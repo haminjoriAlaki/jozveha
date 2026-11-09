@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>جزوه فارسی — بیماری‌های مری (هریسون ۲۰۲۳)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  /* ===== DEFAULT (ORIGINAL DESIGN) ===== */
+  :root{
+    --accent:#0f766e; --accent-2:#14b8a6; --hero-ink:#ffffff;
+    --ink:#1f2937; --muted:#6b7280;
+    --bg:#f3f6f8; --card:#fff; --line:#e5e7eb;
+    --note-bg:#f0fdfa; --note-border:#ccfbf1; --note-color:#134e4a; --note-b-color:#0f766e;
+    --badge-bg:#e6f4f1; --badge-border:#cdeae5; --badge-color:#0f766e;
+    --ph-bg:#f8fafc; --ph-border:#cbd5e1; --ph-color:#64748b; --ph-title-color:#475569;
+    --h2-color:#0b4f4a; --h3-color:#0f766e;
+    --meta-border:#e2e8f0;
+  }
+
+  /* ===== THEME BASE (bg / ink / accent per theme) ===== */
+  body[data-theme="brown"]   { --bg:#3b3b3b; --ink:#fff8f2; --accent:#d4a373; --accent-2:#e8c39e; --hero-ink:#2d1e0f; }
+  body[data-theme="softdark"]{ --bg:#1E1E1C; --ink:#D8CBB3; --accent:#c9b87f; --accent-2:#ddcfa0; --hero-ink:#1E1E1C; }
+  body[data-theme="alldark"] { --bg:#000000; --ink:#ffffff; --accent:#e0b64e; --accent-2:#f0cc70; --hero-ink:#1a1400; }
+  body[data-theme="simple"]  { --bg:#ffffff; --ink:#000000; --accent:#1e40af; --accent-2:#3b6dd8; --hero-ink:#ffffff; }
+
+  /* ===== DERIVED TOKENS PER THEME ===== */
+  body[data-theme]{
+    --card:            color-mix(in srgb, var(--bg) 94%, var(--ink) 6%);
+    --line:            color-mix(in srgb, var(--ink) 12%, var(--bg) 88%);
+    --muted:           color-mix(in srgb, var(--ink) 60%, var(--bg) 40%);
+    --note-bg:         color-mix(in srgb, var(--accent) 8%,  var(--bg) 92%);
+    --note-border:     color-mix(in srgb, var(--accent) 25%, var(--bg) 75%);
+    --note-color:      var(--ink);
+    --note-b-color:    var(--accent);
+    --badge-bg:        color-mix(in srgb, var(--accent) 14%, var(--bg) 86%);
+    --badge-border:    color-mix(in srgb, var(--accent) 35%, var(--bg) 65%);
+    --badge-color:     var(--accent);
+    --ph-bg:           color-mix(in srgb, var(--ink) 6%,  var(--bg) 94%);
+    --ph-border:       color-mix(in srgb, var(--ink) 25%, var(--bg) 75%);
+    --ph-color:        color-mix(in srgb, var(--ink) 60%, var(--bg) 40%);
+    --ph-title-color:  var(--ink);
+    --h2-color:        color-mix(in srgb, var(--accent) 78%, var(--ink) 22%);
+    --h3-color:        color-mix(in srgb, var(--accent) 72%, var(--ink) 28%);
+    --meta-border:     color-mix(in srgb, var(--ink) 15%, var(--bg) 85%);
+  }
+
+  body[data-theme="brown"],
+  body[data-theme="softdark"],body[data-theme="alldark"]{ color-scheme: dark; }
+  body[data-theme="simple"]{ color-scheme: light; }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Vazirmatn",system-ui,"Segoe UI",Tahoma,sans-serif;
+    line-height:1.9; direction:rtl; text-align:right;
+    transition:background-color .35s ease, color .35s ease;
+  }
+  .wrap{max-width:940px;margin:0 auto;padding:24px 16px 80px}
+  header.hero{
+    background:linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+    color:var(--hero-ink);
+    border-radius:22px; padding:34px 30px; margin-bottom:28px;
+    box-shadow:0 14px 34px color-mix(in srgb, var(--accent) 38%, transparent);
+    transition:background .35s ease, color .35s ease, box-shadow .35s ease;
+  }
+  header.hero h1{margin:0 0 10px;font-size:26px;font-weight:800;line-height:1.6}
+  header.hero p{margin:4px 0;font-size:15px;opacity:.95}
+  header.hero .tag{
+    display:inline-block;
+    background:color-mix(in srgb, var(--hero-ink) 20%, var(--accent) 80%);
+    border:1px solid color-mix(in srgb, var(--hero-ink) 45%, var(--accent) 55%);
+    padding:3px 12px;border-radius:999px;font-size:13px;margin-top:10px;
+  }
+  .card{
+    position:relative; background:var(--card); border-radius:18px;
+    padding:32px 28px 24px; margin-bottom:22px;
+    box-shadow:0 6px 18px rgba(15,23,42,.06); border:1px solid var(--line);
+    transition:background-color .35s ease, border-color .35s ease;
+  }
+  .badge{
+    position:absolute; top:14px; left:18px; background:var(--badge-bg);
+    color:var(--badge-color); font-size:13px; font-weight:700; padding:2px 12px;
+    border-radius:999px; border:1px solid var(--badge-border);
+    transition:background-color .35s ease, color .35s ease, border-color .35s ease;
+  }
+  .card h2{
+    font-size:21px; font-weight:800; color:var(--h2-color); margin:0 0 16px;
+    padding-right:14px; border-right:5px solid var(--accent); line-height:1.6;
+    transition:color .35s ease, border-color .35s ease;
+  }
+  .card h3{font-size:17px;color:var(--h3-color);margin:18px 0 8px;font-weight:700;transition:color .35s ease}
+  ul{margin:8px 0;padding-right:24px}
+  li{margin:6px 0}
+  li::marker{color:var(--accent-2)}
+  p{margin:8px 0}
+  .en{direction:ltr;unicode-bidi:isolate;display:inline-block}
+  .note{
+    background:var(--note-bg); border:1px solid var(--note-border);
+    border-right:5px solid var(--accent-2); border-radius:12px;
+    padding:12px 16px; margin-top:18px; font-size:15px; color:var(--note-color);
+    transition:background-color .35s ease, border-color .35s ease, color .35s ease;
+  }
+  .note b{color:var(--note-b-color);font-weight:800;transition:color .35s ease}
+  .ph{
+    border:2px dashed var(--ph-border); background:var(--ph-bg); border-radius:14px;
+    padding:16px; margin-top:16px; color:var(--ph-color); font-size:14px;
+    text-align:center; line-height:1.8;
+    transition:background-color .35s ease, border-color .35s ease, color .35s ease;
+  }
+  .ph .ph-title{display:block;font-weight:700;color:var(--ph-title-color);margin-bottom:6px;transition:color .35s ease}
+  .meta{
+    margin-top:16px; padding-top:10px; border-top:1px dashed var(--meta-border);
+    color:var(--muted); font-size:13.5px;
+    transition:border-color .35s ease, color .35s ease;
+  }
+  .meta span{display:block;margin:2px 0}
+  footer.end{
+    text-align:center; color:var(--muted); font-size:13.5px; padding:26px 10px 0;
+    transition:color .35s ease;
+  }
+
+  /* ===== THEME TOGGLE ===== */
+  .theme-toggle{
+    position:fixed; bottom:20px; left:20px; z-index:1000;
+    font-family:"Vazirmatn",system-ui,sans-serif;
+  }
+  .theme-btn{
+    width:56px; height:56px; border-radius:50%;
+    background:linear-gradient(135deg, var(--accent), var(--accent-2));
+    color:var(--hero-ink);
+    border:2px solid var(--hero-ink);
+    cursor:pointer; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 6px 20px rgba(0,0,0,.28);
+    transition:transform .2s ease, box-shadow .2s ease, background .35s ease, color .35s ease, border-color .35s ease;
+  }
+  .theme-btn:hover{ transform:scale(1.07); box-shadow:0 8px 26px rgba(0,0,0,.34); }
+  .theme-btn:active{ transform:scale(.97); }
+  .theme-panel{
+    position:absolute; bottom:68px; left:0;
+    background:var(--card); border:1px solid var(--line);
+    border-radius:16px; box-shadow:0 12px 38px rgba(0,0,0,.24);
+    padding:10px; display:none; min-width:210px; max-height:70vh; overflow-y:auto;
+    color:var(--ink);
+    transition:background-color .35s ease, border-color .35s ease, color .35s ease;
+  }
+  .theme-panel.open{ display:block; animation:fadeUp .22s ease; }
+  @keyframes fadeUp{ from{opacity:0;transform:translateY(8px);} to{opacity:1;transform:translateY(0);} }
+  .theme-panel-title{
+    font-size:13px; font-weight:700; padding:4px 8px 8px; color:var(--muted);
+    border-bottom:1px solid var(--line); margin-bottom:6px;
+  }
+  .theme-option{
+    display:flex; align-items:center; gap:10px; width:100%;
+    padding:8px 10px; border:none; background:transparent; border-radius:10px;
+    cursor:pointer; font-family:inherit; font-size:14px; color:var(--ink);
+    text-align:right; transition:background-color .15s ease;
+  }
+  .theme-option:hover{ background:var(--note-bg); }
+  .theme-option.active{ background:var(--note-bg); font-weight:700; }
+  .theme-option.active::after{ content:"✓"; margin-right:auto; color:var(--accent); font-weight:800; }
+  .swatch{
+    width:26px; height:26px; border-radius:50%; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 1px 3px rgba(0,0,0,.25);
+  }
+  .swatch i{ width:10px; height:10px; border-radius:50%; display:block; }
+
+  @media print{
+    body{background:#fff}
+    .card{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid;page-break-inside:avoid}
+    header.hero{background:var(--accent) !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .theme-toggle{display:none !important}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <h1>بیماری‌های مری</h1>
+  <p>ترجمه فارسی جزوه — بر پایه هریسون ۲۰۲۳ <span class="en">(Harrison’s Principles of Internal Medicine, 2023)</span></p>
+  <span class="tag">جزوه مطالعه — چیدمان راست‌به‌چپ</span>
+</header>
+
+<!-- 1 -->
+<article class="card">
+  <span class="badge">اسلاید ۱</span>
+  <h2>تصویر خوشنویسی</h2>
+  <p>این اسلاید متن استخراج‌شده ندارد و فقط شامل تصویر است.</p>
+  <div class="ph"><span class="ph-title">Placeholder — تصویر اصلی اسلاید ۱</span>
+  خوشنویسی سیاه روی زمینه آبی روشن؛ متن تصویر قابل خواندن قطعی نیست <b>[نیازمند بررسی]</b></div>
+  <div class="meta"><span>نکته: اسلاید جلد/تصویری است.</span></div>
+</article>
+
+<!-- 2 -->
+<article class="card">
+  <span class="badge">اسلاید ۲</span>
+  <h2>بیماری‌های مری — عنوان و منبع</h2>
+  <ul>
+    <li>بیماری‌های مری ۲۰۲۳ — هریسون <span class="en">(Harrison)</span></li>
+    <li>بهار ۱۴۰۴</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> در متن اصلی «هاربسون» نوشته شده است؛ به‌نظر می‌رسد همان Harrison باشد. <b>[نیازمند بررسی]</b></div>
+</article>
+
+<!-- 3 -->
+<article class="card">
+  <span class="badge">اسلاید ۳</span>
+  <h2>ساختار و عملکرد مری</h2>
+  <ul>
+    <li>مری یک لوله توخالی و عضلانی است که از مدیاستن خلفی عبور می‌کند و هیپوفارنکس را به معده متصل می‌کند؛ در هر دو انتها یک اسفنکتر دارد.</li>
+    <li>وظیفه آن انتقال غذا و مایعات بین این دو انتها است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> مری به‌طور طبیعی با پریستالسیس، غذا را به معده هدایت می‌کند و دو اسفنکتر فوقانی و تحتانی از رفلاکس جلوگیری می‌کنند.</div>
+</article>
+
+<!-- 4 -->
+<article class="card">
+  <span class="badge">اسلاید ۴</span>
+  <h2>علائم بیماری‌های مری</h2>
+  <ul>
+    <li>درد، که گاهی از درد قلبی قابل تشخیص نیست، می‌تواند ناشی از التهاب، عفونت، اختلال حرکتی یا نئوپلاسم باشد.</li>
+    <li>جزئیات مهم شامل افزایش یا کاهش وزن، خونریزی گوارشی، عادات غذایی از جمله زمان وعده‌ها، سیگار و مصرف الکل است.</li>
+    <li>علائم اصلی مری عبارت‌اند از: سوزش سر دل <span class="en">(Heartburn)</span>، برگشت <span class="en">(Regurgitation)</span>، درد قفسه سینه، دیسفاژی <span class="en">(Dysphagia)</span>، اودینوفاژی <span class="en">(Odynophagia)</span> و احساس توده در گلو <span class="en">(Globus sensation)</span>.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> درد قفسه سینه با منشأ مری باید همیشه با در نظر گرفتن علل قلبی بررسی شود.</div>
+</article>
+
+<!-- 5 -->
+<article class="card">
+  <span class="badge">اسلاید ۵</span>
+  <h2>سوزش سر دل <span class="en">(Heartburn / Pyrosis)</span></h2>
+  <ul>
+    <li>شایع‌ترین علامت مری است و با ناراحتی یا احساس سوزش پشت جناغ مشخص می‌شود که از اپی‌گاستر شروع می‌شود و ممکن است به گردن انتشار یابد.</li>
+    <li>ناراحتی با نوشیدن آب یا مصرف آنتی‌اسید تسکین می‌یابد، اما می‌تواند مکرر رخ دهد و فعالیت‌های طبیعی از جمله خواب را مختل کند.</li>
+    <li>ارتباط بین سوزش سر دل و بیماری ریفلاکس معده به مری <span class="en">(GERD)</span> آن‌قدر قوی است که درمان تجربی GERD به یک رویکرد پذیرفته‌شده تبدیل شده است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> پاسخ به آنتی‌اسید یا PPI به‌تنهایی تشخیص GERD را قطعی نمی‌کند، اما در درمان تجربی کاربرد دارد.</div>
+</article>
+
+<!-- 6 -->
+<article class="card">
+  <span class="badge">اسلاید ۶</span>
+  <h2>برگشت <span class="en">(Regurgitation)</span> و نشخوار <span class="en">(Rumination)</span></h2>
+  <ul>
+    <li>برگشت، بازگشت بدون زحمت غذا یا مایع به حلق بدون تهوع یا استفراغ خشک است. بیماران از مایع ترش یا سوزان در گلو یا دهان شکایت دارند که ممکن است حاوی ذرات غذای هضم‌نشده باشد.</li>
+    <li>خم شدن، آروغ زدن یا مانورهایی که فشار داخل شکم را افزایش می‌دهند می‌توانند برگشت را تحریک کنند.</li>
+    <li>نشخوار <span class="en">(Rumination)</span> رفتاری است که در آن غذای تازه بلعیده‌شده برگشت داده و سپس به‌طور مکرر تا یک ساعت دوباره بلعیده می‌شود.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> برگشت را باید از استفراغ افتراق داد؛ در برگشت معمولاً تهوع و انقباضات استفراغی وجود ندارد.</div>
+</article>
+
+<!-- 7 -->
+<article class="card">
+  <span class="badge">اسلاید ۷</span>
+  <h2>درد قفسه سینه و دیسفاژی مری</h2>
+  <ul>
+    <li>درد قفسه سینه یک علامت شایع مری با ویژگی‌های مشابه درد قلبی است: درد فشاری‌شکل، در وسط قفسه سینه، با انتشار به پشت میانی، بازوها یا فک.</li>
+    <li>دیسفاژی مری اغلب به‌صورت احساس «گیر کردن» غذا یا حتی توقف آن در قفسه سینه توصیف می‌شود.</li>
+    <li>غذای جامد <span class="en">(stricture, ring, or tumor)</span> در مقابل مایع + جامد <span class="en">(motility disorder)</span>.</li>
+    <li>اپیزودیک در مقابل مداوم؛ پیشرونده در مقابل ثابت.</li>
+    <li>نکته مهم: محل دقیق گیر کردن غذا در مری توسط بیمار به‌طور معروفی غیردقیق است. حدود ۳۰٪ انسدادهای دیستال مری به‌صورت دیسفاژی گردنی درک می‌شوند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> الگوی دیسفاژی (جامد تنها یا جامد و مایع) به افتراق علل مکانیکی از اختلالات حرکتی کمک می‌کند.</div>
+</article>
+
+<!-- 8 -->
+<article class="card">
+  <span class="badge">اسلاید ۸</span>
+  <h2>افتراق از دیسفاژی اوروفارنژیال</h2>
+  <ul>
+    <li>در این موارد، معمولاً علائم همراه دیسفاژی اوروفارنژیال وجود ندارد؛ مانند آسپیراسیون، برگشت نازوفارنژیال، سرفه، ریزش بزاق یا اختلال واضح عصبی-عضلانی.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> وجود سرفه، خفگی یا ریزش بزاق همراه با دیسفاژی، شک به اختلال اوروفارنژیال را بیشتر می‌کند.</div>
+</article>
+
+<!-- 9 -->
+<article class="card">
+  <span class="badge">اسلاید ۹</span>
+  <h2>اودینوفاژی <span class="en">(Odynophagia)</span></h2>
+  <ul>
+    <li>اودینوفاژی دردی است که توسط بلع ایجاد یا تشدید می‌شود.</li>
+    <li>اگرچه معمولاً از دیسفاژی متمایز در نظر گرفته می‌شود، ممکن است همزمان با دیسفاژی ظاهر شود.</li>
+    <li>اودینوفاژی بیشتر با ازوفاژیت ناشی از قرص یا عفونی دیده می‌شود تا ازوفاژیت ریفلاکسی.</li>
+    <li>وقتی اودینوفاژی در GERD رخ می‌دهد، احتمالاً مربوط به زخم مری یا فرسایش‌های گسترده است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> درد شدید هنگام بلع، به‌ویژه در بیماران نقص ایمنی، شک به ازوفاژیت عفونی را مطرح می‌کند.</div>
+</article>
+
+<!-- 10 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۰</span>
+  <h2>احساس توده در گلو <span class="en">(Globus)</span> و آب دهان ترش <span class="en">(Water brash)</span></h2>
+  <ul>
+    <li>احساس توده در گلو <span class="en">(Globus pharyngeus, globus hystericus)</span> ممکن است با اضطراب یا اختلالات وسواسی همراه باشد.</li>
+    <li>ادراک توده یا پری در گلو که مستقل از بلع احساس می‌شود.</li>
+    <li>اگرچه این بیماران اغلب برای ارزیابی دیسفاژی ارجاع می‌شوند، احساس گلوبوس معمولاً با عمل بلع تسکین می‌یابد.</li>
+    <li>تجربه بالینی نشان می‌دهد که اغلب به GERD نسبت داده می‌شود.</li>
+    <li>آب دهان ترش <span class="en">(Water brash)</span> افزایش ترشح بزاق در نتیجه رفلکس واگ است که با اسیدی‌شدن مخاط مری تحریک می‌شود. این علامت شایع نیست.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> گلوبوس واقعی معمولاً با بلع غذا بدتر نمی‌شود؛ اگر دیسفاژی واقعی وجود دارد، بررسی لازم است.</div>
+</article>
+
+<!-- 11 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۱</span>
+  <h2>بررسی‌های تشخیصی — آندوسکوپی</h2>
+  <ul>
+    <li>ازوفاگوگاسترودئودنوسکوپی <span class="en">(EGD)</span> مفیدترین آزمون برای ارزیابی دستگاه گوارش فوقانی است.</li>
+    <li>مزایای کلیدی آندوسکوپی نسبت به رادیوگرافی باریمی:
+      <ul>
+        <li>(۱) حساسیت بیشتر برای تشخیص ضایعات مخاطی.</li>
+        <li>(۲) حساسیت بسیار بیشتر برای تشخیص ناهنجاری‌هایی که عمدتاً با رنگ قابل شناسایی‌اند، مانند متاپلازی بارت یا ضایعات عروقی.</li>
+        <li>(۳) امکان گرفتن نمونه بیوپسی برای بررسی هیستولوژیک ناهنجاری‌های مشکوک.</li>
+        <li>(۴) امکان دیلاتاسیون تنگی‌ها در حین معاینه.</li>
+      </ul>
+    </li>
+    <li>معایب اصلی آندوسکوپی: حساسیت پایین برای تشخیص تنگی‌های منتشر و غیرکانونی مری، هزینه و نیاز به آرام‌بخش یا بیهوشی.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> آندوسکوپی امکان نمونه‌گیری و درمان همزمان را فراهم می‌کند، اما برای تنگی‌های منتشر حساسیت کمتری دارد.</div>
+</article>
+
+<!-- 12 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۲</span>
+  <h2>رادیوگرافی</h2>
+  <ul>
+    <li>رادیوگرافی با کنتراست مری، معده و دوازدهه می‌تواند ریفلاکس ماده حاجب، فتق هیاتال، گرانولاریتی مخاط، فرسایش‌ها، زخم‌ها و تنگی‌ها را نشان دهد.</li>
+    <li>در مقابل، حساسیت رادیوگرافی باریمی برای تشخیص تنگی‌های مری بیشتر از آندوسکوپی است.</li>
+    <li>فیستول تراکئوازوفاژیال، آناتومی تغییر‌یافته پس از جراحی و فشرده‌سازی خارجی مری شرایطی هستند که تصویربرداری رادیوگرافیک مکمل ارزیابی آندوسکوپیک است.</li>
+    <li>پاتولوژی هیپوفارنکس و اختلالات عضله کریکوفارنژیال بهتر از آندوسکوپی در رادیوگرافی دیده می‌شوند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> برای تنگی‌های منتشر و مشکلات حرکتی، رادیوگرافی باریمی می‌تواند مکمل آندوسکوپی باشد.</div>
+</article>
+
+<!-- 13 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۳</span>
+  <h2>سونوگرافی آندوسکوپیک <span class="en">(EUS)</span></h2>
+  <ul>
+    <li>تصویر ترانس‌مورال از بافت اطراف نوک آندوسکوپ فراهم می‌کند.</li>
+    <li>دستگاه‌های موجود می‌توانند تصویربرداری رادیال (۳۶۰ درجه، مقطعی) یا تصویر خطی منحنی ارائه دهند که می‌تواند آسپیراسیون سوزنی ظریف ساختارهای تصویرشده مانند گره‌های لنفاوی یا تومورها را هدایت کند.</li>
+    <li>کاربردهای اصلی EUS در مری: تعیین مرحله سرطان مری، ارزیابی دیسپلازی در مری بارت و ارزیابی ضایعات زیرمخاطی.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> EUS برای بررسی عمق تهاجم تومور و نمونه‌گیری از گره‌های لنفاوی کاربرد دارد.</div>
+</article>
+
+<!-- 14 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۴</span>
+  <h2>مانومتری مری</h2>
+  <ul>
+    <li>مانومتری مری یا آزمون حرکتی شامل قرار دادن کاتتر حس‌کننده فشار در مری و مشاهده انقباض پس از بلع‌های آزمایشی است.</li>
+    <li>اسفنکتر مری فوقانی و اسفنکتر مری تحتانی <span class="en">(LES)</span> به‌صورت نواحی فشار بالا دیده می‌شوند که با بلع شل می‌شوند.</li>
+    <li>مانومتری برای تشخیص اختلالات حرکتی (آکالازی، اسپاسم منتشر مری <span class="en">[DES]</span>) و ارزیابی یکپارچگی پریستالسیس قبل از جراحی بیماری ریفلاکس استفاده می‌شود.</li>
+    <li>ثبت امپدانس از مجموعه‌ای از الکترودهای جفت‌شده اضافه‌شده به کاتتر مانومتری استفاده می‌کند. محتویات لومن مری در تماس با الکترودها سیگنال امپدانس را کاهش (مایع) یا افزایش (هوا) می‌دهند و امکان تشخیص عبور بولوس به‌صورت آنتروگراد یا رتروگراد را فراهم می‌کنند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> مانومتری استاندارد مرجع برای تشخیص اختلالات حرکتی مری است.</div>
+</article>
+
+<!-- 15 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۵</span>
+  <h2>آزمون ریفلاکس</h2>
+  <ul>
+    <li>GERD اغلب در غیاب نشانه‌های آندوسکوپیک ازوفاژیت تشخیص داده می‌شود.</li>
+    <li>آزمون ریفلاکس می‌تواند مواجهه بیش‌ازحد مری با مایع معده ریفلاکس‌شده را نشان دهد؛ همان ناهنجاری فیزیولوژیک GERD.</li>
+    <li>این کار با ثبت pH مری به‌صورت سرپایی ۲۴ تا ۹۶ ساعته انجام می‌شود؛ با استفاده از فرستنده بی‌سیم حساس به pH که به مخاط مری چسبانده می‌شود یا الکترود سیمی قرارگرفته از بینی با نوک در مری دیستال.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> pH-متری سرپایی برای بیمارانی مفید است که علائم دارند اما آندوسکوپی طبیعی است.</div>
+</article>
+
+<!-- 16 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۶</span>
+  <h2>اختلالات ساختاری — فتق هیاتال</h2>
+  <ul>
+    <li>فتق هیاتال، فتق احشا (اغلب معده) به مدیاستن از طریق هیاتوس مری دیافراگم است.</li>
+    <li>نوع I یا لغزشی <span class="en">(Sliding)</span>: ۹۵٪ موارد.</li>
+    <li>اتصال گاستروازوفاژیال و کاردیای معده به‌دنبال ضعیف شدن لیگامان فرنوازوفاژیال به سمت سر حرکت می‌کنند.</li>
+    <li>بروز فتق لغزشی با افزایش سن بیشتر می‌شود.</li>
+    <li>نتیجه فرسودگی: افزایش فشار داخل شکم (چاقی شکمی، بارداری، عوامل ارثی و ...).</li>
+    <li>این افراد مستعد GERD هستند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> فتق لغزشی شایع‌ترین نوع فتق هیاتال است و اغلب با ریفلاکس همراه است.</div>
+</article>
+
+<!-- 17 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۷</span>
+  <h2>انواع فتق هیاتال</h2>
+  <ul>
+    <li>نوع II: فوندوس معده نیز فتق می‌کند و ممکن است هنگام فتق پیچ بخورد؛ اتصال گاستروازوفاژیال در هیاتوس ثابت می‌ماند؛ «معده وارونه»، ولولوس معده و حتی گانگرن/خفگی معده ممکن است رخ دهد.</li>
+    <li>نوع III: فتق ترکیبی لغزشی و پاراازوفاژیال است. فوندوس معده نیز فتق می‌کند و ممکن است پیچ بخورد؛ «معده وارونه»، ولولوس معده و حتی گانگرن معده ممکن است رخ دهد.</li>
+    <li>نوع IV: احشایی غیر از معده، اغلب کولون، به مدیاستن فتق می‌کند.</li>
+    <li>انواع II، III و IV همه زیرگروه‌های فتق پاراازوفاژیال هستند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> فتق‌های پاراازوفاژیال می‌توانند خطر پیچش و گانگرن داشته باشند و نیاز به بررسی جراحی داشته باشند.</div>
+</article>
+
+<!-- 18 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۸</span>
+  <h2>حلقه‌ها و پرده‌ها <span class="en">(Rings and webs)</span></h2>
+  <ul>
+    <li>حلقه <span class="en">(Ring)</span>: حلقه مری تحتانی؛ حلقه مخاطی؛ حلقه B.</li>
+    <li>تنگ‌شدن نازک و غشایی در محل اتصال مخاط سنگفرشی-استوانه‌ای.</li>
+    <li>منشأ آن ناشناخته است.</li>
+    <li>حلقه‌های B در حدود ۱۰–۱۵٪ جمعیت عمومی قابل نمایش هستند و معمولاً بدون علامت‌اند.</li>
+    <li>تنگ‌شدن‌های پرده‌مانند در قسمت‌های بالاتر مری می‌توانند منشأ مادرزادی یا التهابی داشته باشند.</li>
+    <li>پرده‌های مری گردنی <span class="en">(Cervical esophageal webs)</span>: بدون علامت در ~۱۰٪؛ در سمت قدامی.</li>
+    <li>دیسفاژی متناوب به جامدات مشابه حلقه‌های شاتزکی و به‌طور مشابه با دیلاتاسیون درمان می‌شود.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> حلقه شاتزکی و پرده‌های گردنی می‌توانند باعث دیسفاژی متناوب به غذای جامد شوند.</div>
+</article>
+
+<!-- 19 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۹</span>
+  <h2>شکل ۳۲۳-۲ — آناتومی رادیوگرافیک اتصال گاستروازوفاژیال</h2>
+  <div class="ph"><span class="ph-title">Placeholder — تصویر اصلی اسلاید ۱۹</span>
+  تصویر رادیوگرافیک آناتومی اتصال گاستروازوفاژیال <span class="en">(FIGURE 323-2)</span>.</div>
+  <div class="note"><b>توضیح تکمیلی:</b> این تصویر برای درک محل اتصال مری به معده و حلقه‌های ناحیه GEJ کاربرد دارد.</div>
+</article>
+
+<!-- 20 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۰</span>
+  <h2>حلقه شاتزکی و سندرم پلامر-وینسون</h2>
+  <ul>
+    <li>وقتی قطر لومن <۱۳ میلی‌متر باشد، حلقه‌های دیستال معمولاً با دیسفاژی اپیزودیک به غذای جامد همراه‌اند و حلقه شاتزکی <span class="en">(Schatzki ring)</span> نامیده می‌شوند.</li>
+    <li>بیماران معمولاً >۴۰ سال دارند.</li>
+    <li>منشأ اکتسابی > مادرزادی.</li>
+    <li>حلقه شاتزکی یکی از شایع‌ترین علل گیر کردن متناوب غذا است («سندرم استیک‌هاوس»).</li>
+    <li>حلقه‌های علامت‌دار → دیلاتاسیون.</li>
+    <li>ترکیب پرده‌های علامت‌دار مری پروکسیمال و کم‌خونی فقر آهن در زنان میانسال، سندرم پلامر-وینسون یا پاترسون-کلی <span class="en">(Plummer-Vinson or Paterson-Kelly syndrome)</span> را تشکیل می‌دهد.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> سندرم پلامر-وینسون با دیسفاژی، پرده مری و کم‌خونی فقر آهن مشخص می‌شود.</div>
+</article>
+
+<!-- 21 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۱</span>
+  <h2>دیورتیکول‌های مری</h2>
+  <ul>
+    <li>دیورتیکول اپی‌فرنیک <span class="en">(Epiphrenic)</span> / کاذب / مخاط و زیرمخاط: افزایش فشار داخل لومن همراه با انسداد دیستال؛ همراه با آکالازی، اختلالات هیپرکنتراکتیل مری یا تنگی مری دیستال. اغلب بدون علامت؛ دیسفاژی و برگشت ممکن است رخ دهد.</li>
+    <li>دیورتیکول هیپوفارنژیال (زنکر/<span class="en">Zenker’s</span>) / کاذب / مخاط و زیرمخاط: افزایش فشار داخل لومن همراه با انسداد دیستال؛ عضله کریکوفارنژیال تنگ‌شده (اسفنکتر مری فوقانی)؛ مثلث کیلیان <span class="en">(Killian’s triangle)</span>.</li>
+    <li>دیورتیکول میانی مری <span class="en">(Midesophageal)</span> / حقیقی / همه لایه‌ها / کشش ناشی از التهاب مجاور (سل، هیستوپلاسموز)؛ پولسیون همراه با اختلالات حرکتی مری؛ اغلب بدون علامت؛ دیسفاژی و برگشت ممکن است رخ دهد.</li>
+    <li>بدون علامت؛ نگه‌داشتن غذا و بزاق، دیسفاژی، بوی بد دهان <span class="en">(Halitosis)</span> و آسپیراسیون.</li>
+    <li>درمان با دیورتیکولکتومی جراحی و میوتومی کریکوفارنژیال یا مارسیوپالیزاسیون آندوسکوپیک ترانس‌اورال انجام می‌شود.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> دیورتیکول زنکر در ناحیه هیپوفارنکس و مثلث کیلیان ایجاد می‌شود و می‌تواند باعث دیسفاژی و آسپیراسیون شود.</div>
+</article>
+
+<!-- 22 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۲</span>
+  <h2>شکل ۳۲۳-۳ — دیورتیکول‌های زنکر کوچک و بزرگ</h2>
+  <div class="ph"><span class="ph-title">Placeholder — تصویر اصلی اسلاید ۲۲</span>
+  نمونه‌های دیورتیکول زنکر کوچک <span class="en">(A)</span> و بزرگ <span class="en">(B, C)</span> که از مثلث کیلیان در هیپوفارنکس دیستال منشأ می‌گیرند. دیورتیکول‌های کوچک‌تر فقط در حین بلع دیده می‌شوند، در حالی که دیورتیکول‌های بزرگ‌تر غذا و مایع را نگه می‌دارند.</div>
+</article>
+
+<!-- 23 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۳</span>
+  <h2>پزودودیورتیکولوز منتشر داخل‌دیواره مری</h2>
+  <ul>
+    <li>موجودیتی نادر است که از اتساع مجاری دفعی غدد زیرمخاطی مری ناشی می‌شود.</li>
+    <li>کاندیدیازیس مری و تنگی‌های پروکسیمال مری معمولاً همراه با این اختلال دیده می‌شوند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> این ضایعه در تصویربرداری شبیه دیورتیکول‌های متعدد کوچک در دیواره مری دیده می‌شود.</div>
+</article>
+
+<!-- 24 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۴</span>
+  <h2>شکل ۳۲۳-۴ — پزودودیورتیکولوز داخل‌دیواره مری</h2>
+  <div class="ph"><span class="ph-title">Placeholder — تصویر اصلی اسلاید ۲۴</span>
+  پزودودیورتیکولوز داخل‌دیواره مری همراه با انسداد مزمن. فرورفتگی ماده حاجب به دیواره مری، غدد عمیق مری را مشخص می‌کند <span class="en">(FIGURE 323-4)</span>.</div>
+</article>
+
+<!-- 25 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۵</span>
+  <h2>تومورهای مری</h2>
+  <ul>
+    <li>شیوع آن حدود ۱۰ برابر کمتر از سرطان کولورکتال است، اما حدود یک‌چهارم بیماران را می‌کشد.</li>
+    <li>تغییر نوع غالب سرطان مری از سنگفرشی به آدنوکارسینوم، که به‌شدت با بیماری ریفلاکس و متاپلازی بارت مرتبط است.</li>
+    <li>آدنوکارسینوم بیشتر مری دیستال را در مردان سفیدپوست درگیر می‌کند.</li>
+    <li>کارسینوم سلول سنگفرشی / مری پروکسیمال / مردان سیاه‌پوست / عوامل خطر: سیگار، مصرف الکل، آسیب قلیایی/سوزاننده و عفونت ویروس پاپیلومای انسانی.</li>
+    <li>تظاهر معمول: دیسفاژی پیشرونده به غذای جامد و کاهش وزن.</li>
+    <li>علائم همراه ممکن است شامل اودینوفاژی، کمبود آهن، سرفه ناشی از فیستول تراکئوازوفاژیال و گرفتگی صدا ناشی از آسیب عصب راجعه حنجره چپ باشد.</li>
+    <li>بقای ضعیف = متاستاز به گره‌های لنفاوی منطقه‌ای.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> دیسفاژی پیشرونده به غذای جامد + کاهش وزن، علامت هشدار سرطان مری است.</div>
+</article>
+
+<!-- 26 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۶</span>
+  <h2>تومورهای خوش‌خیم مری</h2>
+  <ul>
+    <li>تومورهای خوش‌خیم مری غیرشایع‌اند و معمولاً به‌طور تصادفی کشف می‌شوند.</li>
+    <li>شامل تومورهای استرومایی گوارشی <span class="en">(GIST)</span>، لیومیوم، پولیپ‌های فیبروواسکولار، پاپیلوم سنگفرشی، تومورهای سلول گرانولار، لیپوم‌ها، نئوپلاسم‌های مزانشیمی و پولیپ‌های فیبروئید التهابی.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> لیومیوم شایع‌ترین تومور خوش‌خیم مری است، اما در متن اصلی به‌عنوان بخشی از فهرست ذکر شده است.</div>
+</article>
+
+<!-- 27 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۷</span>
+  <h2>ناهنجاری‌های مادرزادی مری</h2>
+  <ul>
+    <li>شایع‌ترین ناهنجاری مادرزادی مری، آترزی مری است که در ~۱ از ۵۰۰۰ تولد زنده رخ می‌دهد.</li>
+    <li>عدم جوش خوردن مری پروکسیمال و دیستال همراه با فیستول تراکئوازوفاژیال.</li>
+    <li>آترزی مری معمولاً در چند روز اول زندگی تشخیص داده و جراحی می‌شود.</li>
+    <li>عوارض دیررس شامل دیسفاژی ناشی از تنگی آناستوموز یا فقدان پریستالسیس و ریفلاکس است که می‌تواند شدید باشد.</li>
+    <li>ناهنجاری‌های رشدی کمتر شایع شامل تنگی مادرزادی مری، پرده‌ها و دوتایی‌شدن است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> آترزی مری یک اورژانس نوزادی است و اغلب با فیستول تراکئوازوفاژیال همراه است.</div>
+</article>
+
+<!-- 28 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۸</span>
+  <h2>دیسفاژی لوزوریا و پچ ورودی مری</h2>
+  <ul>
+    <li>دیسفاژی لوزوریا <span class="en">(Dysphagia lusoria)</span>: مری توسط شریان ساب‌کلاوین راست آبرانت که از آئورت نزولی منشأ می‌گیرد و از پشت مری عبور می‌کند، فشرده می‌شود.</li>
+    <li>پچ ورودی مری <span class="en">(Esophageal inlet patch)</span>: مخاط معده هتروتوپیک؛ اپیتلیوم نوع معده در مری گردنی پروکسیمال.</li>
+    <li>شیوع ۴–۵٪ است.</li>
+    <li>اکثر پچ‌های ورودی بدون علامت‌اند، اما تولید اسید می‌تواند رخ دهد زیرا بیشتر آن‌ها اپیتلیوم معده نوع فوندال با سلول‌های پاریتال دارند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> پچ ورودی مری می‌تواند منشأ علائم اسیدی مری باشد، هرچند اغلب بدون علامت است.</div>
+</article>
+
+<!-- 29 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۹</span>
+  <h2>اختلالات حرکتی مری</h2>
+  <ul>
+    <li>اختلال عملکرد عصبی-عضلانی که معمولاً با دیسفاژی، درد قفسه سینه یا سوزش سر دل همراه است.</li>
+    <li>موجودیت‌های اصلی: آکالازی، اسپاسم منتشر مری <span class="en">(DES)</span>، مری چکش‌کوب <span class="en">(Jackhammer esophagus)</span> و GERD.</li>
+    <li>اختلالات حرکتی می‌توانند ثانویه به بیماری‌های سیستمیک نیز باشند؛ مانند پزودوآکالازی، بیماری شاگاس و اسکلرودرما.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> اختلالات حرکتی مری با مانومتری تشخیص داده می‌شوند.</div>
+</article>
+
+<!-- 30 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۰</span>
+  <h2>آکالازی <span class="en">(Achalasia)</span></h2>
+  <ul>
+    <li>نادر است.</li>
+    <li>از دست رفتن سلول‌های گانگلیونی در شبکه می‌آنتریک مری.</li>
+    <li>۱–۳ در هر ۱۰۰٬۰۰۰ نفر.</li>
+    <li>بین سن ۲۵ و ۶۰ سال.</li>
+    <li>بیماری هم نورون‌های گانگلیونی تحریکی (کولینرژیک) و هم مهارکننده (نیتریک اکساید) را درگیر می‌کند.</li>
+    <li>فقدان آن‌ها به شل‌شدن ناقص LES در هنگام بلع و فقدان پریستالسیس می‌انجامد.</li>
+    <li>فرایند خودایمنی؛ ویروس هرپس سیمپلکس انسانی ۱؛ ژنتیک.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> آکالازی با اختلال شل‌شدن LES و فقدان پریستالسیس مشخص می‌شود.</div>
+</article>
+
+<!-- 31 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۱</span>
+  <h2>آکالازی طولانی‌مدت — تظاهرات</h2>
+  <ul>
+    <li>آکالازی طولانی‌مدت با اتساع پیشرونده و تغییر شکل سیگموئید مری همراه با هیپرتروفی LES مشخص می‌شود.</li>
+    <li>دیسفاژی (جامد و مایع)، برگشت، درد قفسه سینه (در ابتدای بیماری؛ بیماران درد رترواسترنال فشاری‌شکل توصیف می‌کنند که گاهی به گردن، بازوها، فک و پشت انتشار می‌یابد) و کاهش وزن.</li>
+    <li>بیماران با آکالازی پیشرفته در معرض برونشیت، پنومونی یا آبسه ریه ناشی از برگشت مزمن و آسپیراسیون هستند.</li>
+    <li>درمان آکالازی در تسکین درد قفسه سینه کمتر از تسکین دیسفاژی یا برگشت مؤثر است.</li>
+    <li>تشخیص افتراقی آکالازی شامل مری چکش‌کوب، DES، بیماری شاگاس، اختلال حرکتی مری ناشی از اوپیوئیدها و پزودوآکالازی است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> آسپیراسیون مزمن در آکالازی پیشرفته خطر عفونت ریوی را افزایش می‌دهد.</div>
+</article>
+
+<!-- 32 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۲</span>
+  <h2>پزودوآکالازی <span class="en">(Pseudoachalasia)</span></h2>
+  <ul>
+    <li>«پزودوآکالازی» حاصل، تا ۵٪ موارد مشکوک را تشکیل می‌دهد و با سن بالاتر بیشتر محتمل است.</li>
+    <li>شروع ناگهانی علائم (<۱ سال).</li>
+    <li>کاهش وزن.</li>
+    <li>بنابراین، آندوسکوپی بخش ضروری ارزیابی آکالازی است.</li>
+    <li>وقتی شک بالینی به پزودوآکالازی زیاد است و آندوسکوپی تشخیصی نیست، CT یا EUS ممکن است مفید باشد.</li>
+    <li>به‌ندرت، پزودوآکالازی → سندرم پارانئوپلاستیک با آنتی‌بادی‌های ضد نورونی در گردش.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> شروع سریع علائم و کاهش وزن در آکالازی، شک به علت بدخیم (پزودوآکالازی) را افزایش می‌دهد.</div>
+</article>
+
+<!-- 33 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۳</span>
+  <h2>تشخیص آکالازی</h2>
+  <ul>
+    <li>آکالازی با بلع باریم و/یا مانومتری مری تشخیص داده می‌شود.</li>
+    <li>آندوسکوپی تومورها یا تنگی‌های مکانیکی خوش‌خیم اتصال مری-معده را رد می‌کند.</li>
+    <li>ظاهر بلع باریم: مری متسع با تخلیه ضعیف، سطح مایع-هوا و باریک‌شدن در LES که ظاهری منقارمانند ایجاد می‌کند.</li>
+    <li>گاهی دیورتیکول اپی‌فرنیک مشاهده می‌شود.</li>
+    <li>در مانومتری: شل‌شدن ناقص LES و فقدان پریستالسیس.</li>
+    <li>از آنجا که مانومتری بیماری زودرس را قبل از اتساع مری و تجمع غذا شناسایی می‌کند، حساس‌ترین آزمون تشخیصی است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> نمای «منقار پرنده» در بلع باریم کلاسیک آکالازی است.</div>
+</article>
+
+<!-- 34 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۴</span>
+  <h2>درمان آکالازی — کاهش فشار LES</h2>
+  <ul>
+    <li>فشار LES می‌تواند با درمان دارویی، دیلاتاسیون با بالون پنوماتیک یا میوتومی LES با میوتومی آندوسکوپیک زیرمخاطی <span class="en">(POEM)</span> یا جراحی لاپاراسکوپیک هِلر کاهش یابد.</li>
+    <li>نیترات‌ها؛ مسدودکننده‌های کانال کلسیم؛ سیلدنافیل؛ توکسین بوتولینوم.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> درمان‌های دارویی اثر موقتی دارند؛ دیلاتاسیون و میوتومی درمان‌های قطعی‌تر هستند.</div>
+</article>
+
+<!-- 35 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۵</span>
+  <h2>شکل ۳۲۳-۵ — آکالازی با اتساع مری</h2>
+  <div class="ph"><span class="ph-title">Placeholder — تصویر اصلی اسلاید ۳۵</span>
+  آکالازی با اتساع مری، باریک‌شدن در اتصال گاستروازوفاژیال و سطح مایع-هوا در مری. نمونه سمت چپ تغییر شکل سیگموئید با بیماری بسیار پیشرفته را نشان می‌دهد <span class="en">(FIGURE 323-5)</span>.</div>
+</article>
+
+<!-- 36 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۶</span>
+  <h2>اسپاسم منتشر مری <span class="en">(DES)</span></h2>
+  <ul>
+    <li>DES با اپیزودهای دیسفاژی و درد قفسه سینه ظاهر می‌شود که به انقباضات غیرطبیعی مری با شل‌شدن طبیعی LES در بلع نسبت داده می‌شود.</li>
+    <li>پاتوفیزیولوژی و تاریخ طبیعی DES به‌خوبی تعریف نشده است.</li>
+    <li>رادیوگرافی → انقباضات ثالثیه یا «مری پیچ‌خورده» <span class="en">(Corkscrew esophagus)</span>.</li>
+    <li>مانومتری → ویژگی‌های تعریف‌کننده متعددی پیشنهاد شده است، شامل فعالیت ناهماهنگ («اسپاستیک») در مری دیستال، انقباضات خودبه‌خودی و مکرر، انقباضات با دامنه بالا و طولانی.</li>
+    <li>DES به‌طور قابل‌توجهی کمتر از آکالازی شایع است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> نمای «مری پیچ‌خورده» در رادیوگرافی باریم از نشانه‌های کلاسیک DES است.</div>
+</article>
+
+<!-- 37 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۷</span>
+  <h2>درد قفسه سینه با منشأ مری</h2>
+  <ul>
+    <li>درد قفسه سینه با منشأ مری به‌شدت آنژین صدری را تقلید می‌کند.</li>
+    <li>غیرمرتبط با فعالیت <span class="en">(Nonexertional)</span>، طولانی‌مدت، مرتبط با غذا، تسکین با آنتی‌اسید و همراه با سوزش سر دل، دیسفاژی یا برگشت و باعث بیدار شدن از خواب می‌شود.</li>
+    <li>تشخیص → مانومتری.</li>
+    <li>آندوسکوپی برای شناسایی ضایعات ساختاری و التهابی جایگزین که می‌توانند باعث درد قفسه سینه شوند مفید است.</li>
+    <li>رادیوگرافی: «مری پیچ‌خورده»، «مری مهره‌مهره‌ای» <span class="en">(Rosary bead esophagus)</span>، پزودودیورتیکول یا خمیدگی می‌تواند نشانه DES باشد، اما این‌ها در آکالازی اسپاستیک نیز دیده می‌شوند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> درد مری می‌تواند با آنتی‌اسید تسکین یابد و همین موضوع افتراق از درد قلبی را دشوار می‌کند.</div>
+</article>
+
+<!-- 38 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۸</span>
+  <h2>درمان DES</h2>
+  <ul>
+    <li>نیترات‌ها.</li>
+    <li>مسدودکننده‌های کانال کلسیم.</li>
+    <li>هیدرالازین.</li>
+    <li>توکسین بوتولینوم.</li>
+    <li>داروهای ضداضطراب <span class="en">(Anxiolytics)</span>.</li>
+    <li>POEM با میوتومی مری دیستال یا میوتومی جراحی فقط در کاهش وزن شدید یا درد مقاوم باید در نظر گرفته شود.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> درمان DES اغلب تجربی و علامتی است؛ جراحی فقط در موارد شدید.</div>
+</article>
+
+<!-- 39 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۹</span>
+  <h2>شکل ۳۲۳-۷ — اسپاسم منتشر مری</h2>
+  <div class="ph"><span class="ph-title">Placeholder — تصویر اصلی اسلاید ۳۹</span>
+  نمای مشخصه «مری پیچ‌خورده» که از انقباض اسپاستیک عضله حلقوی دیواره مری ناشی می‌شود؛ به‌طور دقیق‌تر، این آرایش مارپیچی عضله است. این یافته‌ها در آکالازی اسپاستیک نیز دیده می‌شوند <span class="en">(FIGURE 323-7)</span>.</div>
+</article>
+
+<!-- 40 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۰</span>
+  <h2>ازوفاژیت ائوزینوفیلیک <span class="en">(EoE)</span></h2>
+  <ul>
+    <li>در بزرگسالان و کودکان رخ می‌دهد.</li>
+    <li>شیوع فعلی در ایالات متحده ۴–۸ مورد در هر ۱۰٬۰۰۰ نفر گزارش شده است.</li>
+    <li>مردان سفیدپوست بین ۳۰ و ۴۰ سال.</li>
+    <li>EoE بر اساس ترکیب علائم مری و بیوپسی مخاط مری که التهاب غالب ائوزینوفیلی نشان می‌دهد تشخیص داده می‌شود.</li>
+    <li>علل جایگزین: GERD، حساسیت دارویی، اختلالات بافت همبند، سندرم هیپرائوزینوفیلیک، بیماری کرون، گاستروانتریت ائوزینوفیلیک و عفونت.</li>
+    <li>EoE یک اختلال ایمونولوژیک ناشی از حساسیت به آنتی‌ژن است.</li>
+    <li>آلرژن‌های غذایی محرک‌های غالب هستند، هرچند آئروآلرژن‌ها نیز ممکن است نقش داشته باشند.</li>
+    <li>افزایش خطر ایجاد تنگی مری همراه با مدت بیماری درمان‌نشده گزارش شده است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> EoE در بیماران با دیسفاژی و گیر کردن غذا باید به‌شدت در نظر گرفته شود.</div>
+</article>
+
+<!-- 41 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۱</span>
+  <h2>EoE — تظاهرات بالینی</h2>
+  <ul>
+    <li>EoE باید در کودکان و بزرگسالان با دیسفاژی و گیر کردن غذای مری به‌شدت مد نظر باشد.</li>
+    <li>در کودکان پیش از بلوغ، تظاهرات EoE شامل درد قفسه سینه یا شکم، تهوع، استفراغ و بیزاری از غذا است.</li>
+    <li>سایر علائم در بزرگسالان ممکن است شامل درد قفسه سینه آتیپیک و سوزش سر دل باشد.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> در کودکان، EoE می‌تواند با علائم غیراختصاصی گوارشی تظاهر یابد.</div>
+</article>
+
+<!-- 42 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۲</span>
+  <h2>EoE — یافته‌های بالینی و تشخیصی</h2>
+  <ul>
+    <li>سابقه آتوپی از آلرژی غذایی با واسطه IgE، آسم، اگزما و/یا رینیت آلرژیک در اکثر بیماران وجود دارد.</li>
+    <li>ائوزینوفیلی خون محیطی در ۲۵–۵۰٪ بیماران قابل نمایش است.</li>
+    <li>یافته مشخصه آندوسکوپیک: از دست رفتن نشانه‌های عروقی (ادم)، حلقه‌های متعدد مری، شیارهای طولی و اگزودای سفید.</li>
+    <li>تأیید هیستولوژیک: تراکم اوج ≥۱۵ ائوزینوفیل در هر میدان بزرگنمایی بالا.</li>
+    <li>آزمایش آلرژی با IgE سرم یا تست پوستی prick حساسیت و ویژگی پایینی نشان داده است.</li>
+    <li>عوارض EoE شامل گیر کردن غذا، تنگی مری، مری با قطر باریک و به‌ندرت پارگی مری است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> ≥۱۵ ائوزینوفیل در هر HPF معیار هیستولوژیک کلیدی EoE است.</div>
+</article>
+
+<!-- 43 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۳</span>
+  <h2>EoE — درمان اولیه</h2>
+  <ul>
+    <li>درمان اولیه: PPI که در ۳۰–۵۰٪ بیماران برای بهبود التهاب ائوزینوفیلیک مؤثر است.</li>
+    <li>درمان‌های خط اول اضافی شامل رژیم‌های حذفی یا گلوکوکورتیکوئیدهای موضعی بلعیده‌شده است.</li>
+    <li>حذف تجربی آلرژی‌های غذایی شایع (شیر، گندم، تخم‌مرغ، سویا، آجیل و غذاهای دریایی) در کودکان و بزرگسالان با EoE.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> PPI در EoE هم اثر ضداسیدی و هم اثر ضدالتهابی دارد.</div>
+</article>
+
+<!-- 44 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۴</span>
+  <h2>EoE — گلوکوکورتیکوئیدها، بیولوژیک‌ها و دیلاتاسیون</h2>
+  <ul>
+    <li>گلوکوکورتیکوئیدهای موضعی بلعیده‌شده (مانند فلوتیکازون پروپیونات یا بودزوناید) در ۵۰–۸۰٪ بیماران مؤثرند، اما عود بیماری پس از قطع درمان کوتاه‌مدت شایع است.</li>
+    <li>گلوکوکورتیکوئیدهای سیستمیک به‌دلیل عوارض جانبی و نبود مزیت اثبات‌شده بیش از گلوکوکورتیکوئیدهای موضعی، عموماً توصیه نمی‌شوند.</li>
+    <li>درمان‌های بیولوژیک با هدف واسطه‌های سایتوکاین آلرژیک شامل اینترلوکین ۴، ۵ و ۱۳ در کارآزمایی‌های اولیه امیدبخش بوده‌اند.</li>
+    <li>دیلاتاسیون مری در بیماران با فیبروتنوز برای تسکین دیسفاژی بسیار مؤثر است، اما فرایند التهابی زیرین را درمان نمی‌کند.</li>
+    <li>دیلاتاسیون باید محافظه‌کارانه انجام شود، به‌دلیل خطر پارگی عمیق دیواره مری یا سوراخ‌شدن.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> دیلاتاسیون علامت را بهبود می‌دهد اما التهاب زمینه‌ای را برطرف نمی‌کند.</div>
+</article>
+
+<!-- 45 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۵</span>
+  <h2>ازوفاژیت عفونی — کاندیدا</h2>
+  <ul>
+    <li>کاندیدا به‌طور طبیعی در گلو یافت می‌شود اما می‌تواند در میزبان نقص ایمنی بیماری‌زا شود و ازوفاژیت ایجاد کند.</li>
+    <li><span class="en">C. albicans</span> شایع‌ترین است.</li>
+    <li>ازوفاژیت کاندیدا همچنین با رکود مری ثانویه به اختلالات حرکتی مری و دیورتیکول‌ها رخ می‌دهد.</li>
+    <li>بیماران از اودینوفاژی و دیسفاژی شکایت دارند.</li>
+    <li>اگر برفک دهانی وجود دارد، درمان تجربی مناسب است، اما عفونت همزمان شایع است و علائم پایدار باید به آندوسکوپی فوری با بیوپسی منجر شود؛ چرا که مفیدترین ارزیابی تشخیصی است.</li>
+    <li>ازوفاژیت کاندیدا ظاهر مشخص پلاک‌های سفید یا اگزودا با شکنندگی دارد.</li>
+    <li>فلوکونازول/ووریکونازول یا پوزاکونازول/اکینوکاندین.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> آندوسکوپی با بیوپسی در بیماران با علائم پایدار، حتی با درمان تجربی، لازم است.</div>
+</article>
+
+<!-- 46 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۶</span>
+  <h2>ازوفاژیت هرپسی</h2>
+  <ul>
+    <li>ویروس هرپس سیمپلکس نوع ۱ یا ۲ می‌تواند ازوفاژیت ایجاد کند.</li>
+    <li>وزیکول‌های روی بینی و لب‌ها ممکن است همزمان وجود داشته باشند و به علت هرپسی اشاره کنند.</li>
+    <li>ویروس واریسلا-زوستر نیز می‌تواند در کودکان با آبله‌مرغان یا بزرگسالان با زوستر ازوفاژیت ایجاد کند.</li>
+    <li>یافته‌های آندوسکوپیک مشخص: وزیکول‌ها و زخم‌های کوچک سطحی.</li>
+    <li>از آنجا که عفونت‌های هرپس سیمپلکس محدود به اپیتلیوم سنگفرشی هستند، بیوپسی از حاشیه زخم بیشتر احتمال دارد هسته‌های شیشه‌ای مشخص، اجسام انکلوزیون ائوزینوفیلیک نوع A کووری و سلول‌های غول‌آسا را نشان دهد.</li>
+    <li>اسی کلوویر <span class="en">(Acyclovir)</span>.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> بیوپسی از لبه زخم در هرپس مری بیشترین بازده تشخیصی را دارد.</div>
+</article>
+
+<!-- 47 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۷</span>
+  <h2>ازوفاژیت CMV</h2>
+  <ul>
+    <li>ازوفاژیت CMV عمدتاً در بیماران نقص ایمنی، به‌ویژه بیماران HIV، بیماران بدخیم و گیرندگان پیوند مغز استخوان یا عضو رخ می‌دهد.</li>
+    <li>CMV معمولاً از مرحله نهفته فعال می‌شود.</li>
+    <li>آندوسکوپیک: ضایعات CMV به‌صورت زخم‌های بزرگ مارپیچی <span class="en">(Serpiginous)</span> در مخاطی که در غیر این صورت طبیعی است، به‌ویژه در مری دیستال.</li>
+    <li>بیوپسی از پایه زخم بیشترین بازده تشخیصی را برای یافتن اجسام انکلوزیون بزرگ هسته‌ای یا سیتوپلاسمی پاتوگنومونیک دارد.</li>
+    <li>گانسیکلوویر و والگانسیکلوویر.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> زخم‌های بزرگ و مارپیچی در مری دیستال در بیمار نقص ایمنی، شک به CMV را مطرح می‌کند.</div>
+</article>
+
+<!-- 48 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۸</span>
+  <h2>ازوفاژیت HIV</h2>
+  <ul>
+    <li>در بیماران AIDS، ازوفاژیت عفونی با کاهش CD4 شایع‌تر می‌شود؛ موارد در CD4 >۲۰۰ نادر و در CD4 <۱۰۰ شایع است.</li>
+    <li>خود HIV نیز ممکن است با سندرم خودمحدود زخم حاد مری همراه با زخم‌های دهانی و راش پوستی ماکولوپاپولار در زمان سروکانورژن همراه باشد.</li>
+    <li>علاوه بر این، برخی بیماران با بیماری پیشرفته زخم‌های عمیق و پایدار مری دارند که با گلوکوکورتیکوئید خوراکی یا تالیدومید درمان می‌شوند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> در HIV پیشرفته، عفونت‌های فرصت‌طلب مری باید در بیماران با اودینوفاژی بررسی شوند.</div>
+</article>
+
+<!-- 49 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۹</span>
+  <h2>ترومای مکانیکی و آسیب یاتروژنیک — پارگی مری</h2>
+  <ul>
+    <li>در نتیجه ابزارگذاری در مری یا ترومای مری.</li>
+    <li>استفراغ یا تلاش شدید برای استفراغ می‌تواند به پارگی خودبه‌خودی در اتصال گاستروازوفاژیال منجر شود <span class="en">(Boerhaave’s syndrome)</span>.</li>
+    <li>به‌ندرت، ازوفاژیت خورنده یا نئوپلاسم‌ها به پارگی می‌انجامند.</li>
+    <li>درد پلوریتیک رترواسترنال که می‌تواند با پنومومدیاستن و آمفیزم زیرجلدی همراه باشد.</li>
+    <li>مدیاستینیت یک عارضه مهم پارگی مری است.</li>
+    <li>CT قفسه سینه → حساس در تشخیص هوای مدیاستن.</li>
+    <li>پارگی مری با بلع کنتراست تأیید می‌شود، معمولاً گاستروگرافین و سپس باریم رقیق.</li>
+    <li>درمان: NPO، آنتی‌بیوتیک وریدی، جراحی.</li>
+    <li>کلیپ آندوسکوپیک یا قرار دادن استنت ممکن است در پارگی‌های یاتروژنیک غیرجراحی یا موارد غیرقابل جراحی مانند تومورهای پاره‌شده نشان داده شود.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> درد شدید قفسه سینه پس از استفراغ شدید، شک به سندرم بوئرهاوه را مطرح می‌کند.</div>
+</article>
+
+<!-- 50 -->
+<article class="card">
+  <span class="badge">اسلاید ۵۰</span>
+  <h2>پارگی مالوری-ویس <span class="en">(Mallory-Weiss tear)</span></h2>
+  <ul>
+    <li>استفراغ، تلاش برای استفراغ یا سرفه شدید می‌تواند پارگی غیرترانس‌مورال <span class="en">(Nontransmural)</span> در اتصال گاستروازوفاژیال ایجاد کند که علت شایع خونریزی گوارشی فوقانی است.</li>
+    <li>اکثر بیماران با هماتمز مراجعه می‌کنند. استفراغ پیش‌زمینه معمول است اما همیشه واضح نیست.</li>
+    <li>خونریزی معمولاً خودبه‌خود فروکش می‌کند، اما خونریزی طولانی‌مدت ممکن است به اپی‌نفرین موضعی یا درمان با کوتر، کلیپ آندوسکوپیک یا آمبولیزاسیون آنژیوگرافیک پاسخ دهد. جراحی به‌ندرت لازم است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> پارگی مالوری-ویس یک پارگی مخاطی غیرترانس‌مورال است و اغلب خودبه‌خود بهبود می‌یابد.</div>
+  <div class="ph"><span class="ph-title">Placeholder — تصویر اصلی اسلاید ۵۰</span>
+  اسلاید متنی با عنوان MALLORY-WEISS TEAR؛ متن تصویر ترجمه شد.</div>
+</article>
+
+<!-- 51 -->
+<article class="card">
+  <span class="badge">اسلاید ۵۱</span>
+  <h2>ازوفاژیت تشعشعی <span class="en">(Radiation esophagitis)</span></h2>
+  <ul>
+    <li>ازوفاژیت تشعشعی می‌تواند درمان سرطان‌های قفسه سینه، به‌ویژه پستان و ریه را عارضه‌دار کند.</li>
+    <li>دیسفاژی و اودینوفاژی ممکن است هفته‌ها تا ماه‌ها پس از درمان ادامه یابد.</li>
+    <li>مخاط مری اریتماتوز، ادماتوز و شکننده می‌شود.</li>
+    <li>فیبروز زیرمخاطی و تغییرات دژنراتیو بافتی و تنگی ممکن است سال‌ها پس از مواجهه با تشعشع رخ دهد.</li>
+    <li>مواجهه با تشعشع بیش از ۵۰۰۰ سانتی‌گری <span class="en">(cGy)</span> با افزایش خطر تنگی مری همراه بوده است.</li>
+    <li>درمان ازوفاژیت حاد تشعشعی حمایتی است.</li>
+    <li>تنگی‌های مزمن با دیلاتاسیون مری مدیریت می‌شوند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> تنگی مری می‌تواند سال‌ها پس از رادیوتراپی قفسه سینه ظاهر شود.</div>
+</article>
+
+<!-- 52 -->
+<article class="card">
+  <span class="badge">اسلاید ۵۲</span>
+  <h2>ازوفاژیت خورنده <span class="en">(Corrosive esophagitis)</span></h2>
+  <ul>
+    <li>قلیا یا کمتر شایع، اسید.</li>
+    <li>تصادفی یا خودکشی.</li>
+    <li>نبود آسیب دهانی، احتمال درگیری مری را رد نمی‌کند.</li>
+    <li>بنابراین، ارزیابی آندوسکوپیک زودرس برای ارزیابی و درجه‌بندی آسیب مخاط مری توصیه می‌شود.</li>
+    <li>آسیب خورنده شدید ممکن است به پارگی مری، خونریزی، تنگی و مرگ منجر شود.</li>
+    <li>گلوکوکورتیکوئیدها توصیه نمی‌شوند.</li>
+    <li>تنگی شدید → دیلاتاسیون مکرر.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> در آسیب خورنده، حتی اگر دهان سالم به‌نظر برسد، مری ممکن است آسیب دیده باشد.</div>
+</article>
+
+<!-- 53 -->
+<article class="card">
+  <span class="badge">اسلاید ۵۳</span>
+  <h2>ازوفاژیت قرص <span class="en">(Pill esophagitis)</span></h2>
+  <ul>
+    <li>عادات ضعیف «قرص خوردن»: مایع ناکافی همراه قرص یا دراز کشیدن بلافاصله پس از مصرف قرص.</li>
+    <li>محل شایع: مری میانی نزدیک محل عبور آئورت یا کارینا.</li>
+    <li>داروها: داکسی‌سایکلین، تتراسایکلین، کینیدین، فنی‌توئین، کلرید پتاسیم، سولفات آهن، داروهای ضدالتهاب غیراستروئیدی <span class="en">(NSAIDs)</span> و بیس‌فسفونات‌ها.</li>
+    <li>علائم معمول ازوفاژیت قرص: شروع ناگهانی درد قفسه سینه و اودینوفاژی.</li>
+    <li>مشخصه: درد در طی چند ساعت ایجاد می‌شود یا فرد را از خواب بیدار می‌کند.</li>
+    <li>سابقه کلاسیک مصرف داروهای شناخته‌شده، در بیشتر بیماران نیاز به آزمون تشخیصی را برطرف می‌کند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> بلع قرص با آب کافی و نماندن در حالت دراز کش بلافاصله پس از مصرف، پیشگیری مهمی است.</div>
+</article>
+
+<!-- 54 -->
+<article class="card">
+  <span class="badge">اسلاید ۵۴</span>
+  <h2>ازوفاژیت قرص — آندوسکوپی و سیر</h2>
+  <ul>
+    <li>در آندوسکوپی، زخم یا التهاب موضعی مشخص است.</li>
+    <li>از نظر هیستولوژیک، التهاب حاد تیپیک است.</li>
+    <li>CT قفسه سینه گاهی ضخیم‌شدن مری سازگار با التهاب ترانس‌مورال را نشان می‌دهد.</li>
+    <li>اگرچه وضعیت معمولاً در چند روز تا چند هفته برطرف می‌شود، علائم ممکن است ماه‌ها ادامه یابد و تنگی در موارد شدید ایجاد شود.</li>
+    <li>درمان اختصاصی ندارد، اما داروهای ضدترشح → حذف ریفلاکس همزمان.</li>
+    <li>تنگی → دیلاتاسیون.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> در موارد شدید ازوفاژیت قرص، تنگی مری ممکن است دیررس ایجاد شود.</div>
+</article>
+
+<!-- 55 -->
+<article class="card">
+  <span class="badge">اسلاید ۵۵</span>
+  <h2>اجسام خارجی و گیر کردن غذا</h2>
+  <ul>
+    <li>می‌تواند انسداد کامل ایجاد کند.</li>
+    <li>گیر کردن غذا ممکن است به‌دلیل تنگی پپتیک، کارسینوم، حلقه شاتزکی، EoE یا صرفاً غذا خوردن بی‌دقت رخ دهد.</li>
+    <li>اگر خودبه‌خود برطرف نشد، غذای گیرکرده باید آندوسکوپیک خارج شود.</li>
+    <li>آنزیم‌های نرم‌کننده گوشت <span class="en">(Meat tenderizer enzymes)</span> توصیه نمی‌شوند.</li>
+    <li>گلوکاگون (۱ میلی‌گرم وریدی) گاهی قبل از خارج‌سازی آندوسکوپیک امتحان می‌شود.</li>
+    <li>پس از درمان اورژانسی، بیماران باید از نظر علل بالقوه ارزیابی شوند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> گیر کردن مکرر غذا باید به بررسی تنگی، EoE یا حلقه شاتزکی منجر شود.</div>
+</article>
+
+<!-- 56 -->
+<article class="card">
+  <span class="badge">اسلاید ۵۶</span>
+  <h2>تظاهرات مری بیماری‌های سیستمیک — اسکلرودرما</h2>
+  <ul>
+    <li>مری اسکلرودرما: LES با فشار پایین و فقدان انقباض و پریستالسیس مری.</li>
+    <li>۵۰٪ بیماران → بیماری روماتولوژیک قابل شناسایی؛ ریفلاکس مثبت.</li>
+    <li>صرف‌نظر از علت زمینه‌ای، ناهنجاری‌های مانومتری بیماران را مستعد GERD شدید می‌کند، به‌دلیل عملکرد ناکافی سد LES همراه با پاک‌سازی ضعیف مری از اسید ریفلاکس‌شده.</li>
+    <li>دیسفاژی → خفیف و با غذا خوردن در وضعیت نشسته و استفاده از مایعات برای تسهیل تخلیه جامدات تسکین می‌یابد.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> در اسکلرودرما، LES ضعیف و پریستالسیس مختل، زمینه GERD شدید را فراهم می‌کند.</div>
+</article>
+
+<!-- 57 -->
+<article class="card">
+  <span class="badge">اسلاید ۵۷</span>
+  <h2>بیماری‌های پوستی و درگیری مری</h2>
+  <ul>
+    <li>بسیاری از اختلالات پوستی (لیکن پلان، پمفیگوس ولگاریس، پمفیگوئید بولوز، پمفیگوئید سیکاتریسیال، سندرم بهجت و اپیدرمولیز بولوزا) می‌توانند اوروفارنکس و مری، به‌ویژه مری پروکسیمال را با تاول، بولای بزرگ، زخم، پرده و تنگی درگیر کنند.</li>
+    <li>درمان ضدالتهابی موضعی یا سیستمیک برای بهبود مخاط مؤثر است.</li>
+    <li>سندرم استیونز-جانسون و بیماری پیوند علیه میزبان <span class="en">(GVHD)</span> نیز می‌توانند مری را درگیر کنند. دیلاتاسیون مری ممکن است برای درمان تنگی‌ها لازم باشد.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> در بیماری‌های پوستی تاولی، تنگی مری می‌تواند نیاز به دیلاتاسیون داشته باشد.</div>
+</article>
+
+<!-- 58 -->
+<article class="card">
+  <span class="badge">اسلاید ۵۸</span>
+  <h2>شکل ۳۲۳-۹ — ظاهر آندوسکوپیک عوارض GERD</h2>
+  <div class="ph"><span class="ph-title">Placeholder — تصویر اصلی اسلاید ۵۸</span>
+  ظاهر آندوسکوپیک: <span class="en">(A)</span> ازوفاژیت پپتیک، <span class="en">(B)</span> تنگی پپتیک، <span class="en">(C)</span> متاپلازی بارت و <span class="en">(D)</span> آدنوکارسینوم در حال رشد در ناحیه مری بارت <span class="en">(FIGURE 323-9)</span>.</div>
+</article>
+
+<!-- 59 -->
+<article class="card">
+  <span class="badge">اسلاید ۵۹</span>
+  <h2>شکل ۳۲۳-۱۱ — ویژگی‌های آندوسکوپیک</h2>
+  <div class="ph"><span class="ph-title">Placeholder — تصویر اصلی اسلاید ۵۹</span>
+  ویژگی‌های آندوسکوپیک: <span class="en">(A)</span> ازوفاژیت ائوزینوفیلیک <span class="en">(EoE)</span>، <span class="en">(B)</span> ازوفاژیت کاندیدا، <span class="en">(C)</span> زخم غول‌آسا مرتبط با HIV و <span class="en">(D)</span> حلقه شاتزکی <span class="en">(FIGURE 323-11)</span>.</div>
+</article>
+
+<!-- 60 -->
+<article class="card">
+  <span class="badge">اسلاید ۶۰</span>
+  <h2>بیماری ریفلاکس معده به مری <span class="en">(GERD)</span></h2>
+  <ul>
+    <li>ازوفاژیت زمانی رخ می‌دهد که اسید معده و پپسین ریفلاکس‌شده، التهاب مخاط مری را القا کنند که به آسیب میکروسکوپیک و فرسایش‌ها و زخم‌های ماکروسکوپیک می‌انجامد.</li>
+    <li>مسیر التهابی با واسطه سایتوکاین، نه آسیب مستقیم خورنده به اپیتلیوم مری.</li>
+    <li>طیف آسیب شامل ازوفاژیت، تنگی، مری بارت و آدنوکارسینوم است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> GERD فقط سوزش سر دل نیست؛ می‌تواند به عوارض ساختاری مانند تنگی و بارت منجر شود.</div>
+</article>
+
+<!-- 61 -->
+<article class="card">
+  <span class="badge">اسلاید ۶۱</span>
+  <h2>GERD — عوامل مرتبط</h2>
+  <ul>
+    <li>با این حال، هیپرسکرسیون اسید معده معمولاً عامل غالب در ایجاد ازوفاژیت نیست.</li>
+    <li>استثنا: سندرم زولینگر-الیسون <span class="en">(ZES)</span> که با ازوفاژیت شدید در ~۵۰٪ بیماران همراه است.</li>
+    <li>گاستریت مزمن هلیکوباکتر پیلوری، که ممکن است با القای گاستریت آتروفیک همراه با هیپواسیدیتی اثر محافظتی داشته باشد.</li>
+    <li>پاک‌سازی مختل شیره معده ریفلاکس‌شده.</li>
+    <li>پریستالسیس مختل.</li>
+    <li>کاهش ترشح بزاق.</li>
+    <li>حساسیت احشایی به‌طور فزاینده مطرح است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> در بیشتر بیماران GERD، اسید بیش از حد عامل اصلی نیست؛ اختلال سد LES و پاک‌سازی مری مهم‌ترند.</div>
+</article>
+
+<!-- 62 -->
+<article class="card">
+  <span class="badge">اسلاید ۶۲</span>
+  <h2>GERD — سه مکانیسم غالب و عوامل تشدیدکننده</h2>
+  <ul>
+    <li>سه مکانیسم غالب:
+      <ul>
+        <li>(۱) شل‌شدن‌های گذرای LES <span class="en">(Transient LES relaxations)</span>؛ رفلکس واگوواگال که در آن شل‌شدن LES با اتساع معده ایجاد می‌شود.</li>
+        <li>(۲) هیپوتانسیون LES.</li>
+        <li>(۳) تغییر شکل آناتومیک اتصال مری-معده، شامل فتق هیاتال.</li>
+      </ul>
+    </li>
+    <li>عوامل مستعدکننده تشدید ریفلاکس: چاقی شکمی، بارداری، حالت‌های هیپرسکرتوری معده، تخلیه تأخیری معده، اختلال پریستالسیس مری و پرخوری.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> شل‌شدن‌های گذرای LES مهم‌ترین مکانیسم ریفلاکس در بسیاری از بیماران است.</div>
+</article>
+
+<!-- 63 -->
+<article class="card">
+  <span class="badge">اسلاید ۶۳</span>
+  <h2>نقش پپسین، صفرا و آنزیم‌های پانکراس</h2>
+  <ul>
+    <li>پپسین، صفرا و آنزیم‌های پانکراس در ترشحات معده نیز می‌توانند اپیتلیوم مری را آسیب بزنند، اما خواص مضر آن‌ها یا در نبود محیط اسیدی کاهش می‌یابد یا برای فعال‌شدن به اسید وابسته است.</li>
+    <li>صفرا نیز به‌عنوان یک کوفاکتور در پاتوژنز متاپلازی بارت و آدنوکارسینوم مطرح شده است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> اثر آسیب‌زای صفرا و آنزیم‌های پانکراس اغلب وابسته به محیط اسیدی است.</div>
+</article>
+
+<!-- 64 -->
+<article class="card">
+  <span class="badge">اسلاید ۶۴</span>
+  <h2>GERD — علائم</h2>
+  <ul>
+    <li>سوزش سر دل و برگشت، علائم تیپیک GERD هستند.</li>
+    <li>کمتر شایع: دیسفاژی (ریفلاکس مزمن → تنگی پپتیک، ازوفاژیت ائوزینوفیلیک یا آدنوکارسینوم) و درد قفسه سینه (بیماری قلبی باید به‌دقت در نظر گرفته شود).</li>
+    <li>سندرم‌های خارج مری: سرفه مزمن، لارنژیت، آسم و فرسایش دندان‌ها. بسیاری از شرایط دیگر شامل فارنژیت، برونشیت مزمن، فیبروز ریوی، سینوزیت مزمن، آریتمی قلبی، آپنه خواب و پنومونی آسپیراسیون عودکننده با GERD مرتبط دانسته شده‌اند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> سرفه مزمن و لارنژیت می‌توانند تظاهرات خارج مری GERD باشند.</div>
+</article>
+
+<!-- 65 -->
+<article class="card">
+  <span class="badge">اسلاید ۶۵</span>
+  <h2>GERD — تشخیص افتراقی و ظاهر آندوسکوپیک</h2>
+  <ul>
+    <li>تشخیص افتراقی: ازوفاژیت عفونی یا قرص، EoE، بیماری زخم پپتیک، سوءهاضمه، قولنج صفراوی، بیماری عروق کرونر و اختلالات حرکتی مری.</li>
+    <li>ازوفاژیت فرسایشی در اتصال مری-معده، نشانه آندوسکوپیک GERD است.</li>
+    <li>ظاهر آندوسکوپیک:
+      <ul>
+        <li>ازوفاژیت پپتیک → زخم‌ها معمولاً کم و دیستال.</li>
+        <li>عفونی → زخم‌های متعدد، نقطه‌ای و منتشر.</li>
+        <li>EoE → حلقه‌های متعدد مری، شیارهای خطی، اگزودای نقطه‌ای سفید و تنگی‌ها.</li>
+        <li>ازوفاژیت قرص → زخم منفرد و عمیق در نقاط باریک‌شدن لومن، به‌ویژه نزدیک کارینا، با حفظ مری دیستال.</li>
+      </ul>
+    </li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> الگوی زخم‌ها در آندوسکوپی به افتراق علل پپتیک، عفونی، EoE و قرصی کمک می‌کند.</div>
+</article>
+
+<!-- 66 -->
+<article class="card">
+  <span class="badge">اسلاید ۶۶</span>
+  <h2>GERD — عوارض و مری بارت</h2>
+  <ul>
+    <li>ازوفاژیت مزمن (خونریزی و تنگی) و رابطه بین GERD و آدنوکارسینوم مری.</li>
+    <li>کاهش ازوفاژیت فرسایشی و تنگی‌های پپتیک ← داروهای ضدترشح.</li>
+    <li>در مقابل، شدیدترین پیامد هیستولوژیک GERD، متاپلازی بارت همراه با خطر آدنوکارسینوم مری است و بروز این ضایعات افزایش یافته، نه کاهش.</li>
+    <li>متاپلازی بارت: مخاط سالمون‌رنگ که از GEJ به سمت پروکسیمال گسترش می‌یابد.</li>
+    <li>از نظر هیستوپاتولوژیک با یافتن متاپلازی استوانه‌ای تخصصی‌یافته.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> مری بارت یک ضایعه پیش‌سرطانی است و نیاز به پیگیری دارد.</div>
+</article>
+
+<!-- 67 -->
+<article class="card">
+  <span class="badge">اسلاید ۶۷</span>
+  <h2>مری بارت — پیشرفت به آدنوکارسینوم</h2>
+  <ul>
+    <li>متاپلازی بارت → دیسپلازی کم‌درجه و پردرجه → آدنوکارسینوم.</li>
+    <li>مردان سفیدپوست چاق در دهه ششم زندگی.</li>
+    <li>دیسپلازی پردرجه → ابلیشن آندوسکوپیک مخاط.</li>
+    <li>در چند سال گذشته → ازوفاژکتومی.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> دیسپلازی پردرجه در بارت نیاز به مداخله و پیگیری تخصصی دارد.</div>
+</article>
+
+<!-- 68 -->
+<article class="card">
+  <span class="badge">اسلاید ۶۸</span>
+  <h2>GERD — درمان</h2>
+  <ul>
+    <li>اصلاح سبک زندگی:
+      <ul>
+        <li>(۱) پرهیز از غذاهایی که فشار LES را کاهش می‌دهند و «ریفلاکس‌زا» هستند (اغلب شامل غذاهای چرب، الکل، نعناع، و احتمالاً قهوه و چای).</li>
+        <li>(۲) پرهیز از غذاهای اسیدی (مرکبات، غذاهای گوجه‌فرنگی).</li>
+        <li>(۳) اتخاذ رفتارهایی برای کاهش ریفلاکس و/یا سوزش سر دل.</li>
+      </ul>
+    </li>
+    <li>بیمار با اختلال خواب ناشی از سوزش سر دل شبانه، بیشتر از بالا بردن سر تخت و پرهیز از غذا خوردن قبل از خواب سود می‌برد.</li>
+    <li>کاهش وزن.</li>
+    <li>دارودرمانی → مهارکننده‌های ترشح اسید معده.</li>
+    <li>ریفلاکس را پیشگیری نمی‌کند، اما علائم ریفلاکس را بهبود می‌دهد و به بهبود ازوفاژیت کمک می‌کند.</li>
+    <li>PPIها مؤثرتر از H2RAها هستند.</li>
+    <li>تفاوت عمده‌ای بین PPIها وجود ندارد و افزایش دوز فقط سود محدودی دارد.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> PPI درمان اصلی GERD است، اما اصلاح سبک زندگی نیز مهم است.</div>
+</article>
+
+<!-- 69 -->
+<article class="card">
+  <span class="badge">اسلاید ۶۹</span>
+  <h2>PPI — عوارض و محدودیت‌ها</h2>
+  <ul>
+    <li>به‌طور پارادوکس، فراوانی و شدت درک‌شده سوزش سر دل با وجود یا شدت ازوفاژیت همبستگی ضعیفی دارد.</li>
+    <li>عوارض جانبی PPI → حداقل و نادر.</li>
+    <li>نفریت بینابینی و هیپومنیزیمی شدید و برگشت‌پذیر گزارش شده است. جذب ویتامین B12 و آهن ممکن است مختل شود و حساسیت به عفونت‌های روده‌ای، به‌ویژه کولیت کلستریدیوم دیفیسیل، با درمان افزایش یابد.</li>
+    <li>بیماری کلیوی، زوال عقل و بیماری قلبی‌عروقی.</li>
+    <li>شکستگی استخوان با مصرف مزمن PPI، که نشان‌دهنده اختلال جذب کلسیم است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> مصرف طولانی‌مدت PPI باید در بیماران پرخطر به‌صورت دوره‌ای بازبینی شود.</div>
+</article>
+
+<!-- 70 -->
+<article class="card">
+  <span class="badge">اسلاید ۷۰</span>
+  <h2>فوندوپلیکاسیون نیسن لاپاراسکوپیک</h2>
+  <ul>
+    <li>جراحی، اثربخشی مشابه درمان با PPI دارد.</li>
+    <li>اثرات زیان‌بار شامل موربیدیتی و مرگ‌ومیر جراحی، دیسفاژی پس از عمل، شکست یا از هم گسیختگی نیازمند جراحی مجدد، ناتوانی در آروغ زدن و افزایش نفخ، گاز و علائم روده پس از جراحی است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> جراحی ضدریفلاکس گزینه‌ای برای بیماران منتخب است، نه جایگزین سراسری PPI.</div>
+</article>
+
+<!-- Checklist -->
+<article class="card">
+  <span class="badge">کنترل کیفیت</span>
+  <h2>چک‌لیست کنترل کیفیت</h2>
+  <ul>
+    <li>همه ۷۰ اسلاید ترجمه و در قالب کارتی ارائه شدند.</li>
+    <li>چیدمان کاملاً راست‌به‌چپ و فارسی است.</li>
+    <li>فونت Vazirmatn با اندازه خوانا و فاصله خطوط مناسب استفاده شده است.</li>
+    <li>تصاویر اصلی با Placeholder و کپشن فارسی مشخص شده‌اند.</li>
+    <li>«توضیح تکمیلی»ها با برچسب مشخص از متن اصلی جدا شده‌اند.</li>
+    <li>موارد مشکوک مانند «هاربسون» و «CMTV» با [نیازمند بررسی] علامت‌گذاری شدند.</li>
+    <li>مطلب پزشکی بدون منبع از خود اضافه نشده است؛ توضیحات تکمیلی ساده و آموزشی‌اند.</li>
+  </ul>
+</article>
+
+<footer class="end">
+  پایان جزوه — بیماری‌های مری | ترجمه فارسی بر پایه Harrison 2023 | چیدمان راست‌به‌چپ | فونت Vazirmatn
+</footer>
+
+</div>
+
+<!-- ===== THEME TOGGLE ===== -->
+<div class="theme-toggle">
+  <button class="theme-btn" id="themeBtn" aria-label="تغییر تم" aria-expanded="false" title="تغییر تم">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="13.5" cy="6.5" r="1.5"></circle>
+      <circle cx="17.5" cy="10.5" r="1.5"></circle>
+      <circle cx="8.5" cy="7.5" r="1.5"></circle>
+      <circle cx="6.5" cy="12.5" r="1.5"></circle>
+      <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path>
+    </svg>
+  </button>
+  <div class="theme-panel" id="themePanel" role="menu" aria-label="انتخاب تم">
+    <div class="theme-panel-title">🎨 انتخاب تم</div>
+    <button class="theme-option" data-theme="brown" role="menuitem">
+      <span class="swatch" style="background:#3b3b3b;border:1px solid #fff8f2"><i style="background:#d4a373"></i></span>
+      <span>قهوه‌ای</span>
+    </button>
+    <button class="theme-option" data-theme="softdark" role="menuitem">
+      <span class="swatch" style="background:#1E1E1C;border:1px solid #D8CBB3"><i style="background:#c9b87f"></i></span>
+      <span>دارک ملایم</span>
+    </button>
+    <button class="theme-option" data-theme="alldark" role="menuitem">
+      <span class="swatch" style="background:#000000;border:1px solid #ffffff"><i style="background:#e0b64e"></i></span>
+      <span>تمام دارک</span>
+    </button>
+    <button class="theme-option" data-theme="simple" role="menuitem">
+      <span class="swatch" style="background:#ffffff;border:1px solid #000000"><i style="background:#1e40af"></i></span>
+      <span>ساده</span>
+    </button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var STORAGE_KEY = 'esophagus-note-theme-v1';
+  var btn = document.getElementById('themeBtn');
+  var panel = document.getElementById('themePanel');
+  var options = panel.querySelectorAll('.theme-option');
+  var validThemes = ['brown','softdark','alldark','simple'];
+
+  function setActive(theme){
+    options.forEach(function(o){
+      o.classList.toggle('active', o.dataset.theme === theme);
+    });
+  }
+
+  try{
+    var saved = localStorage.getItem(STORAGE_KEY);
+    if (saved && validThemes.indexOf(saved) !== -1) {
+      document.body.setAttribute('data-theme', saved);
+      setActive(saved);
+    } else if (saved) {
+      // Clean up stale theme (e.g. removed cream/navy/green)
+      localStorage.removeItem(STORAGE_KEY);
+    }
+  } catch(e){}
+
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var open = panel.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  options.forEach(function(opt){
+    opt.addEventListener('click', function(e){
+      e.stopPropagation();
+      var theme = opt.dataset.theme;
+      var current = document.body.getAttribute('data-theme');
+
+      if (current === theme) {
+        document.body.removeAttribute('data-theme');
+        setActive(null);
+        try { localStorage.removeItem(STORAGE_KEY); } catch(e2){}
+      } else {
+        document.body.setAttribute('data-theme', theme);
+        setActive(theme);
+        try { localStorage.setItem(STORAGE_KEY, theme); } catch(e2){}
+      }
+      panel.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    });
+  });
+
+  document.addEventListener('click', function(e){
+    if (!panel.contains(e.target) && !btn.contains(e.target)) {
+      panel.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    }
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') {
+      panel.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

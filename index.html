@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سامانه جامع جزوه‌ها - کورس گوارش</title>
+    <!-- استایل‌های داخلی برای بارگذاری ۱۰۰٪ مطمئن بدون وابستگی به اینترنت یا CDN -->
+    <style>
+        :root {
+            --bg-navy: #0F1B3D;
+            --bg-card: #16254E;
+            --bg-card-hover: #1c2e5e;
+            --hot-pink: #FF3D8B;
+            --hot-pink-hover: #e02874;
+            --text-main: #FFFFFF;
+            --text-muted: #9BB0CE;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, Tahoma, Arial, sans-serif;
+            background-color: var(--bg-navy);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(255, 61, 139, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(255, 61, 139, 0.08) 0%, transparent 45%);
+            background-attachment: fixed;
+        }
+
+        /* سربرگ (Header) */
+        header {
+            background-color: rgba(15, 27, 61, 0.9);
+            border-bottom: 1px solid var(--border-color);
+            padding: 18px 24px;
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-dot {
+            width: 12px;
+            height: 12px;
+            background-color: var(--hot-pink);
+            border-radius: 50%;
+            box-shadow: 0 0 12px var(--hot-pink);
+        }
+
+        .app-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        .app-title span {
+            color: var(--hot-pink);
+        }
+
+        .app-subtitle {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        /* بدنه اصلی */
+        main {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 32px 20px 60px 20px;
+            flex-grow: 1;
+        }
+
+        /* بنر و بخش سرچ */
+        .hero-section {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+
+        .hero-heading {
+            font-size: 1.85rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .hero-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .search-container {
+            max-width: 480px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 14px 20px;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            color: #fff;
+            font-size: 0.95rem;
+            text-align: center;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            border-color: var(--hot-pink);
+            box-shadow: 0 0 18px rgba(255, 61, 139, 0.35);
+            background-color: #1a2a58;
+        }
+
+        .search-input::placeholder {
+            color: #7184a3;
+        }
+
+        /* کارت معرف دسته‌بندی کورس */
+        .category-header {
+            background: linear-gradient(135deg, #182855 0%, #132047 100%);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 20px 24px;
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .cat-info {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .cat-bar {
+            width: 5px;
+            height: 38px;
+            background-color: var(--hot-pink);
+            border-radius: 10px;
+            box-shadow: 0 0 10px var(--hot-pink);
+        }
+
+        .cat-name {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .cat-desc {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-top: 3px;
+        }
+
+        .cat-badge {
+            background-color: rgba(255, 61, 139, 0.15);
+            color: var(--hot-pink);
+            border: 1px solid rgba(255, 61, 139, 0.4);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 30px;
+        }
+
+        /* گرید کارت‌های جزوه‌ها */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 22px;
+        }
+
+        /* کارت مجزا */
+        .pamphlet-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.25s ease;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+        }
+
+        .pamphlet-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 61, 139, 0.6);
+            box-shadow: 0 10px 25px rgba(255, 61, 139, 0.22);
+            background-color: var(--bg-card-hover);
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .card-number {
+            font-size: 0.75rem;
+            font-weight: 700;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 8px;
+        }
+
+        .card-tag {
+            font-size: 0.72rem;
+            color: #8da3c5;
+        }
+
+        .card-title {
+            font-size: 1.12rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+            transition: color 0.2s;
+        }
+
+        .pamphlet-card:hover .card-title {
+            color: var(--hot-pink);
+        }
+
+        .card-desc {
+            font-size: 0.86rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        /* دکمه لینک */
+        .card-link {
+            display: block;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.07);
+            color: #FFFFFF;
+            font-size: 0.88rem;
+            font-weight: 700;
+            padding: 12px 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.25s ease;
+        }
+
+        .card-link:hover {
+            background-color: var(--hot-pink);
+            border-color: var(--hot-pink);
+            box-shadow: 0 4px 15px rgba(255, 61, 139, 0.45);
+        }
+
+        /* پیام عدم وجود نتیجه */
+        .not-found {
+            display: none;
+            text-align: center;
+            padding: 50px 20px;
+            background-color: rgba(22, 37, 78, 0.4);
+            border: 1px dashed var(--border-color);
+            border-radius: 20px;
+            grid-column: 1 / -1;
+        }
+
+        .not-found-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .not-found-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* فوتر */
+        footer {
+            border-top: 1px solid var(--border-color);
+            background-color: rgba(10, 18, 42, 0.8);
+            padding: 20px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 600px) {
+            .hero-heading {
+                font-size: 1.45rem;
+            }
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            .category-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- هدر سایت -->
+    <header>
+        <div class="header-container">
+            <div class="logo-box">
+                <div class="logo-dot"></div>
+                <div>
+                    <h1 class="app-title">سامانه جامع <span>جزوه‌ها</span></h1>
+                    <p class="app-subtitle">مرکز مطالعه و دسترسی سریع به مباحث</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- محتوای اصلی -->
+    <main>
+        <!-- بخش هیرو و جستجو -->
+        <section class="hero-section">
+            <h2 class="hero-heading">یادداشت‌ها و سرفصل‌های درسی</h2>
+            <p class="hero-desc">برای دسترسی آسان به هر جزوه روی دکمه مشاهده کلیک کنید یا از کادر زیر جستجو کنید.</p>
+            
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="searchBar" 
+                    class="search-input" 
+                    placeholder="جستجوی سرفصل یا نام جزوه..." 
+                    oninput="handleSearch()"
+                >
+            </div>
+        </section>
+
+        <!-- معرفی دسته بندی: کورس گوارش -->
+        <div class="category-header">
+            <div class="cat-info">
+                <div class="cat-bar"></div>
+                <div>
+                    <h3 class="cat-name">کورس گوارش</h3>
+                    <p class="cat-desc">سرفصل‌های بالینی و بیماری‌های دستگاه گوارش</p>
+                </div>
+            </div>
+            <div class="cat-badge">۶ جزوه اختصاصی</div>
+        </div>
+
+        <!-- لیست کارت‌های جزوه -->
+        <div class="cards-grid" id="cardsWrapper">
+
+            <!-- جزوه ۱ -->
+            <div class="pamphlet-card" data-title="بیماری های مری" data-desc="ریفلاکس گوارشی GERD، دیسفاژی، آشالازی و اختلالات حرکتی مری">
+                <div>
+                    <div class="card-top">
+                        <span class="card-number">جزوه ۰۱</span>
+                        <span class="card-tag">کورس گوارش</span>
+                    </div>
+                    <h4 class="card-title">بیماری‌های مری</h4>
+                    <p class="card-desc">بررسی ریفلاکس گاستروازوفاژیال (GERD)، دیسفاژی، اسپاسم مری، آشالازی و درمان‌های دارویی و اندوسکوپیک.</p>
+                </div>
+                <a href="./govaresh/1 2 - مری.html" class="card-link">مشاهده و مطالعه جزوه</a>
+            </div>
+
+            <!-- جزوه ۲ -->
+            <div class="pamphlet-card" data-title="بیماری های معده" data-desc="زخم‌های پپتیک PUD، هلیکوباکتر پیلوری، گاستریت و خونریزی‌های گوارشی فوقانی">
+                <div>
+                    <div class="card-top">
+                        <span class="card-number">جزوه ۰۲</span>
+                        <span class="card-tag">کورس گوارش</span>
+                    </div>
+                    <h4 class="card-title">بیماری‌های معده</h4>
+                    <p class="card-desc">پاتولوژی زخم معده و دئودنوم، رژیم‌های ریشه‌کنی H. Pylori، گاستریت حاد و مزمن، خونریزی‌ها و مدیریت بالینی.</p>
+                </div>
+                <a href="./govaresh/3 - معده.html" class="card-link">مشاهده و مطالعه جزوه</a>
+            </div>
+
+            <!-- جزوه ۳ -->
+            <div class="pamphlet-card" data-title="بیماری های صفرا" data-desc="سنگ کیسه صفرا، کوله سیستیت حاد و مزمن، کلانژیت صعودی و کلدوکولیتیازیس">
+                <div>
+                    <div class="card-top">
+                        <span class="card-number">جزوه ۰۳</span>
+                        <span class="card-tag">کورس گوارش</span>
+                    </div>
+                    <h4 class="card-title">بیماری‌های صفرا</h4>
+                    <p class="card-desc">رویکرد به کولیک صفراوی، کلانژیت (تریاد شارکو)، سنگ‌های مجاری صفراوی، اندیکاسیون‌های جراحی و ERCP.</p>
+                </div>
+                <a href="./govaresh/4 - صفرا.html" class="card-link">مشاهده و مطالعه جزوه</a>
+            </div>
+
+            <!-- جزوه ۴ -->
+            <div class="pamphlet-card" data-title="سیروز" data-desc="پاتوفیزیولوژی سیروز کبدی، هایپرتنشن پورت، آسیت، واریس مری و آنسفالوپاتی">
+                <div>
+                    <div class="card-top">
+                        <span class="card-number">جزوه ۰۴</span>
+                        <span class="card-tag">کورس گوارش</span>
+                    </div>
+                    <h4 class="card-title">سیروز</h4>
+                    <p class="card-desc">عوارض هایپرتانسیون پورت، مدیریت آسیت و پریتونیت خودبه‌خودی (SBP)، واریس‌های گوارشی و نارسایی کبد.</p>
+                </div>
+                <a href="./govaresh/5 - سیروز.html" class="card-link">مشاهده و مطالعه جزوه</a>
+            </div>
+
+            <!-- جزوه ۵ -->
+            <div class="pamphlet-card" data-title="بیماری های پانکراس" data-desc="پانکراتیت حاد و مزمن، معیارهای تشخیصی و آزمایشگاهی، کیست‌ها و نارسایی اگزوکرین">
+                <div>
+                    <div class="card-top">
+                        <span class="card-number">جزوه ۰۵</span>
+                        <span class="card-tag">کورس گوارش</span>
+                    </div>
+                    <h4 class="card-title">بیماری‌های پانکراس</h4>
+                    <p class="card-desc">معیارهای رانسون و اتیولوژی پانکراتیت حاد، پانکراتیت الکلی و انسدادی، کیست‌های لوزالمعده و جایگزینی آنزیمی.</p>
+                </div>
+                <a href="./govaresh/6 - pancreas.html" class="card-link">مشاهده و مطالعه جزوه</a>
+            </div>
+
+            <!-- جزوه ۶ -->
+            <div class="pamphlet-card" data-title="IBD بیماری های التهابی روده" data-desc="کولیت اولسراتیو، بیماری کرون، تمایز بالینی، تظاهرات خارج روده ای و درمان">
+                <div>
+                    <div class="card-top">
+                        <span class="card-number">جزوه ۰۶</span>
+                        <span class="card-tag">کورس گوارش</span>
+                    </div>
+                    <h4 class="card-title">IBD</h4>
+                    <p class="card-desc">بررسی مقایسه‌ای کولیت اولسراتیو (UC) و کرون (Crohn's)، علائم آندوسکوپیک، داروهای بیولوژیک و پیگیری‌ها.</p>
+                </div>
+                <a href="./govaresh/6 - IBD.html" class="card-link">مشاهده و مطالعه جزوه</a>
+            </div>
+
+            <!-- باکس زمان عدم یافتن نتیجه -->
+            <div class="not-found" id="notFoundBox">
+                <div class="not-found-title">جزوه‌ای مطابق با عبارت جستجو شده پیدا نشد</div>
+                <div class="not-found-desc">لطفاً املای عبارت یا عنوان دیگری از کورس گوارش را امتحان کنید.</div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- فوتر -->
+    <footer>
+        <p>© پلتفرم اختصاصی جزوات و یادداشت‌های آموزشی | کورس گوارش</p>
+    </footer>
+
+    <!-- اسکریپت فیلتر و جستجوی لحظه‌ای بدون خطا -->
+    <script>
+        function handleSearch() {
+            var input = document.getElementById('searchBar');
+            var query = input.value.trim().toLowerCase();
+            var cards = document.querySelectorAll('.pamphlet-card');
+            var notFoundBox = document.getElementById('notFoundBox');
+            var matches = 0;
+
+            cards.forEach(function(card) {
+                var title = (card.getAttribute('data-title') || '').toLowerCase();
+                var desc = (card.getAttribute('data-desc') || '').toLowerCase();
+
+                if (title.indexOf(query) !== -1 || desc.indexOf(query) !== -1) {
+                    card.style.display = 'flex';
+                    matches++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            if (matches === 0) {
+                notFoundBox.style.display = 'block';
+            } else {
+                notFoundBox.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

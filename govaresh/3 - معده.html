@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>جزوه فارسی — بیماری‌های معده (هریسون ۲۰۲۳)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  /* ===== DEFAULT (ORIGINAL DESIGN) ===== */
+  :root{
+    --accent:#0f766e; --accent-2:#14b8a6; --hero-ink:#ffffff;
+    --ink:#1f2937; --muted:#6b7280;
+    --bg:#f3f6f8; --card:#fff; --line:#e5e7eb;
+    --note-bg:#f0fdfa; --note-border:#ccfbf1; --note-color:#134e4a; --note-b-color:#0f766e;
+    --badge-bg:#e6f4f1; --badge-border:#cdeae5; --badge-color:#0f766e;
+    --h2-color:#0b4f4a; --h3-color:#0f766e;
+    --meta-border:#e2e8f0;
+    --table-even-bg:#f8fafc;
+  }
+
+  /* ===== THEMES ===== */
+  body[data-theme="brown"]   { --bg:#3b3b3b; --ink:#fff8f2; --accent:#d4a373; --accent-2:#e8c39e; --hero-ink:#2d1e0f; }
+  body[data-theme="softdark"]{ --bg:#1E1E1C; --ink:#D8CBB3; --accent:#c9b87f; --accent-2:#ddcfa0; --hero-ink:#1E1E1C; }
+  body[data-theme="alldark"] { --bg:#000000; --ink:#ffffff; --accent:#e0b64e; --accent-2:#f0cc70; --hero-ink:#1a1400; }
+  body[data-theme="simple"]  { --bg:#ffffff; --ink:#000000; --accent:#1e40af; --accent-2:#3b6dd8; --hero-ink:#ffffff; }
+
+  body[data-theme]{
+    --card:            color-mix(in srgb, var(--bg) 94%, var(--ink) 6%);
+    --line:            color-mix(in srgb, var(--ink) 12%, var(--bg) 88%);
+    --muted:           color-mix(in srgb, var(--ink) 60%, var(--bg) 40%);
+    --note-bg:         color-mix(in srgb, var(--accent) 8%,  var(--bg) 92%);
+    --note-border:     color-mix(in srgb, var(--accent) 25%, var(--bg) 75%);
+    --note-color:      var(--ink);
+    --note-b-color:    var(--accent);
+    --badge-bg:        color-mix(in srgb, var(--accent) 14%, var(--bg) 86%);
+    --badge-border:    color-mix(in srgb, var(--accent) 35%, var(--bg) 65%);
+    --badge-color:     var(--accent);
+    --h2-color:        color-mix(in srgb, var(--accent) 78%, var(--ink) 22%);
+    --h3-color:        color-mix(in srgb, var(--accent) 72%, var(--ink) 28%);
+    --meta-border:     color-mix(in srgb, var(--ink) 15%, var(--bg) 85%);
+    --table-even-bg:   color-mix(in srgb, var(--ink) 4%, var(--card) 96%);
+  }
+
+  body[data-theme="brown"],
+  body[data-theme="softdark"],body[data-theme="alldark"]{ color-scheme: dark; }
+  body[data-theme="simple"]{ color-scheme: light; }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Vazirmatn",system-ui,"Segoe UI",Tahoma,sans-serif;
+    line-height:1.9; direction:rtl; text-align:right;
+    transition:background-color .35s ease, color .35s ease;
+  }
+  .wrap{max-width:940px;margin:0 auto;padding:24px 16px 80px}
+  header.hero{
+    background:linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+    color:var(--hero-ink); border-radius:22px; padding:34px 30px; margin-bottom:28px;
+    box-shadow:0 14px 34px color-mix(in srgb, var(--accent) 38%, transparent);
+    transition:background .35s ease, color .35s ease, box-shadow .35s ease;
+  }
+  header.hero h1{margin:0 0 10px;font-size:26px;font-weight:800;line-height:1.6}
+  header.hero p{margin:4px 0;font-size:15px;opacity:.95}
+  header.hero .tag{
+    display:inline-block;
+    background:color-mix(in srgb, var(--hero-ink) 20%, var(--accent) 80%);
+    border:1px solid color-mix(in srgb, var(--hero-ink) 45%, var(--accent) 55%);
+    padding:3px 12px;border-radius:999px;font-size:13px;margin-top:10px;
+  }
+  .card{
+    position:relative; background:var(--card); border-radius:18px;
+    padding:32px 28px 24px; margin-bottom:22px;
+    box-shadow:0 6px 18px rgba(15,23,42,.06); border:1px solid var(--line);
+    transition:background-color .35s ease, border-color .35s ease;
+  }
+  .badge{
+    position:absolute; top:14px; left:18px; background:var(--badge-bg);
+    color:var(--badge-color); font-size:13px; font-weight:700; padding:2px 12px;
+    border-radius:999px; border:1px solid var(--badge-border);
+    transition:background-color .35s ease, color .35s ease, border-color .35s ease;
+  }
+  .card h2{
+    font-size:21px; font-weight:800; color:var(--h2-color); margin:0 0 16px;
+    padding-right:14px; border-right:5px solid var(--accent); line-height:1.6;
+    transition:color .35s ease, border-color .35s ease;
+  }
+  .card h3{font-size:17px;color:var(--h3-color);margin:18px 0 8px;font-weight:700;transition:color .35s ease}
+  ul{margin:8px 0;padding-right:24px}
+  li{margin:6px 0}
+  li::marker{color:var(--accent-2)}
+  p{margin:8px 0}
+  .en{direction:ltr;unicode-bidi:isolate;display:inline-block}
+  .note{
+    background:var(--note-bg); border:1px solid var(--note-border);
+    border-right:5px solid var(--accent-2); border-radius:12px;
+    padding:12px 16px; margin-top:18px; font-size:15px; color:var(--note-color);
+    transition:background-color .35s ease, border-color .35s ease, color .35s ease;
+  }
+  .note b{color:var(--note-b-color);font-weight:800;transition:color .35s ease}
+  .table-scroll{overflow-x:auto;margin-top:14px;border-radius:12px}
+  table{width:100%;border-collapse:collapse;font-size:14px;min-width:600px}
+  thead th{
+    background:var(--accent); color:var(--hero-ink); padding:10px 8px;
+    border:1px solid color-mix(in srgb, var(--accent) 80%, black 20%);
+    font-weight:700; text-align:right;
+    transition:background-color .35s ease, color .35s ease, border-color .35s ease;
+  }
+  tbody td{padding:9px 8px;border:1px solid var(--line);vertical-align:top;
+    transition:border-color .35s ease, color .35s ease}
+  tbody tr:nth-child(even) td{background:var(--table-even-bg);
+    transition:background-color .35s ease}
+  .meta{
+    margin-top:16px; padding-top:10px; border-top:1px dashed var(--meta-border);
+    color:var(--muted); font-size:13.5px;
+    transition:border-color .35s ease, color .35s ease;
+  }
+  .meta span{display:block;margin:2px 0}
+  footer.end{
+    text-align:center; color:var(--muted); font-size:13.5px; padding:26px 10px 0;
+    transition:color .35s ease;
+  }
+
+  /* ==== استایل عکس‌ها ==== */
+  .aks-figure{
+    margin: 0 auto;
+    padding: 12px;
+    background: #ffffff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:border-color .35s ease;
+  }
+  .aks-img{
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 60vh;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+  .ph-caption{
+    margin: 10px 0 0;
+    font-size: 13.5px;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.8;
+    transition:color .35s ease;
+  }
+
+  /* ===== THEME TOGGLE ===== */
+  .theme-toggle{
+    position:fixed; bottom:20px; left:20px; z-index:1000;
+    font-family:"Vazirmatn",system-ui,sans-serif;
+  }
+  .theme-btn{
+    width:56px; height:56px; border-radius:50%;
+    background:linear-gradient(135deg, var(--accent), var(--accent-2));
+    color:var(--hero-ink); border:2px solid var(--hero-ink);
+    cursor:pointer; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 6px 20px rgba(0,0,0,.28);
+    transition:transform .2s ease, box-shadow .2s ease, background .35s ease, color .35s ease, border-color .35s ease;
+  }
+  .theme-btn:hover{ transform:scale(1.07); box-shadow:0 8px 26px rgba(0,0,0,.34); }
+  .theme-btn:active{ transform:scale(.97); }
+  .theme-panel{
+    position:absolute; bottom:68px; left:0;
+    background:var(--card); border:1px solid var(--line);
+    border-radius:16px; box-shadow:0 12px 38px rgba(0,0,0,.24);
+    padding:10px; display:none; min-width:210px; max-height:70vh; overflow-y:auto;
+    color:var(--ink);
+    transition:background-color .35s ease, border-color .35s ease, color .35s ease;
+  }
+  .theme-panel.open{ display:block; animation:fadeUp .22s ease; }
+  @keyframes fadeUp{ from{opacity:0;transform:translateY(8px);} to{opacity:1;transform:translateY(0);} }
+  .theme-panel-title{
+    font-size:13px; font-weight:700; padding:4px 8px 8px; color:var(--muted);
+    border-bottom:1px solid var(--line); margin-bottom:6px;
+  }
+  .theme-option{
+    display:flex; align-items:center; gap:10px; width:100%;
+    padding:8px 10px; border:none; background:transparent; border-radius:10px;
+    cursor:pointer; font-family:inherit; font-size:14px; color:var(--ink);
+    text-align:right; transition:background-color .15s ease;
+  }
+  .theme-option:hover{ background:var(--note-bg); }
+  .theme-option.active{ background:var(--note-bg); font-weight:700; }
+  .theme-option.active::after{ content:"✓"; margin-right:auto; color:var(--accent); font-weight:800; }
+  .swatch{
+    width:26px; height:26px; border-radius:50%; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 1px 3px rgba(0,0,0,.25);
+  }
+  .swatch i{ width:10px; height:10px; border-radius:50%; display:block; }
+
+  @media print{
+    body{background:#fff}
+    .card{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid;page-break-inside:avoid}
+    header.hero{background:var(--accent) !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .table-scroll{overflow:visible}
+    table{min-width:0}
+    .theme-toggle{display:none !important}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <h1>بیماری‌های معده</h1>
+  <p>ترجمه فارسی جزوه — بر پایه هریسون ۲۰۲۳ <span class="en">(Harrison’s Principles of Internal Medicine, 2023)</span></p>
+  <span class="tag">جزوه مطالعه — چیدمان راست‌به‌چپ</span>
+</header>
+
+<!-- 1 -->
+<article class="card">
+  <span class="badge">اسلاید ۱</span>
+  <h2>تصویر خوشنویسی</h2>
+  <figure class="aks-figure">
+    <img class="aks-img" src="" alt="خوشنویسی سیاه روی زمینه آبی روشن — تصویر اصلی اسلاید ۱">
+  </figure>
+  <p class="ph-caption">تصویر اصلی اسلاید ۱ — خوشنویسی سیاه روی زمینه آبی روشن؛ متن تصویر قابل خواندن قطعی نیست <b>[نیازمند بررسی]</b></p>
+  <div class="note"><b>توضیح تکمیلی:</b> این اسلاید جلد/تصویری است. برای نمایش تصویر، مقدار <code>src</code> را به نام فایل عکس تغییر دهید.</div>
+</article>
+
+<!-- 2 -->
+<article class="card">
+  <span class="badge">اسلاید ۲</span>
+  <h2>بیماری‌های معده — عنوان و منبع</h2>
+  <ul>
+    <li>بیماری‌های معده ۲۰۲۳ — هریسون <span class="en">(Harrison)</span></li>
+    <li>بهار ۱۴۰۴</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> در متن اصلی «هاربسون» نوشته شده است؛ به‌نظر می‌رسد همان Harrison باشد. <b>[نیازمند بررسی]</b></div>
+</article>
+
+<!-- 3 -->
+<article class="card">
+  <span class="badge">اسلاید ۳</span>
+  <h2>تعریف زخم پپتیک</h2>
+  <ul>
+    <li>زخم پپتیک <span class="en">(Peptic ulcer)</span> به‌صورت اختلال در یکپارچگی مخاط معده و/یا دوازدهه تعریف می‌شود که به یک نقص یا حفره موضعی ناشی از التهاب فعال منجر می‌شود.</li>
+    <li>اگرچه درد سوزشی اپی‌گاستر که با ناشتایی تشدید و با غذا بهبود می‌یابد، یک مجموعه علامتی مرتبط با بیماری زخم پپتیک <span class="en">(PUD)</span> است، اکنون مشخص شده که بیش از ۹۰٪ بیماران با این مجموعه علامتی (سوءهاضمه) زخم ندارند و اکثر بیماران با زخم پپتیک ممکن است بدون علامت باشند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> بیشتر بیماران با علائم سوءهاضمه زخم ندارند و بسیاری از زخم‌ها بدون علامت‌اند؛ بنابراین آندوسکوپی برای تشخیص قطعی لازم است.</div>
+</article>
+
+<!-- 4 -->
+<article class="card">
+  <span class="badge">اسلاید ۴</span>
+  <h2>فیزیولوژی ترشح معده</h2>
+  <ul>
+    <li>اسید کلریدریک <span class="en">(HCl)</span> و پپسینوژن دو محصول ترشحی اصلی معده هستند که قادر به القای آسیب مخاطی‌اند.</li>
+    <li>اسید معده و پپسینوژن نقش فیزیولوژیک در هضم پروتئین؛ جذب آهن، کلسیم، منیزیم و ویتامین B12؛ و کشتن باکتری‌های بلعیده‌شده دارند.</li>
+    <li>تولید اسید پایه الگوی شبانه‌روزی دارد؛ بالاترین سطوح در شب و پایین‌ترین سطوح در ساعات صبح.</li>
+    <li>ترشح تحریک‌شده اسید معده عمدتاً در سه فاز رخ می‌دهد: سفالیک، گاستریک و اینتستینال.</li>
+    <li>دیدن، بوییدن و چشیدن غذا اجزای فاز سفالیک هستند که ترشح معده را از طریق عصب واگ تحریک می‌کنند.</li>
+    <li>فاز گاستریک با ورود غذا به معده فعال می‌شود. اتساع دیواره معده نیز به آزادسازی گاسترین و تولید اسید منجر می‌شود.</li>
+    <li>آخرین فاز ترشح اسید معده با ورود غذا به روده آغاز می‌شود و با اتساع لومن و جذب مواد مغذی واسطه‌گری می‌شود.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> سه فاز ترشح اسید: سفالیک (دیدن/بو/چشیدن)، گاستریک (ورود غذا و اتساع معده) و اینتستینال (ورود غذا به روده).</div>
+</article>
+
+<!-- 5 -->
+<article class="card">
+  <span class="badge">اسلاید ۵</span>
+  <h2>پروستاگلاندین‌ها و COX</h2>
+  <ul>
+    <li>پروستاگلاندین‌ها نقش مرکزی در دفاع/ترمیم اپیتلیوم معده دارند.</li>
+    <li>پروستاگلاندین‌ها آزادسازی بی‌کربنات و موکوس مخاطی را تنظیم می‌کنند، ترشح سلول‌های پاریتال را مهار می‌کنند و در حفظ جریان خون مخاطی و بازسازی سلول‌های اپیتلیال مهم‌اند.</li>
+    <li>آنزیم کلیدی که مرحله محدودکننده سرعت در سنتز پروستاگلاندین را کنترل می‌کند، سیکلواکسیژناز <span class="en">(COX)</span> است.</li>
+    <li>COX-1 در بسیاری از بافت‌ها از جمله معده، پلاکت‌ها، کلیه‌ها و سلول‌های اندوتلیال بیان می‌شود.</li>
+    <li>یکپارچگی عملکرد کلیه، تجمع پلاکتی و یکپارچگی مخاط گوارشی.</li>
+    <li>COX-2 در ماکروفاژها، لکوسیت‌ها، فیبروبلاست‌ها و سلول‌های سینوویال بیان می‌شود.</li>
+    <li>اثرات مفید NSAIDها بر التهاب بافتی ناشی از مهار COX-2 است.</li>
+    <li>سمیت این داروها (مانند زخم مخاط گوارشی و اختلال کلیوی) به مهار ایزوفرم COX-1 مربوط است.</li>
+    <li>مهارکننده‌های انتخابی COX-2 اثرات نامطلوب قلبی-عروقی <span class="en">(CV)</span> داشته‌اند و خطر انفارکتوس میوکارد را افزایش داده‌اند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> COX-1 برای محافظت مخاطی ضروری است؛ مهار آن باعث زخم گوارشی می‌شود. COX-2 هدف اثر ضدالتهابی NSAIDها است.</div>
+</article>
+
+<!-- 6 -->
+<article class="card">
+  <span class="badge">اسلاید ۶</span>
+  <h2>سوماتوستاتین</h2>
+  <ul>
+    <li>هورمون گوارشی سوماتوستاتین <span class="en">(Somatostatin)</span> از سلول‌های اندوکرین موجود در مخاط معده (سلول‌های D) در پاسخ به HCl آزاد می‌شود. سوماتوستاتین می‌تواند تولید اسید را هم با مکانیسم مستقیم (سلول پاریتال) و هم غیرمستقیم (کاهش آزادسازی هیستامین از سلول‌های ECL، آزادسازی گرلین از سلول‌های Gr و آزادسازی گاسترین از سلول‌های G) مهار کند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> سوماتوستاتین یک مهارکننده فیزیولوژیک قوی ترشح اسید است و از چند مسیر عمل می‌کند.</div>
+</article>
+
+<!-- 7 -->
+<article class="card">
+  <span class="badge">اسلاید ۷</span>
+  <h2>عوامل عصبی و هومورال متعادل‌کننده ترشح اسید</h2>
+  <ul>
+    <li>عوامل عصبی (مرکزی و محیطی) و هومورال اضافی (آمیلین، پپتید ناتریورتیک دهلیزی <span class="en">[ANP]</span>، کوله‌سیستوکینین، گرلین، اینترلوکین ۱۱ <span class="en">[IL-11]</span>، اوبستاتین، سکرتین و سروتونین) در متعادل‌سازی ترشح اسید نقش دارند.</li>
+    <li>گرلین، هورمون تنظیم‌کننده اشتها که در سلول‌های Gr معده بیان می‌شود، و پپتید مرتبط آن موتیلین (آزادشده از دوازدهه) ممکن است ترشح اسید معده را از طریق تحریک آزادسازی هیستامین از سلول‌های ECL افزایش دهند، اما این موضوع هنوز تأیید نشده است.</li>
+    <li>سلول پاریتال ترشح‌کننده اسید، فاکتور داخلی <span class="en">(IF)</span> و IL-11 ترشح می‌کند. گیرنده‌های چندین محرک ترشح اسید، شامل هیستامین (H2)، گاسترین (گیرنده کوله‌سیستوکینین ۲/گاسترین) و استیل‌کولین (موسکارینیک، M3).</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> سلول پاریتال سه گیرنده اصلی تحریکی دارد: H2، CCK2/گاسترین و M3.</div>
+</article>
+
+<!-- 8 -->
+<article class="card">
+  <span class="badge">اسلاید ۸</span>
+  <h2>پاتوفیزیولوژی PUD و عوامل خطر</h2>
+  <ul>
+    <li>زخم‌ها به‌صورت شکستگی در سطح مخاط با اندازه >۵ میلی‌متر و عمق تا زیرمخاط تعریف می‌شوند.</li>
+    <li><span class="en">H. pylori</span> و NSAIDها شایع‌ترین عوامل خطر PUD هستند.</li>
+    <li>عوامل خطر اضافی: بیماری مزمن انسدادی ریه؛ نارسایی مزمن کلیه؛ مصرف فعلی یا قبلی تنباکو؛ سن بالاتر؛ سه یا بیشتر مراجعه به پزشک در سال؛ بیماری عروق کرونر؛ مصرف قبلی الکل؛ نژاد آفریقایی-آمریکایی؛ چاقی؛ دیابت؛ مهارکننده‌های بازجذب سروتونین <span class="en">(SSRIs)</span>؛ جراحی بای‌پس معده.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> H. pylori و NSAIDها دو عامل اصلی زخم پپتیک هستند؛ سایر عوامل خطر زمینه‌ای را تشدید می‌کنند.</div>
+</article>
+
+<!-- 9 -->
+<article class="card">
+  <span class="badge">اسلاید ۹</span>
+  <h2>اپیدمیولوژی زخم دوازدهه <span class="en">(DU)</span></h2>
+  <ul>
+    <li>DUها → ۶–۱۵٪ جمعیت غربی.</li>
+    <li>علت کاهش فراوانی DUها احتمالاً مرتبط با کاهش فراوانی H. pylori است.</li>
+    <li>اغلب در بخش اول دوازدهه (>۹۵٪)، با ~۹۰٪ در فاصله ۳ سانتی‌متری پیلور.</li>
+    <li>معمولاً ≤۱ سانتی‌متر قطر دارند اما گاهی ممکن است به ۳–۶ سانتی‌متر برسند (زخم غول‌آسا).</li>
+    <li>DUهای بدخیم بسیار نادرند.</li>
+    <li>H. pylori و آسیب ناشی از NSAID اکثریت DUها را تشکیل می‌دهند.</li>
+    <li>بسیاری از ناهنجاری‌های ترشح اسید در بیماران DU توصیف شده است.</li>
+    <li>میانگین ترشح اسید پایه و شبانه معده به‌نظر افزایش می‌یابد (عفونت H. pylori ممکن است نقش داشته باشد).</li>
+    <li>DU فعال → بی‌کربنات کاهش می‌یابد.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> کاهش شیوع DU با کاهش عفونت H. pylori مرتبط است.</div>
+</article>
+
+<!-- 10 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۰</span>
+  <h2>زخم معده <span class="en">(GU)</span></h2>
+  <ul>
+    <li>GUها تمایل دارند دیرتر از ضایعات دوازدهه رخ دهند، با اوج بروز در دهه ششم.</li>
+    <li>بیش از نیمی از GUها در مردان رخ می‌دهد.</li>
+    <li>کمتر شایع از DUها هستند.</li>
+    <li>احتمالاً به‌دلیل احتمال بالاتر بی‌علامت بودن GUها و تظاهر فقط پس از ایجاد عارضه.</li>
+    <li>مطالعات کالبدشکافی شیوع مشابه DU و GU را نشان می‌دهد.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> GUها اغلب دیرتر تشخیص داده می‌شوند چون ممکن است بی‌علامت باشند.</div>
+</article>
+
+<!-- 11 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۱</span>
+  <h2>GU — بدخیمی و هیستولوژی</h2>
+  <ul>
+    <li>GU می‌تواند نشان‌دهنده بدخیمی باشد و باید هنگام کشف بیوپسی شود.</li>
+    <li>GUهای خوش‌خیم اغلب دیستال به محل اتصال آنتروم و مخاط ترشح‌کننده اسید یافت می‌شوند.</li>
+    <li>GUهای خوش‌خیم در فوندوس معده نسبتاً نادرند و از نظر هیستولوژیک مشابه DUها هستند.</li>
+    <li>GUهای خوش‌خیم مرتبط با H. pylori نیز با گاستریت آنترال همراه‌اند.</li>
+    <li>در مقابل، GUهای مرتبط با NSAID با گاستریت مزمن فعال همراه نیستند.</li>
+    <li>گاستروپاتی شیمیایی (هیپرپلازی فووولار، ادم لامینا پروپریا و بازسازی اپیتلیال در غیاب H. pylori).</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> هر GU باید بیوپسی شود تا بدخیمی رد شود؛ GUهای مرتبط با NSAID الگوی هیستولوژیک متفاوتی دارند.</div>
+</article>
+
+<!-- 12 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۲</span>
+  <h2>انواع GU بر اساس محل و ترشح اسید</h2>
+  <ul>
+    <li>آسیب مخاطی ناشی از H. pylori یا NSAID.</li>
+    <li>خروجی اسید معده (پایه و تحریک‌شده) در بیماران GU معمولاً نرمال یا کاهش‌یافته است.</li>
+    <li>نوع I: تنه معده / تولید اسید پایین.</li>
+    <li>نوع II: آنتروم / پایین تا نرمال.</li>
+    <li>نوع III: ۳ سانتی‌متر از پیلور / اسید نرمال یا بالا.</li>
+    <li>نوع IV: کاردیا / اسید پایین.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> نوع III (نزدیک پیلور) با اسید نرمال یا بالا و احتمال بدخیمی بیشتر همراه است.</div>
+</article>
+
+<!-- 13 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۳</span>
+  <h2>H. pylori و اختلالات اسید-پپتیک</h2>
+  <ul>
+    <li>باسیل گرم‌منفی میکروآئروفیل.</li>
+    <li>در شرایط طبیعی به‌نظر نمی‌رسد به سلول‌ها حمله کند.</li>
+    <li>شکل S (~۰٫۵–۳ میکرومتر).</li>
+    <li>تاژک‌های متعدد غلاف‌دار.</li>
+    <li>در ابتدا H. pylori در آنتروم ساکن می‌شود اما با گذشت زمان به سمت بخش‌های پروکسیمال‌تر معده مهاجرت می‌کند.</li>
+    <li>PUD؛ لنفوم بافت لنفوئیدی مرتبط با مخاط <span class="en">(MALT)</span> / پان‌گاستریت غیرآتروفیک؛ آدنوکارسینوم معده.</li>
+    <li>تلاش‌های ریشه‌کنی ممکن است به کاهش سرطان معده در جمعیت‌های پرخطر منجر شود، به‌ویژه در افرادی که هنوز گاستریت آتروفیک مزمن و متاپلازی معده پیدا نکرده‌اند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> H. pylori عامل اصلی زخم پپتیک و لنفوم MALT است و با سرطان معده مرتبط است.</div>
+</article>
+
+<!-- 14 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۴</span>
+  <h2>اپیدمیولوژی H. pylori</h2>
+  <ul>
+    <li>در بخش‌های در حال توسعه جهان، ۸۰٪ جمعیت ممکن است تا سن ۲۰ سالگی آلوده شوند، در حالی که شیوع در کشورهای صنعتی ۲۰–۵۰٪ است.</li>
+    <li>عفونت H. pylori تقریباً همیشه با گاستریت مزمن فعال همراه است، اما فقط ۱۰–۱۵٪ افراد آلوده دچار زخم پپتیک آشکار می‌شوند.</li>
+    <li>H. pylori فقط در ۳۰–۶۰٪ افراد با GU و ۵۰–۷۰٪ بیماران با DU وجود دارد.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> عفونت H. pylori شایع است اما فقط اقلیتی دچار زخم می‌شوند؛ عوامل میزبان و محیطی نقش دارند.</div>
+</article>
+
+<!-- 15 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۵</span>
+  <h2>بیماری ناشی از NSAID</h2>
+  <ul>
+    <li>تهوع و سوءهاضمه (۵۰–۶۰٪).</li>
+    <li>عارضه جدی گوارشی مانند زخم پپتیک مستندشده با آندوسکوپی (۱۵–۳۰٪).</li>
+    <li>خونریزی یا سوراخ‌شدن در تا ۱٫۵٪ مصرف‌کنندگان در سال.</li>
+    <li>حتی ۷۵ میلی‌گرم در روز آسپیرین ممکن است به زخم گوارشی جدی منجر شود؛ بنابراین هیچ دوزی از NSAID کاملاً ایمن نیست.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> حتی دوزهای کم آسپیرین نیز می‌توانند خطر زخم گوارشی را افزایش دهند.</div>
+</article>
+
+<!-- 16 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۶</span>
+  <h2>عوامل خطر NSAID</h2>
+  <ul>
+    <li>عوامل خطر اثبات‌شده: سن بالا؛ سابقه زخم؛ مصرف همزمان گلوکوکورتیکوئیدها؛ دوز بالای NSAID؛ مصرف چند NSAID؛ مصرف همزمان ضدانعقادها یا کلوپیدوگرل؛ و بیماری جدی یا مولتی‌سیستم.</li>
+    <li>عوامل خطر احتمالی: H. pylori؛ سیگار کشیدن؛ و مصرف الکل.</li>
+    <li>SSRIها اثر هم‌افزایی بر القای خونریزی گوارشی دارند که تصور می‌شود تا حدی به‌دلیل توانایی این دارو در کاهش تجمع پلاکتی از طریق کاهش محتوای سروتونین پلاکت‌ها است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> ترکیب NSAID با ضدانعقاد یا کلوپیدوگرل خطر خونریزی را به‌شدت افزایش می‌دهد.</div>
+</article>
+
+<!-- 17 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۷</span>
+  <h2>مکانیسم‌های آسیب مخاطی NSAID</h2>
+  <ul>
+    <li>آسیب به مخاط همچنین در نتیجه استفاده موضعی NSAIDها رخ می‌دهد که به افزایش نفوذپذیری سطح اپیتلیال منجر می‌شود.</li>
+    <li>علاوه بر این، فرآورده‌های پوشش‌دار روده‌ای یا بافرشده نیز با خطر زخم پپتیک همراه‌اند.</li>
+    <li>پیش‌التهابی مانند TNF و لکوترین‌ها از طریق فعال‌سازی همزمان مسیر لیپواکسیژناز.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> NSAIDها هم به‌صورت سیستمیک (مهار COX) و هم موضعی به مخاط آسیب می‌زنند.</div>
+</article>
+
+<!-- 18 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۸</span>
+  <h2>سیگار کشیدن</h2>
+  <ul>
+    <li>زخم‌ها مکررتر.</li>
+    <li>کاهش نرخ بهبود.</li>
+    <li>اختلال در پاسخ به درمان.</li>
+    <li>افزایش عوارض مرتبط با زخم مانند سوراخ‌شدن.</li>
+    <li>تخلیه معده تغییر‌یافته؛ کاهش تولید بی‌کربنات دوازدهه پروکسیمال؛ افزایش خطر عفونت H. pylori؛ تولید رادیکال‌های آزاد مخاطی مضر.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> ترک سیگار بخش مهمی از مدیریت PUD است.</div>
+</article>
+
+<!-- 19 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۹</span>
+  <h2>زمینه ژنتیکی و استرس روانی</h2>
+  <ul>
+    <li>بستگان درجه اول بیماران DU سه برابر بیشتر در معرض ایجاد زخم هستند؛ با این حال، نقش بالقوه عفونت H. pylori در تماس‌ها یک ملاحظه مهم است.</li>
+    <li>فراوانی بیشتر گروه خونی O و وضعیت غیرترشح‌کننده <span class="en">(Non-secretor)</span>.</li>
+    <li>تصور می‌شد استرس روانی در PUD نقش دارد، اما مطالعات در این زمینه نتایج متناقضی داشته‌اند.</li>
+    <li>اگرچه PUD با برخی ویژگی‌های شخصیتی (نوروتیسیسم) مرتبط است، این ویژگی‌ها در افراد با سوءهاضمه بدون زخم <span class="en">(NUD)</span> و سایر اختلالات عملکردی و ارگانیک نیز وجود دارد.</li>
+    <li>رژیم غذایی: غذاها و نوشیدنی‌های خاصی می‌توانند سوءهاضمه ایجاد کنند، اما هیچ مطالعه قانع‌کننده‌ای ارتباط بین تشکیل زخم و رژیم غذایی خاص را نشان نمی‌دهد.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> زمینه ژنتیکی و گروه خونی O در DU نقش دارند، اما H. pylori مهم‌ترین عامل قابل درمان است.</div>
+</article>
+
+<!-- 20 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۰</span>
+  <h2>اختلالات مزمن خاص مرتبط با PUD</h2>
+  <ul>
+    <li>ارتباط قوی با PUD: (۱) سن بالا؛ (۲) بیماری مزمن ریوی؛ (۳) نارسایی مزمن کلیه؛ (۴) سیروز؛ (۵) سنگ کلیه؛ (۶) کمبود آلفا-۱ آنتی‌تریپسین؛ (۷) ماستوسیتوز سیستمیک.</li>
+    <li>اختلالات با ارتباط احتمالی: (۱) هیپرپاراتیروئیدیسم؛ (۲) بیماری عروق کرونر؛ (۳) پلی‌سیتمی ورا؛ (۴) پانکراتیت مزمن؛ (۵) مصرف قبلی الکل؛ (۶) چاقی؛ (۷) نژاد آفریقایی-آمریکایی؛ (۸) سه یا بیشتر مراجعه به پزشک در سال. جدول ۳۲۴-۱.</li>
+    <li>اسید معده نقش مهمی در آسیب مخاطی دارد.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> بیماری‌های سیستمیک می‌توانند مخاط معده را آسیب‌پذیرتر کنند.</div>
+</article>
+
+<!-- 21 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۱</span>
+  <h2>جدول ۳۲۴-۱ — علل زخم غیرمرتبط با H. pylori و NSAID</h2>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>دسته</th><th>علل</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>عفونت</td><td>سیتومگالوویروس <span class="en">(CMV)</span>؛ ویروس هرپس سیمپلکس؛ <span class="en">Helicobacter heilmannii</span></td></tr>
+        <tr><td>دارو/سموم</td><td>بیس‌فسفونات‌ها؛ شیمی‌درمانی؛ کلوپیدوگرل؛ کراک کوکائین؛ گلوکوکورتیکوئیدها (در ترکیب با NSAID)؛ میکوفنولات موفتیل؛ کلرید پتاسیم</td></tr>
+        <tr><td>متفرقه</td><td>بازوفیلی در بیماری میلوپرولیفراتیو؛ انسداد دوازدهه (مانند پانکراس حلقوی)؛ بیماری نفوذی؛ ایسکمی؛ رادیوتراپی؛ نفوذ ائوزینوفیلیک؛ سارکوئیدوز؛ بیماری کرون؛ حالت هیپرسکرتوری ایدیوپاتیک</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="meta"><span>مخفف‌ها: Hp: H. pylori؛ NSAID: داروهای ضدالتهاب غیراستروئیدی.</span></div>
+</article>
+
+<!-- 22 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۲</span>
+  <h2>ویژگی‌های بالینی PUD</h2>
+  <ul>
+    <li>درد شکمی؛ اما ارزش پیش‌بینی‌کننده ضعیفی برای وجود DU یا GU دارد.</li>
+    <li>حدود دو سوم بیماران PUD درد شکمی ندارند و تا ۸۷٪ بیماران با بیماری مخاطی ناشی از NSAID ممکن است با عارضه (خونریزی، سوراخ‌شدن و انسداد) بدون علائم قبلی مراجعه کنند.</li>
+    <li>درد اپی‌گاستر به‌صورت ناراحتی سوزشی یا گازگرفتگی می‌تواند در DU و GU وجود داشته باشد. ناراحتی همچنین به‌صورت احساس مبهم، دردناک یا درد گرسنگی توصیف می‌شود.</li>
+    <li>الگوی درد تیپیک در DU ۹۰ دقیقه تا ۳ ساعت پس از غذا رخ می‌دهد و اغلب با آنتی‌اسید یا غذا تسکین می‌یابد. درد بیدارکننده از خواب (بین نیمه‌شب و ۳ صبح).</li>
+    <li>بیماران سالمند کمتر احتمال دارد درد شکمی به‌عنوان تظاهر PUD داشته باشند و ممکن است با عارضه‌ای مانند خونریزی زخم یا سوراخ‌شدن مراجعه کنند.</li>
+    <li>الگوی درد در بیماران GU ممکن است متفاوت از DU باشد، جایی که ناراحتی ممکن است واقعاً با غذا تحریک شود. تهوع و کاهش وزن در بیماران GU شایع‌تر است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> درد شبانه و تسکین با غذا بیشتر در DU دیده می‌شود؛ در GU ممکن است درد با غذا بدتر شود.</div>
+</article>
+
+<!-- 23 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۳</span>
+  <h2>تظاهرات هشداردهنده PUD</h2>
+  <ul>
+    <li>آندوسکوپی زخم‌ها را در کمتر از ۳۰٪ بیماران با سوءهاضمه تشخیص می‌دهد.</li>
+    <li>سوءهاضمه‌ای که ثابت می‌شود، دیگر با غذا یا آنتی‌اسید تسکین نمی‌یابد یا به پشت انتشار می‌یابد ممکن است نشان‌دهنده زخم نافذ (پانکراس) باشد.</li>
+    <li>شروع ناگهانی درد شدید و منتشر شکمی ممکن است نشان‌دهنده سوراخ‌شدن باشد.</li>
+    <li>درد بدترشونده با غذا، تهوع و استفراغ غذای هضم‌نشده نشان‌دهنده انسداد خروجی معده است.</li>
+    <li>مدفوع قیری یا استفراغ خونی نشان‌دهنده خونریزی است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> این علائم هشداردهنده نیاز به ارزیابی فوری دارند.</div>
+</article>
+
+<!-- 24 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۴</span>
+  <h2>نگرانی بدخیمی در GU</h2>
+  <ul>
+    <li>GUها، به‌ویژه در تنه و فوندوس، پتانسیل بدخیمی دارند. بیوپسی‌های متعدد از GU باید در ابتدا گرفته شود؛ حتی اگر برای نئوپلاسم منفی باشند، آندوسکوپی تکراری برای مستندسازی بهبود در ۸–۱۲ هفته باید انجام شود، با بیوپسی اگر زخم هنوز وجود دارد.</li>
+    <li>حدود ۷۰٪ GUهایی که در نهایت بدخیم تشخیص داده می‌شوند، بهبود قابل‌توجه (معمولاً ناقص) نشان می‌دهند.</li>
+    <li>آندوسکوپی تکراری در بیماران DU در صورت تداوم علائم با وجود درمان پزشکی یا شک به عارضه ضروری است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> GU باید حتماً بیوپسی و پیگیری شود چون ممکن است بدخیم باشد.</div>
+</article>
+
+<!-- 25 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۵</span>
+  <h2>معاینه فیزیکی</h2>
+  <ul>
+    <li>حساسیت اپی‌گاستر شایع‌ترین یافته در بیماران GU یا DU است.</li>
+    <li>درد ممکن است در ۲۰٪ بیماران در سمت راست خط وسط یافت شود.</li>
+    <li>متأسفانه ارزش پیش‌بینی‌کننده این یافته پایین است.</li>
+    <li>معاینه فیزیکی برای کشف شواهد عارضه زخم بسیار مهم است.</li>
+    <li>تاکی‌کاردی و ارتواستاز نشان‌دهنده کم‌آبی ناشی از استفراغ یا از دست دادن فعال خون گوارشی است.</li>
+    <li>شکم به‌شدت حساس و تخته‌ای نشان‌دهنده سوراخ‌شدن است.</li>
+    <li>وجود صدای موفقیت <span class="en">(Succussion splash)</span> نشان‌دهنده مایع باقی‌مانده در معده و پیشنهادکننده انسداد خروجی معده است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> تخته‌ای شدن شکم و تاکی‌کاردی از نشانه‌های هشدار عوارض PUD هستند.</div>
+</article>
+
+<!-- 26 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۶</span>
+  <h2>خونریزی مرتبط با PUD</h2>
+  <ul>
+    <li>خونریزی گوارشی شایع‌ترین عارضه PUD است.</li>
+    <li>خونریزی و عوارض بیماری زخم بیشتر در افراد >۶۰ سال رخ می‌دهد.</li>
+    <li>میزان مرگ‌ومیر ۳۰ روزه تا ۲٫۵–۱۰٪ است.</li>
+    <li>بروز بالاتر در سالمندان احتمالاً به‌دلیل افزایش مصرف NSAID در این گروه است.</li>
+    <li>علاوه بر این، تا ۸۰٪ مرگ‌ومیر در خونریزی مرتبط با PUD به علل غیرخونریزی مانند نارسایی چندعضوی (۲۴٪)، عوارض ریوی (۲۴٪) و بدخیمی (۳۴٪) است.</li>
+    <li>بیش از ۵۰٪ بیماران با خونریزی مرتبط با زخم بدون هیچ علامت یا نشانه هشداردهنده قبلی خونریزی می‌کنند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> خونریزی شایع‌ترین عارضه PUD است و می‌تواند بدون علامت هشداردهنده رخ دهد.</div>
+</article>
+
+<!-- 27 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۷</span>
+  <h2>سوراخ‌شدن <span class="en">(Perforation)</span></h2>
+  <ul>
+    <li>دومین عارضه شایع مرتبط با زخم، سوراخ‌شدن است که در تا ۶–۷٪ بیماران PUD گزارش شده و مرگ‌ومیر ۳۰ روزه تخمینی >۲۰٪ دارد.</li>
+    <li>درد حاد شکمی، تاکی‌کاردی و سفتی شکم، تریاد کلاسیک مرتبط با این عارضه را تشکیل می‌دهند.</li>
+    <li>ضروری است به یاد داشته باشیم که بیماران سالمند یا افراد نقص ایمنی ممکن است این تظاهر کلاسیک را نداشته باشند.</li>
+    <li>مانند خونریزی، بروز سوراخ‌شدن در سالمندان به‌دلیل افزایش مصرف NSAID در حال افزایش است.</li>
+    <li>نفوذ <span class="en">(Penetration)</span> شکلی از سوراخ‌شدن است که در آن بستر زخم به داخل عضو مجاور تونل می‌زند.</li>
+    <li>DUها تمایل دارند به‌صورت خلفی به پانکراس نفوذ کنند و به پانکراتیت منجر شوند.</li>
+    <li>GUها تمایل دارند به لوب کبدی چپ نفوذ کنند.</li>
+    <li>فیستول‌های گاستروکولیک.</li>
+    <li>مرگ‌ومیر این عارضه می‌تواند در ۳۰ روز >۲۰٪ باشد.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> سوراخ‌شدن یک اورژانس جراحی است؛ در سالمندان ممکن است تظاهر کلاسیک نداشته باشد.</div>
+</article>
+
+<!-- 28 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۸</span>
+  <h2>انسداد خروجی معده <span class="en">(GOO)</span></h2>
+  <ul>
+    <li>GOO کم‌شایع‌ترین عارضه مرتبط با زخم است و در ۱–۲٪ بیماران رخ می‌دهد.</li>
+    <li>بیمار ممکن است انسداد نسبی ثانویه به التهاب و ادم مرتبط با زخم در ناحیه پری‌پیلوریک و دوازدهه داشته باشد. این فرایند اغلب با بهبود زخم برطرف می‌شود.</li>
+    <li>انسداد مکانیکی ثابت ثانویه به تشکیل اسکار در نواحی پری‌پیلوریک نیز ممکن است.</li>
+    <li>مورد اخیر نیازمند مداخله آندوسکوپیک (دیلاتاسیون با بالون با یا بدون قرار دادن استنت زیست‌تخریب‌پذیر) یا جراحی با استریکچروپلاستی یا گاستروژژونوستومی است.</li>
+    <li>شروع جدید سیری زودرس، تهوع، استفراغ، افزایش درد شکمی پس از غذا و کاهش وزن.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> GOO ناشی از التهاب/ادم اغلب با درمان زخم برطرف می‌شود؛ نوع فیبروتیک نیاز به مداخله دارد.</div>
+</article>
+
+<!-- 29 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۹</span>
+  <h2>مدیریت GOO</h2>
+  <ul>
+    <li>مدیریت محافظه‌کارانه با ساکشن بینی‌معدی، هیدراتاسیون/تغذیه وریدی و عوامل ضدترشح برای ۷–۱۰ روز اندیکاسیون دارد به این امید که انسداد عملکردی برگشت کند.</li>
+    <li>اگر انسداد مکانیکی پایدار بماند، مداخله آندوسکوپیک با دیلاتاسیون بالون ممکن است مؤثر باشد. در صورت شکست همه اقدامات، جراحی باید در نظر گرفته شود.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> ابتدا درمان محافظه‌کارانه؛ در صورت شکست، دیلاتاسیون یا جراحی.</div>
+</article>
+
+<!-- 30 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۰</span>
+  <h2>تشخیص افتراقی</h2>
+  <ul>
+    <li>سوءهاضمه عملکردی <span class="en">(FD)</span> یا سوءهاضمه ضروری، که به گروهی از اختلالات ناهمگون با درد بالای شکم بدون وجود زخم اشاره دارد.</li>
+    <li>FD شامل سندرم دیسترس پس از غذا <span class="en">(PDS)</span> و سندرم درد اپی‌گاستر <span class="en">(EPS)</span>.</li>
+    <li>اتیولوژی FD مشخص نیست، اما مطالعات اخیر پیشنهاد می‌کنند که حالت‌های پس از عفونت، غذاهای خاص و عفونت H. pylori ممکن است در پاتوژنز این اختلال شایع نقش داشته باشند.</li>
+    <li>علائم «زخم‌مانند» شامل تومورهای دستگاه گوارش پروکسیمال، GERD، بیماری عروقی، پانکراتیت، قولنج صفراوی، پانکراتیت مزمن و بیماری کرون گاستروودئودنال است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> سوءهاضمه عملکردی شایع‌ترین علت سوءهاضمه است و باید از زخم افتراق داده شود.</div>
+</article>
+
+<!-- 31 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۱</span>
+  <h2>ارزیابی تشخیصی</h2>
+  <ul>
+    <li>رادیوگرافی (مطالعه باریمی، امروزه به‌ندرت انجام می‌شود) یا آندوسکوپی.</li>
+    <li>با این حال، درصد زیادی از بیماران با علائم مشکوک به زخم، NUD دارند؛ آزمایش H. pylori و درمان آنتی‌بیوتیکی برای افراد سالم و <۴۵ سال قبل از شروع ارزیابی تشخیصی مناسب است.</li>
+    <li>زخم‌های >۳ سانتی‌متر یا همراه با توده بیشتر بدخیم هستند. متأسفانه تا ۸٪ GUهایی که در رادیوگرافی خوش‌خیم به‌نظر می‌رسند، در آندوسکوپی یا جراحی بدخیم‌اند. مطالعات رادیوگرافیک که GU را نشان می‌دهند باید با آندوسکوپی و بیوپسی دنبال شوند.</li>
+    <li>آندوسکوپی حساس‌ترین و اختصاصی‌ترین روش برای بررسی دستگاه گوارش فوقانی است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> آندوسکوپی روش استاندارد طلایی برای تشخیص زخم است.</div>
+</article>
+
+<!-- 32 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۲</span>
+  <h2>شکل ۳۲۴-۱۴ — رویکرد به سوءهاضمه جدید</h2>
+  <figure class="aks-figure">
+    <img class="aks-img" src="" alt="شکل ۳۲۴-۱۴ — فلوچارت رویکرد به سوءهاضمه جدید">
+  </figure>
+  <p class="ph-caption">شکل ۳۲۴-۱۴ — نمای کلی سوءهاضمه جدید. GERD: بیماری ریفلاکس معده به مری؛ Hp: هلیکوباکتر پیلوری؛ IBS: سندرم روده تحریک‌پذیر؛ UBT: تست تنفسی اوره (با اجازه از BS Anand, DY Graham: State-of-the-Art: Ulcer and Gastritis, Endoscopy 31:215, 1999. © Georg Thieme Verlag KG).</p>
+  <div class="note"><b>توضیح تکمیلی:</b> این فلوچارت رویکرد گام‌به‌گام به سوءهاضمه جدید را نشان می‌دهد. برای نمایش تصویر، مقدار <code>src</code> را به نام فایل عکس تغییر دهید.</div>
+</article>
+
+<!-- 33 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۳</span>
+  <h2>جدول ۳۲۴-۳ — داروهای درمان زخم پپتیک</h2>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>نوع دارو/مکانیسم</th><th>نمونه‌ها</th><th>دوز</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>آنتی‌اسیدها</td><td>Mylanta, Maalox, Tums, Gaviscon</td><td>۱۰۰–۱۴۰ mEq/L، ۱ و ۳ ساعت پس از غذا و هنگام خواب</td></tr>
+        <tr><td>آنتی‌گونیست‌های گیرنده H2</td><td>سایمتیدین؛ رانیتیدین؛ فاموتیدین؛ نیزاتیدین</td><td>سایمتیدین ۴۰۰ mg bid؛ رانیتیدین ۳۰۰ mg hs؛ فاموتیدین ۴۰ mg hs؛ نیزاتیدین ۳۰۰ mg hs</td></tr>
+        <tr><td>مهارکننده‌های پمپ پروتون</td><td>امپرازول؛ لانسوپرازول؛ رابپرازول؛ پنتوپرازول؛ ازومپرازول؛ دکس‌لانسوپرازول</td><td>امپرازول ۲۰ mg/d؛ لانسوپرازول ۳۰ mg/d؛ رابپرازول ۲۰ mg/d؛ پنتوپرازول ۴۰ mg/d؛ ازومپرازول ۲۰ mg/d؛ دکس‌لانسوپرازول ۳۰ mg/d</td></tr>
+        <tr><td>عوامل محافظ مخاط</td><td>سوکرالفیت؛ میزوپروستول؛ ترکیبات بیسموت</td><td>سوکرالفیت ۱ g qid؛ میزوپروستول ۲۰۰ µg qid؛ بیسموت ساب‌سالیسیلات (BSS) — به رژیم‌های ضد H. pylori مراجعه شود (جدول ۳۲۴-۴)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="meta"><span>مخفف: hs: هنگام خواب (hora somni).</span></div>
+</article>
+
+<!-- 34 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۴</span>
+  <h2>آنتی‌اسیدها</h2>
+  <ul>
+    <li>هیدروکسید آلومینیوم می‌تواند یبوست و کاهش فسفات ایجاد کند.</li>
+    <li>هیدروکسید منیزیم ممکن است باعث مدفوع شل شود.</li>
+    <li>فرآورده حاوی منیزیم نباید در بیماران با نارسایی مزمن کلیه به‌دلیل احتمال هیپرمگنزمی استفاده شود، و آلومینیوم ممکن است در این بیماران سمیت عصبی مزمن ایجاد کند.</li>
+    <li>کربنات کلسیم و بی‌کربنات سدیم آنتی‌اسیدهای قوی با سطوح مختلف مشکلات بالقوه هستند.</li>
+    <li>مصرف طولانی‌مدت کربنات کلسیم (که در معده به کلرید کلسیم تبدیل می‌شود) می‌تواند به سندرم شیر-قلیا (هیپرکلسمی و هیپرفسفاتمی با کلسیوز کلیوی احتمالی و پیشرفت به نارسایی کلیه) منجر شود.</li>
+    <li>بی‌کربنات سدیم ممکن است آلکالوز سیستمیک ایجاد کند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> آنتی‌اسیدهای منیزیم‌دار در نارسایی کلیه خطرناک‌اند؛ آنتی‌اسیدهای کلسیمی در مصرف طولانی می‌توانند سندرم شیر-قلیا ایجاد کنند.</div>
+</article>
+
+<!-- 35 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۵</span>
+  <h2>آنتی‌گونیست‌های گیرنده H2</h2>
+  <ul>
+    <li>اگرچه هر کدام قدرت متفاوتی دارند، همه در دوزهای درمانی به‌طور قابل‌توجهی ترشح اسید پایه و تحریک‌شده را به سطوح قابل‌مقایسه مهار می‌کنند.</li>
+    <li>نرخ‌های بهبود زخم مشابهی با هر دارو در دوز صحیح به دست می‌آید.</li>
+    <li>هر کدام می‌توانند یک بار در روز هنگام خواب برای پیشگیری از زخم استفاده شوند.</li>
+    <li>بیماران ممکن است به بلاکرهای H2 تحمل پیدا کنند، که با PPIها نادر است.</li>
+    <li>پان‌سیتوپنی برگشت‌پذیر نادر، نوتروپنی، کم‌خونی و ترومبوسیتوپنی.</li>
+    <li>رانیتیدین و نیزاتیدین از بازار خارج شدند → ماده سرطان‌زا شناخته‌شده.</li>
+    <li>اثرات جانبی ضدآندروژنیک منجر به ژنیکوماستی برگشت‌پذیر و ناتوانی جنسی، عمدتاً در بیمارانی که دوزهای بالا برای مدت طولانی (ماه تا سال) دریافت می‌کنند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> رانیتیدین و نیزاتیدین به‌دلیل آلودگی به مواد سرطان‌زا از بازار خارج شده‌اند.</div>
+</article>
+
+<!-- 36 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۶</span>
+  <h2>مهارکننده‌های پمپ پروتون <span class="en">(PPI)</span></h2>
+  <ul>
+    <li>مهار برگشت‌ناپذیر H+,K+-ATPase.</li>
+    <li>دکس‌لانسوپرازول، جدیدترین PPI تأییدشده برای استفاده بالینی است.</li>
+    <li>این‌ها قوی‌ترین عوامل مهار اسید موجود هستند.</li>
+    <li>لانسوپرازول به‌صورت قرص تجزیه‌شونده در دهان موجود است که می‌توان آن را با یا بدون آب مصرف کرد، مزیتی برای افراد با دیسفاژی قابل‌توجه.</li>
+    <li>امپرازول به‌صورت گرانول‌های بدون پوشش روده‌ای مخلوط با بی‌کربنات سدیم به‌صورت پودر موجود است که می‌تواند خوراکی یا از طریق لوله معده تجویز شود.</li>
+    <li>پنتوپرازول و رابپرازول به‌صورت قرص‌های پوشش‌دار روده‌ای موجودند.</li>
+    <li>پنتوپرازول همچنین به‌صورت فرمولاسیون تزریقی برای استفاده وریدی موجود است.</li>
+    <li>این عوامل تمام فازهای ترشح اسید معده را به‌طور قوی مهار می‌کنند.</li>
+    <li>شروع اثر سریع است، با حداکثر اثر مهار اسید بین ۲ و ۶ ساعت پس از تجویز و مدت مهار تا ۷۲–۹۶ ساعت.</li>
+    <li>نیمه‌عمر PPIها ~۱۸ ساعت است.</li>
+    <li>بنابراین، ممکن است ۲ تا ۵ روز طول بکشد تا ترشح اسید معده پس از قطع این داروها به سطوح نرمال برگردد.</li>
+    <li>از آنجا که پمپ‌ها باید برای اثربخشی این عوامل فعال شوند، اثربخشی آن‌ها اگر قبل از غذا تجویز شوند (به‌جز فرمولاسیون آزادسازی فوری امپرازول) (مثلاً صبح قبل از صبحانه) به حداکثر می‌رسد.</li>
+    <li>تومورهای کارسینوئید در برخی حیوانات ایجاد شد.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> PPIها باید ۳۰–۶۰ دقیقه قبل از غذا مصرف شوند تا اثربخشی حداکثری داشته باشند.</div>
+</article>
+
+<!-- 37 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۷</span>
+  <h2>PPI — اثرات و تداخلات</h2>
+  <ul>
+    <li>هیپرگاسترینمی خفیف تا متوسط در بیماران مصرف‌کننده این داروها مشاهده شده است.</li>
+    <li>سطوح گاسترین سرم در ۱–۲ هفته پس از قطع دارو به سطوح نرمال برمی‌گردد.</li>
+    <li>هیپرسکرسیون برگشتی اسید معده در افراد H. pylori-منفی پس از قطع PPI توصیف شده است. این حتی پس از استفاده نسبتاً کوتاه‌مدت (۲ ماه) رخ می‌دهد و ممکن است تا ۲ ماه پس از قطع PPI ادامه یابد → بدتر شدن علائم GERD یا سوءهاضمه هنگام قطع PPI.</li>
+    <li>کاهش تدریجی PPI و تغییر به آنتی‌گونیست گیرنده H2 ممکن است از این امر جلوگیری کند.</li>
+    <li>التهاب ناشی از H. pylori و کاهش همزمان تولید اسید ممکن است توضیح دهد چرا این در بیماران H. pylori-مثبت رخ نمی‌دهد.</li>
+    <li>تولید IF نیز مهار می‌شود، اما کم‌خونی ناشی از کمبود ویتامین B12 غیرشایع است، احتمالاً به‌دلیل ذخایر زیاد این ویتامین.</li>
+    <li>هیپوکلرهیدری قابل‌توجه.</li>
+    <li>PPIها ممکن است با جذب داروهایی مانند کتوکونازول، آمپی‌سیلین، آهن و دیگوکسین تداخل کنند.</li>
+    <li>سیتوکروم P450 کبدی می‌تواند توسط PPIهای اولیه (امپرازول، لانسوپرازول) مهار شود.</li>
+    <li>رابپرازول، پنتوپرازول و ازومپرازول به‌نظر نمی‌رسد با داروهای متابولیزه‌شده توسط سیستم سیتوکروم P450 تداخل قابل‌توجهی داشته باشند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> قطع ناگهانی PPI می‌تواند باعث هیپراسیدیتی برگشتی شود؛ کاهش تدریجی توصیه می‌شود.</div>
+</article>
+
+<!-- 38 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۸</span>
+  <h2>PPI — عوارض و تداخلات دارویی</h2>
+  <ul>
+    <li>اهمیت بالینی کلی این مشاهدات قطعاً مشخص نیست. هنگام استفاده همزمان تئوفیلین، وارفارین، دیازپام، آتازاناویر و فنی‌توئین با PPIها باید احتیاط کرد.</li>
+    <li>پنومونی اکتسابی از جامعه و همچنین بیماری مرتبط با کلوستریدیوم دیفیسیل اکتسابی از جامعه و بیمارستان.</li>
+    <li>اگرچه تصور می‌شد خطر پریتونیت باکتریایی خودبه‌خودی در سیروزی‌ها افزایش یابد، داده‌ها در اینجا کمتر حمایت‌کننده است.</li>
+    <li>اسهال نیز با مصرف PPI مرتبط است، که در برخی موارد با ایجاد کولیت کلاژنی به‌ویژه با لانسوپرازول همراه بوده است.</li>
+    <li>مکانیسم کولیت کلاژنی ناشی از PPI نامشخص است، اما مطالعات آزمایشگاهی نشان می‌دهند PPIها ممکن است بیان ژن کلاژن را القا کنند.</li>
+    <li>کولیت معمولاً با قطع PPI برطرف می‌شود.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> PPI با افزایش خطر عفونت‌های روده‌ای و پنومونی مرتبط است.</div>
+</article>
+
+<!-- 39 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۹</span>
+  <h2>PPI — خطرات استخوانی و کمبود مواد مغذی</h2>
+  <ul>
+    <li>شکستگی لگن در زنان مسن.</li>
+    <li>خطر مطلق شکستگی پایین باقی ماند و ممکن است صفر باشد، با وجود افزایش مشاهده‌شده مرتبط با دوز و مدت مهار اسید.</li>
+    <li>در ایجاد کمبود آهن، ویتامین B12 و منیزیم دخیل است.</li>
+    <li>CBC → جستجوی شواهد کم‌خونی ناشی از کمبود آهن یا ویتامین B12.</li>
+    <li>سطح ویتامین B12.</li>
+    <li>سطح منیزیم.</li>
+    <li>پس از ۱–۲ سال مصرف PPI، اما این توصیه‌ها مبتنی بر شواهد یا نظر متخصص نیستند.</li>
+    <li>PPIها ممکن است اثر منفی بر اثر ضدپلاکتی کلوپیدوگرل داشته باشند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> در مصرف طولانی‌مدت PPI، بررسی دوره‌ای B12، منیزیم و آهن منطقی است.</div>
+</article>
+
+<!-- 40 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۰</span>
+  <h2>PPI و کلوپیدوگرل</h2>
+  <ul>
+    <li>افزایش کوچک در مرگ‌ومیر و نرخ بستری مجدد برای رویدادهای کرونری در بیماران دریافت‌کننده PPI همراه با کلوپیدوگرل در مطالعات قبلی دیده شد.</li>
+    <li>به‌نظر می‌رسد حداقل یک مزیت نظری برای پنتوپرازول نسبت به سایر PPIها وجود دارد، اما این تأیید نشده است.</li>
+    <li>بیماران مصرف‌کننده کلوپیدوگرل با آسپیرین، به‌ویژه با سایر عوامل خطر گوارشی برای خونریزی، باید درمان محافظت گوارشی دریافت کنند. اگرچه بلاکرهای H2 با دوز بالا به‌عنوان یک گزینه در نظر گرفته شده‌اند، این‌ها به‌نظر نمی‌رسند به‌اندازه PPIها مؤثر باشند.</li>
+    <li>جداسازی ۱۲ ساعته بین تجویز PPI و کلوپیدوگرل.</li>
+    <li>یک گزینه این است که PPI ۳۰ دقیقه قبل از صبحانه و کلوپیدوگرل هنگام خواب داده شود.</li>
+    <li>افزایش خطرات قلبی مستقل از مصرف کلوپیدوگرل، زوال عقل و آسیب حاد و مزمن کلیه.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> در بیماران با کلوپیدوگرل، PPI با فاصله زمانی تجویز شود.</div>
+</article>
+
+<!-- 41 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۱</span>
+  <h2>قطع PPI و P-CABها</h2>
+  <ul>
+    <li>قطع ناگهانی PPI در مصرف‌کننده طولانی‌مدت ممکن است به بخشی از هیپراسیدیتی برگشتی منجر شود؛ بنابراین، این عامل باید به‌تدریج در طی ۱–۲ هفته کاهش یابد با احتمال گذار کوتاه‌مدت به بلاکر H2.</li>
+    <li>تنا‌توپرازول یک PPI حاوی حلقه ایمیدازوپیریدین به‌جای حلقه بنزیمیدازول است که مهار برگشت‌ناپذیر پمپ پروتون را ترویج می‌کند. این عامل نیمه‌عمر طولانی‌تری نسبت به سایر PPIها دارد و ممکن است برای مهار ترشح اسید شبانه مفید باشد، که اهمیت قابل‌توجهی در GERD دارد.</li>
+    <li>این ترکیبات ترشح اسید معده را از طریق اتصال رقابتی پتاسیم به H+,K+-ATPase مهار می‌کنند. Revaprazan، vonoprazan و tegoprazan عواملی هستند که در کره و ژاپن برای استفاده تأیید شده‌اند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> P-CABها دسته جدیدی از مهارکننده‌های اسید هستند که در ژاپن و کره استفاده می‌شوند.</div>
+</article>
+
+<!-- 42 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۲</span>
+  <h2>عوامل محافظت سلولی — سوکرالفیت</h2>
+  <ul>
+    <li>سوکرالفیت (۱ گرم qid).</li>
+    <li>در آب نامحلول است و در معده و دوازدهه به خمیر چسبناکی تبدیل می‌شود که عمدتاً به محل‌های زخم فعال متصل می‌شود.</li>
+    <li>به‌عنوان یک سد فیزیکوشیمیایی عمل می‌کند.</li>
+    <li>ترویج EGF.</li>
+    <li>افزایش سنتز پروستاگلاندین.</li>
+    <li>تحریک ترشح موکوس و بی‌کربنات.</li>
+    <li>افزایش دفاع و ترمیم مخاطی.</li>
+    <li>سمیت این دارو نادر است، با یبوست شایع‌ترین (۲–۳٪).</li>
+    <li>در بیماران با نارسایی مزمن کلیه برای پیشگیری از سمیت عصبی ناشی از آلومینیوم اجتناب شود.</li>
+    <li>هیپوفسفاتمی و تشکیل بزوآر معده نیز به‌ندرت گزارش شده است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> سوکرالفیت به‌صورت موضعی محافظ مخاط است و جذب سیستمیک قابل‌توجهی ندارد.</div>
+</article>
+
+<!-- 43 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۳</span>
+  <h2>رژیم ضد H. pylori</h2>
+  <ul>
+    <li>عوارض جانبی کوتاه‌مدت → مدفوع سیاه، یبوست و تیره‌شدن زبان.</li>
+    <li>عوارض جانبی بلندمدت → سمیت عصبی.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> بیسموت باعث مدفوع سیاه و تیره‌شدن زبان می‌شود که باید از خونریزی گوارشی افتراق داده شود.</div>
+</article>
+
+<!-- 44 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۴</span>
+  <h2>آنالوگ‌های پروستاگلاندین</h2>
+  <ul>
+    <li>میزوپروستول (۲۰۰ میکروگرم qid).</li>
+    <li>یکپارچگی و ترمیم مخاطی → درمان PUD.</li>
+    <li>اسهال (بروز ۱۰–۳۰٪).</li>
+    <li>خونریزی و انقباضات رحمی.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> میزوپروستول در زنان باردار منع مصرف دارد زیرا انقباضات رحمی ایجاد می‌کند.</div>
+</article>
+
+<!-- 45 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۵</span>
+  <h2>ریشه‌کنی H. pylori و عود زخم</h2>
+  <ul>
+    <li>ریشه‌کنی مستند H. pylori در بیماران PUD با کاهش چشمگیر عود زخم به <۱۰–۲۰٪ همراه است در مقایسه با ۵۹٪ در بیماران GU و ۶۷٪ در بیماران DU زمانی که ارگانیسم حذف نشود.</li>
+    <li>ریشه‌کنی ارگانیسم ممکن است به کاهش خونریزی عودکننده زخم منجر شود.</li>
+    <li>اثر ریشه‌کنی آن بر سوراخ‌شدن زخم نامشخص است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> ریشه‌کنی H. pylori عود زخم را به‌طور قابل‌توجهی کاهش می‌دهد.</div>
+</article>
+
+<!-- 46 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۶</span>
+  <h2>اندیکاسیون‌های درمان H. pylori</h2>
+  <ul>
+    <li>عفونت H. pylori باید درمان شود.</li>
+    <li>PUD مستند.</li>
+    <li>لنفوم MALT معده.</li>
+    <li>مصرف طولانی‌مدت NSAID.</li>
+    <li>دستورالعمل‌های بالینی ACG شامل آزمایش و پیشنهاد ریشه‌کنی H. pylori در بیمارانی که NSAID (شامل آسپیرین با دوز کم) را به‌طور طولانی‌مدت مصرف خواهند کرد، به‌ویژه اگر سابقه قبلی PUD وجود دارد.</li>
+    <li>تحمل resection سرطان معده زودرس.</li>
+    <li>بستگان درجه اول خانواده با سرطان معده.</li>
+    <li>بیماران با نئوپلاسم معده قبلی درمان‌شده با آندوسکوپی یا resection ساب‌توتال.</li>
+    <li>افراد با خطر گاستریت (پان‌گاستریت شدید یا گاستریت غالب تنه) یا آتروفی شدید.</li>
+    <li>بیماران با مهار اسید معده برای >۱ سال.</li>
+    <li>افراد با عوامل خطر محیطی قوی برای سرطان معده (سیگار شدید؛ مواجهه بالا با گرد و غبار، زغال سنگ، کوارتز یا سیمان؛ و/یا کار در معادن سنگ).</li>
+    <li>بیماران H. pylori-مثبت با ترس از سرطان معده.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> لیست اندیکاسیون‌ها گسترده است و شامل پیشگیری از سرطان معده نیز می‌شود.</div>
+</article>
+
+<!-- 47 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۷</span>
+  <h2>درمان H. pylori — جزئیات دارویی</h2>
+  <ul>
+    <li>در نهایت، دستورالعمل‌های بالینی ACG آزمایش و پیشنهاد ریشه‌کنی H. pylori را برای بیماران با کم‌خونی فقر آهن بدون توجیه و پورپورای ترومبوسیتوپنیک ایدیوپاتیک توصیه می‌کند.</li>
+    <li>بیسموت → مدفوع سیاه، یبوست یا تیره‌شدن زبان.</li>
+    <li>آموکسی‌سیلین → کولیت پسودوممبران (<۱–۲٪). اسهال، تهوع، استفراغ، راش پوستی و واکنش آلرژیک.</li>
+    <li>تتراسایکلین → راش‌ها و به‌ندرت، سمیت کبدی و آنافیلاکسی.</li>
+    <li>پروبیوتیک‌ها، مانند <span class="en">Lactobacillus spp.</span>، <span class="en">Saccharomyces spp.</span>، <span class="en">Bifidobacterium spp.</span> و <span class="en">Bacillus clausii</span>، نرخ ریشه‌کنی را تغییر ندادند اما به‌طور مهمی عوارض جانبی مرتبط با آنتی‌بیوتیک را کاهش دادند.</li>
+    <li>سویه‌های مقاوم به آنتی‌بیوتیک شایع‌ترین علت شکست درمان در بیماران پایبند هستند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> پروبیوتیک‌ها عوارض جانبی آنتی‌بیوتیک را کاهش می‌دهند اما نرخ ریشه‌کنی را تغییر نمی‌دهند.</div>
+</article>
+
+<!-- 48 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۸</span>
+  <h2>عفونت مجدد H. pylori</h2>
+  <ul>
+    <li>عفونت مجدد پس از ریشه‌کنی موفق H. pylori در ایالات متحده نادر است، <۱٪ در سال.</li>
+    <li>اگر عفونت عودکننده در ۶ ماه اول پس از اتمام درمان رخ دهد، محتمل‌ترین توضیح بازگشت <span class="en">(Recrudescence)</span> است نه عفونت مجدد.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> عود زودرس معمولاً بازگشت عفونت قبلی است نه عفونت جدید.</div>
+</article>
+
+<!-- 49 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۹</span>
+  <h2>درمان سه‌گانه و مستندسازی ریشه‌کنی</h2>
+  <ul>
+    <li>درمان سه‌گانه برای ۱۴ روز توصیه می‌شود، سپس ادامه داروهای مهارکننده اسید (آنتی‌گونیست گیرنده H2 یا PPI) در مجموع ۴–۶ هفته. ریشه‌کنی H. pylori باید ۴ هفته پس از اتمام آنتی‌بیوتیک مستند شود.</li>
+    <li>آزمون انتخابی برای مستندسازی ریشه‌کنی، تست آنتی‌ژن مدفوع مونوکلونال معتبر آزمایشگاهی یا تست تنفسی اوره <span class="en">(UBT)</span> است.</li>
+    <li>بیمار باید حداقل ۷ روز از عوامل ضدترشحی دور باشد زمانی که با UBT یا آنتی‌ژن مدفوع برای ریشه‌کنی H. pylori آزمایش می‌شود.</li>
+    <li>آزمایش سروولوژیک برای مستندسازی ریشه‌کنی مفید نیست زیرا عیار آنتی‌بادی به‌کندی کاهش می‌یابد و اغلب غیرقابل تشخیص نمی‌شود.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> برای مستندسازی ریشه‌کنی، UBT یا آنتی‌ژن مدفوع پس از ۴ هفته قطع آنتی‌بیوتیک و ۷ روز قطع PPI انجام شود.</div>
+</article>
+
+<!-- 50 -->
+<article class="card">
+  <span class="badge">اسلاید ۵۰</span>
+  <h2>درمان آسیب گوارشی ناشی از NSAID</h2>
+  <ul>
+    <li>پیشگیری اولیه → اجتناب از عامل، استفاده از کمترین دوز ممکن برای کوتاه‌ترین مدت ممکن، استفاده از NSAIDهایی که از نظر تئوری کمتر آسیب‌زا هستند، استفاده از فرآورده‌های موضعی جدید NSAID، و/یا استفاده از درمان پزشکی همزمان برای پیشگیری از آسیب ناشی از NSAID.</li>
+    <li>احتمال کمتر سمیت گوارشی و قلبی-عروقی = ناپروکسن و ایبوپروفن، اگرچه اثر مفید ممکن است با دوزهای بالاتر از بین برود.</li>
+    <li>PPI و میزوپروستول (۲۰۰ میکروگرم qid). بلاکرهای H2 با دوز بالا (فاموتیدین ۴۰ میلی‌گرم bid) اگرچه PPIها برترند.</li>
+    <li>مهارکننده‌های بسیار انتخابی COX-2، سلکوکسیب و روفکوکسیب، ۱۰۰ برابر انتخاب‌کننده‌تر از NSAIDهای استاندارد برای COX-2 هستند و آسیب مخاط معده یا دوازدهه قابل‌مقایسه با دارونما ایجاد می‌کنند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> ناپروکسن و ایبوپروفن کم‌خطرترین NSAIDها برای گوارش هستند.</div>
+</article>
+
+<!-- 51 -->
+<article class="card">
+  <span class="badge">اسلاید ۵۱</span>
+  <h2>مهارکننده‌های COX-2 و آسپیرین</h2>
+  <ul>
+    <li>بنابراین، درمان محافظت معده در افراد مصرف‌کننده مهارکننده‌های COX-2 و پروفیلاکسی آسپیرین لازم است. در نهایت، بیشتر کارهایی که مزیت مهارکننده‌های COX-2 و PPIها را بر آسیب گوارشی نشان می‌دهند در افراد با خطر متوسط انجام شده است.</li>
+    <li>مصرف همزمان وارفارین + مهارکننده COX-2 → خونریزی گوارشی مشابه آنچه در بیماران مصرف‌کننده NSAIDهای غیرانتخابی مشاهده می‌شود.</li>
+    <li>آسپیرین با دوز کم به‌نظر می‌رسد اثر مفید مهارکننده‌های انتخابی COX-2 (سلکوکسیب) را کاهش دهد.</li>
+    <li>هر بیمار، صرف‌نظر از وضعیت خطر، که برای درمان طولانی‌مدت NSAID سنتی در نظر گرفته می‌شود باید برای آزمایش و درمان H. pylori در صورت مثبت بودن نیز در نظر گرفته شود.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> ترکیب COX-2 با وارفارین خطر خونریزی را افزایش می‌دهد.</div>
+</article>
+
+<!-- 52 -->
+<article class="card">
+  <span class="badge">اسلاید ۵۲</span>
+  <h2>جدول ۳۲۴-۶ و ۳۲۴-۷ — توصیه‌های درمانی NSAID</h2>
+  <h3>جدول ۳۲۴-۶ — توصیه‌های درمان آسیب مخاطی ناشی از NSAID</h3>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>وضعیت بالینی</th><th>توصیه</th></tr></thead>
+      <tbody>
+        <tr><td>زخم فعال — NSAID قطع شود</td><td>آنتی‌گونیست گیرنده H2 یا PPI</td></tr>
+        <tr><td>زخم فعال — NSAID ادامه یابد</td><td>PPI</td></tr>
+        <tr><td>درمان پروفیلاکتیک</td><td>میزوپروستول؛ PPI؛ مهارکننده انتخابی COX-2</td></tr>
+        <tr><td>عفونت H. pylori</td><td>ریشه‌کنی در صورت وجود زخم فعال یا سابقه PUD</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>جدول ۳۲۴-۷ — راهنمای درمان NSAID</h3>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>خطر قلبی-عروقی / خطر گوارشی NSAID</th><th>بدون خطر قلبی-عروقی (بدون آسپیرین)</th><th>با خطر قلبی-عروقی (آسپیرین در نظر گرفته شود)</th></tr></thead>
+      <tbody>
+        <tr><td>بدون/کم خطر گوارشی NSAID</td><td>NSAID سنتی</td><td>NSAID سنتی + PPI یا میزوپروستول در صورت لزوم محافظت گوارشی؛ درمان غیرNSAID در نظر گرفته شود</td></tr>
+        <tr><td>خطر گوارشی NSAID</td><td>کوکسیب یا NSAID سنتی + PPI یا میزوپروستول؛ درمان غیرNSAID در نظر گرفته شود</td><td>در صورت تجویز NSAID سنتی، یک عامل محافظ گوارشی باید اضافه شود؛ درمان غیرNSAID در نظر گرفته شود</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="meta"><span>مخفف‌ها: CV: قلبی-عروقی؛ GI: گوارشی؛ NSAID: داروی ضدالتهاب غیراستروئیدی؛ PPI: مهارکننده پمپ پروتون.</span></div>
+</article>
+
+<!-- 53 -->
+<article class="card">
+  <span class="badge">اسلاید ۵۳</span>
+  <h2>یادداشت دست‌نویس — رویکرد به NSAID و محافظت گوارشی</h2>
+  <figure class="aks-figure">
+    <img class="aks-img" src="" alt="یادداشت دست‌نویس فارسی درباره انتخاب NSAID و محافظت گوارشی">
+  </figure>
+  <p class="ph-caption">یادداشت دست‌نویس فارسی درباره انتخاب NSAID و محافظت گوارشی بر اساس خطر قلبی-عروقی و گوارشی. متن تصویر شامل جدول و توضیحات درباره NSAID سنتی، کوکسیب، PPI و میزوپروستول است. محتوای تصویر با جداول ۳۲۴-۶ و ۳۲۴-۷ هم‌راستاست.</p>
+  <div class="note"><b>توضیح تکمیلی:</b> این یادداشت خلاصه‌ای از الگوریتم انتخاب NSAID و محافظت گوارشی بر اساس خطر است. برای نمایش تصویر، مقدار <code>src</code> را به نام فایل عکس تغییر دهید.</div>
+</article>
+
+<!-- 54 -->
+<article class="card">
+  <span class="badge">اسلاید ۵۴</span>
+  <h2>زخم مقاوم <span class="en">(Refractory ulcer)</span></h2>
+  <ul>
+    <li>GU که پس از ۱۲ هفته بهبود نمی‌یابد.</li>
+    <li>DU که پس از ۸ هفته بهبود نمی‌یابد.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> عدم بهبود زخم در بازه زمانی مورد انتظار، نیازمند بررسی مجدد علت است.</div>
+</article>
+
+<!-- 55 -->
+<article class="card">
+  <span class="badge">اسلاید ۵۵</span>
+  <h2>زخم مقاوم — رویکرد</h2>
+  <ul>
+    <li>پس از رد عدم پایبندی و عفونت پایدار H. pylori، مصرف NSAID، چه ناخواسته و چه پنهانی، باید رد شود. علاوه بر این، سیگار کشیدن باید حذف شود. برای GU، بدخیمی باید به‌دقت رد شود.</li>
+    <li>سپس، باید به حالت هیپرسکرتوری اسید معده مانند ZES (گاسترین ناشتا یا تست تحریک سکرتین) یا فرم ایدیوپاتیک توجه شود، که با آنالیز اسید معده قابل رد است.</li>
+    <li>>۹۰٪ زخم‌های مقاوم (DU یا GU) پس از ۸ هفته درمان با دوزهای بالاتر PPI (امپرازول ۴۰ mg/d؛ لانسوپرازول ۳۰–۶۰ mg/d) بهبود می‌یابند. این دوز بالاتر در حفظ بهبودی نیز مؤثر است.</li>
+    <li>علل نادر زخم مقاوم که ممکن است با بیوپسی معده یا دوازدهه تشخیص داده شوند شامل ایسکمی، بیماری کرون، آمیلوئیدوز، سارکوئیدوز، لنفوم، گاستروانتریت ائوزینوفیلیک، مصرف کراک کوکائین یا عفونت (سیتومگالوویروس [CMV]، سل یا سیفلیس) است.</li>
+    <li>مداخله جراحی.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> در زخم مقاوم، ابتدا پایبندی دارویی، H. pylori و NSAID بررسی شود.</div>
+</article>
+
+<!-- 56 -->
+<article class="card">
+  <span class="badge">اسلاید ۵۶</span>
+  <h2>درمان جراحی</h2>
+  <ul>
+    <li>جراحی بیشتر برای درمان عارضه مرتبط با زخم مورد نیاز است.</li>
+    <li>واگوتومی جزء هر یک از این روش‌هاست و هدف آن کاهش ترشح اسید از طریق از بین بردن ورودی کولینرژیک به معده است. متأسفانه، هم واگوتومی تنه‌ای و هم انتخابی (حفظ شاخه‌های سلیاک و کبدی) علی‌رغم کاهش موفقیت‌آمیز خروجی اسید پایه <span class="en">(BAO؛ کاهش ۸۵٪)</span> و خروجی اسید حداکثر <span class="en">(MAO؛ کاهش ۵۰٪)</span>، به آتونی معده منجر می‌شوند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> واگوتومی ترشح اسید را کاهش می‌دهد اما می‌تواند آتونی معده ایجاد کند.</div>
+</article>
+
+<!-- 57 -->
+<article class="card">
+  <span class="badge">اسلاید ۵۷</span>
+  <h2>جراحی‌های اختصاصی DU</h2>
+  <ul>
+    <li>(۱) واگوتومی و درناژ (با پیلوروپلاستی، گاسترودئودنوستومی یا گاستروژژونوستومی).</li>
+    <li>(۲) واگوتومی بسیار انتخابی (معروف به سلول پاریتال، فوق‌انتخابی یا واگوتومی پروکسیمال) (که نیازی به روش درناژ ندارد). نرخ عود زخم با واگوتومی بسیار انتخابی بالاتر است (≥۱۰٪)، اگرچه نرخ عوارض کلی پایین‌ترین در بین سه روش است. به‌جز در شرایطی که نرخ عود زخم بالا است (زخم‌های پری‌پیلوریک و موارد مقاوم به درمان پزشکی).</li>
+    <li>(۳) واگوتومی با آنترکتومی: پایین‌ترین نرخ عود زخم (۱٪) اما بالاترین نرخ عوارض (آتونی معده) واگوتومی (تنه‌ای یا انتخابی) در ترکیب با آنترکتومی است (مهار ترشح اسید معده، گاسترین).</li>
+    <li>گاسترودئودنوستومی (بیلروت I) یا گاستروژژونوستومی (بیلروت II).</li>
+    <li>(زخم‌های پری‌پیلوریک و موارد مقاوم به درمان پزشکی).</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> واگوتومی + آنترکتومی کمترین عود را دارد اما بیشترین عوارض را.</div>
+</article>
+
+<!-- 58 -->
+<article class="card">
+  <span class="badge">اسلاید ۵۸</span>
+  <h2>جراحی‌های اختصاصی GU</h2>
+  <ul>
+    <li>محل و وجود DU همزمان، روش جراحی GU را تعیین می‌کند. آنترکتومی (شامل زخم) با آناستوموز بیلروت I درمان انتخابی برای زخم آنترال است.</li>
+    <li>واگوتومی فقط در صورت وجود DU انجام می‌شود.</li>
+    <li>زخم نزدیک اتصال مری-معده ممکن است نیازمند رویکرد رادیکال‌تر، گاسترکتومی ساب‌توتال با ازوفاگوگاستروژژونوستومی Roux-en-Y (روش Csendes) باشد.</li>
+    <li>عود زخم با این روش به ۳۰٪ نزدیک می‌شود.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> زخم‌های نزدیک کاردیا نیاز به جراحی گسترده‌تر دارند.</div>
+</article>
+
+<!-- 59 -->
+<article class="card">
+  <span class="badge">اسلاید ۵۹</span>
+  <h2>عوارض مرتبط با جراحی — عود زخم</h2>
+  <ul>
+    <li>عود زخم در محل آناستوموز (زخم استومال یا حاشیه‌ای).</li>
+    <li>درد اپی‌گاستر شایع‌ترین شکایت هنگام مراجعه (>۹۰٪). شدت و مدت درد تمایل دارد پیشرونده‌تر از DUهای قبل از جراحی باشد.</li>
+    <li>دلایل متعدد: واگوتومی ناقص؛ درناژ ناکافی؛ آنتروم باقی‌مانده؛ عفونت پایدار یا عودکننده H. pylori؛ مصرف NSAID.</li>
+    <li>اگر سطح گاسترین پلاسمای ناشتا بالا باشد → آنتروم باقی‌مانده یا ZES باید در نظر گرفته شود.</li>
+    <li>واگوتومی ناقص ← تست تغذیه ساختگی <span class="en">(Sham feeding)</span> مثبت.</li>
+    <li>در این تست، خروجی اسید معده در حالی که بیمار غذا را می‌بیند، بو می‌کند و می‌جود (بدون بلعیدن) اندازه‌گیری می‌شود. افزایش خروجی اسید معده در پاسخ به تغذیه ساختگی شاهدی بر سالم بودن عصب واگ است.</li>
+    <li>افزایش پلی‌پپتید پانکراس سرم >۵۰٪ در ۳۰ دقیقه پس از تغذیه ساختگی نیز نشان‌دهنده سالم بودن عصب واگ است.</li>
+    <li>درمان: بلاکرهای H2؛ جراحی مجدد. اثربخشی PPIها به‌طور کامل ارزیابی نشده است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> تست تغذیه ساختگی برای ارزیابی کامل بودن واگوتومی استفاده می‌شود.</div>
+</article>
+
+<!-- 60 -->
+<article class="card">
+  <span class="badge">اسلاید ۶۰</span>
+  <h2>سندرم‌های لوپ آوران <span class="en">(Afferent loop syndromes)</span></h2>
+  <ul>
+    <li>نوع I: شایع‌تر از دو نوع، رشد باکتریایی در لوپ آوران ثانویه به رکود است.</li>
+    <li>درد شکمی پس از غذا، نفخ و اسهال با سوءجذب همزمان چربی‌ها و ویتامین B12.</li>
+    <li>موارد مقاوم به آنتی‌بیوتیک ممکن است نیازمند بازبینی جراحی لوپ باشند.</li>
+    <li>نوع II: کمتر شایع.</li>
+    <li>درد شدید شکمی و نفخ که ۲۰–۶۰ دقیقه پس از غذا رخ می‌دهد. درد اغلب با تهوع و استفراغ مواد حاوی صفرا دنبال می‌شود. درد و نفخ ممکن است پس از استفراغ بهبود یابند.</li>
+    <li>علت این تصویر بالینی از نظر تئوری تخلیه ناقص صفرا و ترشحات پانکراس از لوپ آوران با انسداد نسبی است.</li>
+    <li>موارد مقاوم به اقدامات غذایی ممکن است نیازمند بازبینی جراحی یا تبدیل آناستوموز بیلروت II به گاستروژژونوستومی Roux-en-Y باشند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> سندرم لوپ آوران نوع II با درد پس از غذا و استفراغ صفراوی مشخص می‌شود.</div>
+</article>
+
+<!-- 61 -->
+<article class="card">
+  <span class="badge">اسلاید ۶۱</span>
+  <h2>سندرم دامپینگ <span class="en">(Dumping syndrome)</span></h2>
+  <ul>
+    <li>پس از واگوتومی و درناژ (به‌ویژه روش‌های بیلروت).</li>
+    <li>فاز زودرس ۱۵–۳۰ دقیقه پس از غذا و شامل ناراحتی شکمی کرامپی، تهوع، اسهال، آروغ زدن، تاکی‌کاردی، تپش قلب، تعریق، سبکی سر و به‌ندرت سنکوپ است.</li>
+    <li>تخلیه سریع محتویات هیپراسمولار معده به روده باریک، که به جابه‌جایی مایع به داخل لومن روده با انقباض حجم پلاسما و اتساع حاد روده منجر می‌شود.</li>
+    <li>آزادسازی هورمون‌های گوارشی وازواکتیو (پلی‌پپتید وازواکتیو روده‌ای، نوروتنسین، موتیلین) نیز از نظر تئوری در دامپینگ زودرس نقش دارد.</li>
+    <li>فاز دیررس دامپینگ معمولاً ۹۰ دقیقه تا ۳ ساعت پس از غذا رخ می‌دهد. علائم وازوموتور (سبکی سر، تعریق، تپش قلب، تاکی‌کاردی و سنکوپ) در این فاز غالب است. این جزء دامپینگ تصور می‌شود ثانویه به هیپوگلیسمی ناشی از آزادسازی بیش‌ازحد انسولین باشد.</li>
+    <li>آکاربوز، که هضم کربوهیدرات‌های بلعیده‌شده را به تأخیر می‌اندازد.</li>
+    <li>سندرم دامپینگ بیشتر پس از وعده‌های غذایی غنی از کربوهیدرات‌های ساده (به‌ویژه ساکارز) و اسمولاریته بالا قابل توجه است. مصرف مقادیر زیاد مایعات نیز ممکن است نقش داشته باشد.</li>
+    <li>علائم و نشانه‌ها اغلب با گذشت زمان بهبود می‌یابند، اصلاح رژیم غذایی سنگ بنای درمان است.</li>
+    <li>وعده‌های کوچک و متعدد (شش وعده) بدون کربوهیدرات‌های ساده همراه با حذف مایعات در طول وعده‌ها مهم است.</li>
+    <li>داروهای ضداسهال و عوامل آنتی‌کولینرژیک.</li>
+    <li>گوار و پکتین، که ویسکوزیته محتویات داخل لومن را افزایش می‌دهند.</li>
+    <li>اکت‌رئوتاید → موفق در موارد مقاوم به رژیم غذایی.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> دامپینگ زودرس ناشی از تخلیه سریع هیپراسمولار و دامپینگ دیررس ناشی از هیپوگلیسمی است.</div>
+</article>
+
+<!-- 62 -->
+<article class="card">
+  <span class="badge">اسلاید ۶۲</span>
+  <h2>اسهال پس از واگوتومی</h2>
+  <ul>
+    <li>پس از واگوتومی تنه‌ای.</li>
+    <li>اسهال متناوب که معمولاً ۱–۲ ساعت پس از غذا رخ می‌دهد.</li>
+    <li>به‌دلیل اختلال حرکتی؛ کاهش جذب مواد مغذی؛ افزایش دفع اسیدهای صفراوی.</li>
+    <li>دیفنوکسیلات یا لوپرامید اغلب در کنترل علائم مفید است.</li>
+    <li>عامل اتصال‌دهنده نمک صفراوی کولستیرامین ممکن است در موارد شدید مفید باشد.</li>
+    <li>برگرداندن جراحی یک قطعه ۱۰ سانتی‌متری ژژنوم.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> اسهال پس از واگوتومی ممکن است به کولستیرامین پاسخ دهد.</div>
+</article>
+
+<!-- 63 -->
+<article class="card">
+  <span class="badge">اسلاید ۶۳</span>
+  <h2>گاستروپاتی ریفلاکس صفراوی</h2>
+  <ul>
+    <li>زیرگروهی از بیماران پس از گاسترکتومی جزئی که با درد شکمی، سیری زودرس، تهوع و استفراغ و اریتم مخاطی باقی‌مانده معده به‌عنوان تنها یافته مراجعه می‌کنند.</li>
+    <li>عوامل پروکینتیک، کولستیرامین و سوکرالفیت تا حدودی درمان‌های مؤثری بوده‌اند.</li>
+    <li>علائم شدید مقاوم ممکن است نیازمند استفاده از اسکن هسته‌ای با 99mTc-HIDA برای مستندسازی ریفلاکس باشد.</li>
+    <li>انحراف جراحی ترشحات پانکراتیکوبیلیاری دور از باقی‌مانده معده با گاستروژژونوستومی Roux-en-Y شامل یک شاخه Roux بلند (۵۰–۶۰ سانتی‌متر) در موارد شدید استفاده شده است.</li>
+    <li>استفراغ صفراوی بهبود می‌یابد، اما سیری زودرس و نفخ ممکن است در تا ۵۰٪ بیماران ادامه یابد.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> گاستروپاتی صفراوی در بیماران پس از گاسترکتومی جزئی دیده می‌شود.</div>
+</article>
+
+<!-- 64 -->
+<article class="card">
+  <span class="badge">اسلاید ۶۴</span>
+  <h2>سوءهضم و سوءجذب پس از جراحی معده</h2>
+  <ul>
+    <li>کاهش وزن.</li>
+    <li>استئاتوره خفیف.</li>
+    <li>کاهش تولید اسید معده، تخلیه سریع معده، کاهش پراکندگی غذا در معده، کاهش غلظت صفرا در لومن، کاهش پاسخ ترشحی پانکراس به تغذیه و عبور سریع روده‌ای.</li>
+    <li>کمبود ویتامین B12: آنترکتومی ⟹ سلول‌های پاریتال (منبع IF) حذف می‌شوند؛ رشد بیش‌ازحد باکتریایی؛ ناتوانی در جداسازی ویتامین از منبع متصل به پروتئین به‌دلیل هیپوکلرهیدری. این معمولاً به‌دلیل کمبود IF نیست.</li>
+    <li>کم‌خونی فقر آهن <span class="en">(IDA)</span>: اختلال در جذب آهن غذایی در بیماران با بیلروت II. جذب نمک‌های آهن در این افراد نرمال است؛ بنابراین، پاسخ مطلوب به مکمل آهن خوراکی قابل پیش‌بینی است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> پس از جراحی معده، کمبود B12 و آهن شایع است و باید بررسی شود.</div>
+</article>
+
+<!-- 65 -->
+<article class="card">
+  <span class="badge">اسلاید ۶۵</span>
+  <h2>سوءجذب ویتامین‌ها و مواد معدنی</h2>
+  <ul>
+    <li>کمبود فولات ثانویه به کاهش جذب یا کاهش دریافت خوراکی.</li>
+    <li>سوءجذب ویتامین D و کلسیم؛ استئوپروز و استئومالاسی پس از گاسترکتومی جزئی و گاستروژژونوستومی (بیلروت II) شایع است.</li>
+    <li>استئومالاسی → آلکالین فسفاتاز بالا، کلسیم سرم کاهش‌یافته، درد استخوان و شکستگی‌های پاتولوژیک.</li>
+    <li>شکستگی استخوان (مردان).</li>
+    <li>کمبود مس در بیماران با جراحی‌هایی که دوازدهه را دور می‌زنند، جایی که مس عمدتاً جذب می‌شود.</li>
+    <li>آتاکسی، میلوپاتی و نوروپاتی محیطی.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> در جراحی‌های بای‌پس دوازدهه، کمبود مس و آهن باید در نظر گرفته شود.</div>
+</article>
+
+<!-- 66 -->
+<article class="card">
+  <span class="badge">اسلاید ۶۶</span>
+  <h2>عوارض دیررس پس از گاسترکتومی</h2>
+  <ul>
+    <li>۱۵ سال پس از resection.</li>
+    <li>برخی افزایش چهار تا پنج برابری سرطان معده ۲۰–۲۵ سال پس از resection را گزارش کرده‌اند. ریفلاکس قلیایی، تکثیر باکتریایی یا هیپوکلرهیدری.</li>
+    <li>نقش غربالگری آندوسکوپیک مشخص نیست و بیشتر دستورالعمل‌ها از استفاده آن حمایت نمی‌کنند.</li>
+    <li>ازوفاژیت ریفلاکس.</li>
+    <li>سنگ صفرا و کوله‌سیستیت در بیماران تحت گاسترکتومی ساب‌توتال گزارش شده است.</li>
+    <li>مورد اخیر تصور می‌شود به‌دلیل کاهش انقباض کیسه صفرا مرتبط با واگوتومی و دور زدن دوازدهه باشد که به کاهش آزادسازی کوله‌سیستوکینین پس از غذا منجر می‌شود.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> پس از گاسترکتومی، خطر سرطان معده در درازمدت افزایش می‌یابد اما غربالگری روتین توصیه نمی‌شود.</div>
+</article>
+
+<!-- 67 -->
+<article class="card">
+  <span class="badge">اسلاید ۶۷</span>
+  <h2>سندرم زولینگر-الیسون <span class="en">(ZES)</span></h2>
+  <ul>
+    <li>زنان > مردان.</li>
+    <li>۳۰–۵۰ سال.</li>
+    <li>تومورهای پراکنده (۸۰٪).</li>
+    <li>نئوپلازی غدد درون‌ریز متعدد <span class="en">(MEN)</span> نوع ۱.</li>
+    <li>هیپرگاسترینمی ناشی از یک نئوپلاسم خودمختار.</li>
+    <li>گاسترین با گیرنده‌های گاسترین روی سلول‌های پاریتال و با القای آزادسازی هیستامین از سلول‌های ECL ترشح اسید را تحریک می‌کند.</li>
+    <li>هیپرگاسترینمی طولانی‌مدت → افزایش ترشح اسید معده.</li>
+    <li>افزایش خروجی اسید معده → دیاتز زخم پپتیک، ازوفاژیت فرسایشی و اسهال.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> ZES با هیپرگاسترینمی، اسید بالا و زخم‌های مقاوم یا متعدد مشخص می‌شود.</div>
+</article>
+
+<!-- 68 -->
+<article class="card">
+  <span class="badge">اسلاید ۶۸</span>
+  <h2>توزیع تومور در ZES</h2>
+  <ul>
+    <li>پانکراس؛ خارج پانکراس (تومورهای دوازدهه → کوچک‌تر، کندتر رشد می‌کنند و کمتر از ضایعات پانکراس متاستاز می‌دهند).</li>
+    <li>بین ۶۰ و ۹۰٪ → مثلث (محل تلاقی مجاری سیستیک و صفراوی مشترک در بالا، محل اتصال بخش دوم و سوم دوازدهه در پایین، و محل اتصال گردن و تنه پانکراس در سمت داخلی).</li>
+    <li>محل‌های خارج پانکراس شامل معده، استخوان‌ها، تخمدان‌ها، قلب، کبد و گره‌های لنفاوی است.</li>
+    <li>بدخیم >۶۰٪.</li>
+    <li>ضایعات متعدد ۳۰–۵٪.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> مثلث گاسترینوما ناحیه شایع تومور است.</div>
+</article>
+
+<!-- 69 -->
+<article class="card">
+  <span class="badge">اسلاید ۶۹</span>
+  <h2>ZES — تظاهرات بالینی</h2>
+  <ul>
+    <li>درد شکمی.</li>
+    <li>زخم پپتیک شایع‌ترین تظاهر بالینی است و در >۹۰٪ بیماران گاسترینوما رخ می‌دهد.</li>
+    <li>محل زخم (بولب دوازدهه).</li>
+    <li>شک به گاسترینوما: زخم در محل‌های غیرمعمول (بخش دوم دوازدهه و بعد از آن)؛ زخم‌های مقاوم به درمان پزشکی استاندارد؛ عود زخم پس از جراحی کاهش اسید؛ زخم‌هایی که با عوارض آشکار (خونریزی، انسداد و سوراخ‌شدن) تظاهر می‌کنند؛ زخم در غیاب H. pylori یا مصرف NSAID.</li>
+    <li>علائم با منشأ مری در تا دو سوم بیماران ZES وجود دارد، با طیفی از ازوفاژیت خفیف تا زخم آشکار با تنگی و مخاط بارت.</li>
+    <li>اسهال، دومین تظاهر بالینی شایع، در تا ۷۰٪ بیماران یافت می‌شود.</li>
+    <li>اتیولوژی اسهال چندعاملی است و از بار حجمی قابل توجه به روده باریک، غیرفعال‌سازی آنزیم‌های پانکراس توسط اسید و آسیب سطح اپیتلیال روده توسط اسید ناشی می‌شود. آسیب اپیتلیال می‌تواند به درجه خفیفی از سوءهضم و سوءجذب مواد مغذی منجر شود. اسهال ممکن است جزء ترشحی نیز داشته باشد، به‌دلیل اثر تحریکی مستقیم گاسترین بر انتروسیت‌ها یا هم‌ترشحی هورمون‌های اضافی از تومور مانند پپتید وازواکتیو روده‌ای.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> اسهال در ZES چندعاملی است و می‌تواند به‌دلیل اثر اسید بر روده باشد.</div>
+</article>
+
+<!-- 70 -->
+<article class="card">
+  <span class="badge">اسلاید ۷۰</span>
+  <h2>جدول ۳۲۴-۸ — چه زمانی سطح گاسترین سرم ناشتا گرفته شود</h2>
+  <ul>
+    <li>زخم‌های متعدد.</li>
+    <li>زخم در محل‌های غیرمعمول؛ همراه با ازوفاژیت شدید؛ مقاوم به درمان با عود مکرر؛ در غیاب مصرف NSAID یا عفونت H. pylori.</li>
+    <li>بیماران زخم در انتظار جراحی.</li>
+    <li>سابقه خانوادگی گسترده بیماری زخم پپتیک.</li>
+    <li>عود زخم پس از عمل.</li>
+    <li>هیپرکلرهیدری پایه.</li>
+    <li>اسهال یا استئاتوره بدون توجیه.</li>
+    <li>هیپرکلسمی.</li>
+    <li>سابقه خانوادگی تومور جزایر پانکراس، هیپوفیز یا پاراتیروئید.</li>
+    <li>چین‌های برجسته معده یا دوازدهه.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> اندازه‌گیری گاسترین ناشتا در این موقعیت‌های بالینی اندیکاسیون دارد.</div>
+</article>
+
+<!-- 71 -->
+<article class="card">
+  <span class="badge">اسلاید ۷۱</span>
+  <h2>سندرم MEN 1</h2>
+  <ul>
+    <li>~۲۵٪ موارد؛ اتوزومال غالب <span class="en">(AD)</span>.</li>
+    <li>غدد پاراتیروئید (۸۰–۹۰٪)، پانکراس (۴۰–۸۰٪) و هیپوفیز (۳۰–۶۰٪).</li>
+    <li>جهش‌های غیرفعال‌کننده ژن سرکوبگر تومور MEN1.</li>
+    <li>اثر تحریکی کلسیم بر ترشح معده: هیپرپاراتیروئیدیسم و هیپرکلسمی در بیماران MEN 1 ممکن است اثر مستقیم بر بیماری زخم داشته باشند → رفع هیپرکلسمی با پاراتیروئیدکتومی گاسترین و خروجی اسید معده را در بیماران گاسترینوما کاهش می‌دهد.</li>
+    <li>بروز بالاتر تومور کارسینوئید معده.</li>
+    <li>ZES در بیماران MEN 1 زودتر تظاهر و تشخیص داده می‌شود.</li>
+    <li>سیر خوش‌خیم‌تر در مقایسه با بیماران گاسترینومای پراکنده.</li>
+    <li>گاسترینوماها تمایل دارند کوچک‌تر، متعدد و بیشتر در دیواره دوازدهه نسبت به ZES پراکنده باشند.</li>
+    <li>تشخیص: مشاوره ژنتیک.</li>
+    <li>درمان: رویکرد جراحی.</li>
+    <li>MEN 1 → سطوح کلسیم، پاراتیروئید، پرولاکتین و پلی‌پپتید پانکراس.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> در MEN 1، هیپرپاراتیروئیدیسم می‌تواند بیماری زخم را تشدید کند.</div>
+</article>
+
+<!-- 72 -->
+<article class="card">
+  <span class="badge">اسلاید ۷۲</span>
+  <h2>تشخیص ZES</h2>
+  <ul>
+    <li>اندازه‌گیری بیوشیمیایی گاسترین و ترشح اسید.</li>
+    <li>اولین گام → سطح گاسترین ناشتا (۱۵۰–۲۰۰ pg/mL).</li>
+    <li>اندازه‌گیری گاسترین ناشتا باید تکرار شود تا شک بالینی تأیید شود.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> گاسترین ناشتای بالا باید تکرار شود و در زمینه قطع PPI تفسیر شود.</div>
+</article>
+
+<!-- 73 -->
+<article class="card">
+  <span class="badge">اسلاید ۷۳</span>
+  <h2>علل گاسترین ناشتای بالا</h2>
+  <ul>
+    <li>هیپوکلرهیدری و آکلرهیدری، با یا بدون کم‌خونی پرنیشیوز.</li>
+    <li>عوامل ضدترشح → کاهش تولید اسید متعاقباً به شکست مسیر بازخورد مهارکننده منجر می‌شود و هیپرگاسترینمی خالص ایجاد می‌کند.</li>
+    <li>عفونت H. pylori.</li>
+    <li>آنتروم باقی‌مانده معده.</li>
+    <li>هیپرپلازی سلول G.</li>
+    <li>GOO.</li>
+    <li>نارسایی کلیه.</li>
+    <li>انسداد شدید روده باریک.</li>
+    <li>آرتریت روماتوئید، ویتیلیگو، دیابت ملیتوس و فئوکروموسیتوم.</li>
+    <li>گاسترین ناشتا >۱۰ برابر نرمال به‌شدت مطرح‌کننده ZES است.</li>
+    <li>PPI باید حداقل ۷ روز قبل از آزمایش قطع شود. بلاکر H2 باید ۲۴ ساعت قطع شود. آنتی‌اسیدها باید ~۱۲ ساعت قطع شوند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> PPI باعث هیپرگاسترینمی می‌شود و باید قبل از آزمایش قطع شود.</div>
+</article>
+
+<!-- 74 -->
+<article class="card">
+  <span class="badge">اسلاید ۷۴</span>
+  <h2>ارزیابی ترشح اسید در ZES</h2>
+  <ul>
+    <li>گام بعدی → ارزیابی ترشح اسید.</li>
+    <li>BAO نرمال در بیماران بدون جراحی معده معمولاً ۱۵ mEq/h است؛ در حضور هیپرگاسترینمی پاتوگنومونیک ZES در نظر گرفته می‌شود.</li>
+    <li>نسبت BAO/MAO >۰٫۶ به‌شدت مطرح‌کننده ZES است.</li>
+    <li>آزمون‌ها شامل تست تحریک سکرتین و مطالعه تزریق کلسیم است.</li>
+    <li>حساس‌ترین و اختصاصی‌ترین → مطالعه سکرتین.</li>
+    <li>افزایش گاسترین ≥۱۲۰ pg در ۱۵ دقیقه پس از تزریق سکرتین حساسیت و ویژگی >۹۰٪ برای ZES دارد.</li>
+    <li>هیپوکلرهیدری یا آکلرهیدری ناشی از PPI → تست سکرتین مثبت کاذب؛ بنابراین این عامل باید ۱ هفته قبل از آزمایش قطع شود.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> تست تحریک سکرتین استاندارد طلایی بیوشیمیایی برای ZES است.</div>
+</article>
+
+<!-- 75 -->
+<article class="card">
+  <span class="badge">اسلاید ۷۵</span>
+  <h2>الگوریتم تشخیصی ZES (یادداشت دست‌نویس)</h2>
+  <figure class="aks-figure">
+    <img class="aks-img" src="" alt="فلوچارت دست‌نویس تشخیص ZES">
+  </figure>
+  <p class="ph-caption">فلوچارت دست‌نویس تشخیص ZES: گاسترین ناشتا ۱۵۰–۲۰۰ pg/mL → pH؛ pH >۳ → BAO؛ BAO <۵ → احتمال ZES؛ BAO ۵–۱۵ → نتیجه غیرقطعی؛ BAO >۱۵ → ZES. pH <۳ → ZES. سپس تست سکرتین: افزایش گاسترین ≥۱۲۰ pg در ۱۵ دقیقه → ZES؛ عدم افزایش → تست تزریق کلسیم. در ادامه تصویربرداری برای لوکالیزاسیون تومور (CT، MRI، EUS، PET-CT).</p>
+  <div class="note"><b>توضیح تکمیلی:</b> این الگوریتم مسیر تشخیص بیوشیمیایی و تصویربرداری ZES را نشان می‌دهد. برای نمایش تصویر، مقدار <code>src</code> را به نام فایل عکس تغییر دهید.</div>
+</article>
+
+<!-- 76 -->
+<article class="card">
+  <span class="badge">اسلاید ۷۶</span>
+  <h2>لوکالیزاسیون تومور در ZES</h2>
+  <ul>
+    <li>پس از تأیید تشخیص بیوشیمیایی ⟹ تشخیص تومور اولیه و رد بیماری متاستاتیک (MRI/PET-CT).</li>
+    <li>EUS امکان تصویربرداری از پانکراس با درجه تفکیک بالا (۸۰٪) را فراهم می‌کند.</li>
+    <li>توموگرافی انتشار پوزیترون <span class="en">(PET)</span>-CT با 68Ga-DOTATATE توسعه یافته و برتری نسبت به OctreoScan برای ارزیابی حضور تومور در بیماران با NETهای خوب‌تمایزیافته مانند گاسترینوما دارد، با حساسیت و ویژگی >۹۰٪.</li>
+    <li>تزریق انتخابی شریان سکرتین ممکن است کمکی مفید برای لوکالیزاسیون تومور باشد.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> 68Ga-DOTATATE PET-CT حساس‌ترین روش تصویربرداری برای گاسترینوما است.</div>
+</article>
+
+<!-- 77 -->
+<article class="card">
+  <span class="badge">اسلاید ۷۷</span>
+  <h2>جدول ۳۲۴-۹ — حساسیت روش‌های تصویربرداری در ZES</h2>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>روش</th><th>حساسیت — گاسترینوم اولیه (٪)</th><th>حساسیت — گاسترینوم متاستاتیک (٪)</th></tr></thead>
+      <tbody>
+        <tr><td>سونوگرافی</td><td>۲۱–۲۸</td><td>۱۴</td></tr>
+        <tr><td>CT اسکن</td><td>۵۵–۷۰</td><td>>۸۵</td></tr>
+        <tr><td>آنژیوگرافی انتخابی</td><td>۳۵–۶۸</td><td>۳۳–۸۶</td></tr>
+        <tr><td>نمونه‌گیری خون ورید پورت</td><td>۷۰–۹۰</td><td>نامشخص</td></tr>
+        <tr><td>SASI</td><td>۵۵–۷۸</td><td>۴۱</td></tr>
+        <tr><td>MRI</td><td>۵۵–۷۰</td><td>>۸۵</td></tr>
+        <tr><td>OctreoScan</td><td>۶۷–۸۶</td><td>۸۰–۱۰۰</td></tr>
+        <tr><td>EUS</td><td>۸۰–۱۰۰</td><td>نامشخص</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="meta"><span>مخفف‌ها: CT: توموگرافی کامپیوتری؛ EUS: سونوگرافی آندوسکوپیک؛ MRI: تصویربرداری رزونانس مغناطیسی؛ N/A: نامشخص؛ OctreoScan: تصویربرداری با 111In-pentetreotide؛ SASI: تزریق انتخابی شریان سکرتین.</span></div>
+</article>
+
+<!-- 78 -->
+<article class="card">
+  <span class="badge">اسلاید ۷۸</span>
+  <h2>درمان ZES</h2>
+  <ul>
+    <li>علائم و نشانه‌های مرتبط با تولید بیش‌ازحد هورمون، resection درمانی نئوپلاسم و تلاش برای کنترل رشد تومور در بیماری متاستاتیک.</li>
+    <li>PPIها (بالاتر از دوزهای مصرفی برای GERD یا PUD) درمان انتخابی هستند و نیاز به گاسترکتومی توتال را کاهش داده‌اند.</li>
+    <li>دوزهای اولیه PPI برای دستیابی به BAO <۱۰ mEq/h (در سطح دارو) در بیماران بدون جراحی و <۵ mEq/h در افرادی که قبلاً جراحی کاهش اسید داشته‌اند.</li>
+    <li>اکت‌رئوتاید یا لانرئوتاید ممکن است به‌عنوان درمان کمکی به PPI در بیماران با تومورهایی که گیرنده سوماتوستاتین بیان می‌کنند و علائم پپتیک دارند که با دوز بالای PPI به‌سختی کنترل می‌شوند در نظر گرفته شود.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> PPI با دوز بالا ستون اصلی درمان ZES است.</div>
+</article>
+
+<!-- 79 -->
+<article class="card">
+  <span class="badge">اسلاید ۷۹</span>
+  <h2>جراحی گاسترینوما و پیش‌آگهی</h2>
+  <ul>
+    <li>هدف نهایی جراحی، ارائه درمان قطعی است.</li>
+    <li>درمان جراحی بیماران گاسترینوما با MEN 1 همچنان بحث‌برانگیز است، به‌دلیل دشواری در عاری کردن این بیماران از بیماری با جراحی.</li>
+    <li>درمان تومورهای اندوکرین متاستاتیک به‌طور کلی زیر بهینه باقی مانده است؛ گاسترینوماها نیز مستثنی نیستند.</li>
+    <li>پیش‌آگهی مطلوب: تومورهای اولیه دیواره دوازدهه؛ تومور گره لنفاوی ایزوله؛ وجود MEN 1؛ و تومور غیرقابل تشخیص در اکتشاف جراحی.</li>
+    <li>نتیجه ضعیف: مدت کوتاه‌تر بیماری؛ جنس زن؛ سن بالاتر در تشخیص؛ سطوح بالاتر گاسترین (>۱۰٬۰۰۰ pg/mL)؛ تمایز هیستولوژیک ضعیف؛ شاخص تکثیری بالا؛ تومور اولیه بزرگ پانکراس (>۳ سانتی‌متر)؛ بیماری متاستاتیک به گره‌های لنفاوی، کبد و استخوان؛ و سندرم کوشینگ. رشد سریع متاستازهای کبدی نیز پیش‌بینی‌کننده نتیجه ضعیف است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> گاسترین بسیار بالا و متاستاز کبدی پیش‌آگهی بدتری دارند.</div>
+</article>
+
+<!-- 80 -->
+<article class="card">
+  <span class="badge">اسلاید ۸۰</span>
+  <h2>آسیب مخاطی مرتبط با استرس</h2>
+  <ul>
+    <li>شوک، سپسیس، سوختگی گسترده، ترومای شدید یا آسیب سر می‌تواند تغییرات مخاطی فرسایشی حاد یا زخم آشکار با خونریزی ایجاد کند.</li>
+    <li>بخش‌های فوندوس و تنه معده.</li>
+    <li>خونریزی.</li>
+    <li>نارسایی تنفسی نیازمند تهویه مکانیکی و اختلال انعقادی زمینه‌ای عوامل خطر خونریزی هستند، که تمایل دارد ۴۸–۷۲ ساعت پس از آسیب یا ضربه حاد رخ دهد.</li>
+    <li>از نظر هیستولوژیک → حاوی التهاب یا H. pylori نیستند ⟹ «گاستریت» اصطلاح نادرستی است.</li>
+    <li>افزایش ترشح اسید معده ممکن است در بیماران با زخم استرس پس از آسیب سر (زخم کوشینگ) و سوختگی شدید (زخم کورلینگ) مشاهده شود.</li>
+    <li>مهارکننده‌های اسید به‌عنوان پروفیلاکسی برای گاستریت استرس استفاده می‌شوند. PPIها درمان انتخابی برای پروفیلاکسی استرس هستند.</li>
+    <li>مدیریت عمومی بخش مراقبت‌های ویژه.</li>
+    <li>استفاده از اقدامات پیشگیرانه در بیماران پرخطر (تهویه مکانیکی، اختلال انعقادی، نارسایی چندعضوی یا سوختگی شدید).</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> زخم استرس در بیماران بدحال رخ می‌دهد و PPI پروفیلاکسی استاندارد است.</div>
+</article>
+
+<!-- 81 -->
+<article class="card">
+  <span class="badge">اسلاید ۸۱</span>
+  <h2>جدول ۳۲۴-۱۰ — طبقه‌بندی گاستریت</h2>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>دسته</th><th>زیرگروه‌ها</th></tr></thead>
+      <tbody>
+        <tr><td>I. گاستریت حاد</td><td>A. عفونت حاد H. pylori؛ B. سایر گاستریت‌های عفونی حاد: ۱. باکتریایی (غیر از H. pylori)؛ ۲. Helicobacter heilmannii؛ ۳. فلگمونی؛ ۴. مایکوباکتریوم؛ ۵. سیفیلیتیک؛ ۶. ویروسی؛ ۷. انگلی؛ ۸. قارچی</td></tr>
+        <tr><td>II. گاستریت آتروفیک مزمن</td><td>A. نوع A: خودایمنی، غالب تنه؛ B. نوع B: مرتبط با H. pylori، غالب آنترال؛ C. نامشخص</td></tr>
+        <tr><td>III. اشکال نادر گاستریت</td><td>A. لنفوسیتی؛ B. ائوزینوفیلیک؛ C. بیماری کرون؛ D. سارکوئیدوز؛ E. گاستریت گرانولوماتوز ایزوله؛ F. گاستریت اجسام راسل</td></tr>
+      </tbody>
+    </table>
+  </div>
+</article>
+
+<!-- 82 -->
+<article class="card">
+  <span class="badge">اسلاید ۸۲</span>
+  <h2>گاستریت</h2>
+  <ul>
+    <li>اصطلاح گاستریت باید برای التهاب مستند هیستولوژیک مخاط معده محفوظ بماند.</li>
+    <li>گاستریت همان اریتم مخاطی دیده‌شده در آندوسکوپی نیست و با «سوءهاضمه» قابل تعویض نیست.</li>
+    <li>گاستریت حاد → عفونی (H. pylori) با نفوذ نوتروفیل‌ها همراه با ادم و پرخونی.</li>
+    <li>عفونت باکتریایی (استرپتوکوک، استافیلوکوک، اشریشیاکلی، پروتئوس و گونه‌های هموفیلوس) معده یا گاستریت فلگمونی نادر است.</li>
+    <li>افراد سالمند، الکلی‌ها و بیماران AIDS ممکن است درگیر شوند.</li>
+    <li>علل یاتروژنیک → پولیپکتومی و تزریق مخاطی با جوهر هندی.</li>
+    <li>افراد نقص ایمنی → (هرپس سیمپلکس) یا گاستریت CMV.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> گاستریت یک تشخیص هیستولوژیک است، نه یک توصیف آندوسکوپیک.</div>
+</article>
+
+<!-- 83 -->
+<article class="card">
+  <span class="badge">اسلاید ۸۳</span>
+  <h2>گاستریت مزمن</h2>
+  <ul>
+    <li>نفوذ لنفوسیت‌ها و سلول‌های پلاسما، با درگیری نوتروفیل بسیار کم.</li>
+    <li>تخریب غدد، با آتروفی و متاپلازی. → سرطان.</li>
+    <li>اینها شامل تغییرات آتروفیک سطحی و آتروفی معده است. ارتباط گاستریت آتروفیک با ایجاد سرطان معده به توسعه نشانگرهای آندوسکوپیک و سرولوژیک شدت منجر شده است.</li>
+    <li>گاستریت سطحی → تغییرات التهابی محدود به لامینا پروپریای مخاط سطحی، با ادم و نفوذ سلولی که غدد معده دست‌نخورده را جدا می‌کند. مرحله بعد گاستریت آتروفیک است → نفوذ التهابی به عمق مخاط گسترش می‌یابد، با اختلال و تخریب پیشرونده غدد. آتروفی معده → ساختارهای غددی از بین می‌روند و نفوذ التهابی کم است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> توالی گاستریت سطحی → آتروفیک → آتروفی معده → متاپلازی روده‌ای → سرطان معده.</div>
+</article>
+
+<!-- 84 -->
+<article class="card">
+  <span class="badge">اسلاید ۸۴</span>
+  <h2>متاپلازی روده‌ای و انواع گاستریت مزمن</h2>
+  <ul>
+    <li>متاپلازی روده‌ای ⟹ عامل مستعدکننده برای سرطان معده.</li>
+    <li>گاستریت مزمن.</li>
+    <li>نوع A به فرم غالب تنه (خودایمنی) اشاره دارد.</li>
+    <li>نوع B فرم غالب آنترال است (مرتبط با H. pylori).</li>
+    <li>اصطلاح گاستریت AB برای اشاره به تصویر مختلط آنترال/تنه استفاده شده است.</li>
+  </ul>
+</article>
+
+<!-- 85 -->
+<article class="card">
+  <span class="badge">اسلاید ۸۵</span>
+  <h2>گاستریت نوع A</h2>
+  <ul>
+    <li>کمتر شایع.</li>
+    <li>فوندوس و تنه.</li>
+    <li>مرتبط با کم‌خونی پرنیشیوز.</li>
+    <li>آنتی‌بادی علیه سلول‌های پاریتال و IF (اختصاصی‌تر) ⟹ گاستریت خودایمنی.</li>
+    <li>عفونت H. pylori می‌تواند به توزیع مشابه گاستریت منجر شود.</li>
+    <li>ویژگی‌های تصویر خودایمنی همیشه وجود ندارند.</li>
+    <li>بیماران با کم‌خونی پرنیشیوز >۹۰٪ آنتی‌بادی علیه سلول‌های پاریتال (علیه H+,K+-ATPase)؛ الگوی گاستریت آتروفیک؛ بیماران با گاستریت نوع A ۵۰٪؛ افراد >۶۰ سال ۲۰٪؛ بیماران با ویتیلیگو و بیماری آدیسون ۲۰٪.</li>
+    <li>HLA-B8 و HLA-DR3. پپسینوژن پایین. آکلرهیدری. کمبود ویتامین B12 و عوارض آن (کم‌خونی مگالوبلاستیک، اختلال عصبی).</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> گاستریت نوع A با آنتی‌بادی علیه سلول‌های پاریتال و کم‌خونی پرنیشیوز همراه است.</div>
+</article>
+
+<!-- 86 -->
+<article class="card">
+  <span class="badge">اسلاید ۸۶</span>
+  <h2>آکلرهیدری و هیپرگاسترینمی</h2>
+  <ul>
+    <li>آکلرهیدری ⟹ هیپرگاسترینمی. سطوح گاسترین می‌تواند در بیماران با کم‌خونی پرنیشیوز به‌طور مشخص بالا باشد (>۵۰۰ pg/mL).</li>
+    <li>هیپرپلازی سلول ECL با ایجاد آشکار تومورهای کارسینوئید معده ممکن است از اثرات تروفیک گاسترین ناشی شود.</li>
+    <li>هیپرگاسترینمی و آکلرهیدری ممکن است در گاستریت نوع A غیرمرتبط با کم‌خونی پرنیشیوز نیز دیده شوند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> گاسترین بالا در آکلرهیدری می‌تواند به هیپرپلازی سلول ECL و کارسینوئید منجر شود.</div>
+</article>
+
+<!-- 87 -->
+<article class="card">
+  <span class="badge">اسلاید ۸۷</span>
+  <h2>گاستریت نوع B</h2>
+  <ul>
+    <li>غالب آنترال / شایع‌تر.</li>
+    <li>عفونت H. pylori علت این موجودیت است.</li>
+    <li>اصطلاح نادرست ⟹ پیشرفت فرایند التهابی به سمت تنه و فوندوس در افراد آلوده.</li>
+    <li>پان‌گاستریت (پس از ۱۵–۲۰ سال).</li>
+    <li>این شکل گاستریت با افزایش سن بیشتر می‌شود و در تا ۱۰۰٪ افراد >۷۰ سال وجود دارد.</li>
+    <li>گاستریت آتروفیک مولتی‌فوکال، متاپلازی ⟹ آدنوکارسینوم معده.</li>
+    <li>H. pylori مرتبط ⟹ التهاب مزمن ⟹ سرطان معده.</li>
+    <li>بیماران با گاستریت آتروفیک عارضه‌دار با متاپلازی روده‌ای بدون دیسپلازی باید هر ۳ سال تحت آندوسکوپی پایش قرار گیرند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> گاستریت نوع B شایع‌ترین نوع گاستریت مزمن است و با H. pylori مرتبط است.</div>
+</article>
+
+<!-- 88 -->
+<article class="card">
+  <span class="badge">اسلاید ۸۸</span>
+  <h2>لنفوم MALT</h2>
+  <ul>
+    <li>لنفوم MALT (لنفوم سلول B).</li>
+    <li>H. pylori.</li>
+    <li>تومور باید ابتدا با CT اسکن شکم و EUS مرحله‌بندی شود.</li>
+    <li>ریشه‌کنی اغلب با پسرفت کامل تومور همراه است.</li>
+    <li>پس از آن EUS هر ۲–۳ ماه.</li>
+    <li>اگر تومور پایدار یا در حال کاهش اندازه باشد، هیچ درمان دیگری لازم نیست (فقط ریشه‌کنی H. pylori).</li>
+    <li>اگر تومور رشد کند → لنفوم تهاجمی با درجه بالا (شیمی‌درمانی / جراحی).</li>
+    <li>ممکن است بیش از یک سال طول بکشد تا تومور پس از درمان عفونت پسرفت کند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> ریشه‌کنی H. pylori می‌تواند به پسرفت کامل لنفوم MALT منجر شود.</div>
+</article>
+
+<!-- 89 -->
+<article class="card">
+  <span class="badge">اسلاید ۸۹</span>
+  <h2>گاستریت لنفوسیتی</h2>
+  <ul>
+    <li>نفوذ لنفوسیت‌ها. سلول‌های T بالغ و پلاسماسیت‌ها.</li>
+    <li>تنه معده.</li>
+    <li>اسپرو سلیاک.</li>
+    <li>چین‌های ضخیم‌شده در آندوسکوپی.</li>
+    <li>ندول‌های کوچک حاوی فرورفتگی مرکزی یا فرسایش.</li>
+    <li>گاستریت واریولیفرم.</li>
+    <li>H. pylori احتمالاً نقش مهمی در گاستریت لنفوسیتی ندارد.</li>
+    <li>درمان با گلوکوکورتیکوئیدها یا سدیم کروموگلیکات نتایج نامشخصی داشته است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> گاستریت لنفوسیتی با اسپرو سلیاک مرتبط است و H. pylori نقش مهمی ندارد.</div>
+</article>
+
+<!-- 90 -->
+<article class="card">
+  <span class="badge">اسلاید ۹۰</span>
+  <h2>گاستریت ائوزینوفیلیک</h2>
+  <ul>
+    <li>نفوذ ائوزینوفیلیک مشخص درگیرکننده هر لایه معده (مخاط، عضله صاف و سروزا).</li>
+    <li>آلرژی سیستمیک.</li>
+    <li>درگیری ممکن است از بیماری ایزوله معده تا گاستروانتریت ائوزینوفیلیک منتشر متغیر باشد.</li>
+    <li>درگیری آنترال غالب است.</li>
+    <li>چین‌های ادماتوز در آندوسکوپی ⟹ انسداد خروجی.</li>
+    <li>بیماران می‌توانند با ناراحتی اپی‌گاستر، تهوع و استفراغ مراجعه کنند.</li>
+    <li>درمان با گلوکوکورتیکوئیدها موفق بوده است.</li>
+  </ul>
+</article>
+
+<!-- 91 -->
+<article class="card">
+  <span class="badge">اسلاید ۹۱</span>
+  <h2>گاستریت گرانولوماتوز و اجسام راسل</h2>
+  <ul>
+    <li>گاستریت گرانولوماتوز: بیماری کرون؛ هیستوپلاسموز، کاندیدیازیس، سیفلیس و سل؛ سارکوئیدوز.</li>
+    <li>تشخیص: نیازمند آندوسکوپی تکراری با بیوپسی و سیتولوژی.</li>
+    <li>گاهی بیوپسی کامل دیواره معده به‌صورت جراحی.</li>
+    <li>گاستریت اجسام راسل <span class="en">(RBG)</span>: پلاسماسل‌های متعدد حاوی اجسام راسل (RBs) که زنجیره‌های سبک کاپا و لامبدا بیان می‌کنند.</li>
+    <li>عفونت H. pylori.</li>
+    <li>ضایعه می‌تواند با فرایند نئوپلاستیک اشتباه شود، اما ماهیت خوش‌خیم دارد و تاریخ طبیعی ضایعه ناشناخته است.</li>
+    <li>انتروکولیت و گاستریت ناشی از مهارکننده‌های نقطه کنترل ایمنی: در اواخر دوره درمان رخ می‌دهد.</li>
+    <li>گلوکوکورتیکوئیدها و به‌طور بالقوه مسدودکننده‌های گیرنده IL-6 لازم خواهند بود.</li>
+    <li>این عارضه جانبی بر درمان انکولوژیک تجویزشده تأثیر خواهد گذاشت.</li>
+  </ul>
+</article>
+
+<!-- 92 -->
+<article class="card">
+  <span class="badge">اسلاید ۹۲</span>
+  <h2>بیماری منترییر <span class="en">(Ménétrier’s disease)</span></h2>
+  <ul>
+    <li>گاستروپاتی.</li>
+    <li>چین‌های بزرگ و پرپیچ‌وتاب مخاط. تنه و فوندوس.</li>
+    <li>۴۰–۶۰ سال.</li>
+    <li>مرد.</li>
+    <li>چین‌های بزرگ معده شامل ZES، بدخیمی (لنفوم، کارسینوم نفوذی)، علل عفونی (CMV، هیستوپلاسموز، سیفلیس، سل)، گاستریت پولیپوزا پروفوندا و اختلالات نفوذی مانند سارکوئیدوز. پولیپ‌های بزرگ یا متعدد معده (مصرف طولانی‌مدت PPI) یا سندرم‌های پولیپوز خانوادگی.</li>
+    <li>هیپرپلازی عظیم فووولار (هیپرپلازی سلول‌های مخاطی سطحی و غددی). کاهش مشخص در غدد اکسی‌نتیک و سلول‌های پاریتال و سلول‌های اصلی مشاهده می‌شود.</li>
+    <li>غدد معده کشیده می‌شوند و ممکن است به‌شدت متسع و پرپیچ‌وتاب شوند. علت در کودکان اغلب CMV است. علت در بزرگسالان ناشناخته است. بیان بیش‌ازحد فاکتور رشد TGF-α، گیرنده فاکتور رشد اپیدرمی <span class="en">(EGFR)</span> ⟹ هیپرپلازی فووولار.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> بیماری منترییر با هیپرپلازی فووولار و افزایش بیان EGFR مشخص می‌شود.</div>
+</article>
+
+<!-- 93 -->
+<article class="card">
+  <span class="badge">اسلاید ۹۳</span>
+  <h2>منترییر — تظاهرات و تشخیص</h2>
+  <ul>
+    <li>درد اپی‌گاستر، تهوع، استفراغ، بی‌اشتهایی، ادم محیطی و کاهش وزن.</li>
+    <li>خونریزی گوارشی مخفی ممکن است رخ دهد، اما خونریزی آشکار غیرمعمول است.</li>
+    <li>بیست تا ۱۰۰٪ بیماران (بسته به زمان مراجعه) دچار گاستروپاتی از دست‌دهنده پروتئین به‌دلیل هیپرسکرسیون موکوس معده همراه با هیپوآلبومینمی و ادم می‌شوند.</li>
+    <li>ترشح اسید معده معمولاً به‌دلیل کاهش سلول‌های پاریتال کاهش‌یافته یا غایب است.</li>
+    <li>چین‌های بزرگ معده به‌راحتی با روش‌های رادیوگرافیک (باریم میل) یا آندوسکوپیک قابل تشخیص هستند.</li>
+    <li>تشخیص: آندوسکوپی با بیوپسی عمیق مخاط (تمام ضخامت با تکنیک اسنر).</li>
+    <li>MD توسط برخی پیش‌بدخیم در نظر گرفته می‌شود، خطر پیشرفت نئوپلاستیک تعریف نشده است.</li>
+    <li>CBC، گاسترین سرم، آلبومین سرم، سروولوژی CMV و H. pylori و تست pH آسپیره معده در طول آندوسکوپی باید بخشی از ارزیابی اولیه بیماران با چین‌های بزرگ معده باشد.</li>
+  </ul>
+</article>
+
+<!-- 94 -->
+<article class="card">
+  <span class="badge">اسلاید ۹۴</span>
+  <h2>درمان منترییر</h2>
+  <ul>
+    <li>عوامل آنتی‌کولینرژیک، پروستاگلاندین‌ها، PPIها، پردنیزون، آنالوگ‌های سوماتوستاتین (اکت‌رئوتاید) و آنتاگونیست‌های گیرنده H2.</li>
+    <li>تحریک بیش‌ازحد EGFR → آنتی‌بادی مهارکننده EGF → ستوکسیماب (درمان خط اول).</li>
+    <li>گاسترکتومی جزئی یا تام < بیماری شدید.</li>
+    <li>با از دست دادن پایدار و قابل توجه پروتئین با وجود درمان با این عامل.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> ستوکسیماب (آنتی‌بادی ضد EGFR) در بیماری منترییر مقاوم به درمان مطرح شده است.</div>
+</article>
+
+<!-- Checklist -->
+<article class="card">
+  <span class="badge">کنترل کیفیت</span>
+  <h2>چک‌لیست کنترل کیفیت</h2>
+  <ul>
+    <li>همه ۹۴ اسلاید ترجمه و در قالب کارتی ارائه شدند.</li>
+    <li>چیدمان کاملاً راست‌به‌چپ و فارسی است.</li>
+    <li>فونت Vazirmatn با اندازه خوانا و فاصله خطوط مناسب استفاده شده است.</li>
+    <li>اسلایدهای عکس‌دار (اسلایدهای ۱، ۳۲، ۵۳ و ۷۵) با ساختار <code>aks-figure</code>/<code>aks-img</code> و کپشن فارسی آماده هستند؛ مقدار <code>src</code> توسط شما تنظیم می‌شود.</li>
+    <li>CSS عکس‌ها عیناً در استایل فایل قرار گرفت.</li>
+    <li>جدول‌های ۳۲۴-۱، ۳۲۴-۳، ۳۲۴-۶، ۳۲۴-۷، ۳۲۴-۸، ۳۲۴-۹ و ۳۲۴-۱۰ در قالب فارسی بازسازی شدند.</li>
+    <li>«توضیح تکمیلی»ها با برچسب مشخص از متن اصلی جدا شده‌اند.</li>
+    <li>موارد مشکوک مانند «هاربسون» با [نیازمند بررسی] علامت‌گذاری شدند.</li>
+    <li>مطلب پزشکی بدون منبع از خود اضافه نشده است؛ توضیحات تکمیلی ساده و آموزشی‌اند.</li>
+  </ul>
+</article>
+
+<footer class="end">
+  پایان جزوه — بیماری‌های معده | ترجمه فارسی بر پایه Harrison 2023 | چیدمان راست‌به‌چپ | فونت Vazirmatn
+</footer>
+
+</div>
+
+<!-- ===== THEME TOGGLE ===== -->
+<div class="theme-toggle">
+  <button class="theme-btn" id="themeBtn" aria-label="تغییر تم" aria-expanded="false" title="تغییر تم">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="13.5" cy="6.5" r="1.5"></circle>
+      <circle cx="17.5" cy="10.5" r="1.5"></circle>
+      <circle cx="8.5" cy="7.5" r="1.5"></circle>
+      <circle cx="6.5" cy="12.5" r="1.5"></circle>
+      <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path>
+    </svg>
+  </button>
+  <div class="theme-panel" id="themePanel" role="menu" aria-label="انتخاب تم">
+    <div class="theme-panel-title">🎨 انتخاب تم</div>
+    <button class="theme-option" data-theme="brown" role="menuitem">
+      <span class="swatch" style="background:#3b3b3b;border:1px solid #fff8f2"><i style="background:#d4a373"></i></span>
+      <span>قهوه‌ای</span>
+    </button>
+    <button class="theme-option" data-theme="softdark" role="menuitem">
+      <span class="swatch" style="background:#1E1E1C;border:1px solid #D8CBB3"><i style="background:#c9b87f"></i></span>
+      <span>دارک ملایم</span>
+    </button>
+    <button class="theme-option" data-theme="alldark" role="menuitem">
+      <span class="swatch" style="background:#000000;border:1px solid #ffffff"><i style="background:#e0b64e"></i></span>
+      <span>تمام دارک</span>
+    </button>
+    <button class="theme-option" data-theme="simple" role="menuitem">
+      <span class="swatch" style="background:#ffffff;border:1px solid #000000"><i style="background:#1e40af"></i></span>
+      <span>ساده</span>
+    </button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var STORAGE_KEY = 'stomach-note-theme-v1';
+  var btn = document.getElementById('themeBtn');
+  var panel = document.getElementById('themePanel');
+  var options = panel.querySelectorAll('.theme-option');
+  var validThemes = ['brown','softdark','alldark','simple'];
+
+  function setActive(theme){
+    options.forEach(function(o){
+      o.classList.toggle('active', o.dataset.theme === theme);
+    });
+  }
+
+  try{
+    var saved = localStorage.getItem(STORAGE_KEY);
+    if (saved && validThemes.indexOf(saved) !== -1) {
+      document.body.setAttribute('data-theme', saved);
+      setActive(saved);
+    } else if (saved) {
+      localStorage.removeItem(STORAGE_KEY);
+    }
+  } catch(e){}
+
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var open = panel.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  options.forEach(function(opt){
+    opt.addEventListener('click', function(e){
+      e.stopPropagation();
+      var theme = opt.dataset.theme;
+      var current = document.body.getAttribute('data-theme');
+
+      if (current === theme) {
+        document.body.removeAttribute('data-theme');
+        setActive(null);
+        try { localStorage.removeItem(STORAGE_KEY); } catch(e2){}
+      } else {
+        document.body.setAttribute('data-theme', theme);
+        setActive(theme);
+        try { localStorage.setItem(STORAGE_KEY, theme); } catch(e2){}
+      }
+      panel.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    });
+  });
+
+  document.addEventListener('click', function(e){
+    if (!panel.contains(e.target) && !btn.contains(e.target)) {
+      panel.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    }
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') {
+      panel.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

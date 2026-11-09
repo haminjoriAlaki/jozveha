@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>جزوه فارسی — سیروز و عوارض آن (هریسون ۲۰۲۳)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  /* ===== DEFAULT (ORIGINAL DESIGN) ===== */
+  :root{
+    --accent:#0f766e; --accent-2:#14b8a6; --hero-ink:#ffffff;
+    --ink:#1f2937; --muted:#6b7280;
+    --bg:#f3f6f8; --card:#fff; --line:#e5e7eb;
+    --note-bg:#f0fdfa; --note-border:#ccfbf1; --note-color:#134e4a; --note-b-color:#0f766e;
+    --badge-bg:#e6f4f1; --badge-border:#cdeae5; --badge-color:#0f766e;
+    --ph-bg:#f8fafc; --ph-border:#cbd5e1; --ph-color:#64748b; --ph-title-color:#475569;
+    --h2-color:#0b4f4a; --h3-color:#0f766e;
+    --meta-border:#e2e8f0;
+    --table-even-bg:#f8fafc;
+  }
+
+  /* ===== THEMES ===== */
+  body[data-theme="brown"]   { --bg:#3b3b3b; --ink:#fff8f2; --accent:#d4a373; --accent-2:#e8c39e; --hero-ink:#2d1e0f; }
+  body[data-theme="softdark"]{ --bg:#1E1E1C; --ink:#D8CBB3; --accent:#c9b87f; --accent-2:#ddcfa0; --hero-ink:#1E1E1C; }
+  body[data-theme="alldark"] { --bg:#000000; --ink:#ffffff; --accent:#e0b64e; --accent-2:#f0cc70; --hero-ink:#1a1400; }
+  body[data-theme="simple"]  { --bg:#ffffff; --ink:#000000; --accent:#1e40af; --accent-2:#3b6dd8; --hero-ink:#ffffff; }
+
+  body[data-theme]{
+    --card:            color-mix(in srgb, var(--bg) 94%, var(--ink) 6%);
+    --line:            color-mix(in srgb, var(--ink) 12%, var(--bg) 88%);
+    --muted:           color-mix(in srgb, var(--ink) 60%, var(--bg) 40%);
+    --note-bg:         color-mix(in srgb, var(--accent) 8%,  var(--bg) 92%);
+    --note-border:     color-mix(in srgb, var(--accent) 25%, var(--bg) 75%);
+    --note-color:      var(--ink);
+    --note-b-color:    var(--accent);
+    --badge-bg:        color-mix(in srgb, var(--accent) 14%, var(--bg) 86%);
+    --badge-border:    color-mix(in srgb, var(--accent) 35%, var(--bg) 65%);
+    --badge-color:     var(--accent);
+    --ph-bg:           color-mix(in srgb, var(--ink) 6%,  var(--bg) 94%);
+    --ph-border:       color-mix(in srgb, var(--ink) 25%, var(--bg) 75%);
+    --ph-color:        color-mix(in srgb, var(--ink) 60%, var(--bg) 40%);
+    --ph-title-color:  var(--ink);
+    --h2-color:        color-mix(in srgb, var(--accent) 78%, var(--ink) 22%);
+    --h3-color:        color-mix(in srgb, var(--accent) 72%, var(--ink) 28%);
+    --meta-border:     color-mix(in srgb, var(--ink) 15%, var(--bg) 85%);
+    --table-even-bg:   color-mix(in srgb, var(--ink) 4%, var(--card) 96%);
+  }
+
+  body[data-theme="brown"],
+  body[data-theme="softdark"],body[data-theme="alldark"]{ color-scheme: dark; }
+  body[data-theme="simple"]{ color-scheme: light; }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Vazirmatn",system-ui,"Segoe UI",Tahoma,sans-serif;
+    line-height:1.9; direction:rtl; text-align:right;
+    transition:background-color .35s ease, color .35s ease;
+  }
+  .wrap{max-width:940px;margin:0 auto;padding:24px 16px 80px}
+  header.hero{
+    background:linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+    color:var(--hero-ink); border-radius:22px; padding:34px 30px; margin-bottom:28px;
+    box-shadow:0 14px 34px color-mix(in srgb, var(--accent) 38%, transparent);
+    transition:background .35s ease, color .35s ease, box-shadow .35s ease;
+  }
+  header.hero h1{margin:0 0 10px;font-size:26px;font-weight:800;line-height:1.6}
+  header.hero p{margin:4px 0;font-size:15px;opacity:.95}
+  header.hero .tag{
+    display:inline-block;
+    background:color-mix(in srgb, var(--hero-ink) 20%, var(--accent) 80%);
+    border:1px solid color-mix(in srgb, var(--hero-ink) 45%, var(--accent) 55%);
+    padding:3px 12px;border-radius:999px;font-size:13px;margin-top:10px;
+  }
+  .card{
+    position:relative; background:var(--card); border-radius:18px;
+    padding:32px 28px 24px; margin-bottom:22px;
+    box-shadow:0 6px 18px rgba(15,23,42,.06); border:1px solid var(--line);
+    transition:background-color .35s ease, border-color .35s ease;
+  }
+  .badge{
+    position:absolute; top:14px; left:18px; background:var(--badge-bg);
+    color:var(--badge-color); font-size:13px; font-weight:700; padding:2px 12px;
+    border-radius:999px; border:1px solid var(--badge-border);
+    transition:background-color .35s ease, color .35s ease, border-color .35s ease;
+  }
+  .card h2{
+    font-size:21px; font-weight:800; color:var(--h2-color); margin:0 0 16px;
+    padding-right:14px; border-right:5px solid var(--accent); line-height:1.6;
+    transition:color .35s ease, border-color .35s ease;
+  }
+  .card h3{font-size:17px;color:var(--h3-color);margin:18px 0 8px;font-weight:700;transition:color .35s ease}
+  ul{margin:8px 0;padding-right:24px}
+  li{margin:6px 0}
+  li::marker{color:var(--accent-2)}
+  p{margin:8px 0}
+  .en{direction:ltr;unicode-bidi:isolate;display:inline-block}
+  .note{
+    background:var(--note-bg); border:1px solid var(--note-border);
+    border-right:5px solid var(--accent-2); border-radius:12px;
+    padding:12px 16px; margin-top:18px; font-size:15px; color:var(--note-color);
+    transition:background-color .35s ease, border-color .35s ease, color .35s ease;
+  }
+  .note b{color:var(--note-b-color);font-weight:800;transition:color .35s ease}
+  .ph{
+    border:2px dashed var(--ph-border); background:var(--ph-bg); border-radius:14px;
+    padding:16px; margin-top:16px; color:var(--ph-color); font-size:14px;
+    text-align:center; line-height:1.8;
+    transition:background-color .35s ease, border-color .35s ease, color .35s ease;
+  }
+  .ph .ph-title{display:block;font-weight:700;color:var(--ph-title-color);margin-bottom:6px;transition:color .35s ease}
+  .table-scroll{overflow-x:auto;margin-top:14px;border-radius:12px}
+  table{width:100%;border-collapse:collapse;font-size:14px;min-width:600px}
+  thead th{
+    background:var(--accent); color:var(--hero-ink); padding:10px 8px;
+    border:1px solid color-mix(in srgb, var(--accent) 80%, black 20%);
+    font-weight:700; text-align:right;
+    transition:background-color .35s ease, color .35s ease, border-color .35s ease;
+  }
+  tbody td{padding:9px 8px;border:1px solid var(--line);vertical-align:top;
+    transition:border-color .35s ease, color .35s ease}
+  tbody tr:nth-child(even) td{background:var(--table-even-bg);
+    transition:background-color .35s ease}
+  .meta{
+    margin-top:16px; padding-top:10px; border-top:1px dashed var(--meta-border);
+    color:var(--muted); font-size:13.5px;
+    transition:border-color .35s ease, color .35s ease;
+  }
+  .meta span{display:block;margin:2px 0}
+  footer.end{
+    text-align:center; color:var(--muted); font-size:13.5px; padding:26px 10px 0;
+    transition:color .35s ease;
+  }
+
+  /* ===== THEME TOGGLE ===== */
+  .theme-toggle{
+    position:fixed; bottom:20px; left:20px; z-index:1000;
+    font-family:"Vazirmatn",system-ui,sans-serif;
+  }
+  .theme-btn{
+    width:56px; height:56px; border-radius:50%;
+    background:linear-gradient(135deg, var(--accent), var(--accent-2));
+    color:var(--hero-ink); border:2px solid var(--hero-ink);
+    cursor:pointer; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 6px 20px rgba(0,0,0,.28);
+    transition:transform .2s ease, box-shadow .2s ease, background .35s ease, color .35s ease, border-color .35s ease;
+  }
+  .theme-btn:hover{ transform:scale(1.07); box-shadow:0 8px 26px rgba(0,0,0,.34); }
+  .theme-btn:active{ transform:scale(.97); }
+  .theme-panel{
+    position:absolute; bottom:68px; left:0;
+    background:var(--card); border:1px solid var(--line);
+    border-radius:16px; box-shadow:0 12px 38px rgba(0,0,0,.24);
+    padding:10px; display:none; min-width:210px; max-height:70vh; overflow-y:auto;
+    color:var(--ink);
+    transition:background-color .35s ease, border-color .35s ease, color .35s ease;
+  }
+  .theme-panel.open{ display:block; animation:fadeUp .22s ease; }
+  @keyframes fadeUp{ from{opacity:0;transform:translateY(8px);} to{opacity:1;transform:translateY(0);} }
+  .theme-panel-title{
+    font-size:13px; font-weight:700; padding:4px 8px 8px; color:var(--muted);
+    border-bottom:1px solid var(--line); margin-bottom:6px;
+  }
+  .theme-option{
+    display:flex; align-items:center; gap:10px; width:100%;
+    padding:8px 10px; border:none; background:transparent; border-radius:10px;
+    cursor:pointer; font-family:inherit; font-size:14px; color:var(--ink);
+    text-align:right; transition:background-color .15s ease;
+  }
+  .theme-option:hover{ background:var(--note-bg); }
+  .theme-option.active{ background:var(--note-bg); font-weight:700; }
+  .theme-option.active::after{ content:"✓"; margin-right:auto; color:var(--accent); font-weight:800; }
+  .swatch{
+    width:26px; height:26px; border-radius:50%; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 1px 3px rgba(0,0,0,.25);
+  }
+  .swatch i{ width:10px; height:10px; border-radius:50%; display:block; }
+
+  @media print{
+    body{background:#fff}
+    .card{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid;page-break-inside:avoid}
+    header.hero{background:var(--accent) !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .table-scroll{overflow:visible}
+    table{min-width:0}
+    .theme-toggle{display:none !important}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <h1>سیروز و عوارض آن</h1>
+  <p>ترجمه فارسی جزوه — بر پایه هریسون ۲۰۲۳ <span class="en">(Harrison’s Principles of Internal Medicine, 2023)</span></p>
+  <span class="tag">جزوه مطالعه — چیدمان راست‌به‌چپ</span>
+</header>
+
+<!-- 1 -->
+<article class="card">
+  <span class="badge">اسلاید ۱</span>
+  <h2>تصویر خوشنویسی</h2>
+  <p>این اسلاید متن استخراج‌شده ندارد و فقط شامل تصویر است.</p>
+  <div class="ph"><span class="ph-title">Placeholder — تصویر اصلی اسلاید ۱</span>
+  خوشنویسی سیاه روی زمینه آبی روشن؛ متن تصویر قابل خواندن قطعی نیست <b>[نیازمند بررسی]</b></div>
+</article>
+
+<!-- 2 -->
+<article class="card">
+  <span class="badge">اسلاید ۲</span>
+  <h2>سیروز و عوارض — عنوان و منبع</h2>
+  <ul>
+    <li>سیروز و عوارض ۲۰۲۳ — هریسون <span class="en">(Harrison)</span></li>
+    <li>بهار ۱۴۰۴</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> در متن اصلی «سیبروز و گوارض» و «هاربسون» نوشته شده است؛ به‌نظر می‌رسد به‌ترتیب همان «سیروز و عوارض» و «Harrison» باشد. <b>[نیازمند بررسی]</b></div>
+</article>
+
+<!-- 3 -->
+<article class="card">
+  <span class="badge">اسلاید ۳</span>
+  <h2>سیروز و عوارض آن</h2>
+  <ul>
+    <li>سیروز یک وضعیت است که از نظر هیستوپاتولوژیک تعریف می‌شود.</li>
+    <li>در گذشته تصور می‌شد که سیروز هرگز برگشت‌پذیر نیست.</li>
+    <li>با این حال، مشخص شده است که وقتی عامل زمینه‌ای ایجادکننده سیروز حذف شود، می‌تواند به بازگشت فیبروز منجر شود.</li>
+    <li>این امر در درمان موفق هپاتیت C مزمن، هموکروماتوز و بیماری کبدی مرتبط با الکل بیشتر آشکار است.</li>
+    <li>صرف‌نظر از علت سیروز، ویژگی‌های پاتولوژیک شامل ایجاد فیبروز تا حدی است که distortions معماری با تشکیل ندول‌های بازسازنده رخ می‌دهد.</li>
+    <li>این امر به کاهش توده هپاتوسلولار و در نتیجه عملکرد و تغییر جریان خون منجر می‌شود. القای فیبروز با فعال‌سازی سلول‌های ستاره‌ای کبدی رخ می‌دهد و به تشکیل مقادیر افزایش‌یافته کلاژن و سایر اجزای ماتریکس خارج سلولی می‌انجامد.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> فیبروز کبدی در صورت حذف عامل آسیب‌زا می‌تواند بازگشت کند، اما سیروز پیشرفته معمولاً برگشت‌ناپذیر است.</div>
+</article>
+
+<!-- 4 -->
+<article class="card">
+  <span class="badge">اسلاید ۴</span>
+  <h2>مراحل فیبروز و طبقه‌بندی سیروز</h2>
+  <ul>
+    <li>فیبروز پیشرفته معمولاً شامل فیبروز پل‌زننده با ندولاریتی است که مرحله ۳ و سیروز مرحله ۴ نامیده می‌شود.</li>
+    <li>بیماران مبتلا به سیروز درجات متفاوتی از عملکرد کبد دارند.</li>
+    <li>بیمارانی که دچار آسیت، انسفالوپاتی کبدی یا خونریزی واریسی شده‌اند به‌عنوان جبران‌نشده <span class="en">(Decompensated)</span> طبقه‌بندی می‌شوند → پیوند کبد.</li>
+    <li>پرفشاری پورت → آسیت و خونریزی از واریس‌های ازوفاگوگاستریک.</li>
+    <li>از دست رفتن عملکرد هپاتوسلولار به زردی، اختلالات انعقادی و هیپوآلبومینمی منجر می‌شود و در علل انسفالوپاتی پورتوسیستمیک نقش دارد.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> سیروز جبران‌نشده با آسیت، انسفالوپاتی یا خونریزی واریسی مشخص می‌شود و اندیکاسیون پیوند کبد است.</div>
+</article>
+
+<!-- 5 -->
+<article class="card">
+  <span class="badge">اسلاید ۵</span>
+  <h2>جدول ۳۴۴-۱ — علل سیروز</h2>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>دسته</th><th>علل</th></tr></thead>
+      <tbody>
+        <tr><td>الکل</td><td>سیروز قلبی</td></tr>
+        <tr><td>هپاتیت ویروسی مزمن</td><td>هپاتیت B؛ هپاتیت C</td></tr>
+        <tr><td>بیماری کبدی متابولیک ارثی</td><td>هموکروماتوز؛ بیماری ویلسون؛ کمبود آلفا-۱ آنتی‌تریپسین؛ فیبروز کیستیک</td></tr>
+        <tr><td>سیروز صفراوی</td><td>کولانژیت صفراوی اولیه؛ کولانژیت اسکلروزان اولیه؛ کولانژیوپاتی خودایمنی</td></tr>
+        <tr><td>سایر</td><td>هپاتیت خودایمنی؛ استئاتوهپاتیت غیرالکلی؛ سیروز کریپتوژنیک</td></tr>
+      </tbody>
+    </table>
+  </div>
+</article>
+
+<!-- 6 -->
+<article class="card">
+  <span class="badge">اسلاید ۶</span>
+  <h2>سیروز مرتبط با الکل</h2>
+  <ul>
+    <li>مصرف مزمن و بیش‌ازحد الکل: کبد چرب مرتبط با الکل؛ هپاتیت الکلی؛ سیروز مرتبط با الکل.</li>
+    <li>مصرف بیش‌ازحد الکل می‌تواند به آسیب کبدی در بیماران با سایر بیماری‌های کبدی مانند هپاتیت C، هموکروماتوز و بیماری کبد چرب مرتبط با چاقی کمک کند.</li>
+    <li>مصرف مزمن الکل می‌تواند فیبروز را در غیاب التهاب و/یا نکروز همراه ایجاد کند.</li>
+    <li>فیبروز → اختلال در معماری طبیعی کبد → جایگزینی سلول‌های کبدی با ندول‌های بازسازنده.</li>
+    <li>میکروندولار <۳ میلی‌متر قطر.</li>
+    <li>قطع مصرف الکل → ندول‌های بزرگ‌تر ممکن است تشکیل شوند و به سیروز میکروندولار و ماکروندولار مختلط منجر شوند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> مصرف مزمن الکل می‌تواند حتی بدون التهاب فعال، فیبروز ایجاد کند.</div>
+</article>
+
+<!-- 7 -->
+<article class="card">
+  <span class="badge">اسلاید ۷</span>
+  <h2>پاتوژنز سیروز الکلی</h2>
+  <ul>
+    <li>اتانول عمدتاً توسط روده باریک و تا حد کمتری از طریق معده جذب می‌شود.</li>
+    <li>مصرف اتانول با افزایش برداشت اسیدهای چرب و کاهش اکسیداسیون اسیدهای چرب و ترشح لیپوپروتئین، تجمع داخل سلولی تری‌گلیسیریدها را افزایش می‌دهد.</li>
+    <li>از دست رفتن هپاتوسیت رخ می‌دهد و با افزایش تولید و رسوب کلاژن، همراه با تخریب مداوم هپاتوسیت، کبد منقبض و کوچک می‌شود.</li>
+    <li>این فرایند عموماً از سال‌ها تا دهه‌ها طول می‌کشد و نیازمند آسیب‌های مکرر است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> آسیب کبدی الکلی نیازمند مصرف مزمن و مکرر است.</div>
+</article>
+
+<!-- 8 -->
+<article class="card">
+  <span class="badge">اسلاید ۸</span>
+  <h2>ویژگی‌های بالینی سیروز الکلی</h2>
+  <ul>
+    <li>سابقه مربوط به مقدار و مدت مصرف الکل.</li>
+    <li>بیماری کبدی مرتبط با الکل: درد شکمی RUQ، تب، تهوع و استفراغ، اسهال، بی‌اشتهایی و ضعف.</li>
+    <li>عوارض خاص: آسیت، ادم، خونریزی گوارشی فوقانی، زردی یا انسفالوپاتی.</li>
+    <li>کبد و طحال ممکن است بزرگ باشند، با لبه کبد سفت و ندولار.</li>
+    <li>زردی صلبیه، اریتم کف دست، آنژیوم عنکبوتی، بزرگ‌شدن غده پاروتید، کلابینگ انگشتان، تحلیل عضلانی، ادم و آسیت.</li>
+    <li>مردان ممکن است کاهش موهای بدن و ژنیکوماستی و همچنین آتروفی بیضه داشته باشند، که ممکن است نتیجه ناهنجاری‌های هورمونی یا اثر سمی مستقیم الکل بر بیضه‌ها باشد.</li>
+    <li>در زنان با سیروز الکلی پیشرفته، بی‌نظمی قاعدگی معمولاً رخ می‌دهد، از جمله آمنوره. این تغییرات اغلب پس از قطع مصرف الکل برگشت‌پذیرند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> آنژیوم عنکبوتی و اریتم کف دست از نشانه‌های پوستی سیروز هستند.</div>
+</article>
+
+<!-- 9 -->
+<article class="card">
+  <span class="badge">اسلاید ۹</span>
+  <h2>شکل ۳۴۴-۲ — آنژیوم عنکبوتی</h2>
+  <div class="ph"><span class="ph-title">Placeholder — تصویر اصلی اسلاید ۹</span>
+  این شکل آنژیوم عنکبوتی را در بیمار با سیروز هپاتیت C نشان می‌دهد. با رهاسازی فشار مرکزی، شریانچه از مرکز پر می‌شود و به‌صورت محیطی گسترش می‌یابد <span class="en">(FIGURE 344-2)</span>.</div>
+  <div class="note"><b>توضیح تکمیلی:</b> آنژیوم عنکبوتی از نشانه‌های شایع سیروز است.</div>
+</article>
+
+<!-- 10 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۰</span>
+  <h2>شکل ۳۴۴-۱ — اریتم کف دست</h2>
+  <div class="ph"><span class="ph-title">Placeholder — تصویر اصلی اسلاید ۱۰</span>
+  این شکل اریتم کف دست را در بیمار با سیروز مرتبط با الکل نشان می‌دهد. اریتم در حاشیه کف دست با پریدگی مرکزی است <span class="en">(FIGURE 344-1)</span>.</div>
+</article>
+
+<!-- 11 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۱</span>
+  <h2>آزمایش‌های آزمایشگاهی</h2>
+  <ul>
+    <li>در بیماران با سیروز جبران‌شده اولیه ممکن است کاملاً طبیعی باشند.</li>
+    <li>پیشرفته:
+      <ul>
+        <li>کم‌خونی ناشی از خونریزی مزمن گوارشی، کمبودهای تغذیه‌ای یا هایپراسپلنیسم یا به‌عنوان اثر سرکوبگر مستقیم الکل بر مغز استخوان.</li>
+        <li>کم‌خونی همولیتیک (با سلول‌های خاردار و آکانتوسیت) به نام سندرم زیو <span class="en">(Zieve’s syndrome)</span> در هپاتیت الکلی شدید.</li>
+        <li>شمارش پلاکت اغلب در اوایل بیماری کاهش می‌یابد، که نشان‌دهنده پرفشاری پورت با هایپراسپلنیسم است.</li>
+        <li>بیلی‌روبین تام سرم می‌تواند طبیعی یا در بیماری پیشرفته بالا باشد.</li>
+        <li>PT اغلب طولانی است و معمولاً به تجویز ویتامین K تزریقی پاسخ نمی‌دهد.</li>
+        <li>سطوح سدیم سرم معمولاً طبیعی است مگر اینکه بیماران آسیت داشته باشند که می‌تواند کاهش یابد، عمدتاً به‌دلیل مصرف آب آزاد بیش‌ازحد.</li>
+        <li>ALT و AST معمولاً بالا هستند، به‌ویژه در بیمارانی که به نوشیدن ادامه می‌دهند، با سطوح AST بالاتر از ALT، معمولاً با نسبت ۲:۱.</li>
+      </ul>
+    </li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> نسبت AST/ALT بالاتر از ۲ در بیماری کبدی الکلی کلاسیک است.</div>
+</article>
+
+<!-- 12 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۲</span>
+  <h2>تشخیص</h2>
+  <ul>
+    <li>ویژگی‌های بالینی، یافته‌های معاینه فیزیکی یا آزمایشگاهی.</li>
+    <li>تشخیص، با این حال، نیازمند آگاهی دقیق از این است که بیمار به مصرف الکل ادامه می‌دهد یا اخیراً قطع کرده است.</li>
+    <li>بیوپسی کبد.</li>
+    <li>معمولاً انجام نمی‌شود مگر اینکه شک به تشخیص جایگزین وجود داشته باشد.</li>
+    <li>در بیمارانی که عوارض سیروز داشته‌اند و به نوشیدن ادامه می‌دهند، بقای ۵ ساله <۵۰٪ است.</li>
+    <li>برخی افراد که پرهیز می‌کنند بهبود نمی‌یابند و پیوند کبد یک گزینه قابل دوام است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> پرهیز از الکل مهم‌ترین عامل پیش‌آگهی در سیروز الکلی است.</div>
+</article>
+
+<!-- 13 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۳</span>
+  <h2>درمان سیروز الکلی</h2>
+  <ul>
+    <li>پرهیز از الکل.</li>
+    <li>تغذیه خوب و نظارت پزشکی طولانی‌مدت برای مدیریت عوارض زمینه‌ای که ممکن است ایجاد شود.</li>
+    <li>پیوند کبد می‌تواند یک درمان طولانی‌مدت مؤثر باشد.</li>
+    <li>گلوکوکورتیکوئیدها گاهی در بیماران با هپاتیت الکلی شدید در غیاب عفونت استفاده می‌شوند.</li>
+    <li>مقدار DF (نسبت) >۳۲.</li>
+    <li>عدم بهبود بیلی‌روبین تام پس از ۷ روز، شکست درمان را پیش‌بینی می‌کند و گلوکوکورتیکوئیدها می‌توانند قطع شوند؛ در غیر این صورت، برای ۲۸ روز ادامه می‌یابند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> DF یا Maddrey Discriminant Function در انتخاب بیمار برای کورتیکواستروئید استفاده می‌شود.</div>
+</article>
+
+<!-- 14 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۴</span>
+  <h2>درمان سیروز الکلی — ادامه</h2>
+  <ul>
+    <li>شواهد محدودی وجود دارد که N-استیل‌سیستئین وریدی به‌همراه گلوکوکورتیکوئیدها ممکن است در هپاتیت الکلی در صورت DF >۳۲ مزیت بقا داشته باشد.</li>
+    <li>پنتوکسی‌فیلین خوراکی، مهارکننده‌های TNF-α که به‌صورت تزریقی تجویز می‌شوند مانند اینفلیکسیماب یا اتانرسپت، استروئیدهای آنابولیک، پروپیل‌تیوراسیل، آنتی‌اکسیدان‌ها، کلشی‌سین و پنی‌سیلامین مزایای واضحی نشان نداده‌اند و توصیه نمی‌شوند.</li>
+    <li>مصرف >۲۱٫۵ کیلوکالری بر کیلوگرم وزن بدن در روز با بقای بهتر همراه است، بنابراین دستیابی به دریافت کالری بیشتر توصیه می‌شود.</li>
+    <li>بیماران با ساختار حمایتی اجتماعی خوب که سایر درمان‌های هپاتیت الکلی را شکست داده‌اند، پیوند کبد زودهنگام می‌تواند یک درمان مؤثر باشد.</li>
+    <li>سنگ بنای درمان، قطع مصرف الکل است.</li>
+    <li>کاهش ولع الکل → آکامپروسات کلسیم و باکلوفن.</li>
+    <li>مصرف استامینوفن در بیماران با بیماری کبدی اغلب توصیه نمی‌شود.</li>
+    <li><۲ گرم استامینوفن در روز → مشکل‌ساز نیست مگر در مصرف فعال الکل.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> قطع الکل مهم‌ترین مداخله است؛ داروهای کمکی برای کاهش ولع مطرح‌اند.</div>
+</article>
+
+<!-- 15 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۵</span>
+  <h2>سیروز ناشی از هپاتیت ویروسی مزمن C</h2>
+  <ul>
+    <li>هپاتیت C مزمن ۸۰٪.</li>
+    <li>سیروز ~۲۰–۳۰٪ در طی ۲۰–۳۰ سال.</li>
+    <li>آسیب کبدی احتمالاً با واسطه ایمنی است.</li>
+    <li>کبد کوچک و منقبض با ویژگی‌های مشخصه سیروز میکرو و ماکروندولار مختلط.</li>
+    <li>در بیماران با ژنوتیپ ۳ HCV، استئاتوز اغلب وجود دارد.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> سیروز ناشی از HCV در ۲۰–۳۰٪ بیماران در طی چند دهه ایجاد می‌شود.</div>
+</article>
+
+<!-- 16 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۶</span>
+  <h2>سیروز ناشی از هپاتیت ویروسی مزمن B</h2>
+  <ul>
+    <li>هپاتیت B مزمن ~۵٪ و ~۲۰٪ از این بیماران به سیروز مبتلا خواهند شد.</li>
+    <li>ویژگی‌های بالینی و تشخیص هپاتیت ویروسی مزمن: خستگی، ضعف، درد RUQ و ناهنجاری‌های آزمایشگاهی.</li>
+    <li>تشخیص نیازمند ارزیابی کامل آزمایشگاهی، شامل آزمایش کمی HCV RNA و تحلیل ژنوتیپ HCV، یا سروولوژی هپاتیت B شامل HBsAg، anti-HBs، HBeAg (آنتی‌ژن e هپاتیت B)، anti-HBe و سطوح کمی HBV DNA است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> تشخیص هپاتیت B و C مزمن به سروولوژی و آزمایش‌های مولکولی نیاز دارد.</div>
+</article>
+
+<!-- 17 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۷</span>
+  <h2>درمان سیروز ناشی از هپاتیت B یا C</h2>
+  <ul>
+    <li>HBV: درمان ضدویروسی → سرکوب ویروس، کاهش سطوح آمینوترانسفراز و HBV DNA و بهبود هیستولوژی با کاهش التهاب و فیبروز.</li>
+    <li>جبران‌نشده → جبران‌شده.</li>
+    <li>لامیوودین، آدفوویر، تلبیوودین، انتکاویر و تنوفوویر → کاهش خطر مقاومت ویروسی.</li>
+    <li>اینترفرون α نیز می‌تواند برای درمان هپاتیت B استفاده شود، اما در سیروز نباید به‌کار رود.</li>
+    <li>HCV: رژیم‌های ضدویروسی مستقیم <span class="en">(DAA)</span> که بسیار موفق (>۹۵٪ نرخ درمان)، خوب تحمل‌شده و معمولاً کوتاه‌مدت (۸–۱۲ هفته) هستند، اما گران‌قیمت‌اند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> DAAها درمان هپاتیت C را متحول کرده‌اند، اما هزینه بالای آنها محدودیت اصلی است.</div>
+</article>
+
+<!-- 18 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۸</span>
+  <h2>سیروز ناشی از هپاتیت خودایمنی</h2>
+  <ul>
+    <li>بسیاری از بیماران با AIH با سیروزی مراجعه می‌کنند که قبلاً استقرار یافته است. به‌طور معمول، این بیماران از درمان سرکوبگر ایمنی با گلوکوکورتیکوئیدها یا آزاتیوپرین سود نمی‌برند زیرا AIH «سوخته» <span class="en">(Burned out)</span> است.</li>
+    <li>در این شرایط، بیوپسی کبد نفوذ التهابی قابل توجهی نشان نمی‌دهد. تشخیص در این زمینه نیازمند نشانگرهای خودایمنی مثبت مانند آنتی‌بادی ضد هسته <span class="en">(ANA)</span> یا آنتی‌بادی ضد عضله صاف <span class="en">(ASMA)</span> است.</li>
+    <li>وقتی بیماران با AIH با سیروز و التهاب فعال همراه با آنزیم‌های کبدی بالا مراجعه می‌کنند، درمان سرکوبگر ایمنی می‌تواند سود قابل‌توجهی داشته باشد.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> در AIH «سوخته»، التهاب فعال نیست و سرکوب ایمنی سودی ندارد.</div>
+</article>
+
+<!-- 19 -->
+<article class="card">
+  <span class="badge">اسلاید ۱۹</span>
+  <h2>بیماری کبد چرب غیرالکلی</h2>
+  <ul>
+    <li>زیرگروه قابل توجهی استئاتوهپاتیت غیرالکلی <span class="en">(NASH)</span> دارند و می‌توانند به فیبروز افزایش‌یافته و سیروز پیشرفت کنند.</li>
+    <li>در چند سال گذشته، به‌طور فزاینده‌ای شناخته شده است که بسیاری از بیمارانی که تصور می‌شد سیروز کریپتوژنیک دارند، در واقع استئاتوهپاتیت غیرالکلی دارند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> بسیاری از سیروزهای کریپتوژنیک در واقع NASH هستند.</div>
+</article>
+
+<!-- 20 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۰</span>
+  <h2>سیروز صفراوی</h2>
+  <ul>
+    <li>داخل کبدی و خارج کبدی.</li>
+    <li>انسداد خارج کبدی ممکن است از رفع فشار جراحی یا آندوسکوپیک مجاری صفراوی سود ببرد.</li>
+    <li>سندرم‌های کلستاتیک مزمن شامل کولانژیت صفراوی اولیه <span class="en">(PBC)</span>، کولانژیت خودایمنی <span class="en">(AIC)</span>، کولانژیت اسکلروزان اولیه <span class="en">(PSC)</span> و داکتوپنی ایدیوپاتیک بزرگسالان است.</li>
+    <li>این سندرم‌ها معمولاً از نظر بالینی با آزمایش آنتی‌بادی، یافته‌های کلانژیوگرافیک و تظاهر بالینی از یکدیگر متمایز می‌شوند.</li>
+    <li>همه آنها ویژگی‌های هیستوپاتولوژیک کلستاز مزمن را دارند، مانند رکود کولات؛ رسوب مس؛ تبدیل گزانتوماتوز هپاتوسیت‌ها؛ و فیبروز صفراوی نامنظم. علاوه بر این، ممکن است التهاب پورت مزمن، فعالیت اینترفیس و التهاب لوبولار مزمن وجود داشته باشد.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> PBC، PSC و AIC سه سندرم کلستاتیک مزمن اصلی هستند.</div>
+</article>
+
+<!-- 21 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۱</span>
+  <h2>کولانژیت صفراوی اولیه <span class="en">(PBC)</span></h2>
+  <ul>
+    <li>زن.</li>
+    <li>میانه سن ~۵۰ سال در زمان تشخیص.</li>
+    <li>علت PBC ناشناخته است.</li>
+    <li>التهاب پورت و نکروز کولانژیوسیت‌ها در مجاری صفراوی کوچک و متوسط.</li>
+    <li>پیوند کبد درمان انتخابی برای بیماران با سیروز جبران‌نشده ناشی از PBC است.</li>
+    <li>UDCA درمان خط اول → کاهش سرعت پیشرفت بیماری.</li>
+    <li>آنتی‌بادی‌های ضد میتوکندری <span class="en">(AMAs)</span> در ~۹۵٪ بیماران با PBC وجود دارند.</li>
+    <li>این خودآنتی‌بادی‌ها بیماری‌زا نیستند، بلکه نشانگرهای مفیدی برای تشخیص هستند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> AMA مثبت در ۹۵٪ بیماران با PBC یافت می‌شود.</div>
+</article>
+
+<!-- 22 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۲</span>
+  <h2>PBC — ویژگی‌های بالینی</h2>
+  <ul>
+    <li>بدون علامت.</li>
+    <li>درجه قابل‌توجهی از خستگی نامتناسب با شدت بیماری کبدی یا سن بیمار.</li>
+    <li>خارش در ~۵۰٪ بیماران در زمان تشخیص دیده می‌شود و می‌تواند ناتوان‌کننده باشد.</li>
+    <li>ممکن است متناوب باشد و معمولاً عصرها آزاردهنده‌تر است.</li>
+    <li>خارشی که قبل از ایجاد زردی ظاهر شود نشان‌دهنده بیماری شدید و پیش‌آگهی ضعیف است.</li>
+    <li>معاینه فیزیکی: زردی، هپاتومگالی، اسپلنومگالی، آسیت و ادم.</li>
+    <li>ویژه PBC شامل هیپرپیگمانتاسیون (تنه و بازو)، زانته‌لاسما و زانتوما است که با متابولیسم کلسترول تغییر‌یافته مرتبط‌اند.</li>
+    <li>درد استخوان ناشی از استئوپنی یا استئوپروز گاهی در زمان تشخیص دیده می‌شود.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> خستگی و خارش از علائم شایع و آزاردهنده PBC هستند.</div>
+</article>
+
+<!-- 23 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۳</span>
+  <h2>PBC — یافته‌های آزمایشگاهی</h2>
+  <ul>
+    <li>آنزیم کبدی کلستاتیک → افزایش γGT و ALP.</li>
+    <li>افزایش خفیف ALT و AST.</li>
+    <li>ایمونوگلوبولین‌ها (IgM) → افزایش.</li>
+    <li>هیپربیلی‌روبینمی.</li>
+    <li>ترومبوسیتوپنی، لکوپنی و کم‌خونی ممکن است در بیماران با پرفشاری پورت و هایپراسپلنیسم دیده شوند.</li>
+    <li>تا ۱۰٪ بیماران با PBC مشخصه‌های AIH را نیز دارند (هپاتیت اینترفیس متوسط تا شدید در بیوپسی، ALT بالا >۵ برابر حد بالای نرمال و سطوح IgG بالا) و به‌عنوان داشتن سندرم «همپوشانی» تعریف می‌شوند.</li>
+    <li>این بیماران معمولاً به‌عنوان بیماران PBC درمان می‌شوند و ممکن است با همان فراوانی PBC تیپیک به سیروز پیشرفت کنند. برخی بیماران به داروهای سرکوبگر ایمنی نیز نیاز دارند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> سندرم همپوشانی PBC-AIH در ۱۰٪ بیماران PBC دیده می‌شود.</div>
+</article>
+
+<!-- 24 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۴</span>
+  <h2>PBC — تشخیص</h2>
+  <ul>
+    <li>باید در بیماران با ناهنجاری‌های مزمن آنزیم کبدی کلستاتیک در نظر گرفته شود.</li>
+    <li>آزمایش AMA ممکن است در ۵–۱۰٪ بیماران با PBC منفی باشد. این بیماران معمولاً برای سایر خودآنتی‌بادی‌های اختصاصی PBC شامل sp100 یا gp210 مثبت هستند، اگرچه این آزمایش‌ها به‌طور جهانی در دسترس نیستند.</li>
+    <li>بیوپسی کبد در این شرایط PBC با AMA منفی بسیار مهم است.</li>
+    <li>در بیماران AMA منفی با آنزیم‌های کبدی کلستاتیک، PSC باید با کلانژیوگرافی رد شود.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> در PBC با AMA منفی، بیوپسی کبد و رد PSC ضروری است.</div>
+</article>
+
+<!-- 25 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۵</span>
+  <h2>PBC — درمان</h2>
+  <ul>
+    <li>UDCA (شروع زودهنگام) نشان داده شده که ویژگی‌های بیوشیمیایی و هیستولوژیک بیماری را بهبود می‌بخشد و بنابراین سرعت پیشرفت را کاهش می‌دهد اما بیماری را معکوس یا درمان نمی‌کند.</li>
+    <li>UDCA با دوز ۱۳–۱۵ میلی‌گرم بر کیلوگرم در روز داده می‌شود.</li>
+    <li>اسهال یا سردرد به‌عنوان عارضه جانبی دارو.</li>
+    <li>اسید اوبتیکولیک.</li>
+    <li>درمان خستگی، اما هیچ‌کدام موفق نبوده‌اند.</li>
+    <li>خارش با آنتی‌هیستامین‌ها، آنتاگونیست‌های گیرنده نارکوتیک (نالترکسون) و ریفامپین درمان می‌شود. کولستیرامین.</li>
+    <li>پلاسمافرزیس به‌ندرت در بیماران با خارش شدید و مقاوم استفاده شده است.</li>
+    <li>استئوپنی و استئوپروز → کلسیم و ویتامین D خوراکی / بیس‌فسفونات.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> UDCA درمان استاندارد PBC است و سرعت پیشرفت را کاهش می‌دهد.</div>
+</article>
+
+<!-- 26 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۶</span>
+  <h2>کولانژیت اسکلروزان اولیه <span class="en">(PSC)</span></h2>
+  <ul>
+    <li>علت PSC ناشناخته باقی مانده است.</li>
+    <li>سندرم کلستاتیک مزمن → التهاب منتشر و فیبروز درگیرکننده کل درخت صفراوی.</li>
+    <li>درخت صفراوی داخل و خارج کبدی، که به سیروز صفراوی، پرفشاری پورت و نارسایی کبدی منجر می‌شود.</li>
+    <li>تغییرات بیوپسی کبد در PSC پاتوگنومونیک نیست.</li>
+    <li>داکتوپنی و کولانژیت فیبروز (پری‌کولانژیت). فیبروز پری‌داکتال.</li>
+    <li>ویژگی‌های بالینی: خستگی، خارش، استئاتوره، کمبود ویتامین‌های محلول در چربی.</li>
+    <li>مانند PBC، خستگی عمیق و غیراختصاصی است.</li>
+    <li>خارش اغلب می‌تواند ناتوان‌کننده باشد و با کلستاز مرتبط است. شدت خارش با شدت بیماری همبستگی ندارد.</li>
+    <li>بیماری استخوانی متابولیک.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> PSC با التهاب و فیبروز تمام درخت صفراوی مشخص می‌شود.</div>
+</article>
+
+<!-- 27 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۷</span>
+  <h2>PSC — یافته‌های آزمایشگاهی</h2>
+  <ul>
+    <li>حداقل افزایش دوبرابری ALP.</li>
+    <li>آمینوترانسفرازها ممکن است بالا باشند.</li>
+    <li>سطوح آلبومین ممکن است کاهش یابد.</li>
+    <li>PT → طولانی (اصلاح با ویتامین K تزریقی).</li>
+    <li>افزایش آمینوترانسفرازها >۵ برابر ULN و ممکن است ویژگی‌های AIH در بیوپسی داشته باشند: سندرم همپوشانی بین PSC و AIH.</li>
+    <li>خودآنتی‌بادی‌ها در بیماران با سندرم همپوشانی مکرراً مثبت‌اند اما در بیمارانی که فقط PSC دارند معمولاً منفی‌اند.</li>
+    <li>pANCA در ~۶۵٪ بیماران با PSC مثبت است.</li>
+    <li>شصت تا هشتاد درصد بیماران با PSC بیماری التهابی روده، عمدتاً کولیت اولسراتیو <span class="en">(UC)</span> دارند؛ بنابراین، کولونوسکوپی در زمان تشخیص توصیه می‌شود.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> ارتباط PSC با IBD (به‌ویژه UC) قوی است و کولونوسکوپی در تشخیص توصیه می‌شود.</div>
+</article>
+
+<!-- 28 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۸</span>
+  <h2>PSC — تشخیص</h2>
+  <ul>
+    <li>MRCP → انتخاب برای ارزیابی اولیه.</li>
+    <li>ERCP باید انجام شود اگر MRCP تصاویر زیربهینه ارائه داده باشد یا شواهد بالینی (بیلی‌روبین تام تازه بالا رفته یا خارش بدترشده) یا MRCP از تنگی غالب وجود داشته باشد.</li>
+    <li>تنگ‌شدن مولتی‌فوکال و ظاهر مهره‌مهره‌ای درگیرکننده درخت صفراوی داخل و خارج کبدی.</li>
+    <li>این تنگی‌ها معمولاً کوتاه و با بخش‌های بینابینی از مجاری صفراوی نرمال یا کمی متسع هستند که به‌طور منتشر توزیع شده‌اند و ظاهر کلاسیک مهره‌مهره‌ای ایجاد می‌کنند.</li>
+    <li>کیسه صفرا و مجرای سیستیک می‌توانند در تا ۱۵٪ موارد درگیر شوند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> MRCP روش ارزیابی اولیه PSC است.</div>
+</article>
+
+<!-- 29 -->
+<article class="card">
+  <span class="badge">اسلاید ۲۹</span>
+  <h2>PSC — درمان</h2>
+  <ul>
+    <li>هیچ درمان اثبات‌شده اختصاصی برای PSC وجود ندارد. برخی پزشکان UDCA با «دوزهای PBC» ۱۳–۱۵ میلی‌گرم بر کیلوگرم در روز با بهبود حکایتی استفاده می‌کنند، اگرچه هیچ مطالعه‌ای شواهد قانع‌کننده‌ای از سود بالینی نشان نداده است.</li>
+    <li>یک مطالعه UDCA با دوز بالا (۲۸–۳۰ میلی‌گرم بر کیلوگرم در روز) آن را مضر یافت.</li>
+    <li>دیلاتاسیون آندوسکوپیک < تنگی‌های غالب.</li>
+    <li>پیوند کبد < سیروز جبران‌نشده.</li>
+    <li>کولانژیت → آنتی‌بیوتیک.</li>
+    <li>عارضه PSC → کلانژیوکارسینوم → منع نسبی برای پیوند کبد.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> UDCA با دوز بالا در PSC مضر است.</div>
+</article>
+
+<!-- 30 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۰</span>
+  <h2>سیروز قلبی</h2>
+  <ul>
+    <li>نارسایی قلبی احتقانی راست‌طرفه طولانی‌مدت → آسیب کبدی مزمن و سیروز قلبی.</li>
+    <li>فشار وریدی بالا از طریق IVC و وریدهای کبدی به سینوزوئیدهای کبد منتقل می‌شود که متسع و پر از خون می‌شوند.</li>
+    <li>کبد بزرگ و متورم می‌شود و با احتقان غیرفعال طولانی‌مدت و ایسکمی نسبی ناشی از گردش خون ضعیف، هپاتوسیت‌های سنتریلوبولار می‌توانند نکروز شوند و به فیبروز پری‌سنترال منجر شوند → به محیط لوبول گسترش می‌یابد → سیروز.</li>
+    <li>کبد بزرگ و سفت.</li>
+    <li>سطوح ALP به‌طور مشخص بالا هستند و آمینوترانسفرازها ممکن است نرمال یا کمی افزایش یافته باشند، با AST معمولاً بالاتر از ALT. بعید است که بیماران دچار خونریزی واریسی یا انسفالوپاتی شوند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> در سیروز قلبی، خونریزی واریسی و انسفالوپاتی نادرند.</div>
+</article>
+
+<!-- 31 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۱</span>
+  <h2>تشخیص سیروز قلبی</h2>
+  <ul>
+    <li>تمایز از سندرم باد-کیاری <span class="en">(BCS)</span> با دیدن خروج گلبول‌های قرمز در BCS، اما نه در هپاتوپاتی قلبی، انجام می‌شود.</li>
+    <li>بیماری ورید انسدادی (سندرم انسدادی سینوزوئیدی).</li>
+    <li>همچنین می‌تواند بر خروج کبدی تأثیر بگذارد و ویژگی‌های مشخصه در بیوپسی کبد دارد.</li>
+    <li>پیوند مغز استخوان با تشعشع و شیمی‌درمانی.</li>
+    <li>مصرف برخی چای‌های گیاهی و همچنین آلکالوئیدهای پیرولیزیدین.</li>
+    <li>درمان: مدیریت بیماری قلبی زمینه‌ای.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> درمان سیروز قلبی بر مدیریت نارسایی قلبی زمینه‌ای استوار است.</div>
+</article>
+
+<!-- 32 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۲</span>
+  <h2>سایر انواع سیروز</h2>
+  <ul>
+    <li>هموکروماتوز، بیماری ویلسون، کمبود آلفا-۱ آنتی‌تریپسین (α1 AT) و فیبروز کیستیک.</li>
+    <li>هموکروماتوز یک اختلال ارثی متابولیسم آهن است که به افزایش پیشرونده رسوب آهن کبدی منجر می‌شود → فیبروز → سیروز → نارسایی کبدی → HCC. اشباع بالای ترانسفرین و سطح بالای فریتین، همراه با ناهنجاری‌های شناسایی‌شده توسط تحلیل جهش HFE.</li>
+    <li>درمان: فلبوتومی.</li>
+    <li>بیماری ویلسون یک اختلال ارثی هموستاز مس است → منجر به تجمع در کبد می‌شود.</li>
+    <li>نوجوانان و بزرگسالان جوان.</li>
+    <li>سطوح سرولوپلاسمین → پایین؛ مس ادرار ۲۴ ساعته → بالا؛ حلقه‌های قرنیه کایزر-فلایشر.</li>
+    <li>درمان → داروهای کلات‌کننده مس.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> هموکروماتوز و بیماری ویلسون اختلالات متابولیک ارثی هستند که می‌توانند به سیروز منجر شوند.</div>
+</article>
+
+<!-- 33 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۳</span>
+  <h2>کمبود آلفا-۱ آنتی‌تریپسین و فیبروز کیستیک</h2>
+  <ul>
+    <li>کمبود α1 AT: اختلال ارثی ناتوانی در ترشح پروتئین از کبد. چگونگی منجر شدن پروتئین باقی‌مانده به بیماری کبدی → ناشناخته.</li>
+    <li>بیماری کبدی مزمن → فنوتیپ ZZ.</li>
+    <li>تشخیص → تعیین سطوح α1 AT و فنوتیپ.</li>
+    <li>گلوبول‌های مثبت PAS <span class="en">(Periodic acid–Schiff)</span> و مقاوم به دیاستاز مشخصه.</li>
+    <li>پیوند کبد.</li>
+    <li>فیبروز کیستیک یک اختلال ارثی غیرشایع است که سفیدپوستان شمال اروپا را درگیر می‌کند. سیروز نوع صفراوی می‌تواند رخ دهد و برخی بیماران از استفاده مزمن UDCA سود می‌برند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> در کمبود α1 AT، گلوبول‌های PAS مثبت در بیوپسی کبد دیده می‌شوند.</div>
+</article>
+
+<!-- 34 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۴</span>
+  <h2>عوارض عمده سیروز</h2>
+  <ul>
+    <li>این موارد شامل خونریزی واریس ازوفاگوگاستریک، اسپلنومگالی، آسیت، انسفالوپاتی کبدی، پریتونیت باکتریایی خودبه‌خودی <span class="en">(SBP)</span>، سندرم کبدی-کلیوی <span class="en">(HRS)</span> و کارسینوم هپاتوسلولار است.</li>
+    <li>همچنین عوارض نادرتر در سیستم ریوی شامل سندرم هپاتوپولمونری و پرفشاری پورت-ریوی وجود دارد.</li>
+    <li>جدول ۳۴۴-۲ عوارض سیروز: پرفشاری پورت، اختلال انعقادی، واریس‌های ازوفاگوگاستریک، کمبود فاکتور، گاستروپاتی پرفشاری پورت، فیبرینولیز، اسپلنومگالی، هایپراسپلنیسم، ترومبوسیتوپنی، آسیت، بیماری استخوان، پریتونیت باکتریایی خودبه‌خودی، استئوپنی، سندرم کبدی-کلیوی، استئوپروز، نوع ۱، استئومالاسی، نوع ۲، ناهنجاری‌های خون‌شناختی، انسفالوپاتی کبدی، کم‌خونی، سندرم هپاتوپولمونری، همولیز، پرفشاری پورت-ریوی، ترومبوسیتوپنی، سوءتغذیه، نوتروپنی.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> عوارض سیروز می‌توانند تقریباً هر سیستم بدن را درگیر کنند.</div>
+</article>
+
+<!-- 35 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۵</span>
+  <h2>پرفشاری پورت</h2>
+  <ul>
+    <li>افزایش گرادیان فشار وریدی کبدی <span class="en">(HVPG)</span> به >۵ میلی‌متر جیوه.</li>
+    <li>(۱) افزایش مقاومت داخل کبدی در برابر عبور جریان خون از کبد به‌دلیل سیروز، ندول‌های بازسازنده و میکروترومبی.</li>
+    <li>(۲) افزایش جریان خون اسپلانکنیک ثانویه به وازودیلاتاسیون در بستر عروقی اسپلانکنیک.</li>
+    <li>مرحله اولیه سیروز جبران‌شده با HVPG بین ۵ و ۱۰ میلی‌متر جیوه که می‌تواند بدون علامت باشد.</li>
+    <li>پرفشاری پورت قابل توجه (تعریف‌شده به‌عنوان HVPG ≥۱۰ میلی‌متر جیوه) ایجاد می‌شود، خطر قابل توجهی از جبران‌نشدگی با خونریزی واریسی، آسیت یا انسفالوپاتی کبدی وجود دارد.</li>
+    <li>سیستم ورید پورت به‌طور طبیعی خون را از بیشتر دستگاه گوارش شامل معده، روده باریک و بزرگ، طحال، پانکراس و کیسه صفرا تخلیه می‌کند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> HVPG ≥۱۰ میلی‌متر جیوه آستانه پرفشاری پورت قابل توجه است.</div>
+</article>
+
+<!-- 36 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۶</span>
+  <h2>جدول ۳۴۴-۳ — طبقه‌بندی پرفشاری پورت</h2>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>سطح</th><th>علل</th></tr></thead>
+      <tbody>
+        <tr><td>پیش‌کبدی</td><td>ترومبوز ورید پورت؛ ترومبوز ورید طحالی؛ اسپلنومگالی عظیم (سندرم بانتی)</td></tr>
+        <tr><td>کبدی — پیش‌سینوزوئیدی</td><td>شیستوزومیازیس؛ فیبروز کبدی مادرزادی</td></tr>
+        <tr><td>کبدی — سینوزوئیدی</td><td>سیروز — علل متعدد؛ هپاتیت الکلی</td></tr>
+        <tr><td>کبدی — پس‌سینوزوئیدی</td><td>انسداد سینوزوئید کبدی (سندرم ورید انسدادی)</td></tr>
+        <tr><td>پس‌کبدی</td><td>سندرم باد-کیاری؛ تورهای ورید اجوف تحتانی</td></tr>
+        <tr><td>علل قلبی</td><td>کاردیومیوپاتی محدودکننده؛ پریکاردیت کنستریکتیو؛ نارسایی قلبی احتقانی شدید</td></tr>
+      </tbody>
+    </table>
+  </div>
+</article>
+
+<!-- 37 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۷</span>
+  <h2>انسداد ورید پورت</h2>
+  <ul>
+    <li>سیروز شایع‌ترین علت پرفشاری پورت است.</li>
+    <li>انسداد ورید پورت ممکن است ایدیوپاتیک باشد یا همراه با سیروز یا با عفونت، پانکراتیت یا ترومای شکمی رخ دهد.</li>
+    <li>اختلالات انعقادی که می‌توانند به ایجاد ترومبوز ورید پورت منجر شوند شامل پلی‌سیتمی ورا؛ ترومبوسیتوز ضروری؛ کمبود پروتئین C، پروتئین S، آنتی‌ترومبین III و فاکتور V لیدن؛ و ناهنجاری‌های ژن تنظیم‌کننده تولید پروترومبین است. برخی بیماران ممکن است اختلال میلوپرولیفراتیو زیربالینی داشته باشند.</li>
+    <li>سه عارضه اولیه پرفشاری پورت: واریس‌های ازوفاگوگاستریک با خونریزی، آسیت و هایپراسپلنیسم.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> ترومبوفیلی‌ها از علل مهم ترومبوز ورید پورت هستند.</div>
+</article>
+
+<!-- 38 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۸</span>
+  <h2>واریس‌های مری</h2>
+  <ul>
+    <li>حدود یک‌سوم بیماران با سیروز تأییدشده هیستولوژیک واریس دارند.</li>
+    <li>یک‌سوم بیماران با واریس دچار خونریزی خواهند شد.</li>
+    <li>چندین عامل خطر خونریزی را پیش‌بینی می‌کنند: شدت سیروز (کلاس Child-Pugh، نمره MELD)، ارتفاع فشار ورید کبدی وج‌شده، اندازه واریس، محل واریس، استیگمای آندوسکوپیک شامل نشانه‌های قرمز شانه‌ای، نقاط هماتوسیستیک، اریتم منتشر، رنگ مایل به آبی، نقاط قرمز گیلاسی یا نقاط نوک سفید. بیماران با آسیت متشنج نیز در معرض خطر افزایش‌یافته خونریزی از واریس هستند.</li>
+    <li>تشخیص:
+      <ul>
+        <li>ترومبوسیتوپنی/ظاهر طحال بزرگ/آسیت، انسفالوپاتی و/یا واریس مری با یا بدون خونریزی = پرفشاری پورت.</li>
+        <li>در بیماران قبلاً تشخیص‌داده‌نشده، هر یک از این ویژگی‌ها باید ارزیابی بیشتر را برای تعیین وجود پرفشاری پورت و بیماری کبدی تحریک کند. واریس‌ها باید با آندوسکوپی شناسایی شوند. تصویربرداری شکمی با کنتراست، یا با CT یا MRI، می‌تواند در نشان دادن کبد ندولار و در یافتن تغییرات پرفشاری پورت با گردش خون جانبی داخل شکمی مفید باشد. به‌ندرت، HVPG با رادیولوژی مداخله‌ای اندازه‌گیری می‌شود. بیماران با گرادیان >۱۲ میلی‌متر جیوه در معرض خطر خونریزی واریسی هستند.</li>
+      </ul>
+    </li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> HVPG >۱۲ میلی‌متر جیوه خطر خونریزی واریسی را به‌طور قابل‌توجهی افزایش می‌دهد.</div>
+</article>
+
+<!-- 39 -->
+<article class="card">
+  <span class="badge">اسلاید ۳۹</span>
+  <h2>درمان — خونریزی واریسی</h2>
+  <ul>
+    <li>(۱) پروفیلاکسی اولیه → پایش روتین با آندوسکوپی در همه بیماران با سیروز.</li>
+    <li>مسدودکننده بتا غیرانتخابی <span class="en">(NSBB)</span>: پروپرانولول یا نادولول (PR ۵۵–۶۰) (BP >۹۰). لیگاسیون با باند واریس.</li>
+    <li>(۲) پیشگیری از خونریزی مجدد پس از یک خونریزی واریسی اولیه.</li>
+    <li>پس از شروع پروفیلاکسی اولیه، آندوسکوپی تکراری برای پایش واریس‌ها لازم نیست.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> NSBB و لیگاسیون با باند دو ستون پروفیلاکسی خونریزی واریسی هستند.</div>
+</article>
+
+<!-- 40 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۰</span>
+  <h2>درمان خونریزی حاد</h2>
+  <ul>
+    <li>درمان خونریزی حاد نیازمند جایگزینی مایع و گلبول قرمز برای تثبیت همودینامیک است.</li>
+    <li>اصلاح PT بالا با پلاسمای تازه منجمد توصیه نمی‌شود مگر اینکه شواهد کوآگولوپاتی (خونریزی در سایر نقاط مانند خطوط وریدی) وجود داشته باشد.</li>
+    <li>عوامل تنگ‌کننده عروق (سوماتوستاتین یا اکت‌رئوتاید) نشان داده شده که کنترل اولیه خونریزی را بهبود می‌بخشد و نیاز به تزریق و مرگ‌ومیر ناشی از هر علت را کاهش می‌دهد.</li>
+    <li>آنتی‌بیوتیک پروفیلاکتیک، معمولاً با سفتریاکسون، که قبل از آندوسکوپی شروع می‌شود، به کاهش عفونت‌ها، خونریزی عودکننده و مرگ‌ومیر منجر می‌شود.</li>
+    <li>بالون تامپوناد (لوله Sengstaken-Blakemore یا لوله Minnesota) می‌تواند در بیمارانی که نیاز به تثبیت قبل از درمان آندوسکوپیک دارند یا به‌عنوان پل به TIPS پس از شکست آندوسکوپی استفاده شود.</li>
+    <li>وقتی واریس‌های مری به معده پروکسیمال گسترش می‌یابند یا واریس‌های خونریزی‌دهنده کاملاً در معده هستند، لیگاسیون با باند اغلب ناموفق است → TIPS.</li>
+    <li>پیشگیری از خونریزی بیشتر معمولاً با لیگاسیون مکرر باند واریس تا از بین رفتن واریس‌ها همراه با NSBB انجام می‌شود.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> سفتریاکسون پروفیلاکتیک در خونریزی واریسی مرگ‌ومیر را کاهش می‌دهد.</div>
+</article>
+
+<!-- 41 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۱</span>
+  <h2>گاستروپاتی پرفشاری پورت</h2>
+  <ul>
+    <li>خونریزی حاد و مزمن گوارشی → کم‌خونی فقر آهن.</li>
+    <li>با همه علل پرفشاری پورت مرتبط است و با یافته‌های مشخصه آندوسکوپی شامل الگوی موزاییکی شبیه پوست مار در مخاط معده، اغلب با نقاط قرمز یا قهوه‌ای مرکزی، تشخیص داده می‌شود. در صورت خونریزی، درمان با NSBB و جبران آهن است. خونریزی مقاوم ممکن است به TIPS پاسخ دهد.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> الگوی موزاییکی «پوست مار» در گاستروپاتی پرفشاری پورت مشخصه است.</div>
+</article>
+
+<!-- 42 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۲</span>
+  <h2>اسپلنومگالی احتقانی و هایپراسپلنیسم</h2>
+  <ul>
+    <li>اسپلنومگالی احتقانی با هایپراسپلنیسم در بیماران با پرفشاری پورت شایع است و معمولاً اولین نشانه پرفشاری پورت است.</li>
+    <li>ویژگی‌های بالینی شامل وجود طحال بزرگ در معاینه فیزیکی و ایجاد ترومبوسیتوپنی و لکوپنی در بیماران با سیروز است.</li>
+    <li>برخی بیماران درد قابل‌توجه سمت چپ و ربع فوقانی چپ شکم مرتبط با طحال بزرگ خواهند داشت.</li>
+    <li>خود اسپلنومگالی معمولاً نیاز به درمان اختصاصی ندارد.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> اسپلنومگالی اغلب اولین نشانه پرفشاری پورت است.</div>
+</article>
+
+<!-- 43 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۳</span>
+  <h2>آسیت</h2>
+  <ul>
+    <li>آسیت تجمع مایع در حفره صفاق است.</li>
+    <li>وجود پرفشاری پورت به ایجاد آسیت در بیماران با سیروز کمک می‌کند.</li>
+    <li>اثرات کلیوی آلدوسترون افزایش‌یافته و فعال‌سازی سیستم عصبی سمپاتیک به احتباس سدیم منجر می‌شود که باعث تجمع مایع و افزایش حجم مایع خارج سلولی می‌شود و به ادم محیطی و آسیت می‌انجامد.</li>
+    <li>هیپوآلبومینمی ناشی از کاهش عملکرد ساختاری در کبد سیروزی به کاهش فشار انکوتیک پلاسما منجر می‌شود و به از دست رفتن مایع از فضای عروقی به حفره صفاق کمک می‌کند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> پرفشاری پورت و هیپوآلبومینمی دو مکانیسم اصلی آسیت در سیروز هستند.</div>
+</article>
+
+<!-- 44 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۴</span>
+  <h2>آسیت — ویژگی‌های بالینی و تشخیص</h2>
+  <ul>
+    <li>ادم محیطی.</li>
+    <li>اگر مایع آسیت عظیم باشد، عملکرد تنفسی می‌تواند به خطر بیفتد و باعث تنگی نفس شود.</li>
+    <li>هیدروتوراکس کبدی نیز ممکن است به علائم تنفسی کمک کند.</li>
+    <li>سوءتغذیه و تحلیل عضلانی و خستگی و ضعف بیش‌ازحد.</li>
+    <li>تشخیص: تصویربرداری شکمی؛ پهلوی برجسته، موج مایع، تیرگی جابه‌جا شونده.</li>
+    <li>هیدروتوراکس کبدی در سمت راست شایع‌تر است.</li>
+    <li>پاراسنتز (پروتئین تام و آلبومین)، شمارش سلول‌های خونی با تفکیک و کشت.</li>
+    <li>سیروز: پروتئین <۲٫۵ گرم در دسی‌لیتر. گرادیان آلبومین سرم-آسیت <span class="en">(SAAG >1.1 g/dL)</span>.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> SAAG >۱٫۱ گرم در دسی‌لیتر نشان‌دهنده آسیت ناشی از پرفشاری پورت است.</div>
+</article>
+
+<!-- 45 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۵</span>
+  <h2>SAAG و تفسیر مایع آسیت</h2>
+  <ul>
+    <li>آسیت قلبی: SAAG >۱٫۱ گرم در دسی‌لیتر و پروتئین آسیت >۲٫۵ گرم در دسی‌لیتر.</li>
+    <li>وقتی SAAG <۱٫۱ گرم در دسی‌لیتر است، علل عفونی یا بدخیم آسیت باید در نظر گرفته شوند.</li>
+    <li>وقتی پروتئین مایع آسیت خیلی پایین است، <۱٫۵ گرم در دسی‌لیتر، بیماران در معرض خطر افزایش‌یافته ایجاد SBP هستند.</li>
+    <li>سطح بالای گلبول‌های قرمز در مایع آسیت معمولاً نشان‌دهنده تپ تروماتیک است اما به‌ندرت می‌تواند با سرطان هپاتوسلولار یا پارگی واریس امنتال نیز رخ دهد.</li>
+    <li>وقتی سطح مطلق نوتروفیل‌های پلی‌مورفونوکلئار >۲۵۰ در میکرولیتر است، عفونت محتمل است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> PMN >۲۵۰ در میکرولیتر در مایع آسیت معیار تشخیص SBP است.</div>
+</article>
+
+<!-- 46 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۶</span>
+  <h2>درمان آسیت</h2>
+  <ul>
+    <li>مقدار کم آسیت → محدودیت سدیم غذایی (۲ گرم سدیم در روز) معادل کمی بیشتر از سه‌چهارم قاشق چای‌خوری نمک. توصیه ساده خوردن غذاهای تازه یا منجمد و پرهیز از غذاهای کنسروی یا فرآوری‌شده است.</li>
+    <li>آسیت متوسط تا زیاد → درمان با دیورتیک معمولاً لازم است.</li>
+    <li>آسیت مقاوم → پاراسنتز با حجم بالا <span class="en">(LVP)</span> یا TIPS (بهبود نمی‌دهد، فراوانی انسفالوپاتی کبدی را افزایش می‌دهد).</li>
+    <li>پس از LVP ≥۵ لیتر، آلبومین وریدی ۲۵٪ با دوز ~۸ گرم به ازای هر لیتر آسیت خارج‌شده باید داده شود تا از اختلال گردش خون جلوگیری شود.</li>
+    <li>پیش‌آگهی بیماران با سیروز و آسیت ضعیف است → پیوند کبد.</li>
+    <li>بیماران با سیروز و آسیت → نارسایی کلیه (NSAIDها و آمینوگلیکوزیدها) ⟹ باید اجتناب شوند.</li>
+    <li>ACEI و ARB باید با احتیاط و با پایش دقیق فشار خون و عملکرد کلیه استفاده شوند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> در پاراسنتز با حجم بالا، جبران آلبومین برای پیشگیری از اختلال گردش خون لازم است.</div>
+</article>
+
+<!-- 47 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۷</span>
+  <h2>پریتونیت باکتریایی خودبه‌خودی <span class="en">(SBP)</span></h2>
+  <ul>
+    <li>SBP یک عارضه شایع و شدید آسیت است که با عفونت خودبه‌خودی مایع آسیت بدون منبع داخل شکمی مشخص می‌شود.</li>
+    <li>شمارش مطلق نوتروفیل >۲۵۰ در میکرولیتر.</li>
+    <li><span class="en">Escherichia coli</span>، <span class="en">Streptococcus viridans</span>، <span class="en">Staphylococcus aureus</span>، <span class="en">Enterococcus</span>.</li>
+    <li>بیماران با آسیت ممکن است با تب، وضعیت روانی تغییر‌یافته، شمارش گلبول سفید بالا، درد یا ناراحتی شکمی و آسیب حاد کلیه مراجعه کنند، یا ممکن است بدون هیچ‌یک از این ویژگی‌ها مراجعه کنند.</li>
+    <li>درمان معمولاً با سفالوسپورین نسل سوم وریدی برای ۵ روز است.</li>
+    <li>آلبومین (۱٫۵ گرم بر کیلوگرم وزن بدن در روز اول و ۱٫۰ گرم بر کیلوگرم در روز سوم) → کاهش خطر نارسایی کلیه و بهبود بقا.</li>
+    <li>در بیماران با خونریزی واریسی، فراوانی SBP به‌طور قابل‌توجهی افزایش می‌یابد و پروفیلاکسی علیه SBP هنگام مراجعه بیمار با خونریزی گوارشی فوقانی توصیه می‌شود.</li>
+    <li>علاوه بر این، در بیمارانی که یک اپیزود (یا اپیزودهای متعدد) SBP داشته‌اند و بهبود یافته‌اند، پروفیلاکسی با آنتی‌بیوتیک کینولون باید برای پیشگیری از SBP عودکننده داده شود.</li>
+    <li>اگر بیش از دو ارگانیسم شناسایی شود، پریتونیت باکتریایی ثانویه ناشی از ویسکوس سوراخ‌شده.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> آلبومین وریدی در SBP خطر نارسایی کلیه را کاهش می‌دهد.</div>
+</article>
+
+<!-- 48 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۸</span>
+  <h2>سندرم کبدی-کلیوی <span class="en">(HRS)</span></h2>
+  <ul>
+    <li>HRS شکلی از نارسایی عملکردی کلیه بدون پاتولوژی کلیوی است که در ~۱۰٪ بیماران با سیروز پیشرفته یا نارسایی حاد کبدی رخ می‌دهد.</li>
+    <li>تشخیص معمولاً در حضور مقدار زیادی آسیت در بیمارانی که افزایش پله‌ای پیشرونده کراتینین دارند، انجام می‌شود.</li>
+    <li>نوع ۱ → اختلال پیشرونده در عملکرد کلیه و کاهش قابل‌توجه در کلیرانس کراتینین در ۱–۲ هفته از مراجعه.</li>
+    <li>نوع ۲ → کاهش سرعت فیلتراسیون گلومرولی با افزایش سطح کراتینین سرم، اما پایدار است و با نتیجه بهتر از HRS نوع ۱ همراه است.</li>
+    <li>HRS نیازمند رد سایر علل نارسایی حاد کلیه، به‌ویژه کاهش حجم است. دیورتیک‌ها باید قطع شوند و تزریق آلبومین ۱ گرم بر کیلوگرم در روز.</li>
+    <li>درمان با تنگ‌کننده‌های عروق مانند تریپرسین یا نوراپی‌نفرین با دوز پایین. میدودرین، یک آگونیست α، همراه با اکت‌رئوتاید و آلبومین وریدی.</li>
+    <li>بهترین درمان برای HRS پیوند کبد است.</li>
+    <li>در بیماران با HRS نوع ۱ یا ۲، پیش‌آگهی ضعیف است مگر اینکه پیوند در مدت کوتاهی انجام شود.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> HRS یک نارسایی کلیوی عملکردی است و پیوند کبد درمان قطعی آن است.</div>
+</article>
+
+<!-- 49 -->
+<article class="card">
+  <span class="badge">اسلاید ۴۹</span>
+  <h2>انسفالوپاتی کبدی</h2>
+  <ul>
+    <li>عارضه جدی.</li>
+    <li>تغییر در وضعیت روانی و عملکرد شناختی.</li>
+    <li>نوروتوکسین‌های مشتق از روده که به‌دلیل شنت عروقی و کاهش توده کبدی توسط کبد حذف نمی‌شوند به مغز می‌رسند و علائم شناخته‌شده به‌عنوان انسفالوپاتی کبدی را ایجاد می‌کنند.</li>
+    <li>سطوح آمونیاک به‌طور معمول بالا هستند، اما همبستگی بین شدت بیماری کبدی و ارتفاع سطوح آمونیاک اغلب ضعیف است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> آمونیاک بالا نشانه کمکی است، اما تشخیص انسفالوپاتی بالینی است.</div>
+</article>
+
+<!-- 50 -->
+<article class="card">
+  <span class="badge">اسلاید ۵۰</span>
+  <h2>انسفالوپاتی کبدی — ویژگی‌های بالینی</h2>
+  <ul>
+    <li>ادم مغزی / فتق مغزی.</li>
+    <li>در بیماران با سیروز، انسفالوپاتی → هیپوکالمی، عفونت، بار پروتئین غذایی افزایش‌یافته یا کاهش حجم (خونریزی گوارشی).</li>
+    <li>بیماران ممکن است گیج باشند یا تغییر شخصیت نشان دهند.</li>
+    <li>آستریکسیس <span class="en">(Asterixis)</span> اغلب وجود دارد.</li>
+    <li>آستریکسیس را می‌توان با باز کردن بازوها و خم کردن مچ‌ها به عقب ایجاد کرد.</li>
+    <li>تشخیص انسفالوپاتی کبدی بالینی است و نیازمند پزشک باتجربه است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> آستریکسیس یک لرزش فلپینگ است که در انسفالوپاتی کبدی دیده می‌شود.</div>
+</article>
+
+<!-- 51 -->
+<article class="card">
+  <span class="badge">اسلاید ۵۱</span>
+  <h2>درمان انسفالوپاتی کبدی</h2>
+  <ul>
+    <li>درمان چندعاملی است.</li>
+    <li>گاهی هیدراتاسیون و اصلاح عدم تعادل الکترولیت تنها چیزی است که لازم است.</li>
+    <li>در گذشته، محدودیت پروتئین غذایی استفاده می‌شد.</li>
+    <li>لاکتولوز، یک دی‌ساکارید غیرقابل جذب که به اسیدی شدن کولون منجر می‌شود.</li>
+    <li>هدف درمان با لاکتولوز ایجاد دو تا سه مدفوع نرم در روز است.</li>
+    <li>نئومایسین (نارسایی کلیه و اتوتوکسیسیتی) و مترونیدازول (نوروپاتی محیطی). اخیراً ریفاکسیمین با ۵۵۰ میلی‌گرم دو بار در روز در پیشگیری از انسفالوپاتی عودکننده بسیار مؤثر بوده است.</li>
+    <li>مکمل روی گاهی مفید است و نسبتاً بی‌ضرر است.</li>
+    <li>ایجاد انسفالوپاتی در بیماران با بیماری مزمن کبدی یک نشانه پیش‌آگهی ضعیف است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> لاکتولوز و ریفاکسیمین درمان‌های اصلی پیشگیری از عود انسفالوپاتی کبدی هستند.</div>
+</article>
+
+<!-- 52 -->
+<article class="card">
+  <span class="badge">اسلاید ۵۲</span>
+  <h2>سندرم‌های کبدی-ریوی</h2>
+  <ul>
+    <li>سندرم هپاتوپولمونری <span class="en">(HPS)</span> با هیپوکسمی شریانی در بیمار مبتلا به سیروز بدون بیماری ریوی قابل توجه مشخص می‌شود.</li>
+    <li>تنگی نفس و پلاتیپنه.</li>
+    <li>تشخیص: هیپوکسمی، شنت در اکوکاردیوگرافی حبابی.</li>
+    <li>درمان با مکمل اکسیژن و پیوند کبد است.</li>
+    <li>پرفشاری پورت-ریوی <span class="en">(PPHT)</span> پرفشاری ریوی در بیمار مبتلا به پرفشاری پورت است.</li>
+    <li>بدون علامت، تنگی نفس در فعالیت و خستگی.</li>
+    <li>PPHT نادر است.</li>
+    <li>تشخیص: اکوکاردیوگرام و تأیید در کاتتریزاسیون قلب راست که نشان‌دهنده فشار متوسط بالای شریان ریوی، مقاومت عروقی ریوی بالا و فشار گوه‌ای مویرگی ریوی نرمال است.</li>
+    <li>پیش‌آگهی ضعیف است، اگرچه پیوند کبد پس از کاهش مؤثر فشار شریان ریوی با داروهای وازودیلاتور می‌تواند مؤثر باشد.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> HPS و PPHT عوارض ریوی سیروز هستند.</div>
+</article>
+
+<!-- 53 -->
+<article class="card">
+  <span class="badge">اسلاید ۵۳</span>
+  <h2>سوءتغذیه در سیروز</h2>
+  <ul>
+    <li>وقتی بیماران سیروزی می‌شوند، کاتابولیک‌تر هستند و پروتئین عضله متابولیزه می‌شود.</li>
+    <li>عوامل متعدد: دریافت غذایی ضعیف، تغییرات در جذب مواد مغذی روده و تغییرات در متابولیسم پروتئین.</li>
+    <li>توجه دقیق به دریافت غذا در پیشگیری از کاتابولیک شدن بیماران کمک‌کننده است.</li>
+    <li>توصیه‌های کلی شامل وعده‌های کوچک متعدد، از جمله میان‌وعده اواخر شب، با کالری تام ۲۵–۳۰ کیلوکالری بر کیلوگرم وزن بدن ایده‌آل در روز و ۱٫۲–۱٫۵ گرم پروتئین بر کیلوگرم وزن بدن ایده‌آل در روز.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> میان‌وعده اواخر شب برای کاهش کاتابولیسم عضلانی توصیه می‌شود.</div>
+</article>
+
+<!-- 54 -->
+<article class="card">
+  <span class="badge">اسلاید ۵۴</span>
+  <h2>ناهنجاری‌های انعقادی در سیروز</h2>
+  <ul>
+    <li>زمان پروترومبین و نسبت نرمال‌شده بین‌المللی <span class="en">(INR)</span> معیارهای قابل اعتمادی برای توانایی انعقاد نیستند. به‌طور کلی، وضعیت انعقاد در بیمار سیروزی باید بالینی قضاوت شود نه با تکیه بر آزمایش‌های فعلی.</li>
+    <li>کاهش سنتز فاکتورهای پیش‌انعقادی و ضدانعقادی وجود دارد و بنابراین تا حدی تعادل مجدد در انعقاد رخ می‌دهد.</li>
+    <li>ترومبوسیتوپنی ناشی از هایپراسپلنیسم به‌دلیل پرفشاری پورت و برخی اختلال عملکرد پلاکتی، که با افزایش فاکتور فون ویلبراند متعادل می‌شود.</li>
+    <li>تشکیل کافی ترومبین می‌تواند با سطوح پلاکت بیماران سیروزی >۵۰٬۰۰۰–۶۰٬۰۰۰ در لیتر رخ دهد.</li>
+    <li>سنتز فاکتورهای انعقادی وابسته به ویتامین K شامل II، VII، IX و X در بیماران با سندرم‌های کلستاتیک مزمن کاهش می‌یابد زیرا جذب ویتامین K نیازمند جریان صفرا خوب است. ویتامین K وریدی یا عضلانی می‌تواند این ناهنجاری را سریع اصلاح کند.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> INR در سیروز معیار دقیقی برای خطر خونریزی نیست؛ قضاوت بالینی مهم است.</div>
+</article>
+
+<!-- 55 -->
+<article class="card">
+  <span class="badge">اسلاید ۵۵</span>
+  <h2>بیماری استخوان در سیروز</h2>
+  <ul>
+    <li>استئوپروز در بیماران با بیماری کبدی کلستاتیک مزمن به‌دلیل سوءجذب ویتامین D و کاهش دریافت کلسیم شایع است.</li>
+    <li>جذب سنجی دو انرژی اشعه ایکس <span class="en">(DEXA)</span> روش مفیدی برای تعیین استئوپروز یا استئوپنی است.</li>
+    <li>وقتی اسکن DEXA استئوپروز را نشان می‌دهد، درمان با بیس‌فسفونات‌ها مؤثر است.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> DEXA ابزار استاندارد برای ارزیابی تراکم استخوان در بیماران سیروزی است.</div>
+</article>
+
+<!-- 56 -->
+<article class="card">
+  <span class="badge">اسلاید ۵۶</span>
+  <h2>ناهنجاری‌های خون‌شناختی در سیروز</h2>
+  <ul>
+    <li>کم‌خونی از علل متنوع شامل هایپراسپلنیسم، همولیز، کمبود آهن و شاید کمبود فولات ناشی از سوءتغذیه.</li>
+    <li>ماکروسیتوز یک ناهنجاری شایع در مورفولوژی گلبول قرمز است که در بیماران با بیماری مزمن کبدی دیده می‌شود.</li>
+    <li>نوتروپنی ممکن است نتیجه هایپراسپلنیسم باشد.</li>
+  </ul>
+  <div class="note"><b>توضیح تکمیلی:</b> ماکروسیتوز در بیماری مزمن کبدی شایع است.</div>
+</article>
+
+<!-- Checklist -->
+<article class="card">
+  <span class="badge">کنترل کیفیت</span>
+  <h2>چک‌لیست کنترل کیفیت</h2>
+  <ul>
+    <li>همه ۵۶ اسلاید ترجمه و در قالب کارتی ارائه شدند.</li>
+    <li>چیدمان کاملاً راست‌به‌چپ و فارسی است.</li>
+    <li>فونت Vazirmatn با اندازه خوانا و فاصله خطوط مناسب استفاده شده است.</li>
+    <li>تصاویر اصلی با Placeholder و کپشن فارسی مشخص شده‌اند.</li>
+    <li>«توضیح تکمیلی»ها با برچسب مشخص از متن اصلی جدا شده‌اند.</li>
+    <li>موارد مشکوک مانند «سیبروز و گوارض» و «هاربسون» با [نیازمند بررسی] علامت‌گذاری شدند.</li>
+    <li>مطلب پزشکی بدون منبع از خود اضافه نشده است؛ توضیحات تکمیلی ساده و آموزشی‌اند.</li>
+  </ul>
+</article>
+
+<footer class="end">
+  پایان جزوه — سیروز و عوارض آن | ترجمه فارسی بر پایه Harrison 2023 | چیدمان راست‌به‌چپ | فونت Vazirmatn
+</footer>
+
+</div>
+
+<!-- ===== THEME TOGGLE ===== -->
+<div class="theme-toggle">
+  <button class="theme-btn" id="themeBtn" aria-label="تغییر تم" aria-expanded="false" title="تغییر تم">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="13.5" cy="6.5" r="1.5"></circle>
+      <circle cx="17.5" cy="10.5" r="1.5"></circle>
+      <circle cx="8.5" cy="7.5" r="1.5"></circle>
+      <circle cx="6.5" cy="12.5" r="1.5"></circle>
+      <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path>
+    </svg>
+  </button>
+  <div class="theme-panel" id="themePanel" role="menu" aria-label="انتخاب تم">
+    <div class="theme-panel-title">🎨 انتخاب تم</div>
+    <button class="theme-option" data-theme="brown" role="menuitem">
+      <span class="swatch" style="background:#3b3b3b;border:1px solid #fff8f2"><i style="background:#d4a373"></i></span>
+      <span>قهوه‌ای</span>
+    </button>
+    <button class="theme-option" data-theme="softdark" role="menuitem">
+      <span class="swatch" style="background:#1E1E1C;border:1px solid #D8CBB3"><i style="background:#c9b87f"></i></span>
+      <span>دارک ملایم</span>
+    </button>
+    <button class="theme-option" data-theme="alldark" role="menuitem">
+      <span class="swatch" style="background:#000000;border:1px solid #ffffff"><i style="background:#e0b64e"></i></span>
+      <span>تمام دارک</span>
+    </button>
+    <button class="theme-option" data-theme="simple" role="menuitem">
+      <span class="swatch" style="background:#ffffff;border:1px solid #000000"><i style="background:#1e40af"></i></span>
+      <span>ساده</span>
+    </button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var STORAGE_KEY = 'cirrhosis-note-theme-v1';
+  var btn = document.getElementById('themeBtn');
+  var panel = document.getElementById('themePanel');
+  var options = panel.querySelectorAll('.theme-option');
+  var validThemes = ['brown','softdark','alldark','simple'];
+
+  function setActive(theme){
+    options.forEach(function(o){
+      o.classList.toggle('active', o.dataset.theme === theme);
+    });
+  }
+
+  try{
+    var saved = localStorage.getItem(STORAGE_KEY);
+    if (saved && validThemes.indexOf(saved) !== -1) {
+      document.body.setAttribute('data-theme', saved);
+      setActive(saved);
+    } else if (saved) {
+      localStorage.removeItem(STORAGE_KEY);
+    }
+  } catch(e){}
+
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var open = panel.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  options.forEach(function(opt){
+    opt.addEventListener('click', function(e){
+      e.stopPropagation();
+      var theme = opt.dataset.theme;
+      var current = document.body.getAttribute('data-theme');
+
+      if (current === theme) {
+        document.body.removeAttribute('data-theme');
+        setActive(null);
+        try { localStorage.removeItem(STORAGE_KEY); } catch(e2){}
+      } else {
+        document.body.setAttribute('data-theme', theme);
+        setActive(theme);
+        try { localStorage.setItem(STORAGE_KEY, theme); } catch(e2){}
+      }
+      panel.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    });
+  });
+
+  document.addEventListener('click', function(e){
+    if (!panel.contains(e.target) && !btn.contains(e.target)) {
+      panel.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    }
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') {
+      panel.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

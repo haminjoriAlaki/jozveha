@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>جزوه فارسی — بیماری‌های کیسه صفرا و مجاری صفراوی (هریسون ۲۰۲۳)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  /* ===== DEFAULT (ORIGINAL DESIGN) ===== */
+  :root{
+    --accent:#0f766e; --accent-2:#14b8a6; --hero-ink:#ffffff;
+    --ink:#1f2937; --muted:#6b7280;
+    --bg:#f3f6f8; --card:#ffffff; --line:#e5e7eb;
+    --note-bg:#f0fdfa; --note-border:#ccfbf1; --note-color:#134e4a; --note-b-color:#0f766e;
+    --badge-bg:#e6f4f1; --badge-border:#cdeae5; --badge-color:#0f766e;
+    --ph-bg:#f8fafc; --ph-border:#cbd5e1; --ph-color:#64748b; --ph-title-color:#475569;
+    --h2-color:#0b4f4a; --h3-color:#0f766e;
+    --meta-border:#e2e8f0;
+    --table-even-bg:#f8fafc;
+  }
+
+  /* ===== THEMES ===== */
+  body[data-theme="brown"]   { --bg:#3b3b3b; --ink:#fff8f2; --accent:#d4a373; --accent-2:#e8c39e; --hero-ink:#2d1e0f; }
+  body[data-theme="softdark"]{ --bg:#1E1E1C; --ink:#D8CBB3; --accent:#c9b87f; --accent-2:#ddcfa0; --hero-ink:#1E1E1C; }
+  body[data-theme="alldark"] { --bg:#000000; --ink:#ffffff; --accent:#e0b64e; --accent-2:#f0cc70; --hero-ink:#1a1400; }
+  body[data-theme="simple"]  { --bg:#ffffff; --ink:#000000; --accent:#1e40af; --accent-2:#3b6dd8; --hero-ink:#ffffff; }
+
+  body[data-theme]{
+    --card:            color-mix(in srgb, var(--bg) 94%, var(--ink) 6%);
+    --line:            color-mix(in srgb, var(--ink) 12%, var(--bg) 88%);
+    --muted:           color-mix(in srgb, var(--ink) 60%, var(--bg) 40%);
+    --note-bg:         color-mix(in srgb, var(--accent) 8%,  var(--bg) 92%);
+    --note-border:     color-mix(in srgb, var(--accent) 25%, var(--bg) 75%);
+    --note-color:      var(--ink);
+    --note-b-color:    var(--accent);
+    --badge-bg:        color-mix(in srgb, var(--accent) 14%, var(--bg) 86%);
+    --badge-border:    color-mix(in srgb, var(--accent) 35%, var(--bg) 65%);
+    --badge-color:     var(--accent);
+    --ph-bg:           color-mix(in srgb, var(--ink) 6%,  var(--bg) 94%);
+    --ph-border:       color-mix(in srgb, var(--ink) 25%, var(--bg) 75%);
+    --ph-color:        color-mix(in srgb, var(--ink) 60%, var(--bg) 40%);
+    --ph-title-color:  var(--ink);
+    --h2-color:        color-mix(in srgb, var(--accent) 78%, var(--ink) 22%);
+    --h3-color:        color-mix(in srgb, var(--accent) 72%, var(--ink) 28%);
+    --meta-border:     color-mix(in srgb, var(--ink) 15%, var(--bg) 85%);
+    --table-even-bg:   color-mix(in srgb, var(--ink) 4%, var(--card) 96%);
+  }
+
+  body[data-theme="brown"],
+  body[data-theme="softdark"],body[data-theme="alldark"]{ color-scheme: dark; }
+  body[data-theme="simple"]{ color-scheme: light; }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Vazirmatn",system-ui,"Segoe UI",Tahoma,sans-serif;
+    line-height:1.9;
+    direction:rtl;
+    text-align:right;
+    transition:background-color .35s ease, color .35s ease;
+  }
+  .wrap{max-width:940px;margin:0 auto;padding:24px 16px 80px}
+
+  /* ===== Header ===== */
+  header.hero{
+    background:linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+    color:var(--hero-ink);
+    border-radius:22px;
+    padding:34px 30px;
+    margin-bottom:28px;
+    box-shadow:0 14px 34px color-mix(in srgb, var(--accent) 38%, transparent);
+    transition:background .35s ease, color .35s ease, box-shadow .35s ease;
+  }
+  header.hero h1{margin:0 0 10px;font-size:26px;font-weight:800;line-height:1.6}
+  header.hero p{margin:4px 0;font-size:15px;opacity:.95}
+  header.hero .tag{
+    display:inline-block;
+    background:color-mix(in srgb, var(--hero-ink) 20%, var(--accent) 80%);
+    border:1px solid color-mix(in srgb, var(--hero-ink) 45%, var(--accent) 55%);
+    padding:3px 12px;border-radius:999px;font-size:13px;margin-top:10px;
+  }
+
+  /* ===== Cards ===== */
+  .card{
+    position:relative;
+    background:var(--card);
+    border-radius:18px;
+    padding:32px 28px 24px;
+    margin-bottom:22px;
+    box-shadow:0 6px 18px rgba(15,23,42,.06);
+    border:1px solid var(--line);
+    transition:background-color .35s ease, border-color .35s ease;
+  }
+  .badge{
+    position:absolute;
+    top:14px;
+    left:18px;
+    background:var(--badge-bg);
+    color:var(--badge-color);
+    font-size:13px;
+    font-weight:700;
+    padding:2px 12px;
+    border-radius:999px;
+    border:1px solid var(--badge-border);
+    transition:background-color .35s ease, color .35s ease, border-color .35s ease;
+  }
+  .card h2{
+    font-size:21px;
+    font-weight:800;
+    color:var(--h2-color);
+    margin:0 0 16px;
+    padding-right:14px;
+    border-right:5px solid var(--accent);
+    line-height:1.6;
+    transition:color .35s ease, border-color .35s ease;
+  }
+  .card h3{
+    font-size:17px;
+    color:var(--h3-color);
+    margin:18px 0 8px;
+    font-weight:700;
+    transition:color .35s ease;
+  }
+  ul{margin:8px 0;padding-right:24px}
+  li{margin:6px 0}
+  li::marker{color:var(--accent-2)}
+  p{margin:8px 0}
+  .en{direction:ltr;unicode-bidi:isolate;display:inline-block}
+
+  /* ===== Note box ===== */
+  .note{
+    background:var(--note-bg);
+    border:1px solid var(--note-border);
+    border-right:5px solid var(--accent-2);
+    border-radius:12px;
+    padding:12px 16px;
+    margin-top:18px;
+    font-size:15px;
+    color:var(--note-color);
+    transition:background-color .35s ease, border-color .35s ease, color .35s ease;
+  }
+  .note b{color:var(--note-b-color);font-weight:800;transition:color .35s ease}
+
+  /* ===== Placeholder ===== */
+  .ph{
+    border:2px dashed var(--ph-border);
+    background:var(--ph-bg);
+    border-radius:14px;
+    padding:16px;
+    margin-top:16px;
+    color:var(--ph-color);
+    font-size:14px;
+    text-align:center;
+    line-height:1.8;
+    transition:background-color .35s ease, border-color .35s ease, color .35s ease;
+  }
+  .ph .ph-title{
+    display:block;
+    font-weight:700;
+    color:var(--ph-title-color);
+    margin-bottom:6px;
+    transition:color .35s ease;
+  }
+
+  /* ===== Table ===== */
+  .table-scroll{overflow-x:auto;margin-top:14px;border-radius:12px}
+  table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:640px}
+  thead th{
+    background:var(--accent);
+    color:var(--hero-ink);
+    padding:11px 10px;
+    border:1px solid color-mix(in srgb, var(--accent) 80%, black 20%);
+    font-weight:700;
+    text-align:right;
+    transition:background-color .35s ease, color .35s ease, border-color .35s ease;
+  }
+  tbody td{
+    padding:10px;
+    border:1px solid var(--line);
+    vertical-align:top;
+    transition:border-color .35s ease, color .35s ease;
+  }
+  tbody tr:nth-child(even) td{
+    background:var(--table-even-bg);
+    transition:background-color .35s ease;
+  }
+
+  /* ===== Footer meta ===== */
+  .meta{
+    margin-top:16px;
+    padding-top:10px;
+    border-top:1px dashed var(--meta-border);
+    color:var(--muted);
+    font-size:13.5px;
+    transition:border-color .35s ease, color .35s ease;
+  }
+  .meta span{display:block;margin:2px 0}
+
+  footer.end{
+    text-align:center;
+    color:var(--muted);
+    font-size:13.5px;
+    padding:26px 10px 0;
+    transition:color .35s ease;
+  }
+
+  /* ===== THEME TOGGLE ===== */
+  .theme-toggle{
+    position:fixed; bottom:20px; left:20px; z-index:1000;
+    font-family:"Vazirmatn",system-ui,sans-serif;
+  }
+  .theme-btn{
+    width:56px; height:56px; border-radius:50%;
+    background:linear-gradient(135deg, var(--accent), var(--accent-2));
+    color:var(--hero-ink); border:2px solid var(--hero-ink);
+    cursor:pointer; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 6px 20px rgba(0,0,0,.28);
+    transition:transform .2s ease, box-shadow .2s ease, background .35s ease, color .35s ease, border-color .35s ease;
+  }
+  .theme-btn:hover{ transform:scale(1.07); box-shadow:0 8px 26px rgba(0,0,0,.34); }
+  .theme-btn:active{ transform:scale(.97); }
+  .theme-panel{
+    position:absolute; bottom:68px; left:0;
+    background:var(--card); border:1px solid var(--line);
+    border-radius:16px; box-shadow:0 12px 38px rgba(0,0,0,.24);
+    padding:10px; display:none; min-width:210px; max-height:70vh; overflow-y:auto;
+    color:var(--ink);
+    transition:background-color .35s ease, border-color .35s ease, color .35s ease;
+  }
+  .theme-panel.open{ display:block; animation:fadeUp .22s ease; }
+  @keyframes fadeUp{ from{opacity:0;transform:translateY(8px);} to{opacity:1;transform:translateY(0);} }
+  .theme-panel-title{
+    font-size:13px; font-weight:700; padding:4px 8px 8px; color:var(--muted);
+    border-bottom:1px solid var(--line); margin-bottom:6px;
+  }
+  .theme-option{
+    display:flex; align-items:center; gap:10px; width:100%;
+    padding:8px 10px; border:none; background:transparent; border-radius:10px;
+    cursor:pointer; font-family:inherit; font-size:14px; color:var(--ink);
+    text-align:right; transition:background-color .15s ease;
+  }
+  .theme-option:hover{ background:var(--note-bg); }
+  .theme-option.active{ background:var(--note-bg); font-weight:700; }
+  .theme-option.active::after{ content:"✓"; margin-right:auto; color:var(--accent); font-weight:800; }
+  .swatch{
+    width:26px; height:26px; border-radius:50%; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 1px 3px rgba(0,0,0,.25);
+  }
+  .swatch i{ width:10px; height:10px; border-radius:50%; display:block; }
+
+  @media print{
+    body{background:#fff}
+    .card{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid;page-break-inside:avoid}
+    header.hero{background:var(--accent) !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .table-scroll{overflow:visible}
+    table{min-width:0}
+    .theme-toggle{display:none !important}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>بیماری‌های کیسه صفرا و مجاری صفراوی</h1>
+    <p>ترجمه فارسی جزوه — بر پایه هریسون ۲۰۲۳ (Harrison’s Principles of Internal Medicine, 2023)</p>
+    <span class="tag">جزوه مطالعه — چیدمان راست‌به‌چپ</span>
+  </header>
+
+  <!-- ================= اسلاید ۱ ================= -->
+  <article class="card" id="s1">
+    <span class="badge">اسلاید ۱</span>
+    <h2>تصویر خوشنویسی</h2>
+    <p>این اسلاید متن استخراج‌شده ندارد و فقط شامل تصویر است.</p>
+    <div class="ph">
+      <span class="ph-title">Placeholder — تصویر اصلی اسلاید ۱</span>
+      خوشنویسی سیاه روی زمینه آبی روشن؛ متن تصویر قابل خواندن قطعی نیست <b>[نیازمند بررسی]</b>
+    </div>
+    <div class="meta"><span>نکته: اسلاید جلد/تصویری است.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۲ ================= -->
+  <article class="card" id="s2">
+    <span class="badge">اسلاید ۲</span>
+    <h2>بیماری‌های کیسه صفرا و مجاری صفراوی</h2>
+    <ul>
+      <li>هریسون ۲۰۲۳ <span class="en">(Harrison 2023)</span></li>
+      <li>بهار ۱۴۰۴</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> این اسلاید عنوان و منبع اصلی ارائه را نشان می‌دهد.</div>
+    <div class="meta"><span>منبع: Harrison 2023</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۳ ================= -->
+  <article class="card" id="s3">
+    <span class="badge">اسلاید ۳</span>
+    <h2>فیزیولوژی تولید و جریان صفرا</h2>
+    <ul>
+      <li>صفرا در هپاتوسیت‌ها <span class="en">(Hepatocytes)</span> تشکیل می‌شود.</li>
+      <li>صفرای کبدی یک مایع ایزوتونیک <span class="en">(Isotonic)</span> با ترکیب الکترولیتی مشابه پلاسمای خون است؛ ۵۰۰–۶۰۰ سی‌سی در روز.</li>
+      <li>در صفرای کیسه صفرا، کلرید و بی‌کربنات از طریق بازجذب <span class="en">(Reabsorption)</span> در اپیتلیوم کیسه صفرا حذف شده‌اند.</li>
+      <li>در نتیجه بازجذب آب، غلظت کل مواد حل‌شده صفرا از ۳–۴ گرم در دسی‌لیتر در صفرای کبدی به ۱۰–۱۵ گرم در دسی‌لیتر در صفرای کیسه صفرا افزایش می‌یابد.</li>
+      <li>ترکیبات صفرا: اسیدهای صفراوی (۸۰٪)، فسفولیپیدها (لسیتین‌ها، سفالین‌ها و اسفنگومیلین) (۱۶٪)، کلسترول غیراستریفیه (۴٪) → حالت سنگ‌زا <span class="en">(Lithogenic state)</span>؛ بیلی‌روبین کنژوگه (عدد ۸–۱ در متن اصلی؛ <b>[نیازمند بررسی]</b>)؛ پروتئین‌ها (همه ایمونوگلوبولین‌ها، آلبومین، متابولیت‌های هورمون‌ها)؛ الکترولیت‌ها؛ موکوس.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> غلیظ‌شدن صفرا در کیسه صفرا طبیعی است، اما اگر کلسترول بیش از توان حل‌شدن باشد، زمینه سنگ‌سازی فراهم می‌شود.</div>
+    <div class="meta"><span>نکته: صفرای کبدی رقیق‌تر و صفرای کیسه صفرا غلیظ‌تر است.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۴ ================= -->
+  <article class="card" id="s4">
+    <span class="badge">اسلاید ۴</span>
+    <h2>اسیدهای صفراوی</h2>
+    <ul>
+      <li>اسیدهای صفراوی اولیه، کولیک اسید <span class="en">(Cholic acid)</span> و کنودوکسی‌کولیک اسید <span class="en">(CDCA)</span>، در هپاتوسیت‌ها از کلسترول ساخته می‌شوند، با گلیسین یا تاورین کنژوگه می‌شوند و به کانالیکول صفراوی ترشح می‌شوند.</li>
+      <li>اسیدهای صفراوی ثانویه، شامل دئوکسی‌کولات <span class="en">(Deoxycholate)</span> و لیتوکولات <span class="en">(Lithocholate)</span>، در کولون به‌عنوان متابولیت‌های باکتریایی اسیدهای صفراوی اولیه تشکیل می‌شوند. اسید اورسودوکسی‌کولیک <span class="en">(UDCA)</span> نیز مطرح است.</li>
+      <li>اسید صفراوی: با تسهیل دفع صفراوی کلسترول؛ اسیدهای صفراوی جذب طبیعی روده‌ای چربی‌های غذایی، عمدتاً کلسترول و ویتامین‌های محلول در چربی، را از طریق مکانیسم انتقال میسلی <span class="en">(Micellar transport)</span> تسهیل می‌کنند. اسیدهای صفراوی همچنین نیروی محرکه اصلی فیزیولوژیک برای جریان صفرای کبدی هستند و به انتقال آب و الکترولیت در روده باریک و کولون کمک می‌کنند.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> UDCA در درمان انتخابی برخی سنگ‌های کلسترولی کاربرد دارد و برای سنگ‌های پیگمانی مؤثر نیست.</div>
+    <div class="meta"><span>نکته: اسیدهای صفراوی اولیه در کبد؛ ثانویه در روده.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۵ ================= -->
+  <article class="card" id="s5">
+    <span class="badge">اسلاید ۵</span>
+    <h2>گردش انتروهپاتیک <span class="en">(Enterohepatic circulation)</span></h2>
+    <ul>
+      <li>اسیدهای صفراوی غیرکنژوگه و تا حد کمتری کنژوگه، از طریق انتشار غیرفعال در سراسر روده جذب می‌شوند.</li>
+      <li>مکانیسم انتقال فعال برای اسیدهای صفراوی کنژوگه در ایلئوم انتهایی <span class="en">(Distal ileum)</span> قرار دارد.</li>
+      <li>اسیدهای صفراوی بازجذب‌شده وارد جریان خون پورت می‌شوند و به‌سرعت توسط هپاتوسیت‌ها برداشته، مجدداً کنژوگه و به صفرا ترشح می‌شوند (گردش انتروهپاتیک).</li>
+      <li>اندازه طبیعی استخر اسیدهای صفراوی حدود ۲–۴ گرم است.</li>
+      <li>استخر اسیدهای صفراوی حدود ۵–۱۰ بار در روز گردش می‌کند.</li>
+      <li>بازجذب روده‌ای استخر حدود ۹۵٪ کارآمد است؛ بنابراین دفع مدفوعی روزانه اسیدهای صفراوی حدود ۰٫۲–۰٫۴ گرم است.</li>
+      <li>اسیدهای صفراوی در روده آزادسازی فاکتور رشد فیبروبلاست ۱۹ <span class="en">(FGF19)</span> را تحریک می‌کنند که با مهار آنزیم محدودکننده سرعت سیتوکروم P450 7A1 <span class="en">(CYP7A1)</span> سنتز کبدی اسیدهای صفراوی از کلسترول را سرکوب می‌کند. FGF19 همچنین شل‌شدن کیسه صفرا را افزایش می‌دهد.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> گردش انتروهپاتیک باعث صرفه‌جویی در اسیدهای صفراوی می‌شود؛ اختلال آن می‌تواند دفع صفراوی را تغییر دهد.</div>
+    <div class="meta"><span>نکته: FGF19 نقش بازخورد منفی در ساخت اسید صفراوی دارد.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۶ ================= -->
+  <article class="card" id="s6">
+    <span class="badge">اسلاید ۶</span>
+    <h2>عملکرد کیسه صفرا و اسفنکترها</h2>
+    <ul>
+      <li>در حالت ناشتا، اسفنکتر اودی <span class="en">(Sphincter of Oddi; SOD)</span> ناحیه‌ای با مقاومت فشار بالا در برابر جریان صفرا از مجرای صفراوی مشترک <span class="en">(CBD)</span> به دوازدهه ایجاد می‌کند.</li>
+      <li>انقباض تونیک آن برای دو هدف است: (۱) جلوگیری از رفلاکس محتویات دوازدهه به مجاری پانکراس و صفراوی؛ (۲) کمک به پر شدن کیسه صفرا.</li>
+      <li>مهم‌ترین عامل کنترل تخلیه کیسه صفرا → کوله‌سیستوکینین <span class="en">(CCK)</span> است. CCK در پاسخ به مصرف چربی‌ها و اسیدهای آمینه از مخاط دوازدهه آزاد می‌شود.</li>
+      <li>CCK باعث: (۱) انقباض قوی کیسه صفرا؛ (۲) کاهش مقاومت SOD؛ (۳) افزایش جریان محتویات صفراوی به دوازدهه می‌شود.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> CCK هورمون اصلی تخلیه کیسه صفرا پس از وعده غذایی چرب است.</div>
+    <div class="meta"><span>نکته: ناشتا = اسفنکتر بسته و کیسه صفرا پر می‌شود؛ غذا = CCK و تخلیه.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۷ ================= -->
+  <article class="card" id="s7">
+    <span class="badge">اسلاید ۷</span>
+    <h2>آناتومی مجاری صفراوی و پانکراس</h2>
+    <p>این اسلاید شامل تصویر آناتومیک است و متن مستقل ندارد.</p>
+    <div class="ph">
+      <span class="ph-title">Placeholder — تصویر اصلی اسلاید ۷</span>
+      نمودار آناتومی کیسه صفرا، مجاری صفراوی، پانکراس و روده باریک.<br>
+      برچسب‌ها: مجرای کبدی راست <span class="en">(Right hepatic duct)</span>، مجرای کبدی چپ <span class="en">(Left hepatic duct)</span>، مجرای کبدی مشترک <span class="en">(Common hepatic duct)</span>، کیسه صفرا <span class="en">(Gallbladder)</span>، مجرای سیستیک <span class="en">(Cystic duct)</span>، مجرای صفراوی خارج کبدی <span class="en">(Extrahepatic bile duct)</span>، مجرای صفراوی مشترک <span class="en">(Common bile duct)</span>، پانکراس <span class="en">(Pancreas)</span>، مجرای پانکراس <span class="en">(Pancreatic duct)</span>، روده باریک <span class="en">(Small intestine)</span>.
+    </div>
+    <div class="note"><b>توضیح تکمیلی:</b> تصویر مجاری صفراوی داخل و خارج کبدی و اتصال به دوازدهه را نشان می‌دهد.</div>
+    <div class="meta"><span>نکته: این تصویر در اسلاید ۴۹ نیز تکرار شده است.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۸ ================= -->
+  <article class="card" id="s8">
+    <span class="badge">اسلاید ۸</span>
+    <h2>ذخیره‌سازی استخر اسیدهای صفراوی در کیسه صفرا</h2>
+    <ul>
+      <li>تقریباً کل استخر اسیدهای صفراوی ممکن است پس از ناشتایی شبانه در کیسه صفرا ذخیره شود و با اولین وعده غذایی روز به دوازدهه تحویل داده شود.</li>
+      <li>ظرفیت طبیعی کیسه صفرا حدود ۳۰ میلی‌لیتر است.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> این ذخیره‌سازی باعث می‌شود صفرا در زمان مصرف غذا به‌صورت متمرکز وارد روده شود.</div>
+    <div class="meta"><span>نکته: ظرفیت ~۳۰ میلی‌لیتر.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۹ ================= -->
+  <article class="card" id="s9">
+    <span class="badge">اسلاید ۹</span>
+    <h2>بیماری‌های کیسه صفرا — ناهنجاری‌های مادرزادی</h2>
+    <ul>
+      <li>ناهنجاری‌های مادرزادی غیرشایع نیستند.</li>
+      <li>ناهنجاری‌ها در تعداد، اندازه و شکل: آژنزی کیسه صفرا <span class="en">(Agenesis of the gallbladder)</span>، دوتایی‌شدن، کیسه صفرای ابتدایی یا بسیار بزرگ («غول‌آسا») و دیورتیکول‌ها.</li>
+      <li>کلاه فریژی <span class="en">(Phrygian cap)</span> یک وضعیت بالینی بی‌خطر است که در آن یک سپتوم یا چین جزئی/کامل، فوندوس را از بدن کیسه صفرا جدا می‌کند.</li>
+      <li>ناهنجاری‌های موقعیت: کیسه صفرای داخل کبدی <span class="en">(Intrahepatic gallbladder)</span>، جابه‌جایی عقب کیسه صفرا و کیسه صفرای «شناور» <span class="en">(Floating gallbladder)</span>.</li>
+      <li>وضعیت اخیر مستعد پیچش حاد <span class="en">(Acute torsion)</span>، ولولوس <span class="en">(Volvulus)</span> یا فتق کیسه صفرا است.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> کلاه فریژی معمولاً یافته تصادفی و بدون اهمیت بالینی است.</div>
+    <div class="meta"><span>نکته: کیسه صفرای شناور ریسک پیچش دارد.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۱۰ ================= -->
+  <article class="card" id="s10">
+    <span class="badge">اسلاید ۱۰</span>
+    <h2>سنگ کیسه صفرا — شیوع و انواع</h2>
+    <ul>
+      <li>در بیشتر کشورهای غربی بسیار شایع است. سن >۵۰ سال؛ بومیان آمریکا > اسپانیایی‌تبارها > سفیدپوستان غیراسپانیایی‌تبار > آمریکایی‌های سیاه‌پوست. زنان > مردان.</li>
+      <li>سنگ‌های کلسترولی >۹۰٪ و سنگ‌های پیگمانی.</li>
+      <li>سنگ‌های کلسترولی: در کشورهای صنعتی غربی. بیش از ۵۰٪ کلسترول مونوهیدرات به‌همراه مخلوطی از نمک‌های کلسیم، پیگمان‌های صفراوی، پروتئین‌ها و اسیدهای چرب.</li>
+      <li>سنگ‌های پیگمانی («سیاه» و «قهوه‌ای»): بیلی‌روبینات کلسیم؛ کلسترول <۲۰٪؛ انواع ثانویه به عفونت مزمن صفراوی.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> ترکیب سنگ تعیین‌کننده پاسخ به درمان دارویی است؛ سنگ‌های پیگمانی به UDCA پاسخ نمی‌دهند.</div>
+    <div class="meta"><span>نکته: شیوع: زن > مرد؛ سن بالا.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۱۱ ================= -->
+  <article class="card" id="s11">
+    <span class="badge">اسلاید ۱۱</span>
+    <h2>پاتوژنز سنگ‌های کلسترولی — افزایش ترشح کلسترول</h2>
+    <ul>
+      <li>مهم‌ترین عامل = افزایش ترشح کلسترول به صفرا (فوق‌اشباع صفرا با کلسترول).</li>
+      <li>تبدیل کولیک اسید به دئوکسی‌کولیک اسید → هیپرسکرسیون کلسترول به صفرا.</li>
+      <li>ارتباط با چاقی، سندرم متابولیک، رژیم‌های پرکالری و غنی از کلسترول، یا داروها (کلوفیبرات).</li>
+      <li>افزایش فعالیت آنزیم HMG-CoA ردوکتاز <span class="en">(Hydroxy methylglutaryl-coenzyme A reductase)</span>، افزایش برداشت کبدی کلسترول از خون.</li>
+      <li>علاوه بر عوامل محیطی مانند رژیم‌های پرکالری و غنی از کلسترول، هیپرسکرسیون کلسترول مطرح است.</li>
+      <li>بستگان درجه اول؛ برخی جمعیت‌های قومی؛ ژنتیک (چندژنی)؛ جهش‌ها در ژن CYP7A1.</li>
+      <li>هیپوسکرسیون اسیدهای صفراوی یا فسفولیپیدها.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> فوق‌اشباع کلسترول اولین قدم در تشکیل سنگ کلسترولی است.</div>
+    <div class="meta"><span>نکته: HMG-CoA ردوکتاز آنزیم کلیدی ساخت کلسترول است.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۱۲ ================= -->
+  <article class="card" id="s12">
+    <span class="badge">اسلاید ۱۲</span>
+    <h2>هسته‌بندی <span class="en">(Nucleation)</span></h2>
+    <ul>
+      <li>رشد طولانی‌تر است.</li>
+      <li>عوامل هسته‌بندیزا <span class="en">(Pronucleating factors)</span> → موکین و برخی گلیکوپروتئین‌های غیرموکینی، عمدتاً ایمونوگلوبولین.</li>
+      <li>کاهش عوامل ضدهسته‌بندی <span class="en">(Antinucleating factors)</span> → آپولیپوپروتئین A-I و A-II؛ کمبود عوامل ضدهسته‌بندی.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> هسته‌بندی یعنی تشکیل هسته اولیه کریستال کلسترول؛ تعادل عوامل تحریک‌کننده و مهارکننده مهم است.</div>
+    <div class="meta"><span>نکته: موکین و ایمونوگلوبولین‌ها نقش تحریکی دارند.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۱۳ ================= -->
+  <article class="card" id="s13">
+    <span class="badge">اسلاید ۱۳</span>
+    <h2>کاهش حرکات کیسه صفرا <span class="en">(Gallbladder hypomotility)</span></h2>
+    <ul>
+      <li>افزایش حجم کیسه صفرا در حالت ناشتا و پس از یک وعده آزمایشی (حجم باقی‌مانده).</li>
+      <li>بروز سنگ صفرا در شرایط همراه با تخلیه نامکرر یا مختل کیسه صفرا افزایش می‌یابد؛ مانند: ناشتایی، تغذیه وریدی <span class="en">(Parenteral nutrition)</span>، بارداری، مصرف داروهایی که حرکات کیسه صفرا را مهار می‌کنند (اکت‌رئوتاید/Octreotide).</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> رکود صفرا زمان کافی برای رشد کریستال‌ها فراهم می‌کند.</div>
+    <div class="meta"><span>نکته: ناشتایی طولانی و TPN از عوامل خطر هستند.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۱۴ ================= -->
+  <article class="card" id="s14">
+    <span class="badge">اسلاید ۱۴</span>
+    <h2>لجن صفراوی <span class="en">(Biliary sludge)</span></h2>
+    <ul>
+      <li>فوق‌اشباع صفرا با کلسترول یا بیلی‌روبینات کلسیم.</li>
+      <li>ماده غلیظ و موکوسی.</li>
+      <li>لایه‌ای هلالی‌شکل در وابسته‌ترین بخش کیسه صفرا که با اکوهای مشخص در سونوگرافی شناسایی می‌شود؛ هیپواکو <span class="en">(Hypoecho)</span>.</li>
+      <li>(۱) تعادل طبیعی بین ترشح موکین کیسه صفرا و حذف آن مختل شده است؛ (۲) هسته‌بندی مواد حل‌شده صفراوی رخ می‌دهد.</li>
+      <li>لجن صفراوی ممکن است پیش‌ساز بیماری سنگ صفرا باشد.</li>
+      <li>سایه خلفی منفی <span class="en">(Posterior shadow negative)</span>.</li>
+      <li>با اختلالاتی که باعث کاهش حرکات کیسه صفرا می‌شوند ایجاد می‌شود.</li>
+      <li>جراحی، سوختگی، تغذیه تام وریدی <span class="en">(TPN)</span>، بارداری و قرص‌های ضدبارداری — همگی با تشکیل سنگ صفرا مرتبط‌اند.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> لجن صفراوی اغلب گذراست، اما می‌تواند به سنگ یا عارضه منجر شود.</div>
+    <div class="meta"><span>نکته: در سونوگرافی بدون سایه آکوستیک است.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۱۵ ================= -->
+  <article class="card" id="s15">
+    <span class="badge">اسلاید ۱۵</span>
+    <h2>تشکیل سنگ کلسترولی یا لجن صفراوی — بارداری و کاهش وزن سریع</h2>
+    <h3>بارداری</h3>
+    <ul>
+      <li>(۱) افزایش چشمگیر اشباع کلسترول صفرا در سه‌ماهه سوم.</li>
+      <li>(۲) انقباض کند کیسه صفرا در پاسخ به وعده غذایی استاندارد، که به تخلیه مختل کیسه صفرا می‌انجامد.</li>
+      <li>ناهنجاری‌ها پس از زایمان نسبتاً سریع اصلاح می‌شوند.</li>
+      <li>لجن صفراوی در ۲۰–۳۰٪ زنان ایجاد می‌شود؛ سنگ صفرای بدون علامت در ۵–۱۲٪.</li>
+    </ul>
+    <h3>کاهش وزن سریع</h3>
+    <ul>
+      <li>رژیم بسیار کم‌کالری ۱۰–۲۰٪؛ UDCA خطر تشکیل سنگ صفرا را کاهش داد.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> بارداری به‌دلیل اثر پروژسترون و استروژن، تخلیه کیسه صفرا را کند و اشباع کلسترول را افزایش می‌دهد.</div>
+    <div class="meta"><span>نکته: UDCA در پیشگیری از سنگ در کاهش وزن سریع مطرح شده است.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۱۶ ================= -->
+  <article class="card" id="s16">
+    <span class="badge">اسلاید ۱۶</span>
+    <h2>سنگ‌های پیگمانی</h2>
+    <ul>
+      <li>سنگ‌های پیگمانی در آسیا/مناطق روستایی.</li>
+      <li>سیاه (با افزایش بیلی‌روبین کنژوگه در صفرا) / قهوه‌ای (با افزایش مقادیر بیلی‌روبین غیرکنژوگه و نامحلول در صفرا).</li>
+      <li>شرایط مزمن همولیتیک / سنگ سیاه.</li>
+      <li>سیروز، به‌ویژه مرتبط با الکل / سنگ سیاه.</li>
+      <li>سندرم ژیلبرت / سنگ سیاه.</li>
+      <li>فیبروز کیستیک / سنگ سیاه.</li>
+      <li>بیماری‌های ایلئال، برداشتن ایلئوم یا بای‌پس ایلئال / سنگ سیاه.</li>
+      <li>عفونت انگلی.</li>
+      <li>عفونت مزمن باکتریایی.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> سنگ‌های پیگمانی سیاه بیشتر با همولیز مزمن و سیروز و سنگ‌های قهوه‌ای بیشتر با عفونت/رکود صفراوی مرتبط‌اند.</div>
+    <div class="meta"><span>نکته: دو نوع سیاه و قهوه‌ای.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۱۷ ================= -->
+  <article class="card" id="s17">
+    <span class="badge">اسلاید ۱۷</span>
+    <h2>عوامل خطر سنگ‌های کلسترولی و پیگمانی</h2>
+    <h3>سنگ‌های کلسترولی</h3>
+    <ul>
+      <li>۱. عوامل جمعیتی/ژنتیکی: بیشترین شیوع در بومیان آمریکای شمالی، بومیان شیلی و اسپانیایی‌تبارهای شیلی؛ در شمال اروپا و آمریکای شمالی بیشتر از آسیا؛ کمترین در ژاپن؛ زمینه خانوادگی؛ جنبه‌های ارثی؛ افزایش ترشح صفراوی کلسترول.</li>
+      <li>۲. کاهش وزن سریع: بسیج کلسترول بافتی به افزایش ترشح کلسترول صفراوی می‌انجامد، در حالی که گردش انتروهپاتیک اسیدهای صفراوی کاهش می‌یابد.</li>
+      <li>۴. هورمون‌های جنسی زنانه:
+        <ul>
+          <li>الف) استروژن‌ها گیرنده‌های لیپوپروتئین کبدی را تحریک می‌کنند، برداشت کلسترول غذایی را افزایش می‌دهند و ترشح صفراوی کلسترول را زیاد می‌کنند.</li>
+          <li>ب) استروژن‌های طبیعی، سایر استروژن‌ها و قرص‌های ضدبارداری به کاهش ترشح نمک‌های صفراوی و کاهش تبدیل کلسترول به استرهای کلسترول می‌انجامند.</li>
+        </ul>
+      </li>
+      <li>۵. بارداری: تخلیه مختل کیسه صفرا به‌دلیل پروژسترون همراه با اثر استروژن‌ها که ترشح صفراوی کلسترول را افزایش می‌دهند.</li>
+      <li>۶. افزایش سن: افزایش ترشح صفراوی کلسترول، کاهش اندازه استخر اسیدهای صفراوی، کاهش ترشح نمک‌های صفراوی.</li>
+      <li>۷. کاهش حرکات کیسه صفرا که به رکود و تشکیل لجن می‌انجامد: الف) تغذیه تام وریدی؛ ب) ناشتایی؛ ج) بارداری؛ د) داروهایی مانند اکت‌رئوتاید.</li>
+      <li>۸. درمان با کلوفیبرات: افزایش ترشح صفراوی کلسترول.</li>
+      <li>۹. کاهش ترشح اسیدهای صفراوی: نقص ژنتیکی ژن CYP7A1.</li>
+      <li>۱۰. کاهش ترشح فسفولیپید: نقص ژنتیکی ژن MDR3.</li>
+      <li>۱۱. متفرقه: الف) رژیم پرکالری و پرچرب؛ ب) آسیب نخاعی.</li>
+    </ul>
+    <h3>سنگ‌های پیگمانی</h3>
+    <ul>
+      <li>۱. عوامل جمعیتی/ژنتیکی: آسیا، محیط روستایی (احتمالاً به‌دلیل شیوع بیشتر عفونت‌های انگلی صفراوی)؛ بروز با گذشت زمان کاهش یافته است.</li>
+      <li>۲. همولیز مزمن (مثال: بیماری سلول داسی‌شکل).</li>
+      <li>۳. سیروز کبدی مرتبط با الکل.</li>
+      <li>۴. اریتروپوئز ناکارآمد (مثال: کم‌خونی پرنیشیوز).</li>
+      <li>۵. فیبروز کیستیک.</li>
+      <li>۶. عفونت مزمن مجاری صفراوی، عفونت‌های انگلی.</li>
+      <li>۷. افزایش سن.</li>
+      <li>۸. بیماری ایلئال، برداشتن ایلئوم یا بای‌پس.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> شماره ۳ در متن اصلی ذکر نشده است؛ شماره‌گذاری حفظ شده است.</div>
+    <div class="meta"><span>نکته: این اسلاید فهرست جامع عوامل خطر است.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۱۸ ================= -->
+  <article class="card" id="s18">
+    <span class="badge">اسلاید ۱۸</span>
+    <h2>تشخیص سنگ کیسه صفرا</h2>
+    <ul>
+      <li>سونوگرافی کیسه صفرا در شناسایی کوله‌لیتیازیس <span class="en">(Cholelithiasis)</span> بسیار دقیق است و جایگزین کوله‌سیستوگرافی خوراکی <span class="en">(OCG)</span> شده است.</li>
+      <li>«سایه آکوستیک» <span class="en">(Acoustic shadowing)</span> اجسام کدر داخل لومن کیسه صفرا که با موقعیت بیمار [تحت اثر گرانش] تغییر می‌کنند.</li>
+      <li>لجن صفراوی ماده‌ای با فعالیت اکوژنیک پایین است که معمولاً لایه‌ای در وابسته‌ترین وضعیت کیسه صفرا تشکیل می‌دهد. این لایه با تغییر وضعیت بدن جابه‌جا می‌شود اما سایه آکوستیک تولید نمی‌کند.</li>
+      <li>رادیوگرافی ساده شکم ممکن است سنگ‌های صفراوی حاوی کلسیم کافی برای رادیواوپک بودن را تشخیص دهد (۱۰–۱۵٪ سنگ‌های کلسترولی و ~۵۰٪ سنگ‌های پیگمانی).</li>
+      <li>رادیوگرافی ساده ممکن است در تشخیص کوله‌سیستیت آمفیزماتوز، کیسه صفرای چینی، صفرای آهکی و ایلئوس سنگ صفرا مفید باشد.</li>
+      <li>OCG با سونوگرافی جایگزین شده است؛ ممکن است برای ارزیابی باز بودن مجرای سیستیک و عملکرد تخلیه کیسه صفرا استفاده شود.</li>
+      <li>اسکن‌های رادیوایزوتوپ (HIDA و DISIDA): کوله‌سیستیت حاد و ممکن است در تشخیص نشت صفرا پس از کوله‌سیستکتومی نقش داشته باشد.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> سونوگرافی روش انتخابی اولیه است؛ HIDA بیشتر برای اثبات انسداد مجرای سیستیک کاربرد دارد.</div>
+    <div class="meta"><span>نکته: OCG تقریباً منسوخ شده است.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۱۹ ================= -->
+  <article class="card" id="s19">
+    <span class="badge">اسلاید ۱۹</span>
+    <h2>جدول ۳۴۶-۲ — ارزیابی تشخیصی کیسه صفرا</h2>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>روش تشخیصی</th>
+            <th>مزایای تشخیصی</th>
+            <th>محدودیت‌های تشخیصی</th>
+            <th>توضیح</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>سونوگرافی <span class="en">(Ultrasound)</span></td>
+            <td>سریع؛ شناسایی دقیق سنگ‌ها (>۹۵٪)؛ اسکن همزمان کیسه صفرا، کبد، مجاری صفراوی و پانکراس؛ اسکن «Real-time» امکان ارزیابی حجم و انقباض کیسه صفرا را می‌دهد؛ محدود به زردی یا بارداری نیست؛ ممکن است سنگ‌های خیلی کوچک را نشان دهد.</td>
+            <td>گاز روده؛ چاقی شدید؛ آسیت.</td>
+            <td>روش انتخابی تشخیص سنگ.</td>
+          </tr>
+          <tr>
+            <td>رادیوگرافی ساده شکم <span class="en">(Plain Abdominal X-Ray)</span></td>
+            <td>کم‌هزینه؛ به‌راحتی در دسترس؛ یافته‌های پاتوگنومونیک در: سنگ‌های کلسیفیه کیسه صفرا، صفرای آهکی، کیسه صفرای چینی، کوله‌سیستیت آمفیزماتوز، ایلئوس سنگ صفرا.</td>
+            <td>بازده نسبتاً کم؛ در بارداری منع مصرف دارد.</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>کوله‌سیسینتی‌گرافی <span class="en">(Cholescintigraphy: HIDA, DISIDA و غیره)</span></td>
+            <td>شناسایی دقیق انسداد مجرای سیستیک؛ ارزیابی همزمان مجاری صفراوی؛ برای تأیید کوله‌سیستیت حاد؛ در کوله‌سیستیت مزمن حساسیت و ویژگی کمتر؛ مفید در تشخیص کوله‌سیستوپاتی بدون سنگ، به‌ویژه اگر همراه با CCK برای ارزیابی تخلیه کیسه صفرا داده شود.</td>
+            <td>در بارداری منع مصرف دارد؛ بیلی‌روبین سرم >۱۰۳–۲۰۵ میکرومول در لیتر (۶–۱۲ میلی‌گرم در دسی‌لیتر)؛ کوله‌سیستوگرام با رزولوشن پایین.</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note"><b>توضیح تکمیلی:</b> CCK در این روش برای بررسی تخلیه کیسه صفرا استفاده می‌شود.</div>
+    <div class="meta"><span>منبع جدول: TABLE 346-2</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۲۰ ================= -->
+  <article class="card" id="s20">
+    <span class="badge">اسلاید ۲۰</span>
+    <h2>علائم بیماری سنگ صفرا</h2>
+    <ul>
+      <li>اختصاصی‌ترین و مشخص‌ترین علامت بیماری سنگ صفرا، قولنج صفراوی <span class="en">(Biliary colic)</span> است که دردی ثابت و اغلب طولانی‌مدت است.</li>
+      <li>انسداد مجرای سیستیک یا CBD توسط سنگ، فشار داخل لومن را افزایش می‌دهد.</li>
+      <li>درد احشایی حاصل: درد شدید، ثابت یا احساس پری در اپی‌گاستر یا ربع فوقانی راست <span class="en">(RUQ)</span> شکم با انتشار مکرر به ناحیه بین‌کتفی، کتف راست یا شانه.</li>
+      <li>به‌طور ناگهانی شروع می‌شود و ممکن است با شدت زیاد ۳۰ دقیقه تا ۵ ساعت ادامه یابد و به‌تدریج یا سریع فروکش کند. ثابت است نه متناوب. اپیزود درد صفراوی بیش از ۵ ساعت باید شک به کوله‌سیستیت حاد را برانگیزد.</li>
+      <li>تهوع و استفراغ.</li>
+      <li>سطح بالای بیلی‌روبین سرم و/یا آلکالین فسفاتاز نشان‌دهنده سنگ مجرای مشترک است.</li>
+      <li>تب یا لرز <span class="en">(Rigors)</span> → معمولاً دلالت بر عارضه دارد؛ یعنی کوله‌سیستیت، پانکراتیت یا کلانژیت.</li>
+      <li>قولنج صفراوی ممکن است با خوردن وعده چرب، مصرف وعده بزرگ پس از ناشتایی طولانی یا خوردن وعده معمول تحریک شود؛ اغلب شبانه و در چند ساعت پس از خوابیدن رخ می‌دهد.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> درد ثابت و طولانی‌تر از ۵ ساعت، هشدار کوله‌سیستیت حاد است.</div>
+    <div class="meta"><span>نکته: علامت مشخصه: قولنج صفراوی.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۲۱ ================= -->
+  <article class="card" id="s21">
+    <span class="badge">اسلاید ۲۱</span>
+    <h2>تاریخ طبیعی سنگ صفرا</h2>
+    <ul>
+      <li>۶۰–۸۰٪ افراد با سنگ صفرای بدون علامت تا ۲۵ سال پیگیری بدون علامت می‌مانند.</li>
+      <li>بروز سالانه عوارض حدود ۰٫۱–۰٫۳٪ است.</li>
+      <li>نتایج مشابه برای بیماران دیابتی با سنگ صفرای خاموش صدق می‌کند.</li>
+      <li>خطر مرگ ناشی از بیماری سنگ صفرا در مدیریت انتظاری کم است.</li>
+      <li>کوله‌سیستکتومی → در بیمارانی که علائم درد صفراوی پیدا کرده‌اند.</li>
+      <li>سن پایین‌تر احتمال بیشتری برای ایجاد علائم از کوله‌لیتیازیس نسبت به بیماران >۶۰ سال دارد.</li>
+      <li>بیماران دیابتی با سنگ صفرا ممکن است تا حدی مستعد عوارض سپتیک باشند، اما اندازه خطر عوارض سپتیک صفراوی در دیابتی‌ها کاملاً مشخص نیست.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> اکثر سنگ‌های بدون علامت نیازی به جراحی فوری ندارند.</div>
+    <div class="meta"><span>نکته: مدیریت انتظاری در سنگ خاموش منطقی است.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۲۲ ================= -->
+  <article class="card" id="s22">
+    <span class="badge">اسلاید ۲۲</span>
+    <h2>درمان سنگ صفرا — درمان جراحی</h2>
+    <ul>
+      <li>در بیماران با سنگ صفرای بدون علامت، خطر ایجاد علائم یا عوارض نیازمند جراحی بسیار کم است.</li>
+      <li>توصیه برای کوله‌سیستکتومی:
+        <ul>
+          <li>(۱) وجود علائمی که به‌قدر کافی مکرر یا شدید هستند که در روال عمومی بیمار اختلال ایجاد کنند.</li>
+          <li>(۲) وجود عارضه قبلی بیماری سنگ صفرا؛ یعنی سابقه کوله‌سیستیت حاد، پانکراتیت، فیستول سنگ صفرا.</li>
+          <li>(۳) وجود بیماری زمینه‌ای که بیمار را مستعد خطر بیشتر عوارض سنگ صفرا می‌کند (حمله قبلی کوله‌سیستیت حاد بدون توجه به وضعیت علامتی فعلی).</li>
+        </ul>
+      </li>
+      <li>بیماران با سنگ‌های بسیار بزرگ (>۳ سانتی‌متر قطر) و بیماران دارای سنگ در کیسه صفرای آنومال مادرزادی نیز ممکن است برای کوله‌سیستکتومی پیشگیرانه در نظر گرفته شوند.</li>
+      <li>کوله‌سیستکتومی لاپاراسکوپیک «استاندارد طلایی» درمان کوله‌لیتیازیس علامت‌دار شده است.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> جراحی فقط در موارد علامت‌دار یا پرخطر توصیه می‌شود، نه در همه سنگ‌های خاموش.</div>
+    <div class="meta"><span>نکته: لاپاراسکوپی روش استاندارد است.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۲۳ ================= -->
+  <article class="card" id="s23">
+    <span class="badge">اسلاید ۲۳</span>
+    <h2>درمان دارویی سنگ صفرا</h2>
+    <ul>
+      <li>کیسه صفرای عملکردی.</li>
+      <li>سنگ‌های رادیولوسنت.</li>
+      <li>قطر <۱۰ میلی‌متر.</li>
+      <li>حدود ۵۰٪ بیماران در ۶ ماه تا ۲ سال پاسخ می‌دهند.</li>
+      <li>سنگ‌های پیگمانی به درمان با UDCA پاسخ نمی‌دهند.</li>
+      <li>بیماران با بیماری سنگ کلسترولی که پس از کوله‌سیستکتومی دچار کولدوکولیتیازیس عودکننده می‌شوند باید درمان طولانی‌مدت با UDCA دریافت کنند.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> درمان دارویی فقط برای زیرگروه محدودی از سنگ‌های کلسترولی و با کیسه صفرای عملکردی مناسب است.</div>
+    <div class="meta"><span>نکته: UDCA برای سنگ پیگمانی مؤثر نیست.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۲۴ ================= -->
+  <article class="card" id="s24">
+    <span class="badge">اسلاید ۲۴</span>
+    <h2>کوله‌سیستیت حاد <span class="en">(Acute cholecystitis)</span></h2>
+    <ul>
+      <li>معمولاً به‌دنبال انسداد مجرای سیستیک توسط سنگ رخ می‌دهد.</li>
+      <li>(۱) التهاب مکانیکی → افزایش فشار داخل لومن/اتساع با ایسکمی حاصل مخاط و دیواره کیسه صفرا.</li>
+      <li>(۲) التهاب شیمیایی → آزادسازی لیزولسیتین <span class="en">(Lysocethin/Lysolecithin)</span>.</li>
+      <li>(۳) التهاب باکتریایی که ممکن است در ۵۰–۸۵٪ بیماران با کوله‌سیستیت حاد نقش داشته باشد: <span class="en">Escherichia coli</span>، <span class="en">Klebsiella spp.</span>، <span class="en">Streptococcus spp.</span> و <span class="en">Clostridium spp.</span></li>
+      <li>کوله‌سیستیت حاد اغلب به‌صورت حمله درد صفراوی شروع می‌شود که به‌تدریج بدتر می‌شود. حدود ۶۰–۷۰٪ بیماران سابقه حملات قبلی خودبه‌خود فروکش‌کرده را گزارش می‌کنند.</li>
+      <li>درد در RUQ عمومی‌تر است.</li>
+      <li>ممکن است به ناحیه بین‌کتفی، کتف راست یا شانه انتشار یابد. بیمار بی‌اشتها و اغلب تهوع دارد. استفراغ.</li>
+      <li>زردی در ابتدای کوله‌سیستیت حاد غیرمعمول است اما ممکن است وقتی تغییرات التهابی ادماتوز مجاری صفراوی و گره‌های لنفاوی اطراف را درگیر می‌کند رخ دهد.</li>
+      <li>تب خفیف به‌طور مشخص وجود دارد، اما لرز شدید یا <span class="en">Rigors</span> غیرشایع نیست.</li>
+      <li>تنفس عمیق یا سرفه در حین لمس زیردنده‌ای RUQ معمولاً درد را افزایش می‌دهد و توقف دمی ایجاد می‌کند (علامت مورفی/<span class="en">Murphy’s sign</span>). حساسیت برگشتی موضعی در RUQ شایع است، مانند اتساع شکم و صداهای روده‌ای هیپواکتیو ناشی از ایلئوس پارالیتیک.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> علامت مورفی از نشانه‌های کلاسیک کوله‌سیستیت حاد است.</div>
+    <div class="meta"><span>نکته: سه مکانیسم: مکانیکی، شیمیایی، باکتریایی.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۲۵ ================= -->
+  <article class="card" id="s25">
+    <span class="badge">اسلاید ۲۵</span>
+    <h2>تشخیص کوله‌سیستیت حاد</h2>
+    <ul>
+      <li>تشخیص: شرح حال و معاینه فیزیکی.</li>
+      <li>تریاد شروع ناگهانی حساسیت RUQ، تب و لکوسیتوز بسیار مطرح‌کننده است.</li>
+      <li>WBC: ۱۰٬۰۰۰–۱۵٬۰۰۰؛ شیفت به چپ.</li>
+      <li>بیلی‌روبین (<۵ میلی‌گرم در دسی‌لیتر) در کمتر از نیمی از بیماران.</li>
+      <li>آمینوترانسفرازها: معمولاً کمتر از پنج برابر افزایش.</li>
+      <li>سونوگرافی در ۹۰–۹۵٪ موارد سنگ را نشان می‌دهد و برای تشخیص نشانه‌های التهاب کیسه صفرا شامل ضخیم‌شدن دیواره، مایع پری‌کوله‌سیستیک و اتساع مجرای صفراوی مفید است.</li>
+      <li>اسکن رادیونوکلئید (HIDA) ممکن است تأییدی باشد اگر تصویربرداری مجرای صفراوی دیده شود بدون مشاهده کیسه صفرا.</li>
+      <li>۷۵٪ → درمان پزشکی/بهبود در ۲–۷ روز.</li>
+      <li>۲۵٪ با وجود درمان محافظه‌کارانه → مداخله جراحی.</li>
+      <li>کوله‌سیستیت حاد بهترین درمان با جراحی زودهنگام است.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> عدم مشاهده کیسه صفرا در HIDA در زمینه انسداد مجرای سیستیک، یافته کلیدی است.</div>
+    <div class="meta"><span>نکته: سونوگرافی روش تصویربرداری اولیه است.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۲۶ ================= -->
+  <article class="card" id="s26">
+    <span class="badge">اسلاید ۲۶</span>
+    <h2>سندرم میریزی <span class="en">(Mirizzi’s syndrome)</span></h2>
+    <ul>
+      <li>عارضه نادر.</li>
+      <li>سنگ صفرای گیرکرده در مجرای سیستیک یا گردن کیسه صفرا که باعث فشرده‌سازی CBD و در نتیجه انسداد CBD و زردی می‌شود.</li>
+      <li>سونوگرافی سنگ(های) صفرا را خارج از مجرای کبدی نشان می‌دهد.</li>
+      <li>ERCP، PTC، MRCP → فشرده‌سازی خارجی CBD.</li>
+      <li>درمان: جراحی.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> در سندرم میریزی سنگ خود مجرا را پر نکرده، بلکه با فشار خارجی CBD را تنگ می‌کند.</div>
+    <div class="meta"><span>نکته: تشخیص با تصویربرداری مجاری.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۲۷ ================= -->
+  <article class="card" id="s27">
+    <span class="badge">اسلاید ۲۷</span>
+    <h2>کوله‌سیستیت بدون سنگ — عوامل خطر</h2>
+    <ul>
+      <li>۵–۱۴٪؛ در ۵۰٪ موارد علت یافت نمی‌شود.</li>
+      <li>افزایش خطر: ناشتایی طولانی، ترومای جدی، سوختگی، دوره پس از زایمان پس از زایمان طولانی، اعمال جراحی ارتوپدی و سایر جراحی‌های غیرصفراوی بزرگ در دوره پس از عمل، تغذیه وریدی طولانی‌مدت.</li>
+      <li>سایر عوامل رسوب‌دهنده: واسکولیت، آدنوکارسینومای مسدودکننده کیسه صفرا، دیابت ملیتوس، پیچش کیسه صفرا، عفونت‌های «غیرمعمول» باکتریایی کیسه صفرا (مانند <span class="en">Leptospira</span>، <span class="en">Streptococcus</span>، <span class="en">Salmonella</span> یا <span class="en">Vibrio cholerae</span>) و آلودگی انگلی کیسه صفرا.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> کوله‌سیستیت بدون سنگ بیشتر در بیماران بدحال و بستری دیده می‌شود.</div>
+    <div class="meta"><span>نکته: ۵۰٪ بدون علت مشخص.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۲۸ ================= -->
+  <article class="card" id="s28">
+    <span class="badge">اسلاید ۲۸</span>
+    <h2>کوله‌سیستیت بدون سنگ — تظاهرات و درمان</h2>
+    <ul>
+      <li>کوله‌سیستیت بدون سنگ ممکن است با انواع فرایندهای بیماری سیستمیک دیگر نیز دیده شود (سارکوئیدوز، بیماری قلبی‌عروقی، سل، سیفلیس، اکتینومایکوز).</li>
+      <li>تظاهرات بالینی همان کوله‌سیستیت سنگ‌دار است.</li>
+      <li>سونوگرافی یا CT → کیسه صفرای بزرگ، متشنج و ساکن بدون سنگ و با شواهد تخلیه ضعیف در مدت طولانی ممکن است در برخی موارد از نظر تشخیصی مفید باشد.</li>
+      <li>میزان عوارض کوله‌سیستیت بدون سنگ > کوله‌سیستیت سنگ‌دار است.</li>
+      <li>درمان: جراحی.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> تأخیر در تشخیص می‌تواند خطر پارگی و سپسیس را افزایش دهد.</div>
+    <div class="meta"><span>نکته: عوارض بیشتر از نوع سنگ‌دار.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۲۹ ================= -->
+  <article class="card" id="s29">
+    <span class="badge">اسلاید ۲۹</span>
+    <h2>کوله‌سیستوپاتی بدون سنگ <span class="en">(Acalculous cholecystopathy)</span></h2>
+    <ul>
+      <li>اختلال حرکتی کیسه صفرا → درد صفراوی در بیماران بدون سنگ صفرا.</li>
+      <li>هیپرتروفی عضله کیسه صفرا و/یا مجرای سیستیک به‌شدت تنگ.</li>
+      <li>(۱) اپیزودهای عودکننده درد معمول RUQ مشخصه درد مجاری صفراوی.</li>
+      <li>(۲) کوله‌سیسینتی‌گرافی غیرطبیعی با CCK که کسر تخلیه کیسه صفرا <۴۰٪ را نشان می‌دهد.</li>
+      <li>(۳) تزریق CCK که درد بیمار را بازتولید می‌کند.</li>
+      <li>کیسه صفرای بزرگ در سونوگرافی.</li>
+      <li>تشخیص افتراقی: اختلال عملکرد اسفنکتر اودی <span class="en">(SOD dysfunction)</span>.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> این اختلال عملکردی است و سنگ یا التهاب واضحی در تصویربرداری ندارد.</div>
+    <div class="meta"><span>نکته: کسر تخلیه <۴۰٪ معیار مطرح است.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۳۰ ================= -->
+  <article class="card" id="s30">
+    <span class="badge">اسلاید ۳۰</span>
+    <h2>کوله‌سیستیت آمفیزماتوز <span class="en">(Emphysematous cholecystitis)</span></h2>
+    <ul>
+      <li>کوله‌سیستیت حاد (سنگ‌دار یا بدون سنگ) که به‌دنبال ایسکمی یا گانگرن دیواره کیسه صفرا و عفونت با ارگانیسم‌های تولیدکننده گاز رخ می‌دهد.</li>
+      <li>باکتری‌ها: بی‌هوازی‌ها (<span class="en">Clostridium</span>)، هوازی‌ها (<span class="en">E. coli</span>).</li>
+      <li>در مردان سالمند و بیماران دیابتی.</li>
+      <li>رادیوگرافی ساده شکم → یافتن گاز داخل لومن کیسه صفرا.</li>
+      <li>میزان موربیدیتی و مرگ‌ومیر قابل‌توجه است.</li>
+      <li>مداخله جراحی فوری همراه با آنتی‌بیوتیک مناسب الزامی است.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> وجود گاز در دیواره/لومن کیسه صفرا در رادیوگرافی یک نشانه هشدار است.</div>
+    <div class="meta"><span>نکته: اورژانس جراحی.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۳۱ ================= -->
+  <article class="card" id="s31">
+    <span class="badge">اسلاید ۳۱</span>
+    <h2>کوله‌سیستیت مزمن <span class="en">(Chronic cholecystitis)</span></h2>
+    <ul>
+      <li>تقریباً همیشه با وجود سنگ صفرا همراه است.</li>
+      <li>وجود باکتری در صفرا در >۲۵٪ موارد.</li>
+      <li>کوله‌سیستکتومی انتخابی.</li>
+      <li>کوله‌سیستیت مزمن ممکن است سال‌ها بدون علامت باشد.</li>
+      <li>ممکن است پیشرفت به کوله‌سیستیت حاد کند یا با عوارض تظاهر یابد.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> التهاب مزمن دیواره کیسه صفرا اغلب نتیجه تحریک مکرر توسط سنگ است.</div>
+    <div class="meta"><span>نکته: اغلب همراه با سنگ.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۳۲ ================= -->
+  <article class="card" id="s32">
+    <span class="badge">اسلاید ۳۲</span>
+    <h2>عوارض کوله‌سیستیت — امپیما و کلانژیت</h2>
+    <ul>
+      <li>امپیما و هیدروپس: انسداد پایدار مجرای سیستیک منجر به سوپرعفونت صفرای راکد با ارگانیسم چرک‌ساز می‌شود.</li>
+      <li>کلانژیت → تب بالا؛ درد شدید RUQ؛ لکوسیتوز مشخص؛ و اغلب ناتوانی شدید.</li>
+      <li>خطر بالای سپسیس گرم‌منفی و/یا پارگی.</li>
+      <li>جراحی اورژانسی + آنتی‌بیوتیک.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> کلانژیت یک عفونت مجاری صفراوی است و می‌تواند سریعاً به سپسیس تبدیل شود.</div>
+    <div class="meta"><span>نکته: درمان اورژانسی.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۳۳ ================= -->
+  <article class="card" id="s33">
+    <span class="badge">اسلاید ۳۳</span>
+    <h2>هیدروپس و موکوسل کیسه صفرا</h2>
+    <ul>
+      <li>هیدروپس (ترانسودات شفاف) یا موکوسل (موکوس).</li>
+      <li>انسداد طولانی‌مدت مجرای سیستیک، معمولاً توسط یک سنگ بزرگ منفرد.</li>
+      <li>در معاینه فیزیکی ممکن است توده قابل‌دید، به‌راحتی لمس‌شدنی و بدون حساسیت یافت شود که گاهی از RUQ به حفره ایلیاک راست گسترش می‌یابد.</li>
+      <li>بیمار با هیدروپس کیسه صفرا اغلب بدون علامت می‌ماند، هرچند درد مزمن RUQ نیز ممکن است رخ دهد.</li>
+      <li>کوله‌سیستکتومی اندیکاسیون دارد، زیرا امپیما، پارگی یا گانگرن ممکن است عارضه ایجاد کند.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> توده لمس‌شدنی بدون درد در RUQ می‌تواند به هیدروپس کیسه صفرا اشاره کند.</div>
+    <div class="meta"><span>نکته: جراحی برای پیشگیری از عوارض.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۳۴ ================= -->
+  <article class="card" id="s34">
+    <span class="badge">اسلاید ۳۴</span>
+    <h2>گانگرن و پارگی <span class="en">(Gangrene and perforation)</span></h2>
+    <ul>
+      <li>ایسکمی دیواره و نکروز بافتی پچ‌پچ یا کامل.</li>
+      <li>شرایط زمینه‌ای اغلب شامل اتساع مشخص کیسه صفرا، واسکولیت، دیابت ملیتوس، امپیما یا پیچش منجر به انسداد شریانی است.</li>
+      <li>مستعد پارگی است.</li>
+      <li>پارگی‌های موضعی معمولاً توسط امنتوم یا چسبندگی‌های ناشی از التهاب عودکننده کیسه صفرا محدود می‌شوند.</li>
+      <li>سوپرعفونت باکتریایی → تشکیل آبسه.</li>
+      <li>بیشتر بیماران بهترین درمان با کوله‌سیستکتومی هستند، اما برخی بیماران به‌شدت بیمار ممکن است با کوله‌سیستوستومی و درناژ آبسه مدیریت شوند.</li>
+      <li>پارگی آزاد کمتر شایع است اما با میزان مرگ‌ومیر ~۳۰٪ همراه است. چنین بیمارانی ممکن است تسکین موقت ناگهانی درد RUQ را هنگام کاهش فشار کیسه صفرای متسع تجربه کنند؛ سپس نشانه‌های پریتونیت عمومی ظاهر می‌شود.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> پارگی آزاد یک اورژانس جراحی با مرگ‌ومیر بالاست.</div>
+    <div class="meta"><span>نکته: در بیمار بدحال، کوله‌سیستوستومی ممکن است جایگزین جراحی قطعی شود.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۳۵ ================= -->
+  <article class="card" id="s35">
+    <span class="badge">اسلاید ۳۵</span>
+    <h2>تشکیل فیستول و ایلئوس سنگ صفرا</h2>
+    <ul>
+      <li>فیستول‌ها به دوازدهه شایع‌ترین هستند → خم کبدی → معده یا ژژنوم → دیواره شکم → لگن کلیه.</li>
+      <li>سنگ >۲٫۵ سانتی‌متر.</li>
+      <li>فیستول‌های کوله‌سیستوانتریک بدون علامت ممکن است گاهی با یافتن گاز در درخت صفراوی در رادیوگرافی ساده شکم تشخیص داده شوند.</li>
+      <li>مطالعات کنتراست باریم یا آندوسکوپی دستگاه گوارش فوقانی یا کولون ممکن است فیستول را نشان دهد.</li>
+      <li>درمان در بیمار علامت‌دار معمولاً شامل کوله‌سیستکتومی، بررسی CBD و بستن مسیر فیستول است.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> فیستول کوله‌سیستوانتریک مسیر عبور سنگ بزرگ به روده و ایجاد ایلئوس است.</div>
+    <div class="meta"><span>نکته: گاز در درخت صفراوی = پنوموبیلیا.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۳۶ ================= -->
+  <article class="card" id="s36">
+    <span class="badge">اسلاید ۳۶</span>
+    <h2>ایلئوس سنگ صفرا <span class="en">(Gallstone ileus)</span></h2>
+    <ul>
+      <li>عبور یک سنگ صفرای بزرگ >۲٫۵ سانتی‌متر به لومن روده از طریق فیستول کوله‌سیستوانتریک در آن سطح → انسداد (دریچه ایلئوسکال).</li>
+      <li>رادیوگرافی ساده شکم → انسداد روده باریک با گاز در درخت صفراوی [پنوموبیلیا] و سنگ صفرای اکتوپیک کلسیفیه.</li>
+      <li>لاپاراتومی با خارج‌سازی سنگ (یا راندن آن به کولون) همچنان روش انتخابی برای رفع انسداد است.</li>
+      <li>تخلیه سنگ‌های بزرگ داخل کیسه صفرا نیز باید انجام شود.</li>
+      <li>به‌طور کلی، کیسه صفرا و اتصال آن به روده باید دست‌نخورده بماند.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> ایلئوس سنگ صفرا یک انسداد مکانیکی روده است، نه صرفاً بیماری کیسه صفرا.</div>
+    <div class="meta"><span>نکته: تریاد رادیولوژیک: انسداد روده باریک، پنوموبیلیا، سنگ اکتوپیک.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۳۷ ================= -->
+  <article class="card" id="s37">
+    <span class="badge">اسلاید ۳۷</span>
+    <h2>صفرای آهکی (شیر کلسیم) و کیسه صفرای چینی</h2>
+    <ul>
+      <li>نمک‌های کلسیم در لومن کیسه صفرا با غلظت کافی ممکن است رسوب کلسیم و کدرشدن منتشر و مبهم صفرا یا اثر لایه‌ای در رادیوگرافی ساده شکم ایجاد کنند.</li>
+      <li>معمولاً از نظر بالینی بی‌خطر است، اما کوله‌سیستکتومی اغلب انجام می‌شود، به‌ویژه وقتی در کیسه صفرای هیدروپیک رخ دهد.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> «شیر کلسیم» به صفرای آهکی گفته می‌شود که در رادیوگرافی کدر دیده می‌شود.</div>
+    <div class="meta"><span>نکته: اغلب بی‌خطر.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۳۸ ================= -->
+  <article class="card" id="s38">
+    <span class="badge">اسلاید ۳۸</span>
+    <h2>کیسه صفرای چینی <span class="en">(Porcelain gallbladder)</span></h2>
+    <ul>
+      <li>رسوب نمک‌های کلسیم در دیواره کیسه صفرای مزمن‌التهابی ممکن است در رادیوگرافی ساده شکم تشخیص داده شود.</li>
+      <li>در گذشته، کوله‌سیستکتومی برای همه بیماران با کیسه صفرای چینی توصیه می‌شد زیرا تصور می‌شد بروز کارسینوم بالا است.</li>
+      <li>دو الگو: کلسیفیکاسیون کامل داخل دیواره و کلسیفیکاسیون انتخابی مخاطی (بروز سرطان بالا).</li>
+      <li>اما خطر بسیار کوچک است. بنابراین، نیاز به کوله‌سیستکتومی برای کیسه صفرای چینی مطلق نیست؛ پایش نزدیک در این بیماران نیز قابل قبول است.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> الگوی کلسیفیکاسیون مخاطی انتخابی بیشتر با سرطان مرتبط دانسته شده است.</div>
+    <div class="meta"><span>نکته: جراحی مطلق نیست؛ پایش ممکن است.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۳۹ ================= -->
+  <article class="card" id="s39">
+    <span class="badge">اسلاید ۳۹</span>
+    <h2>درمان کوله‌سیستیت حاد — درمان پزشکی</h2>
+    <ul>
+      <li>اگرچه مداخله جراحی ستون اصلی درمان کوله‌سیستیت حاد و عوارض آن است.</li>
+      <li>مصرف خوراکی قطع می‌شود.</li>
+      <li>لوله بینی‌معدی <span class="en">(NGT)</span>.</li>
+      <li>کمبود حجم خارج سلولی و اختلالات الکترولیتی اصلاح می‌شوند.</li>
+      <li>ضد درد <span class="en">(Analgesia)</span>.</li>
+      <li>آنتی‌بیوتیک وریدی در بیماران با کوله‌سیستیت حاد شدید اندیکاسیون دارد.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> درمان پزشکی اولیه برای آماده‌سازی بیمار و کنترل عفونت/التهاب است.</div>
+    <div class="meta"><span>نکته: NPO، مایع، درد و آنتی‌بیوتیک.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۴۰ ================= -->
+  <article class="card" id="s40">
+    <span class="badge">اسلاید ۴۰</span>
+    <h2>درمان کوله‌سیستیت حاد — درمان جراحی</h2>
+    <ul>
+      <li>بیماران با کوله‌سیستیت حاد بدون عارضه باید کوله‌سیستکتومی لاپاراسکوپیک انتخابی زودهنگام، ترجیحاً در ۴۸–۷۲ ساعت پس از تشخیص، انجام دهند.</li>
+      <li>کوله‌سیستکتومی فوری (اورژانسی) یا کوله‌سیستوستومی از راه پوست: امپیما، کوله‌سیستیت آمفیزماتوز، پارگی.</li>
+      <li>میزان عوارض در بیمارانی که جراحی زودهنگام می‌شوند در مقایسه با جراحی تأخیری (>۶ هفته پس از تشخیص) افزایش نمی‌یابد.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> جراحی زودهنگام در بیمار مناسب معمولاً بی‌خطرتر از انتظار طولانی است.</div>
+    <div class="meta"><span>نکته: ۴۸–۷۲ ساعت پنجره پیشنهادی.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۴۱ ================= -->
+  <article class="card" id="s41">
+    <span class="badge">اسلاید ۴۱</span>
+    <h2>عوارض پس از کوله‌سیستکتومی</h2>
+    <ul>
+      <li>آتلکتازی و سایر اختلالات ریوی، تشکیل آبسه (اغلب زیردیافراگمی)، خونریزی خارجی یا داخلی، فیستول صفراوی-روده‌ای و نشت صفرا.</li>
+      <li>زردی ممکن است نشان‌دهنده جذب صفرا از یک تجمع داخل شکمی پس از نشت صفراوی یا انسداد مکانیکی CBD توسط سنگ‌های باقی‌مانده، لخته‌های خون داخل مجرا یا فشرده‌سازی خارجی باشد.</li>
+      <li>شایع‌ترین علت پایدار پس از کوله‌سیستکتومی: اختلال غیرصفراوی (ازوفاژیت ریفلاکسی، زخم پپتیک، پانکراتیت یا — بیشتر اوقات — سندرم روده تحریک‌پذیر).</li>
+      <li>سندرم‌های پس از کوله‌سیستکتومی:
+        <ul>
+          <li>(۱) تنگی‌های صفراوی؛</li>
+          <li>(۲) سنگ‌های صفراوی باقی‌مانده؛</li>
+          <li>(۳) سندرم باقی‌مانده مجرای سیستیک در باقی‌مانده مجرای سیستیک بلند (>۱ سانتی‌متر)؛</li>
+          <li>(۴) تنگی یا دیسکینزی SOD؛</li>
+          <li>(۵) اسهال یا گاستریت ناشی از نمک‌های صفراوی.</li>
+        </ul>
+      </li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> بسیاری از دردهای پس از کوله‌سیستکتومی منشأ غیرصفراوی دارند.</div>
+    <div class="meta"><span>نکته: شایع‌ترین علت غیرصفراوی: IBS.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۴۲ ================= -->
+  <article class="card" id="s42">
+    <span class="badge">اسلاید ۴۲</span>
+    <h2>تنگی SOD، دیسکینزی SOD و دیسکینزی صفراوی</h2>
+    <ul>
+      <li>تنگی SOD تصور می‌شود از التهاب حاد یا مزمن پاپی واتر یا هیپرپلازی غددی بخش پاپی ناشی شود.</li>
+      <li>پنج معیار برای تعریف تنگی SOD استفاده شده است:
+        <ul>
+          <li>(۱) درد بالای شکم، معمولاً RUQ یا اپی‌گاستر.</li>
+          <li>(۲) تست‌های کبدی غیرطبیعی.</li>
+          <li>(۳) اتساع CBD در MRCP یا ERCP.</li>
+          <li>(۴) تخلیه تأخیری (>۴۵ دقیقه) ماده حاجب از مجرا.</li>
+          <li>(۵) افزایش فشار پایه SOD.</li>
+        </ul>
+      </li>
+      <li>پس از رد کوله‌سیستوپاتی بدون سنگ، درمان شامل اسفنکتروپلاستی آندوسکوپیک یا جراحی برای اطمینان از باز بودن وسیع بخش‌های دیستال مجاری صفراوی و پانکراس است.</li>
+      <li>اندیکاسیون‌های اسفنکتروتومی: (۱) مدت طولانی علائم؛ (۲) عدم پاسخ به درمان علامتی؛ (۳) ناتوانی شدید؛ (۴) انتخاب بیمار برای اسفنکتروتومی به‌جای جراحی.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> SOD یکی از علل درد صفراوی پس از کوله‌سیستکتومی است.</div>
+    <div class="meta"><span>نکته: فشار پایه SOD و تخلیه تأخیری مهم‌اند.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۴۳ ================= -->
+  <article class="card" id="s43">
+    <span class="badge">اسلاید ۴۳</span>
+    <h2>دیسکینزی صفراوی/SOD — تشخیص و درمان</h2>
+    <ul>
+      <li>(۱) درد صفراوی؛ (۲) عدم وجود سنگ مجاری صفراوی یا سایر ناهنجاری‌ها؛ (۳) آنزیم‌های کبدی بالا یا CBD متسع، اما نه هر دو.</li>
+      <li>تشخیص: سینتی‌گرافی هپاتوبیلیاری یا مانومتری SOD.</li>
+      <li>اسپاسم اسفنکتر، حساسیت دنرواسیون منجر به هیپرتونیسیته، و ناهنجاری‌های توالی یا فراوانی امواج انقباضی اسفنکتر.</li>
+      <li>درمان: نیتریت‌ها یا آنتی‌کولینرژیک‌ها.</li>
+      <li>اسفنکتروتومی صفراوی آندوسکوپیک (EBS) یا اسفنکتروتومی جراحی ممکن است در بیمارانی که به ۲–۳ ماه درمان پزشکی پاسخ نمی‌دهند، به‌ویژه اگر فشار SOD بالا باشد، اندیکاسیون داشته باشد.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> درمان دارویی ابتدا امتحان می‌شود؛ در عدم پاسخ، اسفنکتروتومی مطرح است.</div>
+    <div class="meta"><span>نکته: مانومتری SOD استاندارد مرجع فشار است.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۴۴ ================= -->
+  <article class="card" id="s44">
+    <span class="badge">اسلاید ۴۴</span>
+    <h2>اسهال و گاستریت ناشی از نمک‌های صفراوی</h2>
+    <ul>
+      <li>بیماران پس از کوله‌سیستکتومی ممکن است علائم سوءهاضمه را پیدا کنند که به رفلاکس دوازدهه‌ای-معده‌ای صفرا نسبت داده شده است.</li>
+      <li>اما داده‌های محکم برای ارتباط این علائم با گاستریت صفراوی پس از برداشتن جراحی کیسه صفرا وجود ندارد.</li>
+      <li>کوله‌سیستکتومی تغییرات پایدار در عبور روده → در کولون راست ایجاد می‌کند، در نتیجه خروجی اسیدهای صفراوی کولونی افزایش می‌یابد → تبدیل اسیدهای صفراوی اولیه به ثانویه → اسهال → سه یا بیشتر حرکت آبکی در روز.</li>
+      <li>۵–۱۰٪ بیماران تحت کوله‌سیستکتومی انتخابی.</li>
+      <li>درمان: کولستیرامین <span class="en">(Cholestyramine)</span> یا کولستیپول <span class="en">(Colestipol)</span>.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> اسهال صفراوی به‌دلیل اثر اسیدهای صفراوی بر کولون است.</div>
+    <div class="meta"><span>نکته: درمان با بایندرهای اسید صفراوی.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۴۵ ================= -->
+  <article class="card" id="s45">
+    <span class="badge">اسلاید ۴۵</span>
+    <h2>کوله‌سیستوزهای هیپرپلاستیک</h2>
+    <ul>
+      <li>تکثیر بیش‌ازحد اجزای بافت طبیعی.</li>
+      <li>آدنومیوماتوز <span class="en">(Adenomyomatosis)</span>: تکثیر خوش‌خیم اپیتلیوم سطحی کیسه صفرا با تشکیلات غده‌مانند، سینوس‌های خارج‌دیواره‌ای، تنگی‌های عرضی و/یا تشکیل ندول فوندال («آدنوم» یا «آدنومیوم»).</li>
+      <li>کلسترولوز <span class="en">(Cholesterolosis)</span>: رسوب غیرطبیعی لیپید، به‌ویژه استرهای کلسترول، در ماکروفاژهای لامینا پروپریا.</li>
+      <li>فرم منتشر → کیسه صفرای توت‌فرنگی <span class="en">(Strawberry gallbladder)</span>.</li>
+      <li>فرم موضعی → «پولیپ‌های کلسترولی» منفرد یا متعدد.</li>
+      <li>اندیکاسیون کوله‌سیستکتومی: بیماران علامت‌دار.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> این ضایعات اغلب خوش‌خیم و تصادفی هستند.</div>
+    <div class="meta"><span>نکته: کلسترولوز منتشر = کیسه صفرای توت‌فرنگی.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۴۶ ================= -->
+  <article class="card" id="s46">
+    <span class="badge">اسلاید ۴۶</span>
+    <h2>اندیکاسیون کوله‌سیستکتومی در بیماران با پولیپ</h2>
+    <ul>
+      <li>بیماران علامت‌دار.</li>
+      <li>بیماران بدون علامت >۵۰ سال که پولیپ‌هایشان >۱۰ میلی‌متر است یا با سنگ صفرا همراه است یا در سونوگرافی‌های سریال رشد پولیپ دارند.</li>
+      <li>پولیپ‌ها: ۱–۴٪ در مردان؛ پولیپ‌های کلسترولی، آدنومیوم‌ها، پولیپ‌های التهابی و آدنوم‌ها (نادر).</li>
+      <li>در بیماران بدون علامت با پولیپ <۶ میلی‌متر در ۵ سال تغییر قابل‌توجهی یافت نشده و در پولیپ‌های ۷–۹ میلی‌متر تغییرات کم بوده است.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> اندازه >۱۰ میلی‌متر و رشد سریال از معیارهای نگران‌کننده‌اند.</div>
+    <div class="meta"><span>نکته: پولیپ <۶ میلی‌متر معمولاً پیگیری کم‌تر.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۴۷ ================= -->
+  <article class="card" id="s47">
+    <span class="badge">اسلاید ۴۷</span>
+    <h2>بیماری‌های مجاری صفراوی — ناهنجاری‌های مادرزادی</h2>
+    <ul>
+      <li>آترزی و هیپوپلازی صفراوی شایع‌ترین ناهنجاری‌های صفراوی هستند.</li>
+      <li>زردی انسدادی شدید در ماه اول زندگی، با مدفوع رنگ‌پریده.</li>
+      <li>درمان → جراحی.</li>
+      <li>بیشتر بیماران، حتی با آناستوموز موفق صفراوی-روده‌ای، در نهایت دچار کلانژیت مزمن، فیبروز کبدی گسترده و پرفشاری پورت می‌شوند.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> آترزی صفراوی اورژانس نوزادی است و تشخیص زودهنگام مهم است.</div>
+    <div class="meta"><span>نکته: جراحی اولیه.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۴۸ ================= -->
+  <article class="card" id="s48">
+    <span class="badge">اسلاید ۴۸</span>
+    <h2>کیست‌های کولدوکال <span class="en">(Choledochal cysts)</span></h2>
+    <ul>
+      <li>اتساع کیستیک ممکن است بخش آزاد CBD را درگیر کند.</li>
+      <li>تشکیل دیورتیکول در بخش داخل‌دوازدهه‌ای.</li>
+      <li>ریفلاکس مزمن شیره پانکراس به درخت صفراوی می‌تواند التهاب و تنگی مجاری صفراوی خارج کبدی ایجاد کند و به کلانژیت یا انسداد صفراوی بینجامد.</li>
+      <li>پس از سن ۱۰ سال.</li>
+      <li>تشخیص: سونوگرافی، CT شکم، MRCP یا کلانژیوگرافی.</li>
+      <li>فقط یک‌سوم بیماران تریاد کلاسیک درد شکم، زردی و توده شکمی را نشان می‌دهند.</li>
+      <li>درمان جراحی شامل برداشتن «کیست» و آناستوموز صفراوی-روده‌ای است.</li>
+      <li>بیماران با کیست کولدوکال در معرض خطر بیشتر ابتلا به کلانژیوکارسینوم در آینده هستند.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> کیست کولدوکال یک ضایعه پیش‌سرطانی مهم است و برداشتن جراحی توصیه می‌شود.</div>
+    <div class="meta"><span>نکته: تریاد فقط در ۱/۳ بیماران.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۴۹ ================= -->
+  <article class="card" id="s49">
+    <span class="badge">اسلاید ۴۹</span>
+    <h2>تکرار تصویر آناتومی مجاری صفراوی</h2>
+    <p>این اسلاید شامل تصویر آناتومیک است و متن مستقل ندارد.</p>
+    <div class="ph">
+      <span class="ph-title">Placeholder — تصویر اصلی اسلاید ۴۹</span>
+      نمودار آناتومی کیسه صفرا، مجاری صفراوی، پانکراس و روده باریک؛ برچسب‌ها مطابق اسلاید ۷: مجرای کبدی راست، مجرای کبدی چپ، مجرای کبدی مشترک، کیسه صفرا، مجرای سیستیک، مجرای صفراوی خارج کبدی، مجرای صفراوی مشترک، پانکراس، مجرای پانکراس، روده باریک.
+    </div>
+    <div class="note"><b>توضیح تکمیلی:</b> همان نمودار اسلاید ۷ است.</div>
+    <div class="meta"><span>نکته: تکرار تصویر برای بخش بیماری‌های مجاری.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۵۰ ================= -->
+  <article class="card" id="s50">
+    <span class="badge">اسلاید ۵۰</span>
+    <h2>اکتازی صفراوی مادرزادی / بیماری کارولی</h2>
+    <ul>
+      <li>اتساع مجاری صفراوی داخل کبدی ممکن است شاخه‌های اصلی داخل کبدی را درگیر کند (بیماری کارولی/<span class="en">Caroli’s disease</span>).</li>
+      <li>کلانژیت عودکننده (AB)، تشکیل آبسه و اغلب تشکیل سنگ پیگمانی قهوه‌ای در بخش‌هایی از شاخه‌های صفراوی داخل کبدی اکتاتیک.</li>
+      <li>سونوگرافی، MRCP و CT.</li>
+      <li>پیشرفت به سیروز صفراوی ثانویه با پرفشاری پورت، انسداد صفراوی خارج کبدی، کلانژیوکارسینوم یا اپیزودهای عودکننده سپسیس با تشکیل آبسه کبدی شایع است.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> بیماری کارولی با رکود صفرا و عفونت مکرر مشخص می‌شود.</div>
+    <div class="meta"><span>نکته: خطر کلانژیوکارسینوم.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۵۱ ================= -->
+  <article class="card" id="s51">
+    <span class="badge">اسلاید ۵۱</span>
+    <h2>سنگ مجرای صفراوی مشترک <span class="en">(Choledocholithiasis)</span></h2>
+    <ul>
+      <li>عبور سنگ‌های صفرا به CBD در ~۱۰–۱۵٪ بیماران با کوله‌لیتیازیس رخ می‌دهد؛ سنگ‌های کلسترولی.</li>
+      <li>بروز با افزایش سن بیمار افزایش می‌یابد.</li>
+      <li>تا ۲۵٪ بیماران سالمند ممکن است در زمان کوله‌سیستکتومی سنگ در مجرای مشترک داشته باشند.</li>
+      <li>سنگ‌های اولیه که در مجاری ایجاد می‌شوند معمولاً سنگ‌های پیگمانی قهوه‌ای هستند.</li>
+      <li>علل: (۱) انگل‌های هپاتوبیلیاری یا کلانژیت مزمن عودکننده؛ (۲) ناهنجاری‌های مادرزادی مجاری صفراوی (به‌ویژه بیماری کارولی)؛ (۳) مجاری متسع، اسکلروز یا تنگ‌شده؛ یا (۴) نقص ژن MDR3 (ABCB4).</li>
+      <li>سنگ‌های مجرای مشترک ممکن است سال‌ها بدون علامت بمانند، خودبه‌خود به دوازدهه عبور کنند، یا (اغلب) با قولنج صفراوی یا عارضه تظاهر یابند.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> سنگ CBD می‌تواند بدون علامت باشد اما خطر کلانژیت و پانکراتیت دارد.</div>
+    <div class="meta"><span>نکته: سنگ‌های اولیه مجرا بیشتر پیگمانی قهوه‌ای.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۵۲ ================= -->
+  <article class="card" id="s52">
+    <span class="badge">اسلاید ۵۲</span>
+    <h2>کلانژیت چرکی <span class="en">(Suppurative cholangitis)</span></h2>
+    <ul>
+      <li>باکتری‌ها (کشت صفرا ~۷۵٪).</li>
+      <li>درد صفراوی، زردی و تب‌های بالا با لرز (تریاد شارکو/<span class="en">Charcot’s triad</span>).</li>
+      <li>گیجی، باکتریمی و شوک سپتیک.</li>
+      <li>کشت خون اغلب مثبت است و لکوسیتوز تیپیک است.</li>
+      <li>درمان اورژانسی ERCP یا جراحی.</li>
+      <li>کلانژیت غیرچرکی شایع‌ترین است → درمان حمایتی + آنتی‌بیوتیک / ERCP.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> تریاد شارکو (درد RUQ، زردی، تب با لرز) کلاسیک کلانژیت است.</div>
+    <div class="meta"><span>نکته: کلانژیت چرکی اورژانس است.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۵۳ ================= -->
+  <article class="card" id="s53">
+    <span class="badge">اسلاید ۵۳</span>
+    <h2>زردی انسدادی <span class="en">(Obstructive jaundice)</span></h2>
+    <ul>
+      <li>انسداد تدریجی CBD.</li>
+      <li>زردی یا خارش بدون علائم همراه قولنج صفراوی یا کلانژیت (زردی بی‌درد/<span class="en">Painless jaundice</span>).</li>
+      <li>علامت کورووازیه <span class="en">(Courvoisier’s sign)</span> منفی.</li>
+      <li>جریان صفرای کبدی سرکوب می‌شود و بازجذب و برگشت بیلی‌روبین کنژوگه به جریان خون منجر به زردی همراه با ادرار تیره (بیلی‌روبینوری) و مدفوع روشن (آکولیک/<span class="en">acholic</span>) می‌شود.</li>
+      <li>حداکثر سطح بیلی‌روبین در بیماران با کولدوکولیتیازیس به‌ندرت >۱۵ میلی‌گرم در دسی‌لیتر است، مگر بیماری کبدی یا کلیوی همزمان یا عامل دیگری باعث هیپربیلی‌روبینمی بارز شود.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> زردی بی‌درد با کیسه صفرای لمس‌شدنی، شک به انسداد بدخیم را مطرح می‌کند.</div>
+    <div class="meta"><span>نکته: ادرار تیره + مدفوع روشن = زردی کنژوگه.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۵۴ ================= -->
+  <article class="card" id="s54">
+    <span class="badge">اسلاید ۵۴</span>
+    <h2>الگوی آنزیم‌های کبدی در انسداد صفراوی</h2>
+    <ul>
+      <li>آلکالین فسفاتاز تقریباً همیشه در انسداد صفراوی بالا است.</li>
+      <li>در انسداد حاد: آمینوترانسفرازها → آلکالین فسفاتاز → بیلی‌روبین بالا هستند.</li>
+      <li>پس از رفع عامل انسداد: افزایش آمینوترانسفرازها در ۱–۲ هفته به نرمال برمی‌گردد؛ آلکالین فسفاتاز کاهش می‌یابد.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> الگوی «آلکالین فسفاتاز بالا + بیلی‌روبین بالا» الگوی کلستاتیک است.</div>
+    <div class="meta"><span>نکته: روند زمانی آنزیم‌ها پس از رفع انسداد مهم است.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۵۵ ================= -->
+  <article class="card" id="s55">
+    <span class="badge">اسلاید ۵۵</span>
+    <h2>قانون کورووازیه <span class="en">(Courvoisier’s law)</span></h2>
+    <ul>
+      <li>قانون کورووازیه: وجود کیسه صفرای بزرگ و لمس‌شدنی نشان می‌دهد که انسداد صفراوی بیشتر ثانویه به یک بدخیمی زمینه‌ای است تا بیماری سنگ‌دار.</li>
+      <li>سطح بیلی‌روبین سرم ≥۲۰ میلی‌گرم در دسی‌لیتر باید احتمال انسداد نئوپلاستیک را مطرح کند.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> این قانون کمک می‌کند بین علت سنگ‌دار و بدخیم انسداد تمایز گذاشته شود.</div>
+    <div class="meta"><span>نکته: بیلی‌روبین خیلی بالا → شک به بدخیمی.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۵۶ ================= -->
+  <article class="card" id="s56">
+    <span class="badge">اسلاید ۵۶</span>
+    <h2>پانکراتیت <span class="en">(Pancreatitis)</span></h2>
+    <ul>
+      <li>کوله‌سیستیت حاد در ۱۵٪ موارد.</li>
+      <li>کولدوکولیتیازیس در >۳۰٪ موارد.</li>
+      <li>بیماران با علائم کوله‌سیستیت که دچار موارد زیر می‌شوند: (۱) درد پشت یا درد به سمت چپ خط وسط شکم؛ (۲) استفراغ طولانی‌مدت همراه با ایلئوس پارالیتیک؛ یا (۳) افیوژن پلور، به‌ویژه در سمت چپ.</li>
+      <li>درمان جراحی بیماری سنگ صفرا معمولاً با فروکش پانکراتیت همراه است.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> درد پشت و استفراغ مقاوم در بیمار با سنگ صفرا باید شک به پانکراتیت را برانگیزد.</div>
+    <div class="meta"><span>نکته: افیوژن پلور چپ از نشانه‌های هشدار است.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۵۷ ================= -->
+  <article class="card" id="s57">
+    <span class="badge">اسلاید ۵۷</span>
+    <h2>سیروز صفراوی ثانویه <span class="en">(Secondary biliary cirrhosis)</span></h2>
+    <ul>
+      <li>انسداد طولانی‌مدت یا متناوب مجرا، با یا بدون کلانژیت عودکننده/کولدوکولیتیازیس/تنگی/نئوپلاسم.</li>
+      <li>پس از استقرار، سیروز صفراوی ثانویه ممکن است حتی پس از اصلاح عامل انسداد پیشرونده باشد و سیروز کبدی به‌طور فزاینده شدید ممکن است به پرفشاری پورت یا نارسایی کبدی و مرگ بینجامد.</li>
+      <li>انسداد صفراوی طولانی‌مدت ممکن است با کمبودهای بالینی مهم ویتامین‌های محلول در چربی A، D، E و K همراه باشد.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> کمبود ویتامین‌های محلول در چربی در کلستاز مزمن باید در نظر گرفته شود.</div>
+    <div class="meta"><span>نکته: انسداد مزمن می‌تواند برگشت‌ناپذیر پیشرفت کند.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۵۸ ================= -->
+  <article class="card" id="s58">
+    <span class="badge">اسلاید ۵۸</span>
+    <h2>تشخیص و درمان سنگ مجرای صفراوی مشترک</h2>
+    <ul>
+      <li>کلانژیوگرافی / ERCP / MRCP.</li>
+      <li>تا ۱۵٪ بیماران تحت کوله‌سیستکتومی سنگ CBD خواهند داشت.</li>
+      <li>وقتی سنگ CBD پیش از کوله‌سیستکتومی لاپاراسکوپیک مشکوک باشد، ERCP پیش از عمل با پاپیلوتومی آندوسکوپیک و خارج‌سازی سنگ روش ترجیحی است.</li>
+      <li>سنگ CBD باید در بیماران با سنگ صفرا و هر یک از عوامل خطر زیر مشکوک باشد: (۱) سابقه زردی یا پانکراتیت؛ (۲) تست‌های غیرطبیعی عملکرد کبد؛ (۳) شواهد سونوگرافی یا MRCP از CBD متسع یا سنگ در مجرا.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> MRCP برای غربالگری و ERCP برای درمان به‌کار می‌رود.</div>
+    <div class="meta"><span>نکته: سه عامل خطر کلیدی برای سنگ CBD.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۵۹ ================= -->
+  <article class="card" id="s59">
+    <span class="badge">اسلاید ۵۹</span>
+    <h2>تروما، تنگی‌ها و هموبیلی <span class="en">(Hemobilia)</span></h2>
+    <ul>
+      <li>هموبیلی ممکن است به‌دنبال آسیب تروماتیک یا جراحی کبد یا مجاری صفراوی، پارگی داخل مجرای آبسه کبدی یا آنوریسم شریان کبدی، خونریزی تومور صفراوی یا کبدی، یا عوارض مکانیکی کولدوکولیتیازیس یا انگل‌های هپاتوبیلیاری رخ دهد.</li>
+      <li>روش‌های تشخیصی مانند بیوپسی کبد، PTC و قرار دادن کاتتر درناژ صفراوی از راه پوست نیز ممکن است با هموبیلی عارضه‌دار شوند.</li>
+      <li>بیماران اغلب با تریاد کلاسیک درد صفراوی، زردی انسدادی و ملنا یا خون مخفی در مدفوع مراجعه می‌کنند.</li>
+      <li>تشخیص گاهی با شواهد کلانژیوگرافیک لخته خون در درخت صفراوی انجام می‌شود، اما تأیید آنژیوگرافی انتخابی ممکن است لازم باشد.</li>
+      <li>اگرچه اپیزودهای خفیف هموبیلی ممکن است بدون مداخله برطرف شوند، آنژیوگرافی و آمبولیزاسیون از راه کاتتر یا بستن جراحی عروق خونریزی‌دهنده ممکن است لازم باشد.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> تریاد هموبیلی: درد صفراوی + زردی + خونریزی گوارشی.</div>
+    <div class="meta"><span>نکته: آمبولیزاسیون ترانس‌کاتتر درمان کم‌تهاجمی است.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۶۰ ================= -->
+  <article class="card" id="s60">
+    <span class="badge">اسلاید ۶۰</span>
+    <h2>فشرده‌سازی خارجی مجاری صفراوی</h2>
+    <ul>
+      <li>کارسینوم سر پانکراس.</li>
+      <li>درگیری گره‌های لنفاوی در پورت هپاتیس توسط لنفوم یا کارسینوم متاستاتیک.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> در انسداد خارجی، خود مجرا سالم است اما از بیرون تنگ می‌شود.</div>
+    <div class="meta"><span>نکته: تومور سر پانکراس شایع‌ترین علت بدخیم است.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۶۱ ================= -->
+  <article class="card" id="s61">
+    <span class="badge">اسلاید ۶۱</span>
+    <h2>انگل‌های هپاتوبیلیاری <span class="en">(Hepatobiliary parasitism)</span></h2>
+    <ul>
+      <li>آلودگی مجاری صفراوی با کرم‌های بالغ یا تخم آن‌ها ممکن است کلانژیت چرکی مزمن و عودکننده با یا بدون آبسه‌های متعدد کبدی، سنگ‌های مجرایی یا انسداد صفراوی ایجاد کند.</li>
+      <li>ترماتودها یا فلوک‌ها، شامل <span class="en">Clonorchis sinensis</span>، <span class="en">Opisthorchis viverrini</span> یا <span class="en">Opisthorchis felineus</span>، و <span class="en">Fasciola hepatica</span>.</li>
+      <li>مجاری صفراوی همچنین ممکن است با مهاجرت داخل‌مجرایی کرم بالغ <span class="en">Ascaris lumbricoides</span> از دوازدهه یا با پارگی داخل صفراوی کیست‌های هیداتید کبدی ناشی از <span class="en">Echinococcus spp.</span> درگیر شود.</li>
+      <li>تشخیص با کلانژیوگرافی و وجود تخم‌های مشخص در آزمایش مدفوع انجام می‌شود.</li>
+      <li>در صورت وجود انسداد، درمان انتخابی لاپاراتومی تحت پوشش آنتی‌بیوتیک، با اکتشاف مجرای مشترک و اقدام درناژ صفراوی است.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> انگل‌های صفراوی در مناطق اندمیک می‌توانند باعث سنگ پیگمانی قهوه‌ای و کلانژیت مکرر شوند.</div>
+    <div class="meta"><span>نکته: تشخیص با تخم در مدفوع + کلانژیوگرافی.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۶۲ ================= -->
+  <article class="card" id="s62">
+    <span class="badge">اسلاید ۶۲</span>
+    <h2>کلانژیت اسکلروزان اولیه <span class="en">(Primary sclerosing cholangitis; PSC)</span></h2>
+    <ul>
+      <li>PSC با فرایند پیشرونده، التهابی، اسکلروزان و انسدادی مشخص می‌شود که مجاری صفراوی خارج کبدی و/یا داخل کبدی را درگیر می‌کند.</li>
+      <li>PSC به‌شدت با بیماری التهابی روده، به‌ویژه کولیت اولسراتیو، مرتبط است.</li>
+      <li>انسداد صفراوی مزمن یا متناوب: درد شکم RUQ، خارش، زردی یا کلانژیت حاد.</li>
+      <li>در مراحل پایانی، انسداد کامل صفراوی، سیروز صفراوی ثانویه، نارسایی کبدی یا پرفشاری پورت با واریس خونریزی‌دهنده ممکن است رخ دهد.</li>
+      <li>ظاهر «مهره‌مهره‌ای» <span class="en">(beaded appearance)</span> در کلانژیوگرافی.</li>
+      <li>تکنیک‌های کلانژیوگرافی انتخابی در موارد مشکوک MRCP و ERCP هستند.</li>
+      <li>بیماران با PSC باید از نظر بیماری‌های همراه، به‌ویژه بیماری التهابی روده، در صورت عدم تشخیص قبلی بررسی شوند.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> نمای مهره‌مهره‌ای مجاری صفراوی در PSC کلاسیک است.</div>
+    <div class="meta"><span>نکته: ارتباط قوی با IBD به‌ویژه کولیت اولسراتیو.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۶۳ ================= -->
+  <article class="card" id="s63">
+    <span class="badge">اسلاید ۶۳</span>
+    <h2>PSC — درمان و پیش‌آگهی</h2>
+    <ul>
+      <li>هیچ درمان پزشکی اثبات‌شده‌ای برای PSC وجود ندارد.</li>
+      <li>خارش → کولستیرامین، ریفامپین و نالترکسون.</li>
+      <li>کلانژیت باکتریایی → آنتی‌بیوتیک.</li>
+      <li>مکمل ویتامین D و کلسیم ممکن است به‌عنوان درمان اولیه برای کمک به پیشگیری از کاهش توده استخوانی که اغلب در بیماران با کلستاز مزمن دیده می‌شود استفاده شود.</li>
+      <li>انسداد صفراوی با درجه بالا (تنگی‌های غالب/<span class="en">dominant strictures</span>) → دیلاتاسیون با بالون.</li>
+      <li>به‌ندرت مداخله جراحی اندیکاسیون دارد.</li>
+      <li>PSC بیماری پیشرونده با میانه بقای ۱۲–۱۸ سال پس از تشخیص است، صرف‌نظر از درمان.</li>
+      <li>چهار متغیر (سن، سطح بیلی‌روبین سرم، مرحله هیستولوژیک و اسپلنومگالی) بقا را پیش‌بینی می‌کنند و مبنای یک نمره خطر هستند.</li>
+      <li>PSC یک اندیکاسیون شایع برای پیوند کبد است.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> پیوند کبد در مراحل پیشرفته PSC درمان قطعی است.</div>
+    <div class="meta"><span>نکته: چهار متغیر پیش‌بینی‌کننده بقا.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۶۴ ================= -->
+  <article class="card" id="s64">
+    <span class="badge">اسلاید ۶۴</span>
+    <h2>PSC مجاری کوچک <span class="en">(Small duct PSC)</span></h2>
+    <ul>
+      <li>یافته‌های کلانژیوگرافی نرمال است.</li>
+      <li>پیش‌آگهی بلندمدت بهتر.</li>
+      <li>ممکن است به PSC کلاسیک و/یا بیماری کبدی مرحله نهایی پیشرفت کند و در نتیجه نیاز به پیوند کبد پیدا شود.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> در این نوع، مجاری بزرگ در تصویربرداری طبیعی‌اند اما بیماری در سطح مجاری کوچک وجود دارد.</div>
+    <div class="meta"><span>نکته: پیش‌آگهی بهتر از PSC کلاسیک.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۶۵ ================= -->
+  <article class="card" id="s65">
+    <span class="badge">اسلاید ۶۵</span>
+    <h2>کلانژیت اسکلروزان مرتبط با IgG4</h2>
+    <ul>
+      <li>با پانکراتیت خودایمنی و سایر شرایط فیبروزان همراه است.</li>
+      <li>افزایش IgG4 سرم و نفوذ پلاسماسل‌های مثبت IgG4 در مجاری صفراوی و بافت کبد.</li>
+      <li>درمان: گلوکوکورتیکوئیدها.</li>
+      <li>عود پس از قطع استروئید شایع است، به‌ویژه با تنگی‌های پروکسیمال.</li>
+      <li>درمان طولانی‌مدت با گلوکوکورتیکوئیدها و/یا عوامل کاهنده استروئید مانند آزاتیوپرین ممکن است پس از عود یا در پاسخ ناکافی لازم باشد.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> این نوع به استروئید پاسخ می‌دهد، برخلاف PSC کلاسیک.</div>
+    <div class="meta"><span>نکته: IgG4 سرم + پاسخ به گلوکوکورتیکوئید.</span></div>
+  </article>
+
+  <!-- ================= اسلاید ۶۶ ================= -->
+  <article class="card" id="s66">
+    <span class="badge">اسلاید ۶۶</span>
+    <h2>کلانژیوپانکراتوگرافی در AIDS</h2>
+    <ul>
+      <li>ضایعات مجاری صفراوی در AIDS شامل عفونت و تغییرات کلانژیوپانکراتوگرافیک کلانژیت اسکلروزان است.</li>
+      <li>تغییرات شامل: (۱) درگیری منتشر مجاری صفراوی داخل کبدی به‌تنهایی؛ (۲) درگیری هر دو مجاری داخل و خارج کبدی؛ (۳) تنگی آمپول؛ (۴) تنگی بخش داخل پانکراسی CBD؛ (۵) درگیری مجرای پانکراس.</li>
+      <li>ارگانیسم‌های عفونی مرتبط شامل <span class="en">Cryptosporidium</span>، <span class="en">Mycobacterium avium-intracellulare</span>، سیتومگالوویروس (CMV)، <span class="en">Microsporidia</span> و <span class="en">Isospora</span>.</li>
+      <li>اسفنکتروتومی ERCP می‌تواند کاهش قابل‌توجه درد را در بیماران با تنگی پاپی مرتبط با AIDS فراهم کند.</li>
+    </ul>
+    <div class="note"><b>توضیح تکمیلی:</b> در AIDS، عفونت‌های فرصت‌طلب می‌توانند الگوی شبیه PSC در مجاری صفراوی ایجاد کنند.</div>
+    <div class="meta"><span>نکته: ERCP هم تشخیصی و هم درمانی است.</span></div>
+  </article>
+
+  <footer class="end">
+    پایان جزوه — ترجمه فارسی بر پایه Harrison 2023 | چیدمان راست‌به‌چپ | فونت Vazirmatn
+  </footer>
+
+</div>
+
+<!-- ===== THEME TOGGLE ===== -->
+<div class="theme-toggle">
+  <button class="theme-btn" id="themeBtn" aria-label="تغییر تم" aria-expanded="false" title="تغییر تم">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="13.5" cy="6.5" r="1.5"></circle>
+      <circle cx="17.5" cy="10.5" r="1.5"></circle>
+      <circle cx="8.5" cy="7.5" r="1.5"></circle>
+      <circle cx="6.5" cy="12.5" r="1.5"></circle>
+      <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path>
+    </svg>
+  </button>
+  <div class="theme-panel" id="themePanel" role="menu" aria-label="انتخاب تم">
+    <div class="theme-panel-title">🎨 انتخاب تم</div>
+    <button class="theme-option" data-theme="brown" role="menuitem">
+      <span class="swatch" style="background:#3b3b3b;border:1px solid #fff8f2"><i style="background:#d4a373"></i></span>
+      <span>قهوه‌ای</span>
+    </button>
+    <button class="theme-option" data-theme="softdark" role="menuitem">
+      <span class="swatch" style="background:#1E1E1C;border:1px solid #D8CBB3"><i style="background:#c9b87f"></i></span>
+      <span>دارک ملایم</span>
+    </button>
+    <button class="theme-option" data-theme="alldark" role="menuitem">
+      <span class="swatch" style="background:#000000;border:1px solid #ffffff"><i style="background:#e0b64e"></i></span>
+      <span>تمام دارک</span>
+    </button>
+    <button class="theme-option" data-theme="simple" role="menuitem">
+      <span class="swatch" style="background:#ffffff;border:1px solid #000000"><i style="background:#1e40af"></i></span>
+      <span>ساده</span>
+    </button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var STORAGE_KEY = 'bile-note-theme-v1';
+  var btn = document.getElementById('themeBtn');
+  var panel = document.getElementById('themePanel');
+  var options = panel.querySelectorAll('.theme-option');
+  var validThemes = ['brown','softdark','alldark','simple'];
+
+  function setActive(theme){
+    options.forEach(function(o){
+      o.classList.toggle('active', o.dataset.theme === theme);
+    });
+  }
+
+  try{
+    var saved = localStorage.getItem(STORAGE_KEY);
+    if (saved && validThemes.indexOf(saved) !== -1) {
+      document.body.setAttribute('data-theme', saved);
+      setActive(saved);
+    } else if (saved) {
+      localStorage.removeItem(STORAGE_KEY);
+    }
+  } catch(e){}
+
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var open = panel.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  options.forEach(function(opt){
+    opt.addEventListener('click', function(e){
+      e.stopPropagation();
+      var theme = opt.dataset.theme;
+      var current = document.body.getAttribute('data-theme');
+
+      if (current === theme) {
+        document.body.removeAttribute('data-theme');
+        setActive(null);
+        try { localStorage.removeItem(STORAGE_KEY); } catch(e2){}
+      } else {
+        document.body.setAttribute('data-theme', theme);
+        setActive(theme);
+        try { localStorage.setItem(STORAGE_KEY, theme); } catch(e2){}
+      }
+      panel.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    });
+  });
+
+  document.addEventListener('click', function(e){
+    if (!panel.contains(e.target) && !btn.contains(e.target)) {
+      panel.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    }
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') {
+      panel.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
