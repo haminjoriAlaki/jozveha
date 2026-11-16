@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="semi-dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پاتولوژی روده کوچک و بزرگ (Intestine) | Robbins & Kumar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root, [data-theme="semi-dark"] {
+            --bg-primary: #2a2b2b;
+            --bg-secondary: #343636;
+            --bg-card: rgba(54, 56, 56, 0.85);
+            --bg-accent-soft: rgba(56, 189, 248, 0.14);
+            --bg-warning-soft: rgba(244, 63, 94, 0.15);
+            --bg-success-soft: rgba(16, 185, 129, 0.15);
+            --text-primary: #ffffff;
+            --text-secondary: #e2e8f0;
+            --text-muted: #cbd5e1;
+            --accent: #38bdf8;
+            --accent-secondary: #818cf8;
+            --danger: #fb7185;
+            --success: #34d399;
+            --warning: #fbbf24;
+            --border-color: rgba(255, 255, 255, 0.12);
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+            --header-bg: rgba(42, 43, 43, 0.88);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0f1115;
+            --bg-secondary: #181b21;
+            --bg-card: rgba(24, 27, 33, 0.9);
+            --bg-accent-soft: rgba(56, 189, 248, 0.12);
+            --bg-warning-soft: rgba(244, 63, 94, 0.14);
+            --bg-success-soft: rgba(16, 185, 129, 0.14);
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-secondary: #a78bfa;
+            --danger: #f43f5e;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
+            --header-bg: rgba(15, 17, 21, 0.88);
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #f4f6f9;
+            --bg-secondary: #ffffff;
+            --bg-card: rgba(255, 255, 255, 0.95);
+            --bg-accent-soft: rgba(2, 132, 199, 0.08);
+            --bg-warning-soft: rgba(225, 29, 72, 0.08);
+            --bg-success-soft: rgba(5, 150, 105, 0.08);
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --text-muted: #64748b;
+            --accent: #0284c7;
+            --accent-secondary: #6366f1;
+            --danger: #e11d48;
+            --success: #059669;
+            --warning: #d97706;
+            --border-color: rgba(15, 23, 42, 0.1);
+            --shadow: 0 8px 25px rgba(15, 23, 42, 0.07);
+            --header-bg: rgba(244, 246, 249, 0.9);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.85;
+            font-size: 16px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            padding-bottom: 4rem;
+        }
+
+        /* English Terms Formatting */
+        .en {
+            font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            direction: ltr;
+            unicode-bidi: isolate;
+            display: inline-block;
+            font-weight: 600;
+            color: var(--accent);
+            padding: 0 3px;
+        }
+
+        /* Sticky Navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--header-bg);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 1.25rem;
+        }
+
+        .nav-container {
+            max-width: 1120px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            font-weight: 800;
+            font-size: 1.05rem;
+        }
+
+        .brand-badge {
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+            color: #fff;
+            padding: 0.25rem 0.65rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .theme-switcher {
+            display: flex;
+            align-items: center;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 999px;
+            padding: 4px;
+            gap: 4px;
+        }
+
+        .theme-btn {
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 0.35rem 0.85rem;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .theme-btn.active {
+            background: var(--accent);
+            color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        [data-theme="semi-dark"] .theme-btn.active,
+        [data-theme="dark"] .theme-btn.active {
+            color: #0f172a;
+        }
+
+        /* Quick Nav Pills */
+        .quick-nav {
+            max-width: 1120px;
+            margin: 1rem auto 0;
+            padding: 0 1.25rem;
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .quick-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-pill {
+            text-decoration: none;
+            color: var(--text-secondary);
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 0.4rem 0.9rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .nav-pill:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1120px;
+            margin: 1.5rem auto 0;
+            padding: 0 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+        }
+
+        /* Hero / Cover Card */
+        .hero-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 22px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-secondary), var(--danger));
+        }
+
+        .uni-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            padding-bottom: 1.25rem;
+            margin-bottom: 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .uni-title {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .ref-badge {
+            background: var(--bg-accent-soft);
+            border: 1px solid var(--accent);
+            padding: 0.35rem 0.85rem;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .hero-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 0.85rem;
+            background: var(--bg-secondary);
+            padding: 1rem 1.25rem;
+            border-radius: 14px;
+            border: 1px solid var(--border-color);
+            font-size: 0.92rem;
+        }
+
+        /* Section Cards */
+        .slide-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 1.75rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .slide-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.85rem;
+            border-bottom: 1px solid var(--border-color);
+            flex-wrap: wrap;
+        }
+
+        .slide-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .slide-num {
+            background: var(--bg-accent-soft);
+            color: var(--accent);
+            border: 1px solid var(--border-color);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 0.25rem 0.7rem;
+            border-radius: 8px;
+        }
+
+        /* Grids inside slides */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 1.15rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .sub-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.2rem;
+        }
+
+        .sub-box h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.65rem;
+            color: var(--accent);
+        }
+
+        .sub-box.danger {
+            border-right: 4px solid var(--danger);
+        }
+
+        .sub-box.danger h4 {
+            color: var(--danger);
+        }
+
+        .sub-box.success {
+            border-right: 4px solid var(--success);
+        }
+
+        .sub-box.success h4 {
+            color: var(--success);
+        }
+
+        .sub-box.warning {
+            border-right: 4px solid var(--warning);
+        }
+
+        .sub-box.warning h4 {
+            color: var(--warning);
+        }
+
+        ul, ol {
+            padding-right: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+        }
+
+        li {
+            color: var(--text-primary);
+        }
+
+        .callout {
+            background: var(--bg-accent-soft);
+            border-right: 4px solid var(--accent);
+            padding: 1rem 1.2rem;
+            border-radius: 12px;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .callout.danger {
+            background: var(--bg-warning-soft);
+            border-right-color: var(--danger);
+        }
+
+        /* Table styling */
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 14px;
+            border: 1px solid var(--border-color);
+            margin-top: 0.75rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: right;
+            background: var(--bg-secondary);
+            font-size: 0.92rem;
+        }
+
+        th, td {
+            padding: 0.85rem 0.9rem;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+
+        th {
+            background: var(--bg-accent-soft);
+            font-weight: 700;
+            color: var(--accent);
+            white-space: nowrap;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding: 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Responsive Mobile Adjustments */
+        @media (max-width: 640px) {
+            body {
+                font-size: 15px;
+            }
+            .hero-card, .slide-card {
+                padding: 1.25rem;
+                border-radius: 16px;
+            }
+            .hero-title {
+                font-size: 1.4rem;
+            }
+            .slide-title {
+                font-size: 1.15rem;
+            }
+            .theme-btn {
+                padding: 0.3rem 0.65rem;
+                font-size: 0.78rem;
+            }
+            .nav-container {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation & Theme Switcher -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="brand">
+                <span class="brand-badge">جلسه چهارم</span>
+                <span>پاتولوژی روده کوچک و بزرگ (<span class="en">Intestine</span>)</span>
+            </div>
+
+            <div class="theme-switcher" role="group" aria-label="تغییر تم صفحه">
+                <button class="theme-btn" data-set-theme="light" onclick="setTheme('light')">☀️ روشن</button>
+                <button class="theme-btn active" data-set-theme="semi-dark" onclick="setTheme('semi-dark')">🌗 نیمه‌دارک</button>
+                <button class="theme-btn" data-set-theme="dark" onclick="setTheme('dark')">🌙 دارک</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Quick Section Links -->
+    <nav class="quick-nav" aria-label="دسترسی سریع به بخش‌ها">
+        <a href="#intro" class="nav-pill">مقدمه و ستون‌های نارسایی</a>
+        <a href="#obstruction" class="nav-pill">انسداد روده و هیرشپرونگ</a>
+        <a href="#vascular" class="nav-pill">بیماری‌های عروقی و ایسکمی</a>
+        <a href="#diarrhea" class="nav-pill">اسهال و سوءجذب</a>
+        <a href="#celiac" class="nav-pill">سلیاک و نقص‌های جذبی</a>
+        <a href="#bacterial" class="nav-pill">انتروکولیت‌های باکتریایی</a>
+        <a href="#parasitic" class="nav-pill">بیماری‌های انگلی</a>
+    </nav>
+
+    <main class="container">
+
+        <!-- Slide 1, 2, 3 & 4: Cover, Overview & Three Pillars -->
+        <section class="hero-card" id="intro">
+            <div class="uni-header">
+                <div>
+                    <div class="uni-title">وزارت بهداشت، درمان و آموزش پزشکی</div>
+                    <div class="uni-title">دانشکده علوم پزشکی و خدمات بهداشتی درمانی ساوه</div>
+                </div>
+                <div class="ref-badge">
+                    <span class="en">ROBBINS & KUMAR BASIC PATHOLOGY</span> — ویرایش یازدهم (<span class="en">ELEVENTH EDITION</span>) | انتشارات <span class="en">ELSEVIER</span> (نسخه دیجیتال پیشرفته)
+                </div>
+            </div>
+
+            <h1 class="hero-title">فصل ۱۳: حفره دهان و دستگاه گوارش (<span class="en">Chapter 13: Oral Cavity and Gastrointestinal Tract</span>)</h1>
+            <p class="hero-subtitle">جلسه ۴ (<span class="en">Session 4</span>) — روده کوچک و بزرگ (<span class="en">Small and Large Intestines</span>)</p>
+
+            <div class="meta-grid" style="margin-bottom: 1.25rem;">
+                <div><strong>مدرس:</strong> <span class="en">Dr. Saeede Khoshbakht M.D.</span> (<span class="en">Board certified AP/CP</span>)</div>
+                <div><strong>نویسندگان مرجع:</strong> <span class="en">KUMAR, ABBAS, ASTER, DEYRUP, DAS</span></div>
+            </div>
+
+            <ul>
+                <li><strong>عملکردهای اصلی:</strong> جذب مواد مغذی و آب (<span class="en">Nutrient and water absorption</span>).</li>
+                <li><strong>محیط لومنی:</strong> در معرض آنتی‌ژن‌های غذایی (<span class="en">Dietary antigens</span>) و میکروب‌های روده قرار دارد که میکروبیوم روده (<span class="en">Intestinal microbiome</span>) را تشکیل می‌دهند.</li>
+                <li><strong>طیف اختلالات:</strong> بیماری‌ها می‌توانند عروقی، مکانیکی، عفونی، التهابی یا نئوپلاستیک باشند.</li>
+                <li><strong>پیامدهای اختلال عملکرد:</strong> اختلال در جذب و انتقال آب می‌تواند منجر به سوءجذب (<span class="en">Malabsorption</span>) و اسهال (<span class="en">Diarrhea</span>) شود.</li>
+                <li><strong>اپیدمیولوژی نئوپلازی:</strong> کولون شایع‌ترین محل نئوپلازی دستگاه گوارش (<span class="en">GI neoplasia</span>) در جوامع غربی است.</li>
+            </ul>
+
+            <h3 style="font-size: 1.1rem; margin: 1.25rem 0 0.85rem; color: var(--accent);">سه ستون نارسایی روده (<span class="en">The Three Pillars of Intestinal Failure</span>)</h3>
+            <div class="grid-3">
+                <div class="sub-box danger">
+                    <h4>۱. اختلال عبور / انسداد (<span class="en">Failure of Transit - Obstruction</span>)</h4>
+                    <p><strong>تمرکز:</strong> نیروهای مکانیکی، فتق‌ها (<span class="en">Hernias</span>)، ولولوس (<span class="en">Volvulus</span>) و بیماری هیرشپرونگ (<span class="en">Hirschsprung disease</span>).</p>
+                </div>
+                <div class="sub-box warning">
+                    <h4>۲. اختلال خون‌رسانی / عروقی (<span class="en">Failure of Supply - Vascular</span>)</h4>
+                    <p><strong>تمرکز:</strong> ایسکمی (<span class="en">Ischemia</span>)، آنژیودیسپلازی (<span class="en">Angiodysplasia</span>) و هموروئیدها (<span class="en">Hemorrhoids</span>).</p>
+                </div>
+                <div class="sub-box">
+                    <h4>۳. اختلال جذب / اسهال (<span class="en">Failure of Absorption - Diarrhea</span>)</h4>
+                    <p><strong>تمرکز:</strong> بیماری سلیاک (<span class="en">Celiac disease</span>)، فیبروز کیستیک (<span class="en">Cystic Fibrosis</span>) و نقص‌های آنزیمی (<span class="en">Enzymatic defects</span>).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5 to 14: Intestinal Obstruction & Hirschsprung Disease -->
+        <section class="slide-card" id="obstruction">
+            <div class="slide-header">
+                <h2 class="slide-title">انسداد روده و بیماری هیرشپرونگ (<span class="en">Intestinal Obstruction & Hirschsprung Disease</span>)</h2>
+                <span class="slide-num">اسلایدهای ۵ تا ۱۴</span>
+            </div>
+
+            <div class="sub-box" style="margin-bottom: 1.25rem;">
+                <h4>کلیات انسداد روده (<span class="en">Intestinal Obstruction</span>)</h4>
+                <ul>
+                    <li>روده کوچک به دلیل لومن باریک‌تر، شایع‌ترین محل درگیری است.</li>
+                    <li><strong>علل عمده (۸۰٪ موارد):</strong> فتق‌ها (<span class="en">Hernias</span>)، چسبندگی‌ها (<span class="en">Adhesions</span>)، درهم‌رفتگی روده (<span class="en">Intussusception</span>) و پیچ‌خوردگی روده (<span class="en">Volvulus</span>).</li>
+                    <li><strong>سایر علل:</strong> تومورها و انفارکتوس روده (<span class="en">Intestinal infarction</span>).</li>
+                    <li><strong>تظاهرات بالینی:</strong> درد شکمی، اتساع شکم (<span class="en">Distention</span>)، استفراغ و یبوست (<span class="en">Constipation</span>).</li>
+                    <li><strong>درمان:</strong> در انسداد مکانیکی یا انفارکتوس شدید روده معمولاً جراحی ضروری است.</li>
+                </ul>
+            </div>
+
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent);">چهار مکانیسم مکانیکی انسداد (<span class="en">The Mechanics of Obstruction — FIG. 13.18</span>)</h3>
+            <div class="grid-2" style="margin-bottom: 1.5rem;">
+                <div class="sub-box danger">
+                    <h4>۱. فتق شکمی (<span class="en">Abdominal Hernia / Herniation</span>)</h4>
+                    <ul>
+                        <li><strong>تعریف:</strong> ضعف یا نقص در دیواره شکم که اجازه می‌دهد یک کیسه پوشیده از صفاق (<span class="en">Hernia sac</span>) بیرون بزند. محل‌های شایع: کانال‌های اینگوئینال و فمورال، ناف و اسکارهای جراحی.</li>
+                        <li><strong>محتویات:</strong> شایع‌ترین محتوا حلقه‌های روده کوچک است؛ امنتوم یا روده بزرگ نیز ممکن است فتق یابند.</li>
+                        <li><strong>عوارض:</strong>
+                            <ol>
+                                <li>انسداد وریدی در گردن فتق باعث استاز خون و ادم می‌شود.</li>
+                                <li><strong>گیرافتادگی (<span class="en">Incarceration</span>):</strong> بافت فتق‌یافته به دام می‌افتد و نمی‌تواند به موقعیت طبیعی بازگردد.</li>
+                                <li><strong>اختناق (<span class="en">Strangulation</span>):</strong> خون‌رسانی مختل می‌شود و به‌طور بالقوه باعث انفارکتوس و نکروز روده می‌گردد (بسیار خطرناک).</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sub-box warning">
+                    <h4>۲. درهم‌رفتگی روده (<span class="en">Intussusception</span>)</h4>
+                    <ul>
+                        <li><strong>تعریف:</strong> تلسکوپی شدن یک قطعه از روده به درون قطعه دیستال مجاور که مزانتر را نیز همراه خود می‌کشد (هدایت‌شده توسط پریستالسیس).</li>
+                        <li><strong>پاتوژنز در کودکان (&lt;۲ سال):</strong> شایع‌ترین علت انسداد روده در کودکان زیر ۲ سال؛ معمولاً بدون نقص آناتومیک زمینه‌ای رخ می‌دهد و <strong>هیپرپلازی واکنشی پلاک‌های پیر (<span class="en">Peyer patches</span>)</strong> (مرتبط با عفونت روتاویروس و واکسن‌های قدیمی) به‌عنوان نقطه شروع (<span class="en">Lead point</span>) عمل می‌کند.</li>
+                        <li><strong>پاتوژنز در بزرگسالان:</strong> محرک‌های مکانیکی؛ وجود یک توده داخل لومنی (مانند تومور یا پولیپ بزرگ) به‌عنوان نقطه شروع عمل می‌کند.</li>
+                        <li><strong>عوارض، تشخیص و درمان:</strong> در صورت عدم درمان ← فشردگی عروق مزانتریک ← انفارکتوس تمام‌ضخامت (<span class="en">Transmural infarction</span>). انمای حاجب (<span class="en">Contrast enema</span>) در کودکان خردسال هم تشخیصی و هم درمانی (جااندازی) است؛ در کودکان بزرگ‌تر و بزرگسالان به دلیل وجود توده، جراحی لازم است.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box">
+                    <h4>۳. چسبندگی‌ها (<span class="en">Adhesions</span>)</h4>
+                    <p>پل‌های بافت همبند فیبروز (<span class="en">Fibrous connective tissue bridges</span>) میان حلقه‌های روده (معمولاً پس از جراحی یا التهاب) که حلقه‌های بسته (<span class="en">Closed loops</span>) و انسداد ایجاد می‌کنند.</p>
+                </div>
+
+                <div class="sub-box">
+                    <h4>۴. ولولوس (<span class="en">Volvulus</span>)</h4>
+                    <p>پیچ‌خوردگی کامل یک حلقه روده به دور محور اتصال مزانتریک خود (<span class="en">Twisting around mesenteric attachment</span>) که هم انسداد لومنی و هم اختلال شدید عروقی و انفارکتوس ایجاد می‌کند.</p>
+                </div>
+            </div>
+
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent);">بیماری هیرشپرونگ / مگاکولون آگانگلیونیک مادرزادی (<span class="en">Hirschsprung Disease — FIG. 13.19</span>)</h3>
+            <div class="sub-box">
+                <ul>
+                    <li><strong>بروز:</strong> حدود ۱ در ۵,۰۰۰ تولد؛ در پسران شایع‌تر است.</li>
+                    <li><strong>پاتوژنز و ژنتیک:</strong> نقص در مهاجرت سلول‌های ستیغ عصبی (<span class="en">Neural crest migration</span>) از سکوم به رکتوم ← فقدان سلول‌های گانگلیونی شبکه‌های زیرمخاطی مایسنر (<span class="en">Meissner</span>) و میانتریک اوئرباخ (<span class="en">Auerbach</span>) ← آگانگلیونوز (<span class="en">Aganglionosis</span>) و اختلال پریستالسیس هماهنگ در روده دیستال. مرتبط با <strong>جهش‌های از دست دادن عملکرد در ژن <span class="en">RET</span></strong> و افزایش خطر در تریزومی ۲۱ (<span class="en">Trisomy 21</span>).</li>
+                    <li><strong>مورفولوژی:</strong> همواره رکتوم را درگیر می‌کند و در بیشتر موارد کولون سیگموئید را نیز درگیر می‌سازد (موارد شدید ممکن است کل کولون را درگیر کنند). قطعه آگانگلیونیک اندازه طبیعی یا منقبض (<span class="en">Constricted</span>) دارد، در حالی که کولون پروگزیمال دارای عصب‌دهی طبیعی، به دلیل انسداد عملکردی دیستال به‌تدریج متسع (<span class="en">Dilated</span>) می‌شود.</li>
+                    <li><strong>تشخیص و تظاهرات:</strong> تأیید بافت‌شناسی فقدان سلول‌های گانگلیونی در قطعه درگیر؛ عدم دفع مکونیوم (<span class="en">Failure to pass meconium</span>) و یبوست انسدادی.</li>
+                    <li><strong>عوارض و درمان:</strong> انتروکولیت، عدم تعادل آب و الکترولیت، پرفوراسیون و پریتونیت. درمان شامل برداشتن جراحی قطعه آگانگلیونیک است (بازگشت عملکرد طبیعی روده ممکن است سال‌ها طول بکشد).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 15 to 24: Vascular Disorders of the Bowel -->
+        <section class="slide-card" id="vascular">
+            <div class="slide-header">
+                <h2 class="slide-title">اختلالات عروقی روده: بیماری ایسکمیک، آنژیودیسپلازی و هموروئید</h2>
+                <span class="slide-num">اسلایدهای ۱۵ تا ۲۴</span>
+            </div>
+
+            <div class="grid-2" style="margin-bottom: 1.25rem;">
+                <div class="sub-box">
+                    <h4>خون‌رسانی و علل بیماری ایسکمیک روده (<span class="en">Ischemic Bowel Disease</span>)</h4>
+                    <p style="margin-bottom: 0.5rem;">خون‌رسانی از طریق شریان‌های سلیاک (<span class="en">Celiac</span>)، مزانتریک فوقانی (<span class="en">SMA</span>) و مزانتریک تحتانی (<span class="en">IMA</span>) انجام می‌شود. عروق جانبی کاهش تدریجی جریان خون را جبران می‌کنند، اما قطع حاد آن باعث انفارکتوس روده می‌شود:</p>
+                    <ul>
+                        <li><strong>ترومبوز شریانی (<span class="en">Arterial thrombosis</span>):</strong> معمولاً ناشی از آترواسکلروز شدید.</li>
+                        <li><strong>آمبولی شریانی (<span class="en">Arterial embolism</span>):</strong> اغلب از آتروماهای آئورت یا ترومبوزهای جداری قلبی.</li>
+                        <li><strong>ترومبوز ورید مزانتریک (<span class="en">Mesenteric venous thrombosis</span>):</strong> وضعیت‌های بیش‌انعقادی، تومورها، سیروز، تروما یا فشردگی وریدی.</li>
+                        <li><strong>هیپوپرفیوژن غیرانسدادی (<span class="en">Nonocclusive hypoperfusion</span>):</strong> نارسایی قلبی، شوک، کم‌آبی یا داروهای منقبض‌کننده عروق.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box warning">
+                    <h4>پاتوژنز و مناطق آسیب‌پذیر (<span class="en">Watershed Zones & Hairpin Turn</span>)</h4>
+                    <ul>
+                        <li><strong>نواحی مرزی (<span class="en">Watershed zones</span>):</strong> مناطقی در انتهای قلمرو شریانی با جریان خون جانبی محدود؛ شامل <strong>خم طحالی (<span class="en">Splenic flexure</span>)</strong> (مرز بین <span class="en">SMA</span> و <span class="en">IMA</span>) و <strong>اتصال رکتوسیگموئید (<span class="en">Rectosigmoid junction</span>)</strong> (مرز <span class="en">IMA</span> و ایلیاک).</li>
+                        <li><strong>چین سنجاق‌سری مویرگی (<span class="en">The Hairpin Turn</span>):</strong> در مقیاس میکروسکوپی، مویرگ‌ها در کنار غدد بالا رفته و یک چرخش تیز انجام می‌دهند که سطح اپی‌تلیال را در برابر هیپوپرفیوژن و کمبود اکسیژن به‌شدت آسیب‌پذیر می‌کند.</li>
+                        <li><strong>آسیب خون‌رسانی مجدد (<span class="en">Reperfusion injury</span>):</strong> ورود اکسیژن به بافت هیپوکسیک باعث تولید رادیکال‌های آزاد، ارتشاح نوتروفیل‌ها و تشدید نکروز مخاطی می‌شود.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sub-box" style="margin-bottom: 1.25rem;">
+                <h4>مورفولوژی، سیر بالینی و شرایط مرتبط با ایسکمی (<span class="en">FIG. 13.20</span>)</h4>
+                <ul>
+                    <li><strong>توزیع و نمای ماکروسکوپی:</strong> می‌تواند هر بخشی از دستگاه گوارش را به‌صورت قطعه‌ای و تکه‌ای (<span class="en">Segmental and patchy</span>) درگیر کند؛ مخاط هموراژیک و اغلب زخمی همراه با ادم دیواره روده. در انفارکتوس تمام‌ضخامت (<span class="en">Transmural infarction</span>؛ بیشتر با ترومبوز حاد شریانی): محتویات خونی روده، نکروز انعقادی موسکولاریس پروپریا طی ۱ تا ۴ روز، سروزیت چرکی و پرفوراسیون.</li>
+                    <li><strong>یافته‌های میکروسکوپی:</strong> آتروفی و ریزش اپی‌تلیوم سطحی (<span class="en">Sloughing</span>)، تکثیر جبرانی کریپت‌ها (<span class="en">Crypt hyperproliferation</span>)؛ ایسکمی حاد در ابتدا فاقد ارتشاح التهابی است و نوتروفیل‌ها ظرف چند ساعت پس از خون‌رسانی مجدد ظاهر می‌شوند. ایسکمی مزمن باعث فیبروز لامینا پروپریا و گاهی تنگی می‌شود. سوپراینفکشن باکتریایی ممکن است غشاهای کاذب شبیه کولیت <span class="en">C. difficile</span> ایجاد کند.</li>
+                    <li><strong>ویژگی‌های بالینی و پیش‌آگهی:</strong> بیماران مسن با بیماری قلبی-عروقی؛ درد شدید و ناگهانی شکم، تندرنس، تهوع، استفراغ، اسهال خونی یا ملنا، کاهش یا فقدان صداهای روده و سفتی تخته‌مانند شکم (<span class="en">Boardlike abdominal rigidity</span>). تخریب سد مخاطی منجر به سپسیس و <strong>مرگ‌ومیر بیش از ۵۰٪</strong> می‌شود (ممکن است با پانکراتیت، آپاندیسیت، زخم پپتیک پرفوره یا کوله‌سیستیت حاد اشتباه شود).</li>
+                    <li><strong>سایر شرایط مرتبط:</strong> ایسکمی مزمن می‌تواند بیماری التهابی روده (<span class="en">IBD</span>) را تقلید کند؛ عفونت <span class="en">CMV</span> (آلودگی سلول‌های اندوتلیال در افراد دچار نقص ایمنی)؛ انتروکولیت ناشی از اشعه (<span class="en">Radiation enterocolitis</span>)؛ و <strong>انتروکولیت نکروزان (<span class="en">Necrotizing enterocolitis - NEC</span>)</strong> که شایع‌ترین اورژانس اکتسابی گوارشی در نوزادان (به‌ویژه نارس یا کم‌وزن) پس از شروع تغذیه خوراکی است.</li>
+                </ul>
+            </div>
+
+            <div class="grid-2">
+                <div class="sub-box">
+                    <h4>آنژیودیسپلازی (<span class="en">Angiodysplasia</span>)</h4>
+                    <ul>
+                        <li><strong>تعریف و محل:</strong> عروق خونی متسع و غیرطبیعی در مخاط و زیرمخاط؛ شایع‌ترین محل <strong>سکوم و کولون راست (<span class="en">Cecum / Right Colon</span>)</strong>.</li>
+                        <li><strong>اپیدمیولوژی و بالین:</strong> معمولاً پس از ۶۰ سالگی رخ می‌دهد و عامل حدود ۲۰٪ خونریزی‌های عمده دستگاه گوارش تحتانی است. با خونریزی بدون درد و مدفوع قرمز روشن یا خرمایی‌رنگ (<span class="en">Maroon stool</span>) تظاهر می‌یابد (در مقایسه با خونریزی گوارشی فوقانی که معمولاً ملنا یا استفراغ دانه‌قهوه‌ای ایجاد می‌کند).</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box danger">
+                    <h4>هموروئیدها (<span class="en">Hemorrhoids</span>)</h4>
+                    <ul>
+                        <li><strong>تعریف و عوامل خطر:</strong> وریدهای متسع در ناحیه آنال و رکتوم (در محل خط آنورکتال <span class="en">Anorectal line</span>) برای تخلیه فشار وریدی بالا؛ ناشی از یبوست، زور زدن (<span class="en">Straining</span>)، بارداری و پرفشاری پورت (<span class="en">Portal hypertension</span>).</li>
+                        <li><strong>انواع و مورفولوژی:</strong> خارجی (زیر خط آنورکتال) و داخلی (در دیستال رکتوم، بالای خط آنورکتال). عروق زیرمخاطی متسع با دیواره نازک که ممکن است خونریزی، ترومبوز یا التهاب یابند.</li>
+                        <li><strong>بالین و درمان:</strong> خونریزی قرمز روشن (اغلب روی دستمال توالت) و گاهی درد. درمان: بستن با باند لاستیکی (<span class="en">Rubber-band ligation</span>)، اسکلروتراپی، انعقاد مادون قرمز یا جراحی. هموروئید همراه با پرفشاری پورت می‌تواند نشانه بیماری زمینه‌ای کبد باشد.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 25 to 32: Diarrhea, Malabsorption & Cystic Fibrosis -->
+        <section class="slide-card" id="diarrhea">
+            <div class="slide-header">
+                <h2 class="slide-title">اسهال، مراحل جذب و سوءجذب (<span class="en">Diarrhea, Absorption Phases & Malabsorption</span>)</h2>
+                <span class="slide-num">اسلایدهای ۲۵ تا ۳۲</span>
+            </div>
+
+            <p style="margin-bottom: 1rem;"><strong>تعریف اسهال (<span class="en">Diarrhea</span>):</strong> دفع مدفوع شل یا آبکی که به‌طور معمول از <strong>۲۰۰ گرم در روز</strong> فراتر می‌رود (در موارد شدید حجم مدفوع ممکن است بیش از ۱۴ لیتر در روز شود و بدون جایگزینی مایعات به کم‌آبی کشنده منجر گردد).</p>
+
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent);">۱. چهار نوع اصلی اسهال (<span class="en">The Diarrheal Spectrum</span>)</h3>
+            <div class="grid-4" style="margin-bottom: 1.5rem;">
+                <div class="sub-box">
+                    <h4>۱. اسهال ترشحی (<span class="en">Secretory</span>)</h4>
+                    <p>ترشح تنظیم‌نشده روده؛ تولید مدفوع ایزوتونیک؛ <strong>با ناشتایی ادامه می‌یابد (<span class="en">Persists during fasting</span>)</strong>. مثال: وبا (<span class="en">Cholera</span>).</p>
+                </div>
+                <div class="sub-box warning">
+                    <h4>۲. اسهال اسموتیک (<span class="en">Osmotic</span>)</h4>
+                    <p>مواد محلول جذب‌نشده آب را به داخل لومن می‌کشند؛ شکاف اسموتیک مدفوع <span class="en">≥50 mOsm/kg</span>؛ <strong>با ناشتایی بهبود می‌یابد</strong>. مثال: کمبود لاکتاز (<span class="en">Lactase deficiency</span>).</p>
+                </div>
+                <div class="sub-box">
+                    <h4>۳. اسهال ناشی از سوءجذب (<span class="en">Malabsorptive</span>)</h4>
+                    <p>پردازش یا انتقال ناکافی مواد مغذی؛ همراه با استئاتوره (<span class="en">Steatorrhea</span>)؛ <strong>با ناشتایی تسکین می‌یابد</strong>. مثال: بیماری سلیاک (<span class="en">Celiac disease</span>).</p>
+                </div>
+                <div class="sub-box danger">
+                    <h4>۴. اسهال اگزوداتیو (<span class="en">Exudative</span>)</h4>
+                    <p>آسیب التهابی مخاط؛ مشخصه آن مدفوع خونی یا چرکی است؛ <strong>با ناشتایی ادامه می‌یابد</strong>. مثال: بیماری التهابی روده (<span class="en">IBD</span>).</p>
+                </div>
+            </div>
+
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent);">۲. خط مونتاژ جذب مواد مغذی (<span class="en">The Assembly Line of Nutrient Absorption</span>)</h3>
+            <div class="grid-4" style="margin-bottom: 1.5rem;">
+                <div class="sub-box">
+                    <h4>فاز ۱: هضم داخل لومنی (<span class="en">Intraluminal Digestion</span>)</h4>
+                    <p>تجزیه پروتئین‌ها، کربوهیدرات‌ها و چربی‌ها به اشکال قابل جذب.</p>
+                </div>
+                <div class="sub-box">
+                    <h4>فاز ۲: هضم نهایی (<span class="en">Terminal Digestion</span>)</h4>
+                    <p>هیدرولیز کربوهیدرات‌ها و پپتیدها توسط آنزیم‌های حاشیه مسواکی (<span class="en">Brush-border enzymes</span>؛ دی‌ساکاریدازها و پپتیدازها).</p>
+                </div>
+                <div class="sub-box">
+                    <h4>فاز ۳: انتقال ترانس‌اپی‌تلیال (<span class="en">Transepithelial Transport</span>)</h4>
+                    <p>جذب و پردازش مواد مغذی، مایعات و الکترولیت‌ها از عرض اپی‌تلیوم روده کوچک.</p>
+                </div>
+                <div class="sub-box">
+                    <h4>فاز ۴: انتقال لنفاوی (<span class="en">Lymphatic Transport</span>)</h4>
+                    <p>بسته‌بندی و انتقال لیپیدهای جذب‌شده از طریق سیستم لنفاوی.</p>
+                </div>
+            </div>
+
+            <div class="grid-2" style="margin-bottom: 1.25rem;">
+                <div class="sub-box warning">
+                    <h4>ویژگی‌های بالینی سوءجذب و عوارض کمبود مواد مغذی</h4>
+                    <ul>
+                        <li><strong>علائم سوءجذب:</strong> اسهال مزمن و کاهش وزن، بی‌اشتهایی، اتساع شکم، قرقر شکم (<span class="en">Borborygmi</span>)، تحلیل عضلانی و <strong>استئاتوره (<span class="en">Steatorrhea</span>)</strong> (مدفوع حجیم، کف‌آلود، چرب، زرد یا خاکستری‌رنگ). علل شایع در غرب: نارسایی پانکراس، سلیاک و کرون؛ در کشورهای کم‌درآمد: اختلال عملکرد روده‌ای محیطی (<span class="en">EED</span>).</li>
+                        <li><strong>کمبود ویتامین <span class="en">B6</span>، فولات یا <span class="en">B12</span>:</strong> آنمی و موکوزیت (<span class="en">Mucositis</span>).</li>
+                        <li><strong>کمبود ویتامین <span class="en">K</span>:</strong> خونریزی (<span class="en">Bleeding</span>).</li>
+                        <li><strong>کمبود کلسیم، منیزیم یا ویتامین <span class="en">D</span>:</strong> استئوپنی (<span class="en">Osteopenia</span>) و تتانی (<span class="en">Tetany</span>).</li>
+                        <li><strong>کمبود ویتامین <span class="en">A</span> یا <span class="en">B12</span>:</strong> نوروپاتی (<span class="en">Neuropathy</span>)؛ اختلالات غدد درون‌ریز و پوستی نیز ممکن است رخ دهد.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box danger">
+                    <h4>نارسایی فاز ۱: فیبروز کیستیک (<span class="en">Phase 1 Failure: Cystic Fibrosis</span>)</h4>
+                    <ul>
+                        <li><strong>علت:</strong> جهش‌های کانال <span class="en">CFTR</span> انتقال یون را در مجاری روده و پانکراس مختل کرده و ترشح بی‌کربنات، سدیم و آب را کاهش می‌دهند.</li>
+                        <li><strong>پاتوژنز:</strong> کم‌آبی لومنی ← ترشحات پانکراسی غلیظ و چسبناک (<span class="en">Highly viscous mucus</span>) ← انسداد مجاری ← خودهضمی پانکراس (<span class="en">Autodigestion of pancreas</span>) و نارسایی برون‌ریز پانکراس در بیش از ۸۰٪ بیماران.</li>
+                        <li><strong>پیامد و درمان:</strong> هضم ناکافی مواد مغذی باعث اسهال اسموتیک و کمبود لیپاز باعث استئاتوره می‌شود. مکمل‌های آنزیم گوارشی خوراکی پانکراس در اکثر بیماران مؤثرند.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--accent);">جدول ۱۳.۳: نقص‌ها در بیماری‌های سوءجذب و اسهالی (<span class="en">Table 13.3</span>)</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>بیماری (<span class="en">Disease</span>)</th>
+                            <th>هضم داخل لومنی (<span class="en">Intraluminal</span>)</th>
+                            <th>هضم نهایی (<span class="en">Terminal</span>)</th>
+                            <th>انتقال ترانس‌اپی‌تلیال (<span class="en">Transepithelial</span>)</th>
+                            <th>انتقال لنفاوی (<span class="en">Lymphatic</span>)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>بیماری سلیاک (<span class="en">Celiac disease</span>)</td><td>—</td><td><strong>+</strong></td><td><strong>+</strong></td><td>—</td></tr>
+                        <tr><td>اسپروی گرمسیری (<span class="en">Tropical sprue</span>)</td><td>—</td><td><strong>+</strong></td><td><strong>+</strong></td><td>—</td></tr>
+                        <tr><td>پانکراتیت مزمن (<span class="en">Chronic pancreatitis</span>)</td><td><strong>+</strong></td><td>—</td><td>—</td><td>—</td></tr>
+                        <tr><td>فیبروز کیستیک (<span class="en">Cystic fibrosis</span>)</td><td><strong>+</strong></td><td>—</td><td>—</td><td>—</td></tr>
+                        <tr><td>سوءجذب اولیه اسید صفراوی (<span class="en">Primary bile acid malabsorption</span>)</td><td><strong>+</strong></td><td>—</td><td><strong>+</strong></td><td>—</td></tr>
+                        <tr><td>سندرم کارسینوئید (<span class="en">Carcinoid syndrome</span>)</td><td>—</td><td>—</td><td><strong>+</strong></td><td>—</td></tr>
+                        <tr><td>انتروپاتی خودایمنی (<span class="en">Autoimmune enteropathy</span>)</td><td>—</td><td><strong>+</strong></td><td><strong>+</strong></td><td>—</td></tr>
+                        <tr><td>کمبود دی‌ساکاریداز (<span class="en">Disaccharidase deficiency</span>)</td><td>—</td><td><strong>+</strong></td><td>—</td><td>—</td></tr>
+                        <tr><td>عفونت مایکوباکتریال، بیماری ویپل (<span class="en">Whipple disease</span>)</td><td>—</td><td>—</td><td>—</td><td><strong>+</strong></td></tr>
+                        <tr><td>آبتالیپوپروتئینمی (<span class="en">Abetalipoproteinemia</span>)</td><td>—</td><td>—</td><td><strong>+</strong></td><td>—</td></tr>
+                        <tr><td>گاستروانتریت ویروسی (<span class="en">Viral gastroenteritis</span>)</td><td>—</td><td><strong>+</strong></td><td><strong>+</strong></td><td>—</td></tr>
+                        <tr><td>گاستروانتریت باکتریایی (<span class="en">Bacterial gastroenteritis</span>)</td><td>—</td><td><strong>+</strong></td><td><strong>+</strong></td><td>—</td></tr>
+                        <tr><td>گاستروانتریت انگلی (<span class="en">Parasitic gastroenteritis</span>)</td><td>—</td><td><strong>+</strong></td><td><strong>+</strong></td><td>—</td></tr>
+                        <tr><td>بیماری التهابی روده (<span class="en">Inflammatory bowel disease</span>)</td><td><strong>+</strong></td><td><strong>+</strong></td><td><strong>+</strong></td><td>—</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Slide 33 to 42: Celiac Disease, EED, Lactase Deficiency & Abetalipoproteinemia -->
+        <section class="slide-card" id="celiac">
+            <div class="slide-header">
+                <h2 class="slide-title">بیماری سلیاک و سایر اختلالات سوءجذب (<span class="en">Celiac Disease, EED, Lactase & Abetalipoproteinemia</span>)</h2>
+                <span class="slide-num">اسلایدهای ۳۳ تا ۴۲</span>
+            </div>
+
+            <div class="sub-box warning" style="margin-bottom: 1.25rem;">
+                <h4>بیماری سلیاک / انتروپاتی حساس به گلوتن (<span class="en">Celiac Disease / Gluten-Sensitive Enteropathy — FIG. 13.22, eFIG. 13.6</span>)</h4>
+                <ul>
+                    <li><strong>تعریف، غلات محرک و اپیدمیولوژی:</strong> انتروپاتی با واسطه ایمنی که با مصرف <strong>گلوتن (<span class="en">Gluten</span>)</strong> (موجود در گندم <span class="en">Wheat</span>، چاودار <span class="en">Rye</span> و جو <span class="en">Barley</span>؛ جو دوسر <span class="en">Oats</span> ذاتاً گلوتن ندارد اما ممکن است حین فرآوری آلوده شود) در افراد مستعد ژنتیکی ایجاد می‌شود. شیوع جهانی حدود ۱٪ است. درمان اصلی رژیم غذایی اکیداً فاقد گلوتن (<span class="en">Gluten-free diet</span>) است.</li>
+                    <li><strong>پاتوژنز:</strong> هضم گلوتن پپتیدهای مقاوم <strong>گلیادین (<span class="en">Gliadin</span>)</strong> را تولید می‌کند. آنزیم <strong>ترانس‌گلوتامیناز بافتی (<span class="en">tTG</span>)</strong> گلیادین را دِآمیده کرده و اتصال آن به <strong><span class="en">HLA-DQ2</span> و <span class="en">HLA-DQ8</span></strong> را روی سلول‌های ارائه‌دهنده آنتی‌ژن افزایش می‌دهد ← فعال‌سازی سلول‌های <span class="en">CD4+ T</span> و ترشح <span class="en">IFN-γ</span> ← تولید آنتی‌بادی‌های ضد <span class="en">tTG</span>، ضد گلیادین دِآمیده‌شده و ضد اندومیزیوم. هم‌زمان گلیادین سلول‌های اپی‌تلیال را به تولید <strong><span class="en">IL-15</span></strong> تحریک کرده که لنفوسیت‌های داخل اپی‌تلیالی <strong><span class="en">CD8+</span></strong> را فعال می‌کند (شناسایی <span class="en">MIC-A</span> از طریق گیرنده <span class="en">NKG2D</span> و کشتن انتروسیت‌ها). مرتبط با دیابت نوع ۱، تیروئیدیت و سندرم شوگرن.</li>
+                    <li><strong>مورفولوژی (سه‌گانه کلاسیک امتحانی — بیوپسی از بخش دوم دئودنوم یا ژژنوم پروگزیمال):</strong>
+                        <ol>
+                            <li><strong>آتروفی پرزها (<span class="en">Villous atrophy</span>):</strong> مسطح شدن پرزهای روده.</li>
+                            <li><strong>هیپرپلازی کریپت‌ها (<span class="en">Crypt hyperplasia</span>):</strong> افزایش فعالیت میتوزی کریپت‌ها.</li>
+                            <li><strong>افزایش لنفوسیت‌های داخل اپی‌تلیالی (<span class="en">Increased intraepithelial lymphocytes</span>):</strong> به‌همراه افزایش پلاسماسل‌ها، ماست‌سل‌ها و ائوزینوفیل‌ها در لامینا پروپریای فوقانی.</li>
+                        </ol>
+                    </li>
+                    <li><strong>ویژگی‌های بالینی و تشخیص:</strong> در کودکان (۶ تا ۲۴ ماهگی): تحریک‌پذیری، اتساع شکم، اسهال، اختلال رشد (<span class="en">Failure to thrive</span>) و تحلیل عضلانی. در بزرگسالان (۳۰ تا ۶۰ سال): آنمی فقر آهن (یا <span class="en">B12</span>/فولات)، اسهال، نفخ و خستگی. تا ۱۰٪ بیماران دچار <strong>درماتیت هرپتی‌فرم (<span class="en">Dermatitis herpetiformis</span>)</strong> (بثورات تاولی به‌شدت خارش‌دار) می‌شوند. تشخیص سرولوژیک: <span class="en">IgA anti-tTG</span> (حساسیت بالا) و آنتی‌بادی‌های ضد اندومیزیوم (ویژگی بالا).</li>
+                    <li><strong>عوارض بدخیم:</strong> افزایش خطر <strong>لنفوم سلول T مرتبط با انتروپاتی (<span class="en">EATL</span>)</strong> و آدنوکارسینوم روده کوچک (به‌ویژه در اسپروی مقاوم به درمان <span class="en">Refractory sprue</span>).</li>
+                </ul>
+            </div>
+
+            <div class="grid-3">
+                <div class="sub-box">
+                    <h4>اختلال عملکرد روده‌ای محیطی (<span class="en">Environmental Enteric Dysfunction - EED</span>)</h4>
+                    <p>اختلال مزمن روده مرتبط با بهداشت ضعیف در مناطق گرمسیری و کم‌درآمد (احتمالاً ناشی از کلونیزاسیون باکتری‌های کلی‌فرم توکسیژنیک). بافت‌شناسی شبیه سلیاک دارد (باید با سرولوژی رد شود). در کودکان باعث سوءجذب، توقف رشد و اختلال تکامل شناختی می‌شود و با آنتی‌بیوتیک و مکمل کاملاً برطرف نمی‌گردد.</p>
+                </div>
+
+                <div class="sub-box">
+                    <h4>کمبود لاکتاز (<span class="en">Lactase / Disaccharidase Deficiency</span>)</h4>
+                    <p>کاهش لاکتاز حاشیه مسواکی مانع هضم لاکتوز شده و پس از مصرف لبنیات اسهال اسموتیک ایجاد می‌کند. سه نوع دارد: <strong>مادرزادی</strong> (اتوزوم مغلوب نادر؛ اسهال انفجاری آبکی یا کف‌آلود)، <strong>اکتسابی / اولیه</strong> (کاهش طبیعی بیان لاکتاز پس از از شیر گرفتن؛ در دو سوم جمعیت جهان)، و <strong>گذرا / ثانویه</strong> (ناشی از آسیب روده کوچک در اثر عفونت یا التهاب).</p>
+                </div>
+
+                <div class="sub-box danger">
+                    <h4>شکست انتقال: آبتالیپوپروتئینمی (<span class="en">Abetalipoproteinemia</span>)</h4>
+                    <p>جهش در پروتئین انتقال‌دهنده تری‌گلیسیرید میکروزومی (<span class="en">MTP</span>) ← ناتوانی انتروسیت‌ها در ساخت و ترشح شیلومیکرون‌ها (شکست فاز ۳/۴ و تجمع چربی در سلول). شروع در شیرخوارگی با استئاتوره شدید، اختلال رشد و کمبود ویتامین <span class="en">K</span>. یافته اسمیر خون محیطی: <strong>آکانتوسیت‌ها (<span class="en">Acanthocytes / spur cells</span>)</strong> ناشی از تغییر محتوای لیپیدی غشای گلبول قرمز.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 43 to 56: Infectious Enterocolitis (Bacterial) -->
+        <section class="slide-card" id="bacterial">
+            <div class="slide-header">
+                <h2 class="slide-title">انتروکولیت عفونی و پاتوژن‌های باکتریایی (<span class="en">Infectious Enterocolitis</span>)</h2>
+                <span class="slide-num">اسلایدهای ۴۳ تا ۵۶</span>
+            </div>
+
+            <p style="margin-bottom: 1rem;">انتروکولیت عفونی سالانه بیش از ۱ میلیون مرگ در سراسر جهان و بیش از ۱۰٪ مرگ‌های کودکان زیر ۵ سال را رقم می‌زند و با اسهال، درد شکم، فوریت دفع، ناراحتی پره‌آنال، بی‌اختیاری مدفوع و خونریزی گوارشی تظاهر می‌یابد.</p>
+
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--accent);">جدول ۱۳.۴: ویژگی‌های انتروکولیت‌های باکتریایی (<span class="en">Table 13.4</span>)</h3>
+            <div class="table-wrapper" style="margin-bottom: 1.5rem;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>نوع عفونت</th>
+                            <th>توزیع</th>
+                            <th>مخزن</th>
+                            <th>انتقال</th>
+                            <th>محل درگیری GI</th>
+                            <th>علائم</th>
+                            <th>عوارض</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong><span class="en">Cholera</span></strong></td><td>هند، آفریقا</td><td>صدف‌ها (<span class="en">Shellfish</span>)</td><td>مدفوعی-دهانی، آب</td><td>روده کوچک</td><td>اسهال آبکی شدید</td><td>کم‌آبی، عدم تعادل الکترولیت</td></tr>
+                        <tr><td><strong><span class="en">Campylobacter spp.</span></strong></td><td>کشورهای پردرآمد</td><td>مرغ، گوسفند، خوک، گاو</td><td>ماکیان، شیر و سایر غذاها</td><td>کولون</td><td>اسهال آبکی یا خونی</td><td>آرتریت واکنشی، سندرم گیلن-باره</td></tr>
+                        <tr><td><strong><span class="en">Shigellosis</span></strong></td><td>جهانی، اندمیک در مناطق کم‌درآمد</td><td>انسان</td><td>مدفوعی-دهانی، غذا، آب</td><td>کولون چپ، ایلئوم</td><td>اسهال خونی</td><td>آرتریت واکنشی، اورتریت، کنژنکتیویت، <span class="en">HUS</span></td></tr>
+                        <tr><td><strong><span class="en">Salmonellosis</span></strong></td><td>جهانی</td><td>ماکیان، دام، خزندگان</td><td>گوشت، مرغ، تخم‌مرغ، شیر</td><td>کولون، روده کوچک</td><td>اسهال آبکی یا خونی</td><td>سپسیس، آبسه</td></tr>
+                        <tr><td><strong><span class="en">Enteric (typhoid) fever</span></strong></td><td>هند، مکزیک، فیلیپین</td><td>انسان</td><td>مدفوعی-دهانی، آب</td><td>روده کوچک</td><td>اسهال خونی، تب</td><td>حالت ناقل مزمن، انسفالوپاتی، میوکاردیت، پرفوراسیون</td></tr>
+                        <tr><td><strong><span class="en">Yersinia spp.</span></strong></td><td>اروپای شمالی و مرکزی</td><td>خوک، گاو، توله‌سگ، گربه</td><td>گوشت خوک، شیر، آب</td><td>ایلئوم، آپاندیس، کولون راست</td><td>درد شکم، تب، اسهال</td><td>آرتریت واکنشی، اریتم ندوزوم</td></tr>
+                        <tr><td><strong><span class="en">Enterotoxigenic E. coli (ETEC)</span></strong></td><td>کشورهای کم‌درآمد</td><td>نامشخص</td><td>غذا یا مدفوعی-دهانی</td><td>روده کوچک</td><td>اسهال آبکی شدید</td><td>کم‌آبی، عدم تعادل الکترولیت</td></tr>
+                        <tr><td><strong><span class="en">Enteropathogenic E. coli (EPEC)</span></strong></td><td>جهانی</td><td>انسان</td><td>مدفوعی-دهانی</td><td>روده کوچک</td><td>اسهال آبکی</td><td>کم‌آبی، عدم تعادل الکترولیت</td></tr>
+                        <tr><td><strong><span class="en">Enterohemorrhagic E. coli (EHEC)</span></strong></td><td>جهانی</td><td>گسترده شامل گاو</td><td>گوشت گاو، شیر، سبزیجات</td><td>کولون</td><td>اسهال خونی</td><td>سندرم همولیتیک اورمیک (<span class="en">HUS</span>)</td></tr>
+                        <tr><td><strong><span class="en">Enteroinvasive E. coli (EIEC)</span></strong></td><td>کشورهای کم‌درآمد</td><td>نامشخص</td><td>پنیر، سایر غذاها، آب</td><td>کولون</td><td>اسهال خونی</td><td>نامشخص</td></tr>
+                        <tr><td><strong><span class="en">Enteroaggregative E. coli (EAEC)</span></strong></td><td>جهانی</td><td>نامشخص</td><td>نامشخص</td><td>کولون</td><td>اسهال غیرخونی، بدون تب</td><td>به‌خوبی تعریف نشده</td></tr>
+                        <tr><td><strong><span class="en">Pseudomembranous colitis (C. difficile)</span></strong></td><td>جهانی</td><td>انسان، بیمارستان‌ها</td><td>آنتی‌بیوتیک‌ها اجازه رشد می‌دهند</td><td>کولون</td><td>اسهال آبکی، تب</td><td>عود، مگاکولون توکسیک</td></tr>
+                        <tr><td><strong><span class="en">Whipple disease</span></strong></td><td>روستایی / شهری</td><td>نامشخص</td><td>نامشخص (نادر)</td><td>روده کوچک</td><td>سوءجذب</td><td>آرتریت، بیماری <span class="en">CNS</span></td></tr>
+                        <tr><td><strong><span class="en">Mycobacterial infection</span></strong></td><td>جهانی</td><td>نامشخص</td><td>نامشخص</td><td>روده کوچک</td><td>سوءجذب</td><td>پنومونی، عفونت در سایر نقاط</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="grid-2">
+                <div class="sub-box">
+                    <h4>۱. وبا (<span class="en">Cholera — Vibrio cholerae</span>)</h4>
+                    <ul>
+                        <li><strong>ارگانیسم و پاتوژنز:</strong> باسیل گرم منفی ویرگولی‌شکل؛ انتقال از طریق آب آلوده و غذاهای دریایی. توکسین وبا (۵ زیرواحد <span class="en">B</span> و ۱ زیرواحد فعال <span class="en">A</span>) پروتئین <span class="en">Gsα</span> را از طریق <span class="en">ADP-ribosylation</span> فعال کرده ← تحریک مداوم آدنیلات سیکلاز و افزایش <span class="en">cAMP</span> ← باز شدن کانال کلر <span class="en">CFTR</span> و ترشح کلر، سدیم و آب به لومن. بیوپسی مخاط تغییرات ساختاری بسیار ناچیزی نشان می‌دهد.</li>
+                        <li><strong>بالین و پیش‌آگهی:</strong> کمون ۱ تا ۵ روز؛ دفع مدفوع تا ۱ لیتر در ساعت، کم‌آبی شدید، افت فشار، گرفتگی عضلات، آنوری، شوک و مرگ (تب غیرشایع است). مرگ‌ومیر بدون درمان ۵۰ تا ۷۰٪ است، اما با مایع‌درمانی سریع بقا بیش از ۹۹٪ می‌باشد.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box">
+                    <h4>۲. انتروکولیت کمپیلوباکتر (<span class="en">Campylobacter jejuni — FIG. 13.23A</span>)</h4>
+                    <ul>
+                        <li><strong>انتقال و پاتوژنز:</strong> گوشت خام/نیم‌پز (به‌ویژه مرغ)، شیر غیرپاستوریزه، آب آلوده؛ عامل شایع اسهال مسافران. دوز عفونی پایین (حتی ۵۰۰ ارگانیسم). تهاجم به مخاط باعث دیسانتری (در ۱۵ تا ۵۰٪ موارد) می‌شود.</li>
+                        <li><strong>بافت‌شناسی:</strong> کولیت حاد خودبه‌خود محدودشونده با ارتشاح نوتروفیل‌ها در لامینا پروپریا و کریپت‌ها (<span class="en">Cryptitis</span> و آبسه‌های کریپت <span class="en">Crypt abscesses</span>) <strong>همراه با حفظ معماری طبیعی کریپت‌ها</strong> (وجه تمایز از <span class="en">IBD</span>).</li>
+                        <li><strong>عوارض خارج روده‌ای:</strong> آرتریت واکنشی (<span class="en">HLA-B27</span>)، اریتم ندوزوم و <strong>سندرم گیلن-باره (<span class="en">Guillain-Barré syndrome</span>)</strong> (فلج شل خودایمنی در ≤۰.۱٪ بیماران).</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box danger">
+                    <h4>۳. شیگلوز (<span class="en">Shigellosis — Shigella</span>)</h4>
+                    <ul>
+                        <li><strong>پاتوژنز و مورفولوژی:</strong> دوز عفونی بسیار پایین (&lt;۱۰۰ ارگانیسم) به دلیل مقاومت در برابر اسید معده. ورود از طریق سلول‌های <span class="en">M</span> و تهاجم به سلول‌های اپی‌تلیال از سطح بازولترال. برخی سویه‌های <span class="en">S. dysenteriae</span> <strong>توکسین شیگا (<span class="en">Shiga toxin</span>)</strong> تولید می‌کنند. عمدتاً کولون رکتوسیگموئید را درگیر می‌کند (زخم‌های آفت‌مانند و غشای کاذب در موارد شدید).</li>
+                        <li><strong>بالین، درمان و عوارض:</strong> اسهال خونی مکرر و کم‌حجم با تب و درد شکم (تهوع و استفراغ غیرشایع است). داروهای ضداسهال کنترااندیکه هستند (تأخیر در پاک‌سازی باکتری). عوارض: آرتریت واکنشی (<span class="en">HLA-B27</span>) و <strong>سندرم همولیتیک اورمیک (<span class="en">HUS</span>)</strong>.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box warning">
+                    <h4>۴. پاتوتیپ‌های <span class="en">Escherichia coli</span></h4>
+                    <ul>
+                        <li><strong><span class="en">ETEC</span>:</strong> عامل اصلی اسهال مسافران؛ تولید توکسین حساس به حرارت (<span class="en">↑cAMP</span>) و مقاوم به حرارت (<span class="en">↑cGMP</span>) ← اسهال آبکی شبیه وبا.</li>
+                        <li><strong><span class="en">EPEC</span>:</strong> ضایعه چسبندگی و محو شدن (<span class="en">Attaching and effacing</span>) ← تخریب میکروپرزهای آپیکال؛ اسهال در کودکان زیر ۲ سال.</li>
+                        <li><strong><span class="en">EHEC (O157:H7)</span>:</strong> ترشح توکسین شبه‌شیگا (<span class="en">Shiga-like toxin</span>) از طریق گوشت چرخ‌کرده نیم‌پز، شیر غیرپاستوریزه و سبزیجات ← دیسانتری شدید و خطر بالای <strong><span class="en">HUS</span></strong>.</li>
+                        <li><strong><span class="en">EIEC</span>:</strong> تهاجم داخل سلولی بدون تولید توکسین (شبیه شیگلا) ← اسهال خونی.</li>
+                        <li><strong><span class="en">EAEC</span>:</strong> چسبندگی آجرمانند (<span class="en">Brick-like stacking</span>) با فیمبریه ← اسهال غیرخونی.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box">
+                    <h4>۵. سالمونلوز (<span class="en">Salmonellosis</span>)</h4>
+                    <ul>
+                        <li>شامل <span class="en">Salmonella typhi</span> (تب تیفوئید) و سالمونلاهای غیرتیفوئیدی به‌ویژه <span class="en">S. enteritidis</span> (گاستروانتریت ناشی از گوشت، مرغ، تخم‌مرغ و شیر آلوده).</li>
+                        <li><strong>پاتوژنز:</strong> تزریق پروتئین‌های باکتریایی به سلول‌های <span class="en">M</span> و انتروسیت‌ها ← بازآرایی اسکلت اکتین میزبان و بلع باکتری به فاگوزوم ← تکثیر داخل سلولی و فراخوانی نوتروفیل‌ها. کاهش اسید معده (گاستریت آتروفیک یا مصرف <span class="en">PPI</span>) فرد را مستعد عفونت می‌کند.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box danger">
+                    <h4>۶. کولیت سودوممبرانوس (<span class="en">Clostridioides difficile — FIG. 13.24</span>)</h4>
+                    <ul>
+                        <li><strong>علت و پاتوژنز:</strong> رشد بیش‌ازحد باسیل گرم مثبت بی‌هوازی اسپوردار <span class="en">C. difficile</span> پس از مصرف آنتی‌بیوتیک‌ها. توکسین‌ها اسکلت سلولی و اتصالات محکم را تخریب می‌کنند.</li>
+                        <li><strong>مورفولوژی:</strong> تشکیل غشاهای کاذب (<span class="en">Pseudomembranes</span>) زرد-قهوه‌ای متشکل از نوتروفیل‌ها، سلول‌های مرده و بقایای التهابی که با <strong>الگوی فوران آتشفشانی (<span class="en">Volcano-like pattern</span>)</strong> از کریپت‌های آسیب‌دیده بیرون می‌ریزند.</li>
+                        <li><strong>تشخیص و درمان:</strong> مثبت شدن هم‌زمان تست تکثیر اسید نوکلئیک و تست توکسین مدفوع؛ درمان با آنتی‌بیوتیک‌های انتخابی و پیوند میکروبیوتای مدفوع (<span class="en">FMT</span>) در موارد شدید یا راجعه.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 57 to 60: Parasitic Diseases & Closing -->
+        <section class="slide-card" id="parasitic">
+            <div class="slide-header">
+                <h2 class="slide-title">بیماری‌های انگلی دستگاه گوارش (<span class="en">Parasitic Diseases — eFIG. 13.7</span>)</h2>
+                <span class="slide-num">اسلایدهای ۵۷ تا ۶۰</span>
+            </div>
+
+            <p style="margin-bottom: 1rem;">عفونت‌های انگلی و تک‌یاخته‌ای بیش از نیمی از جمعیت جهان را به‌صورت مزمن یا راجعه درگیر می‌کنند و شامل نماتودها (کرم‌های گرد: آسکاریس، استرونژیلوئیدس، کرم‌های قلاب‌دار)، سستودها (کرم‌های نواری)، ترماتودها (فلوک‌ها) و تک‌یاخته‌ها (<span class="en">Protozoa</span>) هستند:</p>
+
+            <div class="grid-2">
+                <div class="sub-box">
+                    <h4>۱. آسکاریس لومبریکوئیدس (<span class="en">Ascaris lumbricoides</span>)</h4>
+                    <p><strong>انتقال و چرخه:</strong> بلع مدفوعی-دهانی تخم‌ها ← مهاجرت لاروها از روده به کبد و ریه‌ها ← صعود از نای و بلع مجدد به روده برای بلوغ. <strong>تشخیص:</strong> مشاهده تخم در مدفوع.</p>
+                </div>
+
+                <div class="sub-box warning">
+                    <h4>۲. استرونژیلوئیدس (<span class="en">Strongyloides</span>)</h4>
+                    <p><strong>انتقال و خودآلودگی (<span class="en">Autoinfection</span>):</strong> نفوذ لاروها از خاک آلوده به پوست سالم ← مهاجرت از طریق ریه‌ها به روده. لاروها در داخل روده از تخم خارج شده و مجدداً به مخاط تهاجم می‌کنند که باعث تداوم مادام‌العمر عفونت و بروز عفونت شدید و کشنده در بیماران دچار سرکوب ایمنی می‌شود.</p>
+                </div>
+
+                <div class="sub-box">
+                    <h4>۳. ژیاردیا لامبلیا (<span class="en">Giardia lamblia</span>)</h4>
+                    <p><strong>انتقال و پاتوژنز:</strong> آب یا غذای آلوده به مدفوع (بلع حتی ۱۰ کیست کافی است). تروفوزوئیت‌های گلابی‌شکل (<span class="en">Pear-shaped</span>) و غیرتهاجمی به میکروپرزها آسیب زده و آنزیم‌های حاشیه مسواکی از جمله لاکتاز را کاهش می‌دهند ← اسهال حاد یا مزمن ناشی از سوءجذب. <strong>تشخیص:</strong> تست آنتی‌ژن یا اسید نوکلئیک مدفوع، یا مشاهده در مدفوع و بیوپسی دئودنوم.</p>
+                </div>
+
+                <div class="sub-box">
+                    <h4>۴. کریپتوسپوریدیوم (<span class="en">Cryptosporidium</span>)</h4>
+                    <p><strong>انتقال و بالین:</strong> آب آلوده و بهداشت ضعیف؛ عامل شایع اسهال کودکان در کشورهای کم‌درآمد. ارگانیسم‌ها به سطح سلول‌های اپی‌تلیال روده کوچک می‌چسبند و باعث اسهال ترشحی و سوءجذب می‌شوند. <strong>تشخیص:</strong> میکروسکوپ مدفوع یا تست‌های اسید نوکلئیک اختصاصی انگل.</p>
+                </div>
+
+                <div class="sub-box danger" style="grid-column: 1 / -1;">
+                    <h4>۵. انتاموبا هیستولیتیکا (<span class="en">Entamoeba histolytica</span>)</h4>
+                    <ul>
+                        <li><strong>انتقال و محل شایع:</strong> مسیر مدفوعی-دهانی؛ شایع‌ترین محل درگیری <strong>سکوم و کولون صعودی (<span class="en">Cecum and ascending colon</span>)</strong>.</li>
+                        <li><strong>پاتوژنز و مورفولوژی:</strong> تهاجم به مخاط کولون و ایجاد <strong>زخم‌های فلاسکی‌شکل (<span class="en">Flask-shaped ulcers</span>)</strong> با دهانه باریک و قاعده پهن. در نمای میکروسکوپی، آمیب‌هایی دیده می‌شوند که گلبول‌های قرمز را فاگوسیت کرده‌اند (<span class="en">Phagocytosed red cells</span>).</li>
+                        <li><strong>علائم و عوارض:</strong> درد شکمی، اسهال خونی (دیسانتری) و کاهش وزن. انتشار خونی به کبد باعث <strong>آبسه‌های کبدی آمیبی (<span class="en">Amebic liver abscesses</span>)</strong> می‌شود که ممکن است حتی پس از بهبود علائم روده‌ای باقی بمانند؛ موارد شدید می‌توانند باعث کولیت نکروزان یا مگاکولون شوند.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="callout" style="text-align: center; margin-top: 1.5rem;">
+                <strong>با آرزوی موفقیت! (<span class="en">Best wishes!</span>)</strong>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        خلاصه جامع و ترجمه کامل اسلایدهای پاتولوژی روده کوچک و بزرگ (جلسه چهارم) — برگرفته از <span class="en">Robbins & Kumar Basic Pathology (11th Ed)</span>
+    </footer>
+
+    <script>
+        function setTheme(themeName) {
+            document.documentElement.setAttribute('data-theme', themeName);
+            localStorage.setItem('intestine-pathology-theme', themeName);
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-set-theme') === themeName);
+            });
+        }
+
+        // Load saved theme or default to semi-dark (#2a2b2b)
+        const savedTheme = localStorage.getItem('intestine-pathology-theme') || 'semi-dark';
+        setTheme(savedTheme);
+    </script>
+</body>
+</html>

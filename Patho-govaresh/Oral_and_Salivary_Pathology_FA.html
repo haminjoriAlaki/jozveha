@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="semi-dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پاتولوژی حفره دهان و غدد بزاقی | Robbins & Kumar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root, [data-theme="semi-dark"] {
+            --bg-primary: #2a2b2b;
+            --bg-secondary: #343636;
+            --bg-card: rgba(54, 56, 56, 0.85);
+            --bg-accent-soft: rgba(56, 189, 248, 0.14);
+            --bg-warning-soft: rgba(244, 63, 94, 0.15);
+            --bg-success-soft: rgba(16, 185, 129, 0.15);
+            --text-primary: #ffffff;
+            --text-secondary: #e2e8f0;
+            --text-muted: #cbd5e1;
+            --accent: #38bdf8;
+            --accent-secondary: #818cf8;
+            --danger: #fb7185;
+            --success: #34d399;
+            --warning: #fbbf24;
+            --border-color: rgba(255, 255, 255, 0.12);
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+            --header-bg: rgba(42, 43, 43, 0.88);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0f1115;
+            --bg-secondary: #181b21;
+            --bg-card: rgba(24, 27, 33, 0.9);
+            --bg-accent-soft: rgba(56, 189, 248, 0.12);
+            --bg-warning-soft: rgba(244, 63, 94, 0.14);
+            --bg-success-soft: rgba(16, 185, 129, 0.14);
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-secondary: #a78bfa;
+            --danger: #f43f5e;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
+            --header-bg: rgba(15, 17, 21, 0.88);
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #f4f6f9;
+            --bg-secondary: #ffffff;
+            --bg-card: rgba(255, 255, 255, 0.95);
+            --bg-accent-soft: rgba(2, 132, 199, 0.08);
+            --bg-warning-soft: rgba(225, 29, 72, 0.08);
+            --bg-success-soft: rgba(5, 150, 105, 0.08);
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --text-muted: #64748b;
+            --accent: #0284c7;
+            --accent-secondary: #6366f1;
+            --danger: #e11d48;
+            --success: #059669;
+            --warning: #d97706;
+            --border-color: rgba(15, 23, 42, 0.1);
+            --shadow: 0 8px 25px rgba(15, 23, 42, 0.07);
+            --header-bg: rgba(244, 246, 249, 0.9);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.85;
+            font-size: 16px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            padding-bottom: 4rem;
+        }
+
+        /* English Terms Formatting */
+        .en {
+            font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            direction: ltr;
+            unicode-bidi: isolate;
+            display: inline-block;
+            font-weight: 600;
+            color: var(--accent);
+            padding: 0 3px;
+        }
+
+        /* Sticky Navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--header-bg);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 1.25rem;
+        }
+
+        .nav-container {
+            max-width: 1120px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            font-weight: 800;
+            font-size: 1.05rem;
+        }
+
+        .brand-badge {
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+            color: #fff;
+            padding: 0.25rem 0.65rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .theme-switcher {
+            display: flex;
+            align-items: center;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 999px;
+            padding: 4px;
+            gap: 4px;
+        }
+
+        .theme-btn {
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 0.35rem 0.85rem;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .theme-btn.active {
+            background: var(--accent);
+            color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        [data-theme="semi-dark"] .theme-btn.active,
+        [data-theme="dark"] .theme-btn.active {
+            color: #0f172a;
+        }
+
+        /* Quick Nav Pills */
+        .quick-nav {
+            max-width: 1120px;
+            margin: 1rem auto 0;
+            padding: 0 1.25rem;
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .quick-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-pill {
+            text-decoration: none;
+            color: var(--text-secondary);
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 0.4rem 0.9rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .nav-pill:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1120px;
+            margin: 1.5rem auto 0;
+            padding: 0 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+        }
+
+        /* Hero / Cover Card */
+        .hero-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 22px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-secondary), var(--danger));
+        }
+
+        .uni-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            padding-bottom: 1.25rem;
+            margin-bottom: 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .uni-title {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .ref-badge {
+            background: var(--bg-accent-soft);
+            border: 1px solid var(--accent);
+            padding: 0.35rem 0.85rem;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .hero-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 0.85rem;
+            background: var(--bg-secondary);
+            padding: 1rem 1.25rem;
+            border-radius: 14px;
+            border: 1px solid var(--border-color);
+            font-size: 0.92rem;
+        }
+
+        /* Section Cards */
+        .slide-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 1.75rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .slide-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.85rem;
+            border-bottom: 1px solid var(--border-color);
+            flex-wrap: wrap;
+        }
+
+        .slide-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .slide-num {
+            background: var(--bg-accent-soft);
+            color: var(--accent);
+            border: 1px solid var(--border-color);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 0.25rem 0.7rem;
+            border-radius: 8px;
+        }
+
+        /* Grids inside slides */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 1.15rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .sub-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.2rem;
+        }
+
+        .sub-box h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.65rem;
+            color: var(--accent);
+        }
+
+        .sub-box.danger {
+            border-right: 4px solid var(--danger);
+        }
+
+        .sub-box.danger h4 {
+            color: var(--danger);
+        }
+
+        .sub-box.success {
+            border-right: 4px solid var(--success);
+        }
+
+        .sub-box.success h4 {
+            color: var(--success);
+        }
+
+        .sub-box.warning {
+            border-right: 4px solid var(--warning);
+        }
+
+        .sub-box.warning h4 {
+            color: var(--warning);
+        }
+
+        ul {
+            padding-right: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+        }
+
+        li {
+            color: var(--text-primary);
+        }
+
+        .callout {
+            background: var(--bg-accent-soft);
+            border-right: 4px solid var(--accent);
+            padding: 1rem 1.2rem;
+            border-radius: 12px;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .callout.danger {
+            background: var(--bg-warning-soft);
+            border-right-color: var(--danger);
+        }
+
+        /* Flow Steps */
+        .flow-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .flow-step {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 0.95rem 1.15rem;
+            position: relative;
+        }
+
+        /* Table styling */
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 14px;
+            border: 1px solid var(--border-color);
+            margin-top: 1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: right;
+            background: var(--bg-secondary);
+        }
+
+        th, td {
+            padding: 0.9rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+
+        th {
+            background: var(--bg-accent-soft);
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding: 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Responsive Mobile Adjustments */
+        @media (max-width: 640px) {
+            body {
+                font-size: 15px;
+            }
+            .hero-card, .slide-card {
+                padding: 1.25rem;
+                border-radius: 16px;
+            }
+            .hero-title {
+                font-size: 1.4rem;
+            }
+            .slide-title {
+                font-size: 1.15rem;
+            }
+            .theme-btn {
+                padding: 0.3rem 0.65rem;
+                font-size: 0.78rem;
+            }
+            .nav-container {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation & Theme Switcher -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="brand">
+                <span class="brand-badge">جلسه اول</span>
+                <span>پاتولوژی حفره دهان و غدد بزاقی</span>
+            </div>
+
+            <div class="theme-switcher" role="group" aria-label="تغییر تم صفحه">
+                <button class="theme-btn" data-set-theme="light" onclick="setTheme('light')">☀️ روشن</button>
+                <button class="theme-btn active" data-set-theme="semi-dark" onclick="setTheme('semi-dark')">🌗 نیمه‌دارک</button>
+                <button class="theme-btn" data-set-theme="dark" onclick="setTheme('dark')">🌙 دارک</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Quick Section Links -->
+    <nav class="quick-nav" aria-label="دسترسی سریع به بخش‌ها">
+        <a href="#intro" class="nav-pill">مقدمه و دسته‌بندی</a>
+        <a href="#teeth" class="nav-pill">دندان و پریودنشیوم</a>
+        <a href="#mucosa" class="nav-pill">ضایعات مخاط دهان</a>
+        <a href="#oscc" class="nav-pill">کارسینوم سلول سنگفرشی (OSCC)</a>
+        <a href="#salivary" class="nav-pill">غدد بزاقی</a>
+        <a href="#jaw" class="nav-pill">کیست‌ها و تومورهای فک</a>
+        <a href="#synthesis" class="nav-pill">جمع‌بندی نهایی</a>
+    </nav>
+
+    <main class="container">
+
+        <!-- Slide 1 & 2: Cover & Chapter Title -->
+        <section class="hero-card" id="intro">
+            <div class="uni-header">
+                <div>
+                    <div class="uni-title">وزارت بهداشت، درمان و آموزش پزشکی</div>
+                    <div class="uni-title">دانشکده علوم پزشکی و خدمات بهداشتی درمانی ساوه</div>
+                </div>
+                <div class="ref-badge">
+                    <span class="en">ROBBINS & KUMAR BASIC PATHOLOGY</span> — ویرایش یازدهم (<span class="en">ELEVENTH EDITION</span>) | انتشارات <span class="en">ELSEVIER</span> (نسخه دیجیتال پیشرفته)
+                </div>
+            </div>
+
+            <h1 class="hero-title">فصل ۱۳: حفره دهان و دستگاه گوارش (<span class="en">Chapter 13: Oral Cavity and Gastrointestinal Tract</span>)</h1>
+            <p class="hero-subtitle">جلسه ۱ (<span class="en">Session 1</span>) — پاتولوژی پایه (<span class="en">Basic Pathology</span>)</p>
+
+            <div class="meta-grid">
+                <div><strong>مدرس:</strong> <span class="en">Dr. Saeede Khoshbakht M.D.</span> (<span class="en">Board certified AP/CP</span>)</div>
+                <div><strong>نویسندگان مرجع:</strong> <span class="en">KUMAR, ABBAS, ASTER, DEYRUP, DAS</span></div>
+            </div>
+        </section>
+
+        <!-- Slide 3: Oral Cavity and Gastrointestinal Tract -->
+        <section class="slide-card">
+            <div class="slide-header">
+                <h2 class="slide-title">حفره دهان و دستگاه گوارش (<span class="en">Oral Cavity and Gastrointestinal Tract</span>)</h2>
+                <span class="slide-num">اسلاید ۳</span>
+            </div>
+            <ul>
+                <li>دستگاه گوارش (<span class="en">Gastrointestinal tract</span>) لوله‌ای توخالی است که از مری (<span class="en">Esophagus</span>)، معده (<span class="en">Stomach</span>)، روده کوچک (<span class="en">Small intestine</span>)، کولون (<span class="en">Colon</span>)، رکتوم (<span class="en">Rectum</span>) و مقعد (<span class="en">Anus</span>) تشکیل شده است.</li>
+                <li>هر ناحیه عملکردهای مکمل و بسیار هماهنگی دارد که دریافت، پردازش و جذب مواد مغذی بلعیده‌شده و دفع مواد زائد را تنظیم می‌کند.</li>
+                <li>در این فصل، به بررسی بیماری‌هایی می‌پردازیم که هر بخش از دستگاه گوارش را درگیر می‌کنند.</li>
+                <li>بحث خود را با بیماری‌های حفره دهان (<span class="en">Oral cavity</span>) آغاز می‌کنیم، زیرا مسیر گوارش از آنجا شروع می‌شود.</li>
+            </ul>
+        </section>
+
+        <!-- Slide 4 & 5: Oral Cavity Overview -->
+        <section class="slide-card">
+            <div class="slide-header">
+                <h2 class="slide-title">نمای کلی حفره دهان (<span class="en">ORAL CAVITY</span>)</h2>
+                <span class="slide-num">اسلایدهای ۴ و ۵</span>
+            </div>
+            <ul>
+                <li>شرایط پاتولوژیک حفره دهان را می‌توان به‌طور کلی به بیماری‌های درگیرکننده دندان‌ها و ساختارهای نگهدارنده آن‌ها، مخاط دهان (<span class="en">Oral mucosa</span>)، غدد بزاقی (<span class="en">Salivary glands</span>) و فک (<span class="en">Jaw</span>) تقسیم کرد.</li>
+                <li>در ادامه، شایع‌ترین بیماری‌های درگیرکننده این نواحی مورد بحث قرار می‌گیرند.</li>
+                <li>کیست‌ها و تومورهای ادنتوژنیک (<span class="en">Odontogenic cysts and tumors</span>) — اعم از خوش‌خیم و بدخیم — که از بافت‌های اپی‌تلیال (<span class="en">Epithelial</span>) و/یا مزانشیمی (<span class="en">Mesenchymal</span>) مرتبط با تکامل دندان منشأ می‌گیرند نیز به‌طور خلاصه شرح داده می‌شوند.</li>
+            </ul>
+
+            <div class="grid-4" style="margin-top: 1.25rem;">
+                <div class="sub-box">
+                    <h4>دندان‌ها و پریودنشیوم (<span class="en">Teeth & Periodontium</span>)</h4>
+                    <p>دمینرالیزاسیون کانونی و بیوفیلم‌های باکتریایی (<span class="en">Focal demineralization & bacterial biofilms</span>)</p>
+                </div>
+                <div class="sub-box">
+                    <h4>مخاط دهان (<span class="en">Oral Mucosa</span>)</h4>
+                    <p>ضایعات التهابی، استرومای واکنشی و نئوپلازی سنگفرشی (<span class="en">Inflammatory lesions, reactive stroma, & squamous neoplasia</span>)</p>
+                </div>
+                <div class="sub-box">
+                    <h4>فک و بافت‌های ادنتوژنیک (<span class="en">Jaw & Odontogenic Tissues</span>)</h4>
+                    <p>کیست‌های تکاملی و تومورهای اپی‌تلیال (<span class="en">Developmental cysts & epithelial tumors</span>)</p>
+                </div>
+                <div class="sub-box">
+                    <h4>غدد بزاقی (<span class="en">Salivary Glands</span>)</h4>
+                    <p>اختلال عملکرد ترشحی و نئوپلاسم‌های ناهمگن (<span class="en">Secretory dysfunction & heterogeneous neoplasms</span>)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: Dental Caries -->
+        <section class="slide-card" id="teeth">
+            <div class="slide-header">
+                <h2 class="slide-title">پوسیدگی دندان: دمینرالیزاسیون اسیدی (<span class="en">Dental Caries: Acidic Demineralization</span>)</h2>
+                <span class="slide-num">اسلاید ۶</span>
+            </div>
+            <p style="margin-bottom: 1rem; color: var(--text-secondary);">بررسی مقطع عرضی بر اساس عمق دمینرالیزاسیون (<span class="en">Depth-Mapped Cross Section / Depth of Demineralization</span>):</p>
+            <div class="grid-3">
+                <div class="sub-box danger">
+                    <h4>اتیولوژی (<span class="en">Etiology</span>)</h4>
+                    <p>تخمیر قندها توسط باکتری‌های دهانی باعث تولید اسیدهای کانونی می‌شود.</p>
+                </div>
+                <div class="sub-box warning">
+                    <h4>پاتوژنز (<span class="en">Pathogenesis</span>)</h4>
+                    <p>اسیدها به ساختار کریستالی مینای دندان (<span class="en">Enamel</span>) و عاج زیرین (<span class="en">Dentin</span>) حمله می‌کنند.</p>
+                </div>
+                <div class="sub-box success">
+                    <h4>مکانیسم پیشگیری (<span class="en">Prevention Mechanism</span>)</h4>
+                    <p>فلوئوریداسیون آب باعث ورود فلوئورید به ساختار مینا و تشکیل فلوئوروآپاتیت (<span class="en">Fluoroapatite</span>) می‌شود که در برابر تخریب اسیدی باکتری‌ها بسیار مقاوم است.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 7: Periodontal Disease Progression -->
+        <section class="slide-card">
+            <div class="slide-header">
+                <h2 class="slide-title">سیر پیشرفت بیماری پریودنتال: از لثه سالم تا پریودنتیت (<span class="en">Periodontal Disease Progression: From Healthy Gums to Periodontitis</span>)</h2>
+                <span class="slide-num">اسلاید ۷</span>
+            </div>
+            <div class="grid-3">
+                <div class="sub-box success">
+                    <h4>وضعیت سالم (<span class="en">Healthy</span>)</h4>
+                    <p>لثه صورتی و سفت بدون التهاب و تحلیل استخوان آلوئولار.</p>
+                </div>
+                <div class="sub-box warning">
+                    <h4>فاز ۱: ژنژیویت (<span class="en">Phase 1: Gingivitis</span>)</h4>
+                    <p>بهداشت نامناسب ← تجمع پلاک (<span class="en">Plaque</span>؛ بیوفیلم باکتریایی چسبنده) ← معدنی شدن و تبدیل به جرم دندانی (<span class="en">Calculus / Tartar</span>). با اریتم (<span class="en">Erythema</span>)، ادم (<span class="en">Edema</span>) و خونریزی مشخص می‌شود. <strong>کاملاً برگشت‌پذیر است.</strong></p>
+                </div>
+                <div class="sub-box danger">
+                    <h4>فاز ۲: پریودنتیت (<span class="en">Phase 2: Periodontitis</span>)</h4>
+                    <p>تغییر میکروبیوتا (<span class="en">Microbiota</span>) از باکتری‌های گرم مثبت اختیاری (<span class="en">Facultative gram-positive</span>) به باکتری‌های گرم منفی بی‌هوازی / میکروآئروفیل (<span class="en">Anaerobic/microaerophilic gram-negative</span>).</p>
+                    <p style="margin-top: 0.6rem;"><strong>پاتوژن‌های کلیدی (<span class="en">Key Pathogens</span>):</strong></p>
+                    <ul>
+                        <li><span class="en">Aggregatibacter actinomycetemcomitans</span></li>
+                        <li><span class="en">Porphyromonas gingivalis</span></li>
+                        <li><span class="en">Prevotella intermedia</span></li>
+                    </ul>
+                    <p style="margin-top: 0.6rem;"><strong>پیامد بالینی (<span class="en">Clinical Consequence</span>):</strong> تخریب رباط‌های پریودنتال (<span class="en">Periodontal ligaments</span>) و استخوان آلوئولار (<span class="en">Alveolar bone</span>) ← از دست دادن دندان.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 8: Aphthous Ulcers -->
+        <section class="slide-card" id="mucosa">
+            <div class="slide-header">
+                <h2 class="slide-title">ضایعات التهابی دهان: زخم‌های آفتی (<span class="en">ORAL INFLAMMATORY LESIONS: Aphthous Ulcers / Canker Sores</span>)</h2>
+                <span class="slide-num">اسلاید ۸</span>
+            </div>
+            <div class="grid-2">
+                <div class="sub-box">
+                    <h4>ویژگی‌های بالینی و اپیدمیولوژی</h4>
+                    <ul>
+                        <li><strong>اپیدمیولوژی (<span class="en">Epidemiology</span>):</strong> تا ۴۰٪ جمعیت را عمدتاً در دو دهه اول زندگی درگیر می‌کند. بسیار دردناک و راجعه (<span class="en">Recurrent</span>) است.</li>
+                        <li><strong>بیماری‌های همراه (<span class="en">Associations</span>):</strong> بیماری سلیاک (<span class="en">Celiac disease</span>)، بیماری التهابی روده (<span class="en">IBD</span>) و بیماری بهجت (<span class="en">Behçet disease</span>).</li>
+                        <li><strong>سیر بالینی (<span class="en">Clinical Course</span>):</strong> طی ۷ تا ۱۰ روز به‌صورت خودبه‌خودی بهبود می‌یابد.</li>
+                    </ul>
+                </div>
+                <div class="sub-box danger">
+                    <h4>نمای مورفولوژیک (<span class="en">Morphologic Call-out Panel</span>)</h4>
+                    <ul>
+                        <li>قاعده کم‌عمق پرخون (<span class="en">Shallow hyperemic base</span>) که با اگزودای فیبرینوچرکین خاکستری‌رنگ (<span class="en">Grayish fibrinopurulent exudate</span>) پوشیده شده است.</li>
+                        <li>حاشیه باریک اریتماتوز یا هاله قرمز (<span class="en">Narrow rim of erythema / halo</span>).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 9 & 10: HSV-1 & Oral Candidiasis -->
+        <section class="slide-card">
+            <div class="slide-header">
+                <h2 class="slide-title">عفونت‌های ویروسی و قارچی دهان (<span class="en">HSV-1 & Oral Candidiasis</span>)</h2>
+                <span class="slide-num">اسلایدهای ۹ و ۱۰</span>
+            </div>
+            <div class="grid-2">
+                <div class="sub-box">
+                    <h4>ویروس هرپس سیمپلکس تیپ ۱ (<span class="en">Herpes Simplex Virus - HSV-1</span>)</h4>
+                    <ul>
+                        <li><strong>عفونت اولیه (<span class="en">Primary</span>):</strong> ژنژیواستوماتیت هرپسی حاد (<span class="en">Acute herpetic gingivostomatitis</span>) در کودکان ۲ تا ۴ ساله.</li>
+                        <li><strong>فعال‌سازی مجدد (<span class="en">Reactivation</span>):</strong> تبخال (<span class="en">Cold sores</span>) که با تروما، آلرژی، اشعه فرابنفش (<span class="en">UV light</span>) یا سرکوب سیستم ایمنی (<span class="en">Immunosuppression</span>) تحریک می‌شود؛ به‌صورت دسته‌هایی از وزیکول‌های ۱ تا ۳ میلی‌متری ظاهر می‌گردد.</li>
+                        <li><strong>نمای میکروسکوپی (<span class="en">Microscopic</span>):</strong> سلول‌های بالونی‌شده (<span class="en">Ballooned cells</span>)، انکلوزیون‌های داخل هسته‌ای ائوزینوفیلیک بزرگ (<span class="en">Large eosinophilic intranuclear inclusions</span>) و پلی‌کاریون‌های چند هسته‌ای (<span class="en">Multinucleated polykaryons</span>).</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box">
+                    <h4>کاندیدیازیس دهانی یا برفک (<span class="en">Oral Candidiasis / Thrush</span>)</h4>
+                    <ul>
+                        <li><strong>اهمیت و پاتوژن:</strong> شایع‌ترین عفونت قارچی حفره دهان است. قارچ <span class="en">Candida albicans</span> جزء طبیعی فلور دهان (<span class="en">Oral flora</span>) است و تنها در شرایط غیرعادی بیماری‌زا می‌شود.</li>
+                        <li><strong>عوامل مستعدکننده (<span class="en">Predisposing factors & Triggers</span>):</strong>
+                            <ul>
+                                <li>سرکوب سیستم ایمنی (<span class="en">Immunosuppression</span>)</li>
+                                <li>مصرف آنتی‌بیوتیک‌های وسیع‌الطیف (<span class="en">Broad-spectrum antibiotics</span>)</li>
+                                <li>وجود سویه‌های خاص <span class="en">C. albicans</span></li>
+                                <li>فلور میکروبی مستعدکننده در دهان (<span class="en">Permissive oral microbiota</span>)</li>
+                            </ul>
+                        </li>
+                        <li><strong>مورفولوژی (<span class="en">Morphology</span>):</strong> غشای کاذب (<span class="en">Pseudomembrane</span>) سطحی، دلمه‌ای (شبیه پنیر دلمه) و خاکستری-سفید متشکل از قارچ‌های درهم‌تنیده و اگزودای فیبرینوچرکین (<span class="en">Fibrinosuppurative exudate</span>) که به‌راحتی با تراشیدن برداشته شده و قاعده اریتماتوز زیرین را آشکار می‌کند.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 11: Reactive Stromal Proliferations -->
+        <section class="slide-card">
+            <div class="slide-header">
+                <h2 class="slide-title">تکثیرهای واکنشی استروما (<span class="en">Reactive Stromal Proliferations</span>)</h2>
+                <span class="slide-num">اسلاید ۱۱</span>
+            </div>
+            <div class="grid-2">
+                <div class="sub-box">
+                    <h4>فیبروما (<span class="en">Fibroma</span>)</h4>
+                    <ul>
+                        <li>توده فیبروز ندولر زیرمخاطی (<span class="en">Submucosal nodular fibrous mass</span>).</li>
+                        <li>ناشی از تحریک مزمن (مانند ترومای خط بایت / گازگرفتگی گونه: <span class="en">Bite line trauma</span>).</li>
+                        <li>هیپرپلازی واکنشی بافت همبند (<span class="en">Reactive connective tissue hyperplasia</span>).</li>
+                    </ul>
+                </div>
+                <div class="sub-box danger">
+                    <h4>گرانولوم پیوژنیک (<span class="en">Pyogenic Granuloma</span>)</h4>
+                    <ul>
+                        <li>توده اریتماتوز، خونریزی‌دهنده و برون‌روینده (<span class="en">Erythematous, hemorrhagic, exophytic mass</span>).</li>
+                        <li>اغلب روی لثه (<span class="en">Gingiva</span>) کودکان، جوانان و زنان باردار دیده می‌شود.</li>
+                        <li><strong>بافت‌شناسی (<span class="en">Histology</span>):</strong> تکثیر شدید مویرگی پرعروق (<span class="en">Highly vascular capillary proliferation</span>) که شبیه بافت جوانه‌ای (<span class="en">Granulation tissue</span>) است.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 12: Precancerous Squamous Lesions -->
+        <section class="slide-card">
+            <div class="slide-header">
+                <h2 class="slide-title">ضایعات پیش‌سرطانی سنگفرشی (<span class="en">Precancerous Squamous Lesions</span>)</h2>
+                <span class="slide-num">اسلاید ۱۲</span>
+            </div>
+            <div class="grid-2">
+                <div class="sub-box warning">
+                    <h4>لوکوپلاکیا (<span class="en">Leukoplakia</span>)</h4>
+                    <p>پلاک خاکستری-سفید با حدود مشخص (<span class="en">Well-demarcated plaque</span>) که با تراشیدن پاک نمی‌شود. ۵ تا ۲۵٪ موارد دیسپلاستیک (<span class="en">Dysplastic</span>) هستند. تا زمان اثبات خلاف آن، پیش‌سرطانی (<span class="en">Precancerous</span>) محسوب می‌شود (شایع در نواحی مانند کناره‌های زبان: <span class="en">Lateral tongue</span>).</p>
+                </div>
+                <div class="sub-box danger">
+                    <h4>اریتروپلاکیا (<span class="en">Erythroplakia</span>)</h4>
+                    <p>ضایعه قرمز، مخملی (<span class="en">Velvety</span>) و فرورفته / دچار اروزیون (<span class="en">Eroded/depressed</span>). خطر بسیار بالاتری دارد: بیش از ۵۰٪ موارد دچار استحاله بدخیم (<span class="en">Malignant transformation</span>) می‌شوند.</p>
+                </div>
+            </div>
+            <div class="callout">
+                <strong>نمای میکروسکوپی (<span class="en">Microscopic</span>):</strong> دیسپلازی (<span class="en">Dysplasia</span>) که با پلئومورفیسم هسته‌ای و سلولی (<span class="en">Nuclear/cellular pleomorphism</span>)، از دست رفتن بلوغ اپی‌تلیال (<span class="en">Loss of maturation</span>) و ارتشاح لنفوسیت و ماکروفاژ در بافت زیرین (<span class="en">Underlying lymphocyte/macrophage infiltrate</span>) مشخص می‌شود.
+            </div>
+        </section>
+
+        <!-- Slide 13, 14, 15: OSCC -->
+        <section class="slide-card" id="oscc">
+            <div class="slide-header">
+                <h2 class="slide-title">کارسینوم سلول سنگفرشی دهان (<span class="en">Oral Squamous Cell Carcinoma - OSCC</span>)</h2>
+                <span class="slide-num">اسلایدهای ۱۳، ۱۴ و ۱۵</span>
+            </div>
+
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent);">۱. پاتوژنز (<span class="en">Pathogenesis</span> — از اپی‌تلیوم سنگفرشی طبیعی <span class="en">Normal Squamous Epithelium</span>)</h3>
+            <div class="grid-2" style="margin-bottom: 1.5rem;">
+                <div class="sub-box danger">
+                    <h4>مسیر مرتبط با کارسینوژن (<span class="en">Carcinogen-Associated</span>)</h4>
+                    <ul>
+                        <li><strong>عوامل محرک (<span class="en">Triggers</span>):</strong> الکل، تنباکو (تدخینی یا جویدنی: <span class="en">Smoked/chewed</span>) و آجیل فوفل (<span class="en">Betel nuts / paan</span>).</li>
+                        <li><strong>جهش‌ها (<span class="en">Mutations</span>):</strong> <span class="en">TP53</span>، <span class="en">RAS</span> (تکثیر سلولی) و <span class="en">NOTCH</span> (تمایز سلولی).</li>
+                        <li><strong>مفهوم کلیدی (<span class="en">Concept</span>):</strong> «سرطانی شدن میدانی» (<span class="en">Field Cancerization</span>) — مواجهه مزمن با کارسینوژن باعث ایجاد کلون‌های نئوپلاستیک مستقل متعدد در مخاط می‌شود.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box">
+                    <h4>مسیر مرتبط با ویروس <span class="en">HPV</span> (<span class="en">HPV-Associated</span>)</h4>
+                    <ul>
+                        <li><strong>عوامل محرک (<span class="en">Triggers</span>):</strong> <span class="en">HPV</span> پرخطر (به‌ویژه <span class="en">HPV-16</span>).</li>
+                        <li><strong>مکانیسم (<span class="en">Mechanism</span>):</strong> انکوپروتئین ویروسی <span class="en">E6</span> پروتئین <span class="en">p53</span> را مهار می‌کند و پروتئین ویروسی <span class="en">E7</span> پروتئین <span class="en">RB</span> را مهار می‌نماید.</li>
+                        <li><strong>بیومارکر (<span class="en">Biomarker</span>):</strong> بیان بیش از حد <span class="en">p16</span> (<span class="en">Overexpression of p16</span>).</li>
+                        <li><strong>پیش‌آگهی (<span class="en">Prognosis</span>):</strong> نرخ بقای بهتر به دلیل ناهمگونی ژنتیکی کمتر (<span class="en">Less genetic heterogeneity</span>).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent);">۲. مورفولوژی و سیر بالینی (<span class="en">Morphology & Clinical Course</span>)</h3>
+            <div class="sub-box">
+                <ul>
+                    <li><strong>محل‌های شایع و تظاهر بالینی (<span class="en">Clinical Presentation</span>):</strong>
+                        <ul>
+                            <li>کارسینوم سلول سنگفرشی می‌تواند در هر نقطه‌ای از حفره دهان ایجاد شود. شایع‌ترین محل‌ها برای سرطان‌های مرتبط با کارسینوژن عبارت‌اند از: سطح شکمی زبان (<span class="en">Ventral surface of the tongue</span>)، کف دهان (<span class="en">Floor of the mouth</span>)، لب پایین (<span class="en">Lower lip</span>)، کام نرم (<span class="en">Soft palate</span>) و لثه (<span class="en">Gingiva</span>).</li>
+                            <li>در مراحل اولیه، به‌صورت پلاک‌های برجسته، سفت و مرواریدی (<span class="en">Raised, firm, pearly plaques</span>) یا ضخیم‌شدگی‌های مخاطی نامنظم، خشن یا زگیلی‌شکل (<span class="en">Verrucous mucosal thickenings</span>) ظاهر می‌شوند. مخاط اطراف ممکن است لوکوپلاکیا یا اریترپلاکیا نشان دهد.</li>
+                            <li>در مقابل، سرطان‌های مرتبط با <span class="en">HPV</span> در کریپت‌های لوزه (<span class="en">Tonsillar crypts</span>) یا قاعده / بخش خلفی زبان (<span class="en">Base / posterior tongue</span>) ایجاد می‌شوند.</li>
+                            <li>با بزرگ شدن این ضایعات، معمولاً توده‌های زخمی و برجسته با حاشیه‌های نامنظم، سفت (<span class="en">Indurated</span>) یا لبه‌برگشته (<span class="en">Rolled borders</span>) تشکیل می‌دهند.</li>
+                        </ul>
+                    </li>
+                    <li><strong>نمای میکروسکوپی و بافت‌شناسی (<span class="en">Microscopic & Histologic Patterns</span>):</strong>
+                        <ul>
+                            <li>ارتشاح آشیانه‌ها و جزایر کراتینوسیت‌های بدخیم (<span class="en">Infiltrating nests and islands of malignant keratinocytes</span>) که به استرومای بافت همبند تهاجم می‌کنند.</li>
+                            <li>الگوهای بافت‌شناسی از نئوپلاسم‌های با تمایز خوب و کراتینه‌شونده (<span class="en">Well-differentiated, keratinizing neoplasms</span>) تا تومورهای آناپلاستیک (<span class="en">Anaplastic</span>) و گاهی سارکوماتوئید (<span class="en">Sarcomatoid</span>) متغیر است. با این حال، درجه تمایز بافت‌شناسی (بر اساس میزان نسبی کراتینیزاسیون) با رفتار بیولوژیک تومور همبستگی ندارد.</li>
+                        </ul>
+                    </li>
+                    <li><strong>متاستاز (<span class="en">Metastasis</span>):</strong> به‌طور معمول ابتدا به‌صورت موضعی ارتشاح می‌یابد و سپس متاستاز می‌دهد: ابتدا به غدد لنفاوی منطقه‌ای گردن (<span class="en">Regional cervical lymph nodes</span>) و سپس متاستاز دوردست به غدد لنفاوی مدیاستن (<span class="en">Mediastinal lymph nodes</span>)، ریه‌ها (<span class="en">Lungs</span>) و کبد (<span class="en">Liver</span>).</li>
+                    <li><strong>بقا (<span class="en">Survival</span>):</strong> بقای کلی ۵ ساله به دلیل تشخیص در مراحل دیررس تنها ۵۰٪ است.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 16 & 17: Xerostomia, Sialadenitis & Mucoceles -->
+        <section class="slide-card" id="salivary">
+            <div class="slide-header">
+                <h2 class="slide-title">اختلال عملکرد غدد بزاقی، سیالادنیت و موکوسل (<span class="en">Xerostomia, Sialadenitis & Mucoceles</span>)</h2>
+                <span class="slide-num">اسلایدهای ۱۶ و ۱۷</span>
+            </div>
+
+            <div class="sub-box warning" style="margin-bottom: 1.25rem;">
+                <h4>خشکی دهان یا زروستومی (<span class="en">Xerostomia</span>)</h4>
+                <p><strong>تعریف:</strong> خشکی دهان ناشی از کاهش تولید بزاق (در بیش از ۲۰٪ بزرگسالان بالای ۷۰ سال دیده می‌شود).</p>
+                <div class="grid-3" style="margin-top: 0.85rem;">
+                    <div>
+                        <strong>اتیولوژی ۱: یاتروژنیک (<span class="en">Iatrogenic</span>)</strong>
+                        <p>شایع‌ترین علت. عارضه جانبی داروها (آنتی‌کولینرژیک‌ها <span class="en">Anticholinergics</span>، ضدافسردگی‌ها <span class="en">Antidepressants</span>، دیورتیک‌ها <span class="en">Diuretics</span>) یا پرتودرمانی (<span class="en">Radiation therapy</span>).</p>
+                    </div>
+                    <div>
+                        <strong>اتیولوژی ۲: خودایمنی (<span class="en">Autoimmune</span>)</strong>
+                        <p>سندرم شوگرن (<span class="en">Sjögren syndrome</span>): خشکی دهان + خشکی چشم + بزرگی التهابی غدد بزاقی.</p>
+                    </div>
+                    <div>
+                        <strong>عوارض (<span class="en">Complications</span>)</strong>
+                        <p>افزایش نرخ پوسیدگی دندان، کاندیدیازیس و دشواری در بلع و تکلم (<span class="en">Difficulty swallowing/speaking</span>).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-box">
+                <h4>سیالادنیت و موکوسل (<span class="en">Sialadenitis & Mucoceles</span>)</h4>
+                <p style="margin-bottom: 0.65rem; color: var(--text-secondary);">غدد بزاقی اصلی (<span class="en">Salivary Glands</span>): پاروتید (<span class="en">Parotid</span>)، تحت فکی (<span class="en">Submandibular</span>) و زیرزبانی (<span class="en">Sublingual</span>).</p>
+                <ul>
+                    <li><strong>موکوسل (<span class="en">Mucocele</span>):</strong> شایع‌ترین ضایعه التهابی غدد بزاقی. ناشی از پارگی یا انسداد مجرای غده بزاقی فرعی ← نشت بزاق به درون استروما. به‌صورت تورم مواج (<span class="en">Fluctuant swelling</span>) در لب پایین ظاهر می‌شود. در بافت‌شناسی (<span class="en">Histology</span>): فضای شبه‌کیستی پر از موسین (<span class="en">Mucin</span>) و ماکروفاژها که با بافت جوانه‌ای (<span class="en">Granulation tissue</span>) پوشیده شده است (فاقد پوشش اپی‌تلیال واقعی).</li>
+                    <li><strong>سیالادنیت ویروسی (<span class="en">Viral Sialadenitis</span>):</strong> اوریون (<span class="en">Mumps / Paramyxovirus</span>). عمدتاً غده پاروتید (<span class="en">Parotid</span>) را درگیر می‌کند و با ارتشاح تک‌هسته‌ای (<span class="en">Mononuclear infiltrate</span>) مشخص می‌شود.</li>
+                    <li><strong>سیالادنیت باکتریایی (<span class="en">Bacterial Sialadenitis</span>):</strong> اغلب غده تحت فکی (<span class="en">Submandibular</span>) را درگیر می‌کند. معمولاً به‌دنبال سنگ مجرای بزاقی (<span class="en">Sialolithiasis</span>)، باقی‌مانده مواد غذایی یا کم‌آبی بدن (<span class="en">Dehydration</span>) رخ می‌دهد. باکتری‌های <span class="en">S. aureus</span> و <span class="en">S. viridans</span> باعث التهاب چرکی (<span class="en">Purulent inflammation</span>) می‌شوند.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 18: The Salivary Malignancy Axiom -->
+        <section class="slide-card">
+            <div class="slide-header">
+                <h2 class="slide-title">اصل بدخیمی غدد بزاقی (<span class="en">The Salivary Malignancy Axiom</span>)</h2>
+                <span class="slide-num">اسلاید ۱۸</span>
+            </div>
+
+            <div class="callout danger" style="margin-top: 0; margin-bottom: 1.25rem;">
+                <strong>قانون طلایی (<span class="en">The Rule</span>):</strong> احتمال بدخیم بودن یک تومور غده بزاقی با اندازه آن غده نسبت معکوس دارد (<span class="en">Inversely proportional to the size of the gland</span>).
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>غده بزاقی (<span class="en">Gland</span>)</th>
+                            <th>سهم از کل تومورها</th>
+                            <th>ریسک بدخیمی (<span class="en">Malignancy Risk</span>)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>پاروتید (<span class="en">Parotid</span>)</strong></td>
+                            <td>۶۵ تا ۸۰٪ از کل تومورها</td>
+                            <td>تنها ۱۵ تا ۳۰٪ بدخیم هستند</td>
+                        </tr>
+                        <tr>
+                            <td><strong>تحت فکی (<span class="en">Submandibular</span>)</strong></td>
+                            <td>۱۰٪ از تومورها</td>
+                            <td>۴۰٪ بدخیم هستند</td>
+                        </tr>
+                        <tr>
+                            <td><strong>زیرزبانی / غدد فرعی (<span class="en">Sublingual / Minor</span>)</strong></td>
+                            <td>۱۰ تا ۲۵٪ از تومورها</td>
+                            <td>۵۰ تا ۹۰٪ بدخیم هستند</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="grid-2" style="margin-top: 1.25rem;">
+                <div class="sub-box success">
+                    <h4>تومورهای خوش‌خیم شایع (<span class="en">Benign</span>)</h4>
+                    <ul>
+                        <li>آدنوم پلئومورفیک (<span class="en">Pleomorphic adenoma</span> — ۵۰٪)</li>
+                        <li>تومور وارتین (<span class="en">Warthin tumor</span> — ۵٪)</li>
+                        <li>انکوسیتوما (<span class="en">Oncocytoma</span>)</li>
+                        <li>سیست‌آدنوما (<span class="en">Cystadenoma</span>)</li>
+                        <li>آدنوم سلول بازال (<span class="en">Basal cell adenoma</span>)</li>
+                    </ul>
+                </div>
+                <div class="sub-box danger">
+                    <h4>تومورهای بدخیم شایع (<span class="en">Malignant</span>)</h4>
+                    <ul>
+                        <li>کارسینوم موکواپیدرموئید (<span class="en">Mucoepidermoid carcinoma</span> — ۱۵٪)</li>
+                        <li>کارسینوم سلول آسینیک (<span class="en">Acinic cell carcinoma</span>)</li>
+                        <li>کارسینوم آدنوئید کیستیک (<span class="en">Adenoid cystic carcinoma</span>)</li>
+                        <li>تومور مختلط بدخیم (<span class="en">Malignant mixed tumor</span>)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 19 & 20: Pleomorphic Adenoma -->
+        <section class="slide-card">
+            <div class="slide-header">
+                <h2 class="slide-title">آدنوم پلئومورفیک یا تومور مختلط (<span class="en">Pleomorphic Adenoma / Mixed Tumor</span>)</h2>
+                <span class="slide-num">اسلایدهای ۱۹ و ۲۰</span>
+            </div>
+
+            <p style="margin-bottom: 1rem;"><strong>نمای کلی (<span class="en">Overview</span>):</strong> توده خوش‌خیم، با رشد آهسته و دارای کپسول (<span class="en">Encapsulated</span>؛ هرچند ضایعات کام <span class="en">Palate</span> ممکن است فاقد کپسول کامل باشند). ۶۰٪ تومورهای غده پاروتید را تشکیل می‌دهد.</p>
+
+            <div class="grid-3" style="margin-bottom: 1.25rem;">
+                <div class="sub-box">
+                    <h4>اجزای اپی‌تلیال و میواپی‌تلیال (<span class="en">Epithelial/Myoepithelial Elements</span>)</h4>
+                    <p>آرایش‌یافته در قالب مجاری (<span class="en">Ducts</span>)، آسینی‌ها (<span class="en">Acini</span>)، توبول‌ها (<span class="en">Tubules</span>) یا صفحات سلولی (<span class="en">Sheets</span>).</p>
+                </div>
+                <div class="sub-box">
+                    <h4>استرومای میکسوئید (<span class="en">Myxoid Stroma</span>)</h4>
+                    <p>بافت زمینه‌ای سست و شبه‌مزانشیمی (<span class="en">Loose, mesenchyme-like background tissue</span>).</p>
+                </div>
+                <div class="sub-box">
+                    <h4>ماتریکس کندروئید (<span class="en">Chondroid Matrix</span>)</h4>
+                    <p>جزایر غضروفی نیمه‌شفاف آبی‌رنگ (<span class="en">Blue translucent cartilaginous islands</span>) که گاهی استخوانی (<span class="en">Osseous</span>) نیز می‌شوند.</p>
+                </div>
+            </div>
+
+            <div class="sub-box danger">
+                <h4>سیر بالینی و استحاله بدخیم (<span class="en">Clinical Course & Malignant Transformation</span>)</h4>
+                <ul>
+                    <li><strong>عود (<span class="en">Recurrence</span>):</strong> در ۲۵٪ موارد پس از انوکلئاسیون ساده (<span class="en">Simple enucleation</span>؛ خارج کردن توده از درون کپسول) به دلیل گسترش‌های میکروسکوپی تومور از میان کپسول رخ می‌دهد. رزکسیون گسترده‌تر (<span class="en">Wider resection</span>) این میزان را به ۴٪ کاهش می‌دهد.</li>
+                    <li><strong>کارسینوم در زمینه آدنوم پلئومورفیک (<span class="en">Carcinoma ex Pleomorphic Adenoma</span>):</strong>
+                        <ul>
+                            <li>وجود تومور کمتر از ۵ سال: ۲٪ خطر استحاله بدخیم.</li>
+                            <li>وجود تومور بیش از ۱۵ سال: حدود ۱۰٪ خطر استحاله بدخیم.</li>
+                        </ul>
+                    </li>
+                    <li><strong>پیش‌آگهی (<span class="en">Prognosis</span>):</strong> معمولاً به شکل آدنوکارسینوم (<span class="en">Adenocarcinoma</span>) یا کارسینوم تمایزنیافته (<span class="en">Undifferentiated carcinoma</span>) بروز می‌کند. بسیار تهاجمی است و نرخ مرگ‌ومیر آن ۳۰ تا ۵۰٪ در ۵ سال است.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 21: Mucoepidermoid Carcinoma -->
+        <section class="slide-card">
+            <div class="slide-header">
+                <h2 class="slide-title">کارسینوم موکواپیدرموئید (<span class="en">Mucoepidermoid Carcinoma</span>)</h2>
+                <span class="slide-num">اسلاید ۲۱</span>
+            </div>
+            <ul>
+                <li><strong>اپیدمیولوژی (<span class="en">Epidemiology</span>):</strong> شایع‌ترین تومور بدخیم اولیه غدد بزاقی (۱۵٪ از کل تومورهای بزاقی). اغلب در پاروتید دیده می‌شود، اما بخش قابل‌توجهی نیز در غدد بزاقی فرعی (<span class="en">Minor glands</span>) رخ می‌دهد.</li>
+                <li><strong>نمای ماکروسکوپی (<span class="en">Gross</span>):</strong> تا ۸ سانتی‌متر، فاقد کپسول (<span class="en">Unencapsulated</span>)، ارتشاحی (<span class="en">Infiltrative</span>) و به رنگ خاکستری-سفید کم‌رنگ با کیست‌های موسینی کوچک.</li>
+                <li><strong>اجزای سلولی در بافت‌شناسی (<span class="en">Histology</span>):</strong>
+                    <ol style="padding-right: 1.5rem; margin-top: 0.4rem;">
+                        <li>سلول‌های سنگفرشی (<span class="en">Squamous cells</span>)</li>
+                        <li>سلول‌های ترشح‌کننده موکوس (<span class="en">Mucus-secreting cells</span>؛ پوشاننده جدار کیست‌ها)</li>
+                        <li>سلول‌های بینابینی (<span class="en">Intermediate cells</span>؛ نوع هیبریدی با ویژگی‌های سنگفرشی و واکوئل‌های موسین)</li>
+                    </ol>
+                </li>
+                <li><strong>پیش‌آگهی (<span class="en">Prognosis</span>):</strong> نوع درجه پایین (<span class="en">Low-grade</span>) دارای بقای ۵ ساله ۹۰٪ است، در مقابل نوع درجه بالا (<span class="en">High-grade</span>) که ۳۰٪ نرخ متاستاز و ۵۰٪ بقای ۵ ساله دارد.</li>
+            </ul>
+        </section>
+
+        <!-- Slide 22, 23, 24: Odontogenic Cysts & Tumors -->
+        <section class="slide-card" id="jaw">
+            <div class="slide-header">
+                <h2 class="slide-title">کیست‌ها و تومورهای ادنتوژنیک فک (<span class="en">Odontogenic Cysts & Tumors of the Jaw</span>)</h2>
+                <span class="slide-num">اسلایدهای ۲۲، ۲۳ و ۲۴</span>
+            </div>
+
+            <p style="margin-bottom: 1rem;"><strong>زمینه (<span class="en">Context</span>):</strong> فک به‌طور منحصربه‌فردی میزبان کیست‌های متعدد با پوشش اپی‌تلیال است که از بقایای تکامل دندان (<span class="en">Tooth development remnants</span>) منشأ می‌گیرند.</p>
+
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent);">۱. کیست‌های ادنتوژنیک فک (<span class="en">Odontogenic Cysts</span>)</h3>
+            <div class="grid-2" style="margin-bottom: 1.5rem;">
+                <div class="sub-box">
+                    <h4>کیست دنتیژروس — تکاملی (<span class="en">Dentigerous Cyst - Developmental</span>)</h4>
+                    <ul>
+                        <li><strong>محل (<span class="en">Location</span>):</strong> در اطراف تاج یک دندان نهفته / رویش‌نیافته (<span class="en">Crown of an unerupted tooth</span>) ایجاد می‌شود.</li>
+                        <li><strong>منشأ (<span class="en">Origin</span>):</strong> دژنراسیون فولیکول دندانی (<span class="en">Degeneration of the dental follicle</span>).</li>
+                        <li><strong>بافت‌شناسی و درمان:</strong> پوشش سنگفرشی مطبق نازک (<span class="en">Thin stratified squamous lining</span>) همراه با التهاب مزمن متراکم. با برداشتن جراحی کاملاً درمان می‌شود.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box warning">
+                    <h4>کیست پری‌آپیکال — التهابی (<span class="en">Periapical Cyst - Inflammatory</span>)</h4>
+                    <ul>
+                        <li><strong>محل (<span class="en">Location</span>):</strong> در رأس ریشه یک دندان رویش‌یافته (<span class="en">Apex of an erupted tooth</span>) رخ می‌دهد.</li>
+                        <li><strong>منشأ (<span class="en">Origin</span>):</strong> پالپیت طولانی‌مدت (<span class="en">Long-standing pulpitis</span>) ناشی از پوسیدگی پیشرفته یا تروما که منجر به نکروز و آبسه پری‌آپیکال (<span class="en">Periapical abscess</span>) شده و به مرور زمان بافت جوانه‌ای (<span class="en">Granulation tissue</span>) تشکیل می‌شود.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent);">۲. تومور ادنتوژنیک کراتوسیستیک (<span class="en">Keratocystic Odontogenic Tumor</span>)</h3>
+            <div class="grid-2" style="margin-bottom: 1.5rem;">
+                <div class="sub-box">
+                    <h4>نمای بالینی و بافت‌شناسی (<span class="en">Profile & Histology</span>)</h4>
+                    <ul>
+                        <li><strong>پروفایل (<span class="en">Profile</span>):</strong> در بیماران ۱۰ تا ۴۰ ساله، با غلبه در مردان (<span class="en">Male predominance</span>) و معمولاً در بخش خلفی مندیبل (<span class="en">Posterior mandible</span>) رخ می‌دهد.</li>
+                        <li><strong>رفتار (<span class="en">Behavior</span>):</strong> به‌صورت موضعی تهاجمی (<span class="en">Locally aggressive</span>) با نرخ عود بالا. نیازمند برداشتن کامل جراحی است.</li>
+                        <li><strong>بافت‌شناسی (<span class="en">Histology</span>):</strong> لایه نازکی از اپی‌تلیوم سنگفرشی کراتینه‌شده با لایه سلول بازال بسیار برجسته (<span class="en">Prominent basal cell layer</span>).</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box danger">
+                    <h4>ژنتیک مولکولی (<span class="en">Molecular Genetics Flowchart</span>)</h4>
+                    <ul>
+                        <li><strong>پاتوژنز مولکولی (<span class="en">Molecular Pathogenesis</span>):</strong> ناشی از جهش‌های از دست دادن عملکرد (<span class="en">Loss-of-function mutations</span>) در ژن سرکوبگر تومور <span class="en">PTCH1</span>.</li>
+                        <li><strong>ارتباط سندرمی (<span class="en">Syndromic Link</span>):</strong> بیماران دارای جهش‌های زایا (<span class="en">Germline mutations</span>) در ژن <span class="en">PTCH1</span> مبتلا به سندرم کارسینوم سلول بازال نووئید (<span class="en">Nevoid Basal Cell Carcinoma Syndrome</span>) هستند و در معرض خطر بسیار بالاتری قرار دارند.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent);">۳. تومورهای ادنتوژنیک: نئوپلاسم‌های واقعی (<span class="en">Odontogenic Tumors: True Neoplasms</span>)</h3>
+            <div class="grid-2">
+                <div class="sub-box success">
+                    <h4>ادنتوما (<span class="en">Odontoma</span>)</h4>
+                    <ul>
+                        <li>شایع‌ترین نوع تومور ادنتوژنیک.</li>
+                        <li>از اپی‌تلیوم منشأ می‌گیرد اما رسوب گسترده و بی‌نظم مینا (<span class="en">Enamel</span>) و عاج (<span class="en">Dentin</span>) را نشان می‌دهد.</li>
+                        <li>با اکسیزیون موضعی (<span class="en">Local excision</span>) درمان قطعی می‌شود.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box">
+                    <h4>آملوبلاستوما (<span class="en">Ameloblastoma</span>)</h4>
+                    <ul>
+                        <li>از اپی‌تلیوم ادنتوژنیک (<span class="en">Odontogenic epithelium</span>) منشأ می‌گیرد.</li>
+                        <li>کیستیک، با رشد آهسته، به‌طور موضعی تهاجمی (<span class="en">Locally invasive</span>) اما به‌طور کلی خوش‌خیم و کم‌خطر (<span class="en">Indolent</span>).</li>
+                        <li><strong>اجزای بافت‌شناسی:</strong>
+                            <ol style="padding-right: 1.5rem; margin-top: 0.35rem;">
+                                <li>اپی‌تلیوم استوانه‌ای ردیف‌شده / نرده‌ای (<span class="en">Palisading columnar epithelium</span>)</li>
+                                <li>استرومای سست حاوی سلول‌های ستاره‌ای (<span class="en">Loose stroma containing stellate cells</span>)</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 25 & 26: Synthesis & Closing -->
+        <section class="slide-card" id="synthesis">
+            <div class="slide-header">
+                <h2 class="slide-title">جمع‌بندی: طیف پاتولوژی حفره دهان (<span class="en">Synthesis: The Oral Cavity Pathology Spectrum</span>)</h2>
+                <span class="slide-num">اسلایدهای ۲۵ و ۲۶</span>
+            </div>
+
+            <div class="grid-2">
+                <div class="sub-box">
+                    <h4>دندان‌ها و پریودنشیوم (<span class="en">Teeth & Periodontium</span>)</h4>
+                    <p>تخریب التهابی ناشی از تغییر میکروبیوم بیوفیلم (<span class="en">Facultative → Anaerobic</span>).</p>
+                </div>
+                <div class="sub-box">
+                    <h4>مخاط دهان (<span class="en">Oral Mucosa</span>)</h4>
+                    <p>نئوپلازی سنگفرشی هدایت‌شده توسط مسیرهای مولکولی واگرا (<span class="en">Carcinogen / TP53</span> در برابر <span class="en">Viral / E6/E7</span>).</p>
+                </div>
+                <div class="sub-box">
+                    <h4>غدد بزاقی (<span class="en">Salivary Glands</span>)</h4>
+                    <p>ناهمگونی مورفولوژیک بالا که در آن خطر بدخیمی با اندازه غده نسبت معکوس دارد.</p>
+                </div>
+                <div class="sub-box">
+                    <h4>بافت‌های فک (<span class="en">Jaw Tissues</span>)</h4>
+                    <p>بقایای تکاملی اپی‌تلیال و مزانشیمی منحصربه‌فرد که در برابر جهش‌های ژنتیکی بسیار اختصاصی (مانند <span class="en">PTCH1</span>) آسیب‌پذیر هستند.</p>
+                </div>
+            </div>
+
+            <div class="callout" style="text-align: center; margin-top: 1.5rem;">
+                <strong>پایان بخش اول (<span class="en">End of Part 1. Proceed to Part 2: The Esophagus</span>)</strong><br>
+                با آرزوی موفقیت! (<span class="en">Best wishes!</span>)
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        خلاصه جامع و ترجمه کامل اسلایدهای پاتولوژی حفره دهان و غدد بزاقی — برگرفته از <span class="en">Robbins & Kumar Basic Pathology (11th Ed)</span>
+    </footer>
+
+    <script>
+        function setTheme(themeName) {
+            document.documentElement.setAttribute('data-theme', themeName);
+            localStorage.setItem('oral-pathology-theme', themeName);
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-set-theme') === themeName);
+            });
+        }
+
+        // Load saved theme or default to semi-dark (#2a2b2b)
+        const savedTheme = localStorage.getItem('oral-pathology-theme') || 'semi-dark';
+        setTheme(savedTheme);
+    </script>
+</body>
+</html>

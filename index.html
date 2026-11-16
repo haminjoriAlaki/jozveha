@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سامانه جامع جزوه‌ها - کورس و پاتولوژی گوارش</title>
+    <style>
+        :root {
+            /* پس‌زمینه ترند ۲۰۲۶: Obsidian / Soft Black مینیمال */
+            --bg-base: #141619;
+            --bg-elevated: #1C1C1E;
+            --glass-bg: rgba(255, 255, 255, 0.045);
+            --glass-bg-hover: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-highlight: rgba(255, 255, 255, 0.18);
+            --accent-clinical: #FF3D8B;
+            --accent-clinical-glow: rgba(255, 61, 139, 0.28);
+            --accent-patho: #38BDF8;
+            --accent-patho-glow: rgba(56, 189, 248, 0.28);
+            --text-main: #F5F5F7;
+            --text-muted: #98989D;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Tahoma, sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.65;
+            overflow-x: hidden;
+        }
+
+        /* سربرگ شیشه‌ای iOS */
+        header {
+            background: rgba(20, 22, 25, 0.72);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 16px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 13px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--glass-highlight);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);
+        }
+
+        .logo-dot {
+            width: 11px;
+            height: 11px;
+            background: var(--accent-clinical);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-clinical);
+        }
+
+        .app-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+            color: var(--text-main);
+        }
+
+        .app-title span {
+            color: var(--accent-clinical);
+        }
+
+        .app-subtitle {
+            font-size: 0.76rem;
+            color: var(--text-muted);
+        }
+
+        .header-stats {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 6px 14px;
+            border-radius: 99px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            backdrop-filter: blur(12px);
+        }
+
+        .header-stats strong {
+            color: var(--text-main);
+        }
+
+        /* بدنه اصلی */
+        main {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 36px 20px 70px;
+            flex-grow: 1;
+        }
+
+        /* بخش هیرو، جستجو و تب‌های فیلتر iOS */
+        .hero-section {
+            text-align: center;
+            margin-bottom: 42px;
+        }
+
+        .hero-heading {
+            font-size: 1.9rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: #FFFFFF;
+        }
+
+        .hero-desc {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .search-container {
+            max-width: 520px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 18px;
+            height: 18px;
+            color: var(--text-muted);
+            pointer-events: none;
+            transition: color 0.3s;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 46px 15px 20px;
+            background: var(--bg-elevated);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            color: #fff;
+            font-family: inherit;
+            font-size: 0.94rem;
+            outline: none;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        }
+
+        .search-input:focus {
+            border-color: rgba(255, 255, 255, 0.32);
+            background: #242427;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        }
+
+        .search-input:focus + .search-icon {
+            color: #fff;
+        }
+
+        .search-input::placeholder {
+            color: #6E6E73;
+        }
+
+        /* سگمنت کنترل شیشه‌ای (iOS Segmented Control) */
+        .filter-pills {
+            display: inline-flex;
+            background: var(--bg-elevated);
+            border: 1px solid var(--glass-border);
+            padding: 4px;
+            border-radius: 14px;
+            gap: 4px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .pill-btn {
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--text-muted);
+            font-family: inherit;
+            font-size: 0.82rem;
+            font-weight: 700;
+            padding: 8px 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .pill-btn:hover {
+            color: #fff;
+        }
+
+        .pill-btn.active {
+            background: rgba(255, 255, 255, 0.11);
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        /* بخش دسته‌بندی‌ها */
+        .course-section {
+            margin-bottom: 48px;
+            transition: opacity 0.3s ease;
+        }
+
+        .category-header {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px) saturate(160%);
+            -webkit-backdrop-filter: blur(20px) saturate(160%);
+            border: 1px solid var(--glass-border);
+            border-top-color: var(--glass-highlight);
+            border-radius: 20px;
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .cat-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .cat-bar {
+            width: 4px;
+            height: 38px;
+            border-radius: 10px;
+        }
+
+        .clinical-theme .cat-bar {
+            background: var(--accent-clinical);
+            box-shadow: 0 0 12px var(--accent-clinical-glow);
+        }
+
+        .patho-theme .cat-bar {
+            background: var(--accent-patho);
+            box-shadow: 0 0 12px var(--accent-patho-glow);
+        }
+
+        .cat-name {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .cat-desc {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .cat-badge {
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 99px;
+        }
+
+        .clinical-theme .cat-badge {
+            background: rgba(255, 61, 139, 0.12);
+            color: #FF7AB0;
+            border: 1px solid rgba(255, 61, 139, 0.3);
+        }
+
+        .patho-theme .cat-badge {
+            background: rgba(56, 189, 248, 0.12);
+            color: #7DD3FC;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        /* گرید کارت‌ها */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        /* کارت شیشه‌ای مجزا */
+        .pamphlet-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px) saturate(160%);
+            -webkit-backdrop-filter: blur(20px) saturate(160%);
+            border: 1px solid var(--glass-border);
+            border-top-color: rgba(255, 255, 255, 0.18);
+            border-radius: 22px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            position: relative;
+        }
+
+        .pamphlet-card:hover {
+            transform: translateY(-5px);
+            background: var(--glass-bg-hover);
+        }
+
+        .clinical-theme .pamphlet-card:hover {
+            border-color: rgba(255, 61, 139, 0.45);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+        }
+
+        .patho-theme .pamphlet-card:hover {
+            border-color: rgba(56, 189, 248, 0.45);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .card-number {
+            font-size: 0.75rem;
+            font-weight: 700;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #D1D1D6;
+            padding: 4px 11px;
+            border-radius: 9px;
+        }
+
+        .card-tag {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .card-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 10px;
+            transition: color 0.25s;
+        }
+
+        .card-title-en {
+            direction: ltr;
+            unicode-bidi: isolate;
+            display: inline-block;
+            letter-spacing: 0.2px;
+        }
+
+        .clinical-theme .pamphlet-card:hover .card-title {
+            color: #FF7AB0;
+        }
+
+        .patho-theme .pamphlet-card:hover .card-title {
+            color: #7DD3FC;
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+            margin-bottom: 24px;
+        }
+
+        /* دکمه شیشه‌ای تعاملی */
+        .card-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.07);
+            color: #FFFFFF;
+            font-size: 0.86rem;
+            font-weight: 700;
+            padding: 12px 18px;
+            border-radius: 13px;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+            transition: all 0.22s ease;
+        }
+
+        .card-link svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.22s ease;
+        }
+
+        .pamphlet-card:hover .card-link svg {
+            transform: translateX(-4px);
+        }
+
+        .clinical-theme .card-link:hover {
+            background: var(--accent-clinical);
+            border-color: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 4px 16px var(--accent-clinical-glow);
+        }
+
+        .patho-theme .card-link:hover {
+            background: #0EA5E9;
+            border-color: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 4px 16px var(--accent-patho-glow);
+        }
+
+        /* باکس عدم وجود نتیجه */
+        .not-found {
+            display: none;
+            text-align: center;
+            padding: 56px 20px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px dashed rgba(255, 255, 255, 0.16);
+            border-radius: 22px;
+            margin-top: 16px;
+        }
+
+        .not-found-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .not-found-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* فوتر */
+        footer {
+            background: rgba(20, 22, 25, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid var(--glass-border);
+            padding: 20px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 640px) {
+            .hero-heading {
+                font-size: 1.5rem;
+            }
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            .category-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .header-stats {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- هدر سایت -->
+    <header>
+        <div class="header-container">
+            <div class="logo-box">
+                <div class="logo-icon">
+                    <div class="logo-dot"></div>
+                </div>
+                <div>
+                    <h1 class="app-title">سامانه جامع <span>جزوه‌ها</span></h1>
+                    <p class="app-subtitle">آرشیو دیجیتال مباحث بالینی و پاتولوژی گوارش</p>
+                </div>
+            </div>
+            <div class="header-stats">
+                مجموع: <strong>۱۱ جزوه</strong> فعال
+            </div>
+        </div>
+    </header>
+
+    <!-- محتوای اصلی -->
+    <main>
+        <!-- بخش هیرو و جستجو -->
+        <section class="hero-section">
+            <h2 class="hero-heading">یادداشت‌ها و سرفصل‌های درسی</h2>
+            <p class="hero-desc">برای مطالعه هر مبحث روی کارت مربوطه کلیک کنید یا عنوان مورد نظر را جستجو نمایید.</p>
+            
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="searchBar" 
+                    class="search-input" 
+                    placeholder="جستجوی سرفصل (مثلاً: سیروز، Esophagus، معده...)" 
+                    oninput="filterContent()"
+                >
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </div>
+
+            <!-- فیلتر دسته‌بندی‌ها -->
+            <div class="filter-pills" role="tablist">
+                <button class="pill-btn active" data-filter="all" onclick="setCategoryFilter('all', this)">همه دسته‌ها (۱۱)</button>
+                <button class="pill-btn" data-filter="clinical" onclick="setCategoryFilter('clinical', this)">کورس بالینی گوارش (۶)</button>
+                <button class="pill-btn" data-filter="pathology" onclick="setCategoryFilter('pathology', this)">پاتولوژی گوارش (۵)</button>
+            </div>
+        </section>
+
+        <!-- بخش اول: کورس گوارش (بالینی) -->
+        <section class="course-section clinical-theme" id="section-clinical" data-category="clinical">
+            <div class="category-header">
+                <div class="cat-info">
+                    <div class="cat-bar"></div>
+                    <div>
+                        <h3 class="cat-name">کورس گوارش</h3>
+                        <p class="cat-desc">سرفصل‌های بالینی و رویکرد تشخیصی و درمانی بیماری‌های دستگاه گوارش</p>
+                    </div>
+                </div>
+                <div class="cat-badge">۶ جزوه اختصاصی</div>
+            </div>
+
+            <div class="cards-grid">
+                <!-- جزوه ۱ -->
+                <div class="pamphlet-card" data-category="clinical" data-title="بیماری های مری esophagus" data-desc="ریفلاکس گوارشی GERD، دیسفاژی، آشالازی و اختلالات حرکتی مری">
+                    <div>
+                        <div class="card-top">
+                            <span class="card-number">جزوه ۰۱</span>
+                            <span class="card-tag">کورس گوارش</span>
+                        </div>
+                        <h4 class="card-title">بیماری‌های مری</h4>
+                        <p class="card-desc">بررسی ریفلاکس گاستروازوفاژیال (GERD)، دیسفاژی، اسپاسم مری، آشالازی و درمان‌های دارویی و اندوسکوپیک.</p>
+                    </div>
+                    <a href="./govaresh/1 2 - مری.html" class="card-link">
+                        <span>مشاهده و مطالعه جزوه</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    </a>
+                </div>
+
+                <!-- جزوه ۲ -->
+                <div class="pamphlet-card" data-category="clinical" data-title="بیماری های معده stomach" data-desc="زخم‌های پپتیک PUD، هلیکوباکتر پیلوری، گاستریت و خونریزی‌های گوارشی فوقانی">
+                    <div>
+                        <div class="card-top">
+                            <span class="card-number">جزوه ۰۲</span>
+                            <span class="card-tag">کورس گوارش</span>
+                        </div>
+                        <h4 class="card-title">بیماری‌های معده</h4>
+                        <p class="card-desc">پاتولوژی زخم معده و دئودنوم، رژیم‌های ریشه‌کنی H. Pylori، گاستریت حاد و مزمن، خونریزی‌ها و مدیریت بالینی.</p>
+                    </div>
+                    <a href="./govaresh/3 - معده.html" class="card-link">
+                        <span>مشاهده و مطالعه جزوه</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    </a>
+                </div>
+
+                <!-- جزوه ۳ -->
+                <div class="pamphlet-card" data-category="clinical" data-title="بیماری های صفرا biliary" data-desc="سنگ کیسه صفرا، کوله سیستیت حاد و مزمن، کلانژیت صعودی و کلدوکولیتیازیس">
+                    <div>
+                        <div class="card-top">
+                            <span class="card-number">جزوه ۰۳</span>
+                            <span class="card-tag">کورس گوارش</span>
+                        </div>
+                        <h4 class="card-title">بیماری‌های صفرا</h4>
+                        <p class="card-desc">رویکرد به کولیک صفراوی، کلانژیت (تریاد شارکو)، سنگ‌های مجاری صفراوی، اندیکاسیون‌های جراحی و ERCP.</p>
+                    </div>
+                    <a href="./govaresh/4 - صفرا.html" class="card-link">
+                        <span>مشاهده و مطالعه جزوه</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    </a>
+                </div>
+
+                <!-- جزوه ۴ -->
+                <div class="pamphlet-card" data-category="clinical" data-title="سیروز cirrhosis" data-desc="پاتوفیزیولوژی سیروز کبدی، هایپرتنشن پورت، آسیت، واریس مری و آنسفالوپاتی">
+                    <div>
+                        <div class="card-top">
+                            <span class="card-number">جزوه ۰۴</span>
+                            <span class="card-tag">کورس گوارش</span>
+                        </div>
+                        <h4 class="card-title">سیروز</h4>
+                        <p class="card-desc">عوارض هایپرتانسیون پورت، مدیریت آسیت و پریتونیت خودبه‌خودی (SBP)، واریس‌های گوارشی و نارسایی کبد.</p>
+                    </div>
+                    <a href="./govaresh/5 - سیروز.html" class="card-link">
+                        <span>مشاهده و مطالعه جزوه</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    </a>
+                </div>
+
+                <!-- جزوه ۵ -->
+                <div class="pamphlet-card" data-category="clinical" data-title="بیماری های پانکراس pancreas" data-desc="پانکراتیت حاد و مزمن، معیارهای تشخیصی و آزمایشگاهی، کیست‌ها و نارسایی اگزوکرین">
+                    <div>
+                        <div class="card-top">
+                            <span class="card-number">جزوه ۰۵</span>
+                            <span class="card-tag">کورس گوارش</span>
+                        </div>
+                        <h4 class="card-title">بیماری‌های پانکراس</h4>
+                        <p class="card-desc">معیارهای رانسون و اتیولوژی پانکراتیت حاد، پانکراتیت الکلی و انسدادی، کیست‌های لوزالمعده و جایگزینی آنزیمی.</p>
+                    </div>
+                    <a href="./govaresh/6 - pancreas.html" class="card-link">
+                        <span>مشاهده و مطالعه جزوه</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    </a>
+                </div>
+
+                <!-- جزوه ۶ -->
+                <div class="pamphlet-card" data-category="clinical" data-title="IBD بیماری های التهابی روده" data-desc="کولیت اولسراتیو، بیماری کرون، تمایز بالینی، تظاهرات خارج روده ای و درمان">
+                    <div>
+                        <div class="card-top">
+                            <span class="card-number">جزوه ۰۶</span>
+                            <span class="card-tag">کورس گوارش</span>
+                        </div>
+                        <h4 class="card-title">IBD</h4>
+                        <p class="card-desc">بررسی مقایسه‌ای کولیت اولسراتیو (UC) و کرون (Crohn's)، علائم آندوسکوپیک، داروهای بیولوژیک و پیگیری‌ها.</p>
+                    </div>
+                    <a href="./govaresh/6 - IBD.html" class="card-link">
+                        <span>مشاهده و مطالعه جزوه</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- بخش دوم: پاتولوژی گوارش -->
+        <section class="course-section patho-theme" id="section-pathology" data-category="pathology">
+            <div class="category-header">
+                <div class="cat-info">
+                    <div class="cat-bar"></div>
+                    <div>
+                        <h3 class="cat-name">پاتولوژی گوارش</h3>
+                        <p class="cat-desc">آسیب‌شناسی بافتی، نئوپلاسم‌ها و تغییرات پاتولوژیک دستگاه گوارش</p>
+                    </div>
+                </div>
+                <div class="cat-badge">۵ جلسه آموزشی</div>
+            </div>
+
+            <div class="cards-grid">
+                <!-- جلسه ۱ پاتولوژی -->
+                <div class="pamphlet-card" data-category="pathology" data-title="Oral & Salivary حفره دهان و غدد بزاقی" data-desc="پاتولوژی ضایعات دهان، لوکوپلاکیا، کارسینوم سلول سنگفرشی، سیالادنیت و تومورهای غدد بزاقی پلئومورفیک آدنوما">
+                    <div>
+                        <div class="card-top">
+                            <span class="card-number">جلسه ۰۱</span>
+                            <span class="card-tag">پاتولوژی گوارش</span>
+                        </div>
+                        <h4 class="card-title"><span class="card-title-en">Oral & Salivary</span></h4>
+                        <p class="card-desc">بررسی ضایعات التهابی و پیش‌بدخیم حفره دهان، کارسینوم سلول سنگفرشی (SCC) و نئوپلاسم‌های غدد بزاقی.</p>
+                    </div>
+                    <a href="./Patho-govaresh/Oral_and_Salivary_Pathology_FA.html" class="card-link">
+                        <span>مشاهده و مطالعه جزوه</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    </a>
+                </div>
+
+                <!-- جلسه ۲ پاتولوژی -->
+                <div class="pamphlet-card" data-category="pathology" data-title="Esophagus پاتولوژی مری" data-desc="ازوفاژیت، مری بارت Barrett esophagus، آدنوکارسینوم و کارسینوم سلول سنگفرشی مری، واریس">
+                    <div>
+                        <div class="card-top">
+                            <span class="card-number">جلسه ۰۲</span>
+                            <span class="card-tag">پاتولوژی گوارش</span>
+                        </div>
+                        <h4 class="card-title"><span class="card-title-en">Esophagus</span></h4>
+                        <p class="card-desc">تغییرات بافت‌شناسی ازوفاژیت، متاپلازی بارت (Barrett's Esophagus)، دیسپلازی و بدخیمی‌های مری.</p>
+                    </div>
+                    <a href="./Patho-govaresh/Esophagus_Pathology_FA.html" class="card-link">
+                        <span>مشاهده و مطالعه جزوه</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    </a>
+                </div>
+
+                <!-- جلسه ۳ پاتولوژی -->
+                <div class="pamphlet-card" data-category="pathology" data-title="Stomach پاتولوژی معده" data-desc="گاستریت حاد و مزمن اتوایمیون، زخم پپتیک، پولیپ‌های معده، آدنوکارسینوم روده‌ای و منتشر، MALToma">
+                    <div>
+                        <div class="card-top">
+                            <span class="card-number">جلسه ۰۳</span>
+                            <span class="card-tag">پاتولوژی گوارش</span>
+                        </div>
+                        <h4 class="card-title"><span class="card-title-en">Stomach</span></h4>
+                        <p class="card-desc">آسیب‌شناسی گاستریت‌ها، پاتوژنز زخم پپتیک، پولیپ‌های معده، کارسینوم معده و لنفوم MALT.</p>
+                    </div>
+                    <a href="./Patho-govaresh/Stomach_Pathology_FA.html" class="card-link">
+                        <span>مشاهده و مطالعه جزوه</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    </a>
+                </div>
+
+                <!-- جلسه ۴ پاتولوژی -->
+                <div class="pamphlet-card" data-category="pathology" data-title="Intestine پاتولوژی روده باریک" data-desc="سندرم‌های سوءجذب، بیماری سلیاک، بیماری ویپل، ایسکمی روده و انتروکولیت‌های عفونی">
+                    <div>
+                        <div class="card-top">
+                            <span class="card-number">جلسه ۰۴</span>
+                            <span class="card-tag">پاتولوژی گوارش</span>
+                        </div>
+                        <h4 class="card-title"><span class="card-title-en">Intestine</span></h4>
+                        <p class="card-desc">پاتولوژی اختلالات سوءجذب (بیماری سلیاک)، بیماری‌های ایسکمیک روده، انتروپاتی‌ها و ضایعات روده باریک.</p>
+                    </div>
+                    <a href="./Patho-govaresh/Intestine_Pathology_FA.html" class="card-link">
+                        <span>مشاهده و مطالعه جزوه</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    </a>
+                </div>
+
+                <!-- جلسه ۵ پاتولوژی -->
+                <div class="pamphlet-card" data-category="pathology" data-title="Lower GI پاتولوژی دستگاه گوارش تحتانی کولون" data-desc="دیورتیکولوز، پولیپ‌های آدنوماتوز، سندرم FAP و لینچ، آدنوکارسینوم کولورکتال و آپاندیسیت">
+                    <div>
+                        <div class="card-top">
+                            <span class="card-number">جلسه ۰۵</span>
+                            <span class="card-tag">پاتولوژی گوارش</span>
+                        </div>
+                        <h4 class="card-title"><span class="card-title-en">Lower GI</span></h4>
+                        <p class="card-desc">بیماری دیورتیکولی، پولیپ‌های نئوپلاستیک و غیرنئوپلاستیک، کارسینوژنز کولورکتال و پاتولوژی آپاندیس.</p>
+                    </div>
+                    <a href="./Patho-govaresh/Lower_GI_Pathology_FA.html" class="card-link">
+                        <span>مشاهده و مطالعه جزوه</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- باکس زمان عدم یافتن نتیجه -->
+        <div class="not-found" id="notFoundBox">
+            <div class="not-found-title">جزوه‌ای مطابق با عبارت جستجو شده پیدا نشد</div>
+            <div class="not-found-desc">لطفاً عبارت دیگری از مباحث کورس گوارش یا پاتولوژی گوارش را امتحان کنید.</div>
+        </div>
+    </main>
+
+    <!-- فوتر -->
+    <footer>
+        <p>© پلتفرم اختصاصی جزوات و یادداشت‌های آموزشی | کورس و پاتولوژی گوارش</p>
+    </footer>
+
+    <!-- اسکریپت فیلتر دسته‌بندی و جستجوی لحظه‌ای -->
+    <script>
+        var currentCategory = 'all';
+
+        function setCategoryFilter(category, btnElement) {
+            currentCategory = category;
+            var buttons = document.querySelectorAll('.pill-btn');
+            buttons.forEach(function(btn) {
+                btn.classList.remove('active');
+            });
+            btnElement.classList.add('active');
+            filterContent();
+        }
+
+        function filterContent() {
+            var input = document.getElementById('searchBar');
+            var query = input.value.trim().toLowerCase();
+            var sections = document.querySelectorAll('.course-section');
+            var notFoundBox = document.getElementById('notFoundBox');
+            var totalMatches = 0;
+
+            sections.forEach(function(section) {
+                var secCat = section.getAttribute('data-category');
+                var isCategoryAllowed = (currentCategory === 'all' || currentCategory === secCat);
+
+                if (!isCategoryAllowed) {
+                    section.style.display = 'none';
+                    return;
+                }
+
+                var cards = section.querySelectorAll('.pamphlet-card');
+                var sectionMatches = 0;
+
+                cards.forEach(function(card) {
+                    var title = (card.getAttribute('data-title') || '').toLowerCase();
+                    var desc = (card.getAttribute('data-desc') || '').toLowerCase();
+
+                    if (title.indexOf(query) !== -1 || desc.indexOf(query) !== -1) {
+                        card.style.display = 'flex';
+                        sectionMatches++;
+                        totalMatches++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                section.style.display = sectionMatches > 0 ? 'block' : 'none';
+            });
+
+            notFoundBox.style.display = totalMatches === 0 ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>

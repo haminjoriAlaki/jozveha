@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="semi-dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پاتولوژی معده (Stomach) | Robbins & Kumar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root, [data-theme="semi-dark"] {
+            --bg-primary: #2a2b2b;
+            --bg-secondary: #343636;
+            --bg-card: rgba(54, 56, 56, 0.85);
+            --bg-accent-soft: rgba(56, 189, 248, 0.14);
+            --bg-warning-soft: rgba(244, 63, 94, 0.15);
+            --bg-success-soft: rgba(16, 185, 129, 0.15);
+            --text-primary: #ffffff;
+            --text-secondary: #e2e8f0;
+            --text-muted: #cbd5e1;
+            --accent: #38bdf8;
+            --accent-secondary: #818cf8;
+            --danger: #fb7185;
+            --success: #34d399;
+            --warning: #fbbf24;
+            --border-color: rgba(255, 255, 255, 0.12);
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+            --header-bg: rgba(42, 43, 43, 0.88);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0f1115;
+            --bg-secondary: #181b21;
+            --bg-card: rgba(24, 27, 33, 0.9);
+            --bg-accent-soft: rgba(56, 189, 248, 0.12);
+            --bg-warning-soft: rgba(244, 63, 94, 0.14);
+            --bg-success-soft: rgba(16, 185, 129, 0.14);
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-secondary: #a78bfa;
+            --danger: #f43f5e;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
+            --header-bg: rgba(15, 17, 21, 0.88);
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #f4f6f9;
+            --bg-secondary: #ffffff;
+            --bg-card: rgba(255, 255, 255, 0.95);
+            --bg-accent-soft: rgba(2, 132, 199, 0.08);
+            --bg-warning-soft: rgba(225, 29, 72, 0.08);
+            --bg-success-soft: rgba(5, 150, 105, 0.08);
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --text-muted: #64748b;
+            --accent: #0284c7;
+            --accent-secondary: #6366f1;
+            --danger: #e11d48;
+            --success: #059669;
+            --warning: #d97706;
+            --border-color: rgba(15, 23, 42, 0.1);
+            --shadow: 0 8px 25px rgba(15, 23, 42, 0.07);
+            --header-bg: rgba(244, 246, 249, 0.9);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.85;
+            font-size: 16px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            padding-bottom: 4rem;
+        }
+
+        /* English Terms Formatting */
+        .en {
+            font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            direction: ltr;
+            unicode-bidi: isolate;
+            display: inline-block;
+            font-weight: 600;
+            color: var(--accent);
+            padding: 0 3px;
+        }
+
+        /* Sticky Navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--header-bg);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 1.25rem;
+        }
+
+        .nav-container {
+            max-width: 1120px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            font-weight: 800;
+            font-size: 1.05rem;
+        }
+
+        .brand-badge {
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+            color: #fff;
+            padding: 0.25rem 0.65rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .theme-switcher {
+            display: flex;
+            align-items: center;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 999px;
+            padding: 4px;
+            gap: 4px;
+        }
+
+        .theme-btn {
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 0.35rem 0.85rem;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .theme-btn.active {
+            background: var(--accent);
+            color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        [data-theme="semi-dark"] .theme-btn.active,
+        [data-theme="dark"] .theme-btn.active {
+            color: #0f172a;
+        }
+
+        /* Quick Nav Pills */
+        .quick-nav {
+            max-width: 1120px;
+            margin: 1rem auto 0;
+            padding: 0 1.25rem;
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .quick-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-pill {
+            text-decoration: none;
+            color: var(--text-secondary);
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 0.4rem 0.9rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .nav-pill:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1120px;
+            margin: 1.5rem auto 0;
+            padding: 0 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+        }
+
+        /* Hero / Cover Card */
+        .hero-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 22px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-secondary), var(--danger));
+        }
+
+        .uni-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            padding-bottom: 1.25rem;
+            margin-bottom: 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .uni-title {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .ref-badge {
+            background: var(--bg-accent-soft);
+            border: 1px solid var(--accent);
+            padding: 0.35rem 0.85rem;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .hero-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 0.85rem;
+            background: var(--bg-secondary);
+            padding: 1rem 1.25rem;
+            border-radius: 14px;
+            border: 1px solid var(--border-color);
+            font-size: 0.92rem;
+        }
+
+        /* Section Cards */
+        .slide-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 1.75rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .slide-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.85rem;
+            border-bottom: 1px solid var(--border-color);
+            flex-wrap: wrap;
+        }
+
+        .slide-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .slide-num {
+            background: var(--bg-accent-soft);
+            color: var(--accent);
+            border: 1px solid var(--border-color);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 0.25rem 0.7rem;
+            border-radius: 8px;
+        }
+
+        /* Grids inside slides */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 1.15rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .sub-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.2rem;
+        }
+
+        .sub-box h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.65rem;
+            color: var(--accent);
+        }
+
+        .sub-box.danger {
+            border-right: 4px solid var(--danger);
+        }
+
+        .sub-box.danger h4 {
+            color: var(--danger);
+        }
+
+        .sub-box.success {
+            border-right: 4px solid var(--success);
+        }
+
+        .sub-box.success h4 {
+            color: var(--success);
+        }
+
+        .sub-box.warning {
+            border-right: 4px solid var(--warning);
+        }
+
+        .sub-box.warning h4 {
+            color: var(--warning);
+        }
+
+        ul, ol {
+            padding-right: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+        }
+
+        li {
+            color: var(--text-primary);
+        }
+
+        .callout {
+            background: var(--bg-accent-soft);
+            border-right: 4px solid var(--accent);
+            padding: 1rem 1.2rem;
+            border-radius: 12px;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .callout.danger {
+            background: var(--bg-warning-soft);
+            border-right-color: var(--danger);
+        }
+
+        /* Table styling */
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 14px;
+            border: 1px solid var(--border-color);
+            margin-top: 0.75rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: right;
+            background: var(--bg-secondary);
+        }
+
+        th, td {
+            padding: 0.9rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+
+        th {
+            background: var(--bg-accent-soft);
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding: 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Responsive Mobile Adjustments */
+        @media (max-width: 640px) {
+            body {
+                font-size: 15px;
+            }
+            .hero-card, .slide-card {
+                padding: 1.25rem;
+                border-radius: 16px;
+            }
+            .hero-title {
+                font-size: 1.4rem;
+            }
+            .slide-title {
+                font-size: 1.15rem;
+            }
+            .theme-btn {
+                padding: 0.3rem 0.65rem;
+                font-size: 0.78rem;
+            }
+            .nav-container {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation & Theme Switcher -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="brand">
+                <span class="brand-badge">جلسه سوم</span>
+                <span>پاتولوژی معده (<span class="en">Stomach</span>)</span>
+            </div>
+
+            <div class="theme-switcher" role="group" aria-label="تغییر تم صفحه">
+                <button class="theme-btn" data-set-theme="light" onclick="setTheme('light')">☀️ روشن</button>
+                <button class="theme-btn active" data-set-theme="semi-dark" onclick="setTheme('semi-dark')">🌗 نیمه‌دارک</button>
+                <button class="theme-btn" data-set-theme="dark" onclick="setTheme('dark')">🌙 دارک</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Quick Section Links -->
+    <nav class="quick-nav" aria-label="دسترسی سریع به بخش‌ها">
+        <a href="#intro" class="nav-pill">مقدمه و آناتومی معده</a>
+        <a href="#acute" class="nav-pill">گاستروپاتی و گاستریت حاد</a>
+        <a href="#stress" class="nav-pill">زخم‌های استرسی</a>
+        <a href="#chronic" class="nav-pill">گاستریت مزمن و H. pylori</a>
+        <a href="#autoimmune" class="nav-pill">گاستریت خودایمنی</a>
+        <a href="#pud" class="nav-pill">بیماری زخم پپتیک (PUD)</a>
+        <a href="#polyps" class="nav-pill">پولیپ‌های معده</a>
+        <a href="#adenoca" class="nav-pill">آدنوکارسینوم معده</a>
+        <a href="#other-tumors" class="nav-pill">MALToma، کارسینوئید و GIST</a>
+    </nav>
+
+    <main class="container">
+
+        <!-- Slide 1, 2 & 3: Cover & Chapter Title -->
+        <section class="hero-card" id="intro">
+            <div class="uni-header">
+                <div>
+                    <div class="uni-title">وزارت بهداشت، درمان و آموزش پزشکی</div>
+                    <div class="uni-title">دانشکده علوم پزشکی و خدمات بهداشتی درمانی ساوه</div>
+                </div>
+                <div class="ref-badge">
+                    <span class="en">ROBBINS & KUMAR BASIC PATHOLOGY</span> — ویرایش یازدهم (<span class="en">ELEVENTH EDITION</span>) | انتشارات <span class="en">ELSEVIER</span> (نسخه دیجیتال پیشرفته)
+                </div>
+            </div>
+
+            <h1 class="hero-title">فصل ۱۳: حفره دهان و دستگاه گوارش (<span class="en">Chapter 13: Oral Cavity and Gastrointestinal Tract</span>)</h1>
+            <p class="hero-subtitle">جلسه ۳ (<span class="en">Session 3</span>) — پاتولوژی معده (<span class="en">Stomach</span>)</p>
+
+            <div class="meta-grid">
+                <div><strong>مدرس:</strong> <span class="en">Dr. Saeede Khoshbakht M.D.</span> (<span class="en">Board certified AP/CP</span>)</div>
+                <div><strong>نویسندگان مرجع:</strong> <span class="en">KUMAR, ABBAS, ASTER, DEYRUP, DAS</span></div>
+            </div>
+        </section>
+
+        <!-- Slide 3: Stomach Anatomy and Cell Types -->
+        <section class="slide-card">
+            <div class="slide-header">
+                <h2 class="slide-title">آناتومی و انواع سلولی معده (<span class="en">Stomach Anatomy and Cell Types</span>)</h2>
+                <span class="slide-num">اسلاید ۳</span>
+            </div>
+            <div class="grid-3">
+                <div class="sub-box">
+                    <h4>کاردیا (<span class="en">Cardia</span>)</h4>
+                    <p>عمدتاً حاوی سلول‌های فووئولار ترشح‌کننده موسین (<span class="en">Mucin-secreting foveolar cells</span>) است که غدد کم‌عمقی را تشکیل می‌دهند.</p>
+                </div>
+                <div class="sub-box warning">
+                    <h4>فوندوس و تنه (<span class="en">Fundus and Body</span>)</h4>
+                    <p>حاوی غدد کاملاً تکامل‌یافته شامل:</p>
+                    <ul>
+                        <li><strong>سلول‌های جداری (<span class="en">Parietal cells</span>):</strong> اسید معده (<span class="en">Gastric acid</span>) ترشح می‌کنند.</li>
+                        <li><strong>سلول‌های اصلی (<span class="en">Chief cells</span>):</strong> آنزیم‌های گوارشی از جمله پپسین (<span class="en">Pepsin</span>) ترشح می‌کنند.</li>
+                    </ul>
+                </div>
+                <div class="sub-box success">
+                    <h4>آنتروم (<span class="en">Antrum</span>)</h4>
+                    <p>حاوی سلول‌های ترشح‌کننده موسین و سلول‌های <span class="en">G</span> (<span class="en">G cells</span>) است که گاسترین (<span class="en">Gastrin</span>) آزاد می‌کنند تا ترشح اسید توسط سلول‌های جداری در فوندوس و تنه را تحریک کنند.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4, 5, 6, 7, 8 & 9: Gastropathy and Acute Gastritis -->
+        <section class="slide-card" id="acute">
+            <div class="slide-header">
+                <h2 class="slide-title">گاستروپاتی و گاستریت حاد (<span class="en">GASTROPATHY AND ACUTE GASTRITIS</span>)</h2>
+                <span class="slide-num">اسلایدهای ۴ تا ۹</span>
+            </div>
+
+            <div class="grid-2" style="margin-bottom: 1.25rem;">
+                <div class="sub-box danger">
+                    <h4>تعاریف و علل (<span class="en">Definitions & Causes</span>)</h4>
+                    <ul>
+                        <li><strong>گاستریت حاد (<span class="en">Acute gastritis</span>):</strong> آسیب مخاطی همراه با التهاب نوتروفیلی (<span class="en">Neutrophilic inflammation</span>).</li>
+                        <li><strong>گاستروپاتی (<span class="en">Gastropathy</span>):</strong> آسیب و بازسازی مخاطی با تعداد کم یا بدون سلول‌های التهابی (<span class="en">Few or no inflammatory cells</span>).</li>
+                        <li><strong>علل گاستروپاتی:</strong> داروهای ضدالتهاب غیراستروئیدی (<span class="en">NSAIDs</span>)، ریفلاکس صفراوی (<span class="en">Bile reflux</span>) و آسیب مرتبط با استرس (<span class="en">Stress-related injury</span>). سوختگی‌های شدید می‌توانند باعث زخم‌های کرلینگ (<span class="en">Curling ulcers</span>) شوند.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box warning">
+                    <h4>ویژگی‌های بالینی (<span class="en">Clinical Features</span>)</h4>
+                    <ul>
+                        <li>ممکن است بدون علامت باشد یا باعث درد اپی‌گاستر (<span class="en">Epigastric pain</span>)، تهوع و استفراغ شود.</li>
+                        <li>موارد شدید می‌توانند منجر به اروزیون (<span class="en">Erosions</span>)، زخم (<span class="en">Ulcers</span>) و خونریزی شوند که به هماتمز (<span class="en">Hematemesis</span>)، ملنا (<span class="en">Melena</span>) یا به‌ندرت از دست رفتن حجیم خون می‌انجامد.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent);">۱. مکانیسم‌های محافظتی مخاط معده (<span class="en">Gastric Mucosal Protective Mechanisms</span>)</h3>
+            <div class="grid-3" style="margin-bottom: 1rem;">
+                <div class="sub-box">
+                    <h4>لایه ۱: سپر (<span class="en">Layer 1: The Shield</span>)</h4>
+                    <p>لایه موکوس سطحی (<span class="en">Surface mucus layer</span>). سدی با <span class="en">pH</span> خنثی، غنی از یون‌های بی‌کربنات (<span class="en">Bicarbonate ions</span>) ترشح‌شده توسط سلول‌های اپی‌تلیال سطحی که در برابر اسید (<span class="en">pH ~1.0</span>) و آسیب فیزیکی ذرات غذا محافظت می‌کند.</p>
+                </div>
+                <div class="sub-box">
+                    <h4>لایه ۲: دیواره (<span class="en">Layer 2: The Wall</span>)</h4>
+                    <p>سلول‌های فووئولار (<span class="en">Foveolar cells</span>) و اتصالات محکم (<span class="en">Tight junctions</span>). ظرفیت بازسازی اپی‌تلیال امکان ترمیم سریع (<span class="en">Rapid restitution</span>) را پس از سایش فیزیکی یا شیمیایی فراهم می‌کند.</p>
+                </div>
+                <div class="sub-box">
+                    <h4>لایه ۳: خط تدارکات (<span class="en">Layer 3: The Supply Line</span>)</h4>
+                    <p>جریان خون مخاطی غنی در لامینا پروپریا (<span class="en">Mucosal blood flow in lamina propria</span>). بافرینگ عروقی، پروتون‌هایی را که به عقب نفوذ کرده‌اند پاک‌سازی کرده و اکسیژن را برای دفاع سلولی فراهم می‌کند.</p>
+                </div>
+            </div>
+            <div class="callout" style="margin-top: 0; margin-bottom: 1.5rem;">
+                <strong>نکته کلیدی (<span class="en">Key Insight</span>):</strong> محیط خشن لومن معده (<span class="en">pH ~1.0</span>) یک میلیون برابر اسیدی‌تر از خون است. سلامت مخاط کاملاً از طریق حفظ مداوم و فعال این سد افقی تأمین می‌شود؛ اختلال در این مکانیسم‌ها باعث گاستروپاتی، گاستریت حاد یا گاستریت مزمن می‌گردد.
+            </div>
+
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent);">۲. تعادل نیروهای دفاعی و مهاجم و ۴ مکانیسم آسیب (<span class="en">Homeostasis & Mechanisms of Injury</span>)</h3>
+            <div class="grid-2" style="margin-bottom: 1.25rem;">
+                <div class="sub-box success">
+                    <h4>نیروهای دفاعی (<span class="en">Defensive Forces</span>)</h4>
+                    <ul>
+                        <li>ترشح موکوس و بی‌کربنات (<span class="en">Mucus and Bicarbonate secretion</span>)</li>
+                        <li>انتقال غشایی سطح آپیکال (<span class="en">Apical surface membrane transport</span>)</li>
+                        <li>جریان خون مخاطی قوی (<span class="en">Robust mucosal blood flow</span>)</li>
+                        <li>سنتز پروستاگلاندین‌ها (<span class="en">Prostaglandin synthesis: PGE2, PGI2</span>)</li>
+                        <li>ظرفیت بازسازی اپی‌تلیال (<span class="en">Epithelial regenerative capacity</span>)</li>
+                    </ul>
+                </div>
+                <div class="sub-box danger">
+                    <h4>عوامل مهاجم و اختلال دفاع (<span class="en">Injurious Exposures & Impaired Defenses</span>)</h4>
+                    <ul>
+                        <li>اسیدیته معده و آنزیم‌های پپتیک (<span class="en">Gastric acidity and Peptic enzymes</span>)</li>
+                        <li>عفونت <span class="en">H. pylori</span></li>
+                        <li><span class="en">NSAIDs</span> و آسپرین (مسدودکننده پروستاگلاندین‌های محافظ)</li>
+                        <li>الکل، تنباکو، ریفلاکس صفراوی/دئودنوگاستریک و تأخیر تخلیه معده</li>
+                        <li>ایسکمی و شوک (قطع بافرینگ عروقی)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid-4" style="margin-bottom: 1.5rem;">
+                <div class="sub-box">
+                    <h4>مکانیسم ۱: <span class="en">NSAIDs</span></h4>
+                    <p>مهار سنتز وابسته به <span class="en">COX</span> پروستاگلاندین‌های <span class="en">E2</span> و <span class="en">I2</span> که مستقیماً توانایی مخاط را برای تحریک موکوس/بی‌کربنات، جریان خون و ترمیم اپی‌تلیال سلب می‌کند.</p>
+                </div>
+                <div class="sub-box">
+                    <h4>مکانیسم ۲: آسیب شیمیایی و مستقیم (<span class="en">Chemical & Direct Injury</span>)</h4>
+                    <p>مصرف الکل، ریفلاکس صفراوی یا بلع تصادفی مواد شیمیایی خشن باعث آسیب نکروتیک مستقیم به سلول‌های اپی‌تلیال و استرومایی می‌شود.</p>
+                </div>
+                <div class="sub-box">
+                    <h4>مکانیسم ۳: اورمی و <span class="en">H. pylori</span></h4>
+                    <p>مهار ناقل‌های بی‌کربنات معده توسط یون‌های آمونیوم (<span class="en">Ammonium ions</span>) که ظرفیت خنثی‌سازی سپر مخاطی را به‌شدت محدود می‌کند.</p>
+                </div>
+                <div class="sub-box">
+                    <h4>مکانیسم ۴: هیپوکسی و پیری (<span class="en">Hypoxia & Aging</span>)</h4>
+                    <p>ارتفاعات بالا (هیپوکسمی) یا کاهش مرتبط با سن در ترشح موسین/بی‌کربنات که اپی‌تلیوم را در برابر اسید پایه به‌طور منحصربه‌فردی آسیب‌پذیر می‌سازد.</p>
+                </div>
+            </div>
+
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent);">۳. بافت‌شناسی گاستروپاتی و گاستریت حاد (<span class="en">Histology — FIG. 13.13</span>)</h3>
+            <div class="sub-box">
+                <ul>
+                    <li><strong>گاستروپاتی خفیف / گاستریت حاد (<span class="en">Mild gastropathy / acute gastritis</span>):</strong> ادم خفیف لامینا پروپریا و پرخونی عروقی (<span class="en">Vascular congestion</span>)، اپی‌تلیوم سطحی سالم (<span class="en">Intact surface epithelium</span>)، هیپرپلازی سلول‌های موکوسی فووئولار (<span class="en">Foveolar mucus-cell hyperplasia</span>) و تعداد اندک سلول‌های التهابی.</li>
+                    <li><strong>گاستریت فعال (<span class="en">Active gastritis</span>):</strong> حضور <strong>نوتروفیل‌ها در بالای غشای پایه (<span class="en">Neutrophils above the basement membrane</span>)</strong> و در تماس با سلول‌های اپی‌تلیال، نشان‌دهنده التهاب فعال است و گاستریت را از گاستروپاتی متمایز می‌کند.</li>
+                    <li><strong>آسیب شدید و زخم (<span class="en">Severe injury & Ulceration</span>):</strong> ممکن است اروزیون مخاطی و خونریزی ایجاد شود. خونریزی‌های نقطه‌ای تیره در مخاط پرخون همراه با اروزیون، مشخصه <strong>گاستریت هموراژیک اروزیو حاد (<span class="en">Acute erosive hemorrhagic gastritis</span>)</strong> است. در پیشرفت به سمت زخم (<span class="en">Ulcer</span>)، لایه‌هایی از بقایای نکروتیک (<span class="en">Necrotic debris</span>)، سلول‌های التهابی حاد و بافت جوانه‌ای (<span class="en">Granulation tissue</span>) دیده می‌شود؛ فیبروز و اسکار (<span class="en">Fibrosis/Scarring</span>) تنها در ضایعات مزمن ایجاد می‌گردد.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 10 & 11: Stress-Related Mucosal Disease -->
+        <section class="slide-card" id="stress">
+            <div class="slide-header">
+                <h2 class="slide-title">بیماری مخاطی مرتبط با استرس (<span class="en">Stress-Related Mucosal Disease</span>)</h2>
+                <span class="slide-num">اسلایدهای ۱۰ و ۱۱</span>
+            </div>
+
+            <div class="grid-3" style="margin-bottom: 1.25rem;">
+                <div class="sub-box danger">
+                    <h4>زخم‌های کوشینگ (<span class="en">Cushing Ulcers</span>)</h4>
+                    <ul>
+                        <li><strong>منشأ:</strong> آسیب سیستم عصبی مرکزی (<span class="en">CNS injury</span>؛ مانند سکته مغزی یا تروما).</li>
+                        <li><strong>مکانیسم:</strong> تحریک مستقیم هسته‌های واگ (<span class="en">Vagal nuclei</span>) تکانه های پاراسمپاتیک را منتقل کرده و باعث ترشح بیش‌ازحد و شدید اسید می‌شود.</li>
+                        <li><strong>محل:</strong> معده، دئودنوم یا مری (با بروز بالای پرفوراسیون / سوراخ‌شدگی <span class="en">Perforation</span>).</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box warning">
+                    <h4>زخم‌های کرلینگ (<span class="en">Curling Ulcers</span>)</h4>
+                    <ul>
+                        <li><strong>منشأ:</strong> سوختگی‌های شدید (<span class="en">Severe burns</span>) یا ترومای گسترده.</li>
+                        <li><strong>مکانیسم:</strong> هیپوولمی سیستمیک منجر به انقباض عروق احشایی (<span class="en">Splanchnic vasoconstriction</span>) و ایسکمی مخاطی می‌شود.</li>
+                        <li><strong>محل:</strong> دئودنوم پروگزیمال (<span class="en">Proximal duodenum</span>).</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box">
+                    <h4>زخم‌های استرسی (<span class="en">Stress Ulcers</span>)</h4>
+                    <ul>
+                        <li><strong>منشأ:</strong> شوک، سپسیس (<span class="en">Sepsis</span>) یا بیماری‌های بحرانی (<span class="en">Critical illness</span>).</li>
+                        <li><strong>مکانیسم:</strong> اسیدوز سیستمیک، <span class="en">pH</span> داخل سلولی سلول‌های مخاطی را کاهش می‌دهد که با کاهش جریان خون و بافرینگ بی‌کربنات همراه است.</li>
+                        <li><strong>محل:</strong> در سراسر معده؛ اغلب به‌صورت اروزیون‌های سطحی متعدد با خون هضم‌شده توسط اسید (قاعده سیاه/قهوه‌ای).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sub-box">
+                <h4>مورفولوژی آسیب مخاطی استرسی (<span class="en">Morphology & Healing</span>)</h4>
+                <ul>
+                    <li><strong>شدت:</strong> از اروزیون‌های سطحی تا زخم‌های عمیق مخاطی متغیر است.</li>
+                    <li><strong>ویژگی‌های زخم‌های استرسی حاد:</strong> گرد، معمولاً کوچک‌تر از ۱ سانتی‌متر، قاعده قهوه‌ای تا سیاه به دلیل خون هضم‌شده با اسید، اغلب متعدد و در هر نقطه‌ای از معده؛ دارای حدود کاملاً مشخص با مخاط اطراف نسبتاً طبیعی؛ ممکن است خونریزی در مخاط و زیرمخاط همراه با مقداری التهاب نشان دهند؛ فاقد ضخیم‌شدگی عروقی و اسکار مشخصه زخم‌های پپتیک مزمن هستند.</li>
+                    <li><strong>بهبودی (<span class="en">Healing</span>):</strong> اپی‌تلیالیزاسیون مجدد کامل (<span class="en">Complete re-epithelialization</span>) معمولاً طی چند روز تا چند هفته پس از حذف محرک آسیب‌زا رخ می‌دهد.</li>
+                    <li><strong>تمایز کلیدی (<span class="en">Key distinction</span>):</strong> زخم‌های استرسی حاد اغلب متعدد هستند و در هر جای معده ایجاد می‌شوند، در حالی که زخم‌های پپتیک مزمن معمولاً منفردند و به‌طور شایع در نزدیکی محل اتصال تنه و آنتروم (<span class="en">Body-antrum junction</span>) رخ می‌دهند.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 12, 13, 14, 15, 16 & 17: Chronic Gastritis & H. pylori -->
+        <section class="slide-card" id="chronic">
+            <div class="slide-header">
+                <h2 class="slide-title">گاستریت مزمن و هلیکوباکتر پیلوری (<span class="en">CHRONIC GASTRITIS & H. pylori</span>)</h2>
+                <span class="slide-num">اسلایدهای ۱۲ تا ۱۷</span>
+            </div>
+
+            <div class="grid-2" style="margin-bottom: 1.25rem;">
+                <div class="sub-box">
+                    <h4>علل و ویژگی‌های بالینی گاستریت مزمن</h4>
+                    <ul>
+                        <li><strong>علل:</strong> عفونت <span class="en">H. pylori</span> (شایع‌ترین علت به‌طور کلی)، گاستریت خودایمنی (<span class="en">Autoimmune gastritis</span>؛ شایع‌ترین علت در بیماران فاقد <span class="en">H. pylori</span> که معمولاً با آتروفی معده همراه است)، مصرف مزمن <span class="en">NSAIDs</span> و علل کمتر شایع شامل آسیب پرتویی و ریفلاکس صفراوی مزمن.</li>
+                        <li><strong>ویژگی‌های بالینی:</strong> معمولاً خفیف‌تر اما پایدارتر از گاستریت حاد است؛ تهوع و ناراحتی بالای شکم، گاهی همراه با استفراغ؛ هماتمز (<span class="en">Hematemesis</span>) غیرشایع است.</li>
+                        <li><strong>عوارض گاستریت مزمن:</strong> بیماری زخم پپتیک (<span class="en">Peptic ulcer disease</span>)، آتروفی مخاط معده (<span class="en">Gastric mucosal atrophy</span>)، متاپلازی روده‌ای (<span class="en">Intestinal metaplasia</span>) و دیسپلازی (<span class="en">Dysplasia</span>؛ افزایش خطر آدنوکارسینوم معده).</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box warning">
+                    <h4>اهمیت و اپیدمیولوژی <span class="en">Helicobacter pylori</span></h4>
+                    <ul>
+                        <li><strong>اهمیت:</strong> علت اصلی گاستریت مزمن است و ارتباط قوی با بیماری زخم پپتیک دارد؛ تقریباً در تمام بیماران مبتلا به زخم دئودنوم و در اکثر بیماران مبتلا به زخم معده یا گاستریت مزمن یافت می‌شود.</li>
+                        <li><strong>سیر بالینی:</strong> عفونت حاد معمولاً بدون علامت است؛ عفونت پایدار به گاستریت مزمن منجر می‌شود.</li>
+                        <li><strong>اپیدمیولوژی:</strong> اغلب در دوران کودکی کسب می‌شود و ممکن است تا پایان عمر باقی بماند. مرتبط با وضعیت اجتماعی-اقتصادی پایین‌تر، بهداشت ضعیف و تولد در خارج از ایالات متحده. شیوع جهانی از کمتر از ۱۰٪ تا بیش از ۸۰٪ متغیر است و بهبود بهداشت باعث کاهش نرخ عفونت در نسل‌های جوان‌تر شده است.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent);">۱. عوامل حدت و پاتوژنز <span class="en">H. pylori</span> (<span class="en">Virulence Factors & Pathogenesis</span>)</h3>
+            <div class="grid-2" style="margin-bottom: 1.25rem;">
+                <div class="sub-box">
+                    <h4>چهار عامل حدت اصلی (<span class="en">Four Major Virulence Factors</span>)</h4>
+                    <ul>
+                        <li><strong>تاژک‌ها (<span class="en">Flagella</span>):</strong> امکان حرکت در میان موکوس معده را فراهم می‌کنند.</li>
+                        <li><strong>اوره‌آز (<span class="en">Urease</span>):</strong> اوره را به آمونیاک تبدیل می‌کند که اسید موضعی را خنثی کرده و از باکتری محافظت می‌نماید.</li>
+                        <li><strong>ادزین‌ها (<span class="en">Adhesins</span>):</strong> به اتصال باکتری به سلول‌های فووئولار سطحی کمک می‌کنند.</li>
+                        <li><strong>توکسین‌های <span class="en">CagA</span> و <span class="en">CagE</span>:</strong> آزادسازی سایتوکاین‌ها به‌ویژه <span class="en">IL-8</span> را تحریک کرده، نوتروفیل‌ها را فراخوانی می‌کنند و آسیب مخاطی را تشدید می‌نمایند.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box">
+                    <h4>سیر پیشرفت عفونت (<span class="en">Progression of Infection</span>)</h4>
+                    <ol>
+                        <li><strong>کلونیزاسیون آنتروم (<span class="en">Antral colonization</span>):</strong> تحریک سلول‌های <span class="en">G</span> برای افزایش ترشح گاسترین.</li>
+                        <li><strong>افزایش ترشح اسید:</strong> ترویج ایجاد زخم پپتیک، به‌ویژه زخم‌های دئودنوم (<span class="en">Duodenal ulcers</span>).</li>
+                        <li><strong>گسترش به تنه معده (<span class="en">Gastric body</span>):</strong> ممکن است عملکرد سلول‌های جداری (<span class="en">Parietal cells</span>) را مختل کند.</li>
+                        <li><strong>آسیب مزمن:</strong> می‌تواند باعث آتروفی معده و متاپلازی روده‌ای شود که خطر آدنوکارسینوم معده را افزایش می‌دهد.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent);">۲. بافت‌شناسی، عوارض و تشخیص بالینی (<span class="en">Histology, Complications & Clinical Diagnosis — FIG. 13.14</span>)</h3>
+            <div class="sub-box">
+                <ul>
+                    <li><strong>شناسایی (<span class="en">Identification</span>):</strong> در بیوپسی‌های معده با رنگ‌آمیزی‌های <span class="en">H&E</span>، گیمسا (<span class="en">Giemsa</span>)، نقره وارتین-استاری (<span class="en">Warthin-Starry silver stain</span>؛ باسیل‌های مارپیچی در موکوس سطحی) یا ایمونوهیستوشیمی (<span class="en">IHC</span>) تشخیص داده می‌شود. عمدتاً در موکوس روی سلول‌های فووئولار به‌ویژه در سطح و گردن غدد معده قرار دارد.</li>
+                    <li><strong>تغییرات التهابی:</strong> ارتشاح نوتروفیل‌ها در لامینا پروپریا و اپی‌تلیوم (تشکیل آبسه‌های حفره‌ای <span class="en">Pit abscesses</span>)؛ افزایش پلاسماسل‌ها، لنفوسیت‌ها و ماکروفاژها در لامینا پروپریای سطحی. التهاب شدید ممکن است چین‌های روگا (<span class="en">Rugal folds</span>) را ضخیم کرده و بدخیمی ارتشاحی را تقلید کند.</li>
+                    <li><strong>ضایعات همراه:</strong> پولیپ‌های هیپرپلاستیک/التهابی (<span class="en">Hyperplastic/inflammatory polyps</span>)، تشکیل <span class="en">MALT</span> (تجمعات لنفوئیدی همراه با مراکز زایا <span class="en">Germinal centers</span> که ممکن است به لنفوم <span class="en">MALT</span> پیشرفت کنند) و متاپلازی روده‌ای (سلول‌های جامی <span class="en">Goblet cells</span> و سلول‌های استوانه‌ای جذبی که خطر آدنوکارسینوم معده را افزایش می‌دهند).</li>
+                    <li><strong>توزیع و نکته امتحانی:</strong> اپی‌تلیوم فووئولار معده را ترجیح می‌دهد و معمولاً در نواحی متاپلازی روده‌ای، مخاط اسیدساز تنه معده و اپی‌تلیوم دئودنوم وجود ندارد. <strong>نکته امتحانی (<span class="en">Exam point</span>):</strong> بیوپسی‌های آنتروم معمولاً برای تشخیص <span class="en">H. pylori</span> استفاده می‌شوند زیرا این ارگانیسم به‌طور شایع آنتروم را کلونیزه می‌کند.</li>
+                    <li><strong>تشخیص و درمان بالینی:</strong>
+                        <ul>
+                            <li><em>تست‌های غیرتهاجمی (<span class="en">Noninvasive tests</span>):</em> سرولوژی (<span class="en">Serology</span>)، تست آنتی‌ژن مدفوع (<span class="en">Stool antigen test</span>) و تست تنفسی اوره (<span class="en">Urea breath test</span>).</li>
+                            <li><em>تست‌های مبتنی بر بیوپسی (<span class="en">Biopsy-based tests</span>):</em> بافت‌شناسی (<span class="en">Histology</span>)، تست سریع اوره‌آز (<span class="en">Rapid urease test</span>)، کشت (<span class="en">Culture</span>) و <span class="en">PCR</span>.</li>
+                            <li><em>درمان:</em> ترکیب آنتی‌بیوتیک‌ها و مهارکننده‌های پمپ پروتون (<span class="en">PPIs</span>). عود (<span class="en">Relapse</span>) ممکن است به دلیل ریشه‌کنی ناقص یا عفونت مجدد رخ دهد.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 18, 19, 20 & 21: Autoimmune Gastritis & Table 13.2 -->
+        <section class="slide-card" id="autoimmune">
+            <div class="slide-header">
+                <h2 class="slide-title">گاستریت خودایمنی و مقایسه با گاستریت <span class="en">H. pylori</span> (<span class="en">Autoimmune Gastritis</span>)</h2>
+                <span class="slide-num">اسلایدهای ۱۸ تا ۲۱</span>
+            </div>
+
+            <div class="grid-2" style="margin-bottom: 1.25rem;">
+                <div class="sub-box">
+                    <h4>پاتوژنز و ویژگی‌های کلیدی (<span class="en">Pathogenesis & Key Features</span>)</h4>
+                    <ul>
+                        <li>کمتر از ۱۰٪ موارد گاستریت مزمن را تشکیل می‌دهد؛ به‌طور کلاسیک آنتروم را درگیر نمی‌کند (<span class="en">Spares the antrum</span>) و عمدتاً تنه و فوندوس (<span class="en">Body and fundus</span>) را درگیر کرده و باعث آتروفی معده می‌شود.</li>
+                        <li><strong>سیر پاتوژنز:</strong>
+                            <ol>
+                                <li>تخریب خودایمنی سلول‌های جداری (<span class="en">Parietal cells</span>) توسط اتوآنتی‌بادی‌ها علیه سلول‌های جداری (<span class="en">H+,K+-ATPase</span>) و فاکتور داخلی (<span class="en">Intrinsic factor</span>) ← کاهش اسید معده (آکلریدری <span class="en">Achlorhydria</span>) و کاهش فاکتور داخلی و پپسینوژن <span class="en">I</span> سرم.</li>
+                                <li>کاهش ترشح اسید ← افزایش آزادسازی گاسترین (هیپرگاسترینمی <span class="en">Hypergastrinemia</span>) ← هیپرپلازی سلول‌های <span class="en">G</span> آنتروم (افزایش خطر تومورهای کارسینوئید معده).</li>
+                                <li>کمبود فاکتور داخلی ← اختلال جذب ویتامین <span class="en">B12</span> در ایلئوم ← کمبود ویتامین <span class="en">B12</span>، آنمی مگالوبلاستیک / پرنیشیوز (<span class="en">Pernicious anemia</span>) و تغییرات نورولوژیک.</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sub-box">
+                    <h4>مورفولوژی و ویژگی‌های بالینی (<span class="en">Morphology & Clinical Features</span>)</h4>
+                    <ul>
+                        <li><strong>مورفولوژی:</strong> نازک شدن مخاط معده و از بین رفتن چین‌های روگا (<span class="en">Loss of rugal folds</span>) در تنه و فوندوس؛ التهاب عمدتاً متشکل از لنفوسیت‌ها، ماکروفاژها و پلاسماسل‌ها در اطراف غدد معده (نوتروفیل‌ها نیز ممکن است وجود داشته باشند)؛ از دست رفتن وسیع سلول‌های جداری و اصلی و احتمال بروز متاپلازی روده‌ای.</li>
+                        <li><strong>ویژگی‌های بالینی:</strong> میانه سنی تشخیص ۶۰ سال؛ اندکی در زنان شایع‌تر است؛ علائم شامل دیسپپسی (<span class="en">Dyspepsia</span>)، کمبود ویتامین <span class="en">B12</span> یا کمبود آهن (به دلیل اختلال جذب آهن ناشی از فقدان اسید). تنها اقلیتی از بیماران دچار آنمی پرنیشیوز آشکار می‌شوند.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--accent);">جدول ۱۳.۲: مقایسه ویژگی‌های گاستریت مرتبط با <span class="en">Helicobacter pylori</span> و گاستریت خودایمنی (<span class="en">Table 13.2</span>)</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ویژگی (<span class="en">Feature</span>)</th>
+                            <th>مرتبط با <span class="en">H. pylori</span> (<span class="en">H. pylori-Associated</span>)</th>
+                            <th>خودایمنی (<span class="en">Autoimmune</span>)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>محل (<span class="en">Location</span>)</strong></td>
+                            <td>آنتروم (<span class="en">Antrum</span>)</td>
+                            <td>تنه معده (<span class="en">Body</span>)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ارتشاح التهابی (<span class="en">Inflammatory infiltrate</span>)</strong></td>
+                            <td>نوتروفیل‌ها، پلاسماسل‌های زیر اپی‌تلیالی، مراکز زایا (<span class="en">Germinal centers</span>)</td>
+                            <td>لنفوسیت‌ها، ماکروفاژها</td>
+                        </tr>
+                        <tr>
+                            <td><strong>تولید اسید (<span class="en">Acid production</span>)</strong></td>
+                            <td>افزایش‌یافته تا اندکی کاهش‌یافته</td>
+                            <td>کاهش‌یافته (<span class="en">Decreased</span>)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>گاسترین (<span class="en">Gastrin</span>)</strong></td>
+                            <td>طبیعی تا به‌شدت افزایش‌یافته</td>
+                            <td>به‌شدت افزایش‌یافته (<span class="en">Markedly increased</span>)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>سایر ضایعات (<span class="en">Other lesions</span>)</strong></td>
+                            <td>پولیپ‌های هیپرپلاستیک / التهابی</td>
+                            <td>هیپرپلازی نورواندوکرین (<span class="en">Neuroendocrine hyperplasia</span>)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>سرولوژی (<span class="en">Serology</span>)</strong></td>
+                            <td>آنتی‌بادی علیه <span class="en">H. pylori</span></td>
+                            <td>آنتی‌بادی علیه سلول‌های جداری (<span class="en">H+,K+-ATPase</span>) و فاکتور داخلی (<span class="en">Intrinsic factor</span>)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>پیامدها (<span class="en">Sequelae</span>)</strong></td>
+                            <td>زخم پپتیک، آدنوکارسینوم، لنفوم</td>
+                            <td>آتروفی، آنمی پرنیشیوز، آدنوکارسینوم، تومور کارسینوئید</td>
+                        </tr>
+                        <tr>
+                            <td><strong>همراهی‌ها (<span class="en">Associations</span>)</strong></td>
+                            <td>وضعیت اقتصادی پایین‌تر، سکونت در مناطق روستایی</td>
+                            <td>بیماری‌های خودایمنی؛ تیروئیدیت، دیابت، بیماری گریوز (<span class="en">Graves disease</span>)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Slide 23, 24, 25 & 26: Peptic Ulcer Disease (PUD) -->
+        <section class="slide-card" id="pud">
+            <div class="slide-header">
+                <h2 class="slide-title">بیماری زخم پپتیک (<span class="en">Peptic Ulcer Disease - PUD</span>)</h2>
+                <span class="slide-num">اسلایدهای ۲۳ تا ۲۶</span>
+            </div>
+
+            <div class="grid-2" style="margin-bottom: 1.25rem;">
+                <div class="sub-box">
+                    <h4>تعریف، اپیدمیولوژی و پاتوژنز</h4>
+                    <ul>
+                        <li><strong>تعریف و علل:</strong> به‌طور شایع با عفونت <span class="en">H. pylori</span> و مصرف <span class="en">NSAIDs</span> مرتبط است و از عدم تعادل میان مکانیسم‌های دفاعی مخاط و عوامل آسیب‌زا ناشی می‌شود. محل‌های شایع: آنتروم معده و بخش اول دئودنوم.</li>
+                        <li><strong>اپیدمیولوژی:</strong> خطر ابتلا در طول عمر تقریباً ۱۰٪ در مردان و ۴٪ در زنان است.</li>
+                        <li><strong>پاتوژنز:</strong> بیش از ۷۰٪ موارد با <span class="en">H. pylori</span> همراه‌اند، اما تنها ۵ تا ۱۰٪ افراد آلوده دچار <span class="en">PUD</span> می‌شوند (نقش عوامل میزبان و تفاوت سویه‌های باکتری). اسیدیته بالا (<span class="en">Hyperacidity</span>) یک مکانیسم کلیدی است که می‌تواند ناشی از <span class="en">H. pylori</span>، هیپرپلازی سلول‌های جداری، از دست رفتن سیگنال‌های مهاری کنترل ترشح اسید یا <strong>سندرم زولینگر-الیسون (<span class="en">Zollinger-Ellison syndrome</span>)</strong> (تومورهای تولیدکننده گاسترین با زخم‌های متعدد در معده، دئودنوم و ژژنوم) باشد.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box warning">
+                    <h4>عوامل خطر و کوفاکتورها (<span class="en">Risk Factors & Cofactors</span>)</h4>
+                    <ul>
+                        <li>مصرف مزمن <span class="en">NSAIDs</span></li>
+                        <li>مصرف سیگار (کاهش جریان خون مخاطی و تأخیر در بهبودی)</li>
+                        <li>کورتیکواستروئیدهای با دوز بالا (اختلال در محافظت و ترمیم مخاط)</li>
+                        <li>سیروز الکلی، <span class="en">COPD</span> و نارسایی مزمن کلیه (<span class="en">Chronic renal failure</span>)</li>
+                        <li>هیپرپاراتیروئیدیسم (<span class="en">Hyperparathyroidism</span>) و نارسایی مزمن کلیه: هیپرکلسمی ترشح گاسترین و اسید را تحریک می‌کند.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sub-box">
+                <h4>مورفولوژی، علائم و درمان زخم پپتیک (<span class="en">Morphology, Symptoms & Treatment — FIG. 13.15</span>)</h4>
+                <ul>
+                    <li><strong>محل:</strong> زخم‌های دئودنوم ۴ برابر شایع‌تر هستند و معمولاً نزدیک پیلور (<span class="en">Pylorus</span>) قرار دارند؛ زخم‌های معده در محل اتصال تنه و آنتروم (<span class="en">Body-antrum junction</span>) رخ می‌دهند.</li>
+                    <li><strong>مورفولوژی:</strong> زخم‌های گرد و منگوله‌مانند (<span class="en">Punched-out ulcers</span>) با حاشیه‌های تمیز (<span class="en">Clean edges</span>) و قاعده تمیز پوشیده از بافت جوانه‌ای پرعروق (<span class="en">Vascular granulation tissue</span>) و بقایای نکروتیک.</li>
+                    <li><strong>علائم:</strong> درد سوزشی اپی‌گاستر ۱ تا ۳ ساعت پس از غذا که اغلب با غذا یا آنتی‌اسیدها تسکین می‌یابد؛ همراه با تهوع، استفراغ و نفخ.</li>
+                    <li><strong>عوارض:</strong> آنمی فقر آهن، خونریزی (<span class="en">Hemorrhage</span>) و سوراخ‌شدگی (<span class="en">Perforation</span>؛ تظاهر به‌صورت هوای آزاد زیر دیافراگم).</li>
+                    <li><strong>درمان:</strong> ریشه‌کنی <span class="en">H. pylori</span> با آنتی‌بیوتیک‌ها، مهارکننده‌های پمپ پروتون (<span class="en">PPIs</span>) برای کاهش اسید و جراحی در موارد خونریزی شدید یا پرفوراسیون.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 27: The Gastric Polyp Spectrum -->
+        <section class="slide-card" id="polyps">
+            <div class="slide-header">
+                <h2 class="slide-title">طیف پولیپ‌های معده (<span class="en">The Gastric Polyp Spectrum</span>)</h2>
+                <span class="slide-num">اسلاید ۲۷</span>
+            </div>
+            <div class="grid-3">
+                <div class="sub-box warning">
+                    <h4>پولیپ‌های التهابی و هیپرپلاستیک (<span class="en">Inflammatory & Hyperplastic Polyps</span>)</h4>
+                    <ul>
+                        <li><strong>پاتوژنز:</strong> هیپرپلازی واکنشی ناشی از چرخه‌های آسیب و ترمیم (معمولاً گاستریت مزمن <span class="en">H. pylori</span>).</li>
+                        <li><strong>مورفولوژی:</strong> غدد فووئولار طویل‌شده همراه با استرومای ملتهب.</li>
+                        <li><strong>پروفایل خطر:</strong> اگر پولیپ بزرگ‌تر از ۱.۵ سانتی‌متر شود، خطر دیسپلازی به‌طور قابل‌توجهی افزایش می‌یابد.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box success">
+                    <h4>پولیپ‌های غدد فوندیک (<span class="en">Fundic Gland Polyps</span>)</h4>
+                    <ul>
+                        <li><strong>پاتوژنز:</strong> تک‌گیر (<span class="en">Sporadic</span>؛ به‌شدت مرتبط با مصرف گسترده <span class="en">PPI</span> و هیپرپلازی واکنشی ناشی از گاسترین) یا خانوادگی (<span class="en">FAP</span>).</li>
+                        <li><strong>مورفولوژی:</strong> غدد نامنظم و متسع کیستیک پوشیده از سلول‌های جداری و اصلی مسطح‌شده در تنه و فوندوس.</li>
+                        <li><strong>پروفایل خطر:</strong> انواع تک‌گیر تقریباً فاقد پتانسیل بدخیمی هستند.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box danger">
+                    <h4>آدنوم معده (<span class="en">Gastric Adenoma</span>)</h4>
+                    <ul>
+                        <li><strong>پاتوژنز:</strong> نئوپلاسم واقعی که در زمینه گاستریت مزمن، آتروفی و متاپلازی روده‌ای ایجاد می‌شود.</li>
+                        <li><strong>مورفولوژی:</strong> دیسپلازی اپی‌تلیال (درجه پایین یا بالا)؛ اغلب منفرد است.</li>
+                        <li><strong>پروفایل خطر:</strong> پتانسیل بدخیمی بالا؛ تا ۳۰٪ موارد حاوی کارسینوم هم‌زمان هستند و خطر در ضایعات بزرگ‌تر از ۲ سانتی‌متر به‌شدت جهش می‌یابد.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 28 to 34: Gastric Malignancies & Adenocarcinoma -->
+        <section class="slide-card" id="adenoca">
+            <div class="slide-header">
+                <h2 class="slide-title">بدخیمی‌های معده و آدنوکارسینوم معده (<span class="en">Gastric Malignancies & Adenocarcinoma</span>)</h2>
+                <span class="slide-num">اسلایدهای ۲۸ تا ۳۴</span>
+            </div>
+
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent);">۱. منشأ سلولی بدخیمی‌های معده (<span class="en">Cellular Origins of Gastric Malignancies</span>)</h3>
+            <div class="grid-4" style="margin-bottom: 1.5rem;">
+                <div class="sub-box danger">
+                    <h4>۱. اپی‌تلیوم سطحی و غدد مخاطی</h4>
+                    <p><strong>نتیجه:</strong> آدنوکارسینوم معده (<span class="en">Gastric Adenocarcinoma</span> — بیش از ۹۰٪ کل سرطان‌های معده).</p>
+                </div>
+                <div class="sub-box">
+                    <h4>۲. لنفوسیت‌های لامینا پروپریا (<span class="en">Induced MALT</span>)</h4>
+                    <p><strong>نتیجه:</strong> لنفوم معده (<span class="en">Gastric Lymphoma / MALToma</span>).</p>
+                </div>
+                <div class="sub-box warning">
+                    <h4>۳. سلول‌های نورواندوکرین (<span class="en">Neuroendocrine Cells</span>)</h4>
+                    <p><strong>نتیجه:</strong> تومور کارسینوئید (<span class="en">Carcinoid Tumor</span>).</p>
+                </div>
+                <div class="sub-box">
+                    <h4>۴. سلول‌های بینابینی کاخال (<span class="en">Interstitial Cells of Cajal</span>)</h4>
+                    <p>سلول‌های ضربان‌ساز مزانشیمی موسکولاریس پروپریا ← <strong>نتیجه:</strong> تومور استرومای گوارشی (<span class="en">GIST</span>).</p>
+                </div>
+            </div>
+
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent);">۲. اپیدمیولوژی و محرک‌های مولکولی آدنوکارسینوم معده (<span class="en">Epidemiology & Molecular Drivers</span>)</h3>
+            <div class="grid-3" style="margin-bottom: 1.5rem;">
+                <div class="sub-box">
+                    <h4>ژنتیک خانوادگی و تک‌گیر (<span class="en">Familial & Sporadic Genetics</span>)</h4>
+                    <ul>
+                        <li><strong>مسیر <span class="en">APC/WNT</span>:</strong> بیماران <span class="en">FAP</span> (از دست رفتن زایا <span class="en">APC</span>) خطر بالایی برای سرطان نوع روده‌ای دارند؛ تومورهای تک‌گیر جهش بتا-کاتنین (<span class="en">Beta-catenin</span>) نشان می‌دهند.</li>
+                        <li><strong><span class="en">CDH1 (E-cadherin)</span>:</strong> از دست رفتن زایا باعث سرطان معده منتشر خانوادگی می‌شود؛ از دست رفتن سوماتیک/متیلاسیون عامل بیش از ۵۰٪ موارد منتشر تک‌گیر است.</li>
+                        <li><strong><span class="en">TP53</span>:</strong> در اکثریت قریب‌به‌اتفاق هر دو زیرگروه تک‌گیر جهش یافته است.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box">
+                    <h4>ویروس اپشتین-بار (<span class="en">Epstein-Barr Virus - EBV</span>)</h4>
+                    <ul>
+                        <li>حدود ۱۰٪ آدنوکارسینوم‌ها را تشکیل می‌دهد.</li>
+                        <li><strong>مورفولوژی:</strong> معمولاً در پروگزیمال معده، الگوی رشد منتشر، همراه با ارتشاح شدید لنفوسیتی.</li>
+                        <li>اپی‌زوم‌های کلونال <span class="en">EBV</span> نشان می‌دهند که عفونت ویروسی مقدم بر ترانسفورماسیون است؛ به‌ندرت جهش <span class="en">TP53</span> دارد.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box success">
+                    <h4>بیومارکرهای قابل هدف‌گیری (<span class="en">Targetable Biomarkers</span>)</h4>
+                    <ul>
+                        <li>تکثیر ژنی گیرنده تیروزین کیناز <span class="en">HER2</span> در ۱۰ تا ۲۰٪ موارد رخ می‌دهد.</li>
+                        <li><strong>تأثیر بالینی:</strong> راه را برای درمان‌های هدفمند و شخصی‌سازی‌شده با مهارکننده‌های <span class="en">HER2</span> در بیماری پیشرفته باز می‌کند.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent);">۳. مقایسه زیرگروه‌های آدنوکارسینوم معده (<span class="en">Intestinal-Type vs. Diffuse-Type — FIG. 13.16</span>)</h3>
+            <div class="grid-2" style="margin-bottom: 1.25rem;">
+                <div class="sub-box warning">
+                    <h4>آدنوکارسینوم نوع روده‌ای (<span class="en">Intestinal-Type Adenocarcinoma</span>)</h4>
+                    <ul>
+                        <li><strong>مورفولوژی:</strong> توده برون‌روینده حجیم با حاشیه‌های برجسته (<span class="en">Heaped-up borders</span>) یا زخم مرکزی عمیق؛ رشد در جبهه‌های منسجم وسیع؛ تشکیل ساختارهای غددی قابل تشخیص با موسین آپیکال.</li>
+                        <li><strong>پاتوژنز:</strong> هدایت‌شده توسط مسیر <span class="en">APC/WNT</span>؛ ارتباط نزدیک با عوامل محیطی، <span class="en">H. pylori</span>، گاستریت آتروفیک و متاپلازی روده‌ای.</li>
+                        <li><strong>اپیدمیولوژی:</strong> بروز آن در سطح جهانی در حال کاهش است؛ در مردان مسن‌تر شایع‌تر است (بروز بالاتر در ژاپن، شیلی، کاستاریکا و اروپای شرقی؛ در غرب نرخ کلی کاهش یافته اما سرطان کاردیا در حال افزایش است).</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box danger">
+                    <h4>آدنوکارسینوم نوع منتشر (<span class="en">Diffuse-Type Adenocarcinoma</span>)</h4>
+                    <ul>
+                        <li><strong>مورفولوژی:</strong> رشد ارتشاحی در سراسر دیواره؛ متشکل از <strong>سلول‌های انگشتری (<span class="en">Signet Ring Cells</span>)</strong> نامنسجم با واکوئل‌های بزرگ موسین سیتوپلاسمی و هسته‌های هلالی‌شکل رانده‌شده به حاشیه. ایجاد دسموپلازی شدید که باعث سفت شدن دیواره و از بین رفتن چین‌های روگا به‌صورت «معده چرمی» یا <strong>لینیت پلاستیکا (<span class="en">Linitis Plastica</span>)</strong> می‌شود.</li>
+                        <li><strong>پاتوژنز:</strong> جهش‌های <span class="en">CDH1 (E-cadherin)</span> چسبندگی بین‌سلولی را از بین می‌برند؛ فاقد ضایعه پیش‌ساز شناخته‌شده است.</li>
+                        <li><strong>اپیدمیولوژی:</strong> بروز جهانی آن ثابت مانده است و زنان و مردان را به‌طور مساوی درگیر می‌کند.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sub-box">
+                <h4>مرحله‌بندی و پیش‌آگهی (<span class="en">Staging & Prognosis</span>)</h4>
+                <ul>
+                    <li><strong>مرحله ۱: سرطان زودرس معده (<span class="en">Early Gastric Cancer</span>):</strong> تومور محدود به مخاط و زیرمخاط است. بقای ۵ ساله با رزکسیون جراحی بیش از ۹۰٪ است (حتی در صورت وجود متاستاز غدد لنفاوی). غربالگری آندوسکوپیک گسترده در مناطق پرخطر (ژاپن، کره) امکان تشخیص زودهنگام را فراهم می‌کند.</li>
+                    <li><strong>مرحله ۲: سرطان پیشرفته معده (<span class="en">Advanced Gastric Cancer</span>):</strong> تومور به‌طور عمیق به موسکولاریس پروپریا، سروز یا ساختارهای مجاور (دئودنوم، پانکراس، رتروپریتوئن) تهاجم می‌کند. بقای کلی ۵ ساله در کشورهای غربی به زیر ۳۰٪ سقوط می‌کند.</li>
+                    <li><strong>اصل بالینی (<span class="en">Clinical Maxim</span>):</strong> عمق تهاجم و میزان متاستاز لنفاوی/دوردست (<span class="en">Tumor Stage</span>) به‌مراتب مهم‌تر از نوع یا درجه بافت‌شناسی در تعیین پیش‌آگهی است.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 35 to 43: MALToma, Carcinoid & GIST -->
+        <section class="slide-card" id="other-tumors">
+            <div class="slide-header">
+                <h2 class="slide-title">سایر نئوپلاسم‌های معده و دستگاه گوارش: <span class="en">MALToma</span>، کارسینوئید و <span class="en">GIST</span></h2>
+                <span class="slide-num">اسلایدهای ۳۵ تا ۴۳</span>
+            </div>
+
+            <!-- MALToma -->
+            <div class="sub-box" style="margin-bottom: 1.25rem;">
+                <h4>۱. لنفوم سلول B ناحیه حاشیه‌ای خارج گرهی (<span class="en">Extranodal Marginal Zone B-cell Lymphoma - MALToma</span>)</h4>
+                <ul>
+                    <li><strong>اپیدمیولوژی و پاتوژنز:</strong> دستگاه گوارش شایع‌ترین محل لنفوم‌های خارج گرهی است و <span class="en">MALToma</span> حدود ۵٪ کل بدخیمی‌های معده را تشکیل می‌دهد. منحصراً از بافت لنفوئیدی مرتبط با مخاط (<span class="en">MALT</span>) که در اثر عفونت مداوم <span class="en">H. pylori</span> القا شده است، منشأ می‌گیرد.</li>
+                    <li><strong>رفتار بالینی و ویژگی درمانی منحصربه‌فرد:</strong> نئوپلاسمی بسیار کم‌تهاجمی (<span class="en">Indolent</span>) است. سلول‌های <span class="en">B</span> نئوپلاستیک اولیه به سیگنال‌دهی سلول‌های <span class="en">T-helper</span> اختصاصی <span class="en">H. pylori</span> وابسته‌اند؛ بنابراین، <strong>ریشه‌کنی عفونت <span class="en">H. pylori</span> با آنتی‌بیوتیک‌ها می‌تواند در مراحل اولیه باعث بهبودی کامل (<span class="en">Complete remission</span>) لنفوم شود.</strong></li>
+                </ul>
+            </div>
+
+            <!-- Carcinoid -->
+            <div class="sub-box warning" style="margin-bottom: 1.25rem;">
+                <h4>۲. تومورهای نورواندوکرین (کارسینوئید) و سندرم کارسینوئید (<span class="en">Neuroendocrine / Carcinoid Tumors — FIG. 13.17</span>)</h4>
+                <ul>
+                    <li><strong>مورفولوژی:</strong> توده‌های داخل جداری یا زیرمخاطی که ضایعات پولیپوئید کوچک و زرد/قهوه‌ای مایل به زرد (<span class="en">Yellow/tan</span>) ایجاد می‌کنند و دسموپلازی شدیدی برمی‌انگیزند که می‌تواند روده را پیچ‌داده یا مسدود کند. در بافت‌شناسی: جزایر، ترابکولاها یا صفحات سلول‌های یکنواخت با سیتوپلاسم صورتی کم و <strong>هسته‌های گرد تا بیضی با الگوی کروماتین «نمک و فلفل» (<span class="en">Salt-and-pepper chromatin texture</span>)</strong>.</li>
+                    <li><strong>مکانیسم سندرم کارسینوئید:</strong> تومورها مواد وازواکتیو ترشح می‌کنند که باعث برافروختگی پوستی (<span class="en">Cutaneous flushing</span>)، تعریق، برونکواسپاسم و فیبروز دریچه‌های قلب راست می‌شوند. در حالت عادی، هورمون‌های وازواکتیو تومورهای روده‌ای به‌طور کامل توسط فیلتر عبور اول کبدی (<span class="en">Hepatic first-pass filter</span>) غیرفعال می‌شوند. سندرم کارسینوئید در کمتر از ۱۰٪ بیماران رخ می‌دهد و به‌شدت با <strong>متاستازهای کبدی</strong> مرتبط است که در آن سلول‌های تومور هورمون‌ها را مستقیماً به گردش خون سیستمیک آزاد می‌کنند.</li>
+                    <li><strong>محور توپوگرافی و پیش‌آگهی (<span class="en">The Topography-Prognosis Axis</span>):</strong>
+                        <ul>
+                            <li><em>ناحیه ۱: پیش‌روده (<span class="en">Foregut</span> — معده، دئودنوم، مری):</em> عموماً خوش‌خیم، به‌ندرت متاستاز می‌دهند و با رزکسیون موضعی درمان می‌شوند. مورد ویژه: گاسترینوماها (<span class="en">Gastrinomas</span>) باعث سندرم زولینگر-الیسون می‌شوند.</li>
+                            <li><em>ناحیه ۲: میان‌روده (<span class="en">Midgut</span> — ژژنوم و ایلئوم):</em> بسیار تهاجمی، اغلب متعدد در زمان مراجعه و دارای پیش‌آگهی ضعیف.</li>
+                            <li><em>ناحیه ۳: پس‌روده (<span class="en">Hindgut</span> — آپاندیس و کولورکتوم):</em> معمولاً به‌طور تصادفی (مثلاً حین آپاندکتومی) کشف می‌شوند و تقریباً همیشه سیر خوش‌خیم دارند.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- GIST -->
+            <div class="sub-box danger">
+                <h4>۳. تومور استرومای گوارشی (<span class="en">Gastrointestinal Stromal Tumor - GIST — eFIG. 13.5</span>)</h4>
+                <ul>
+                    <li><strong>منشأ سلولی و اپیدمیولوژی:</strong> از سلول‌های بینابینی کاخال (<span class="en">Interstitial Cells of Cajal</span>) منشأ می‌گیرد و شایع‌ترین تومور مزانشیمی شکم است.</li>
+                    <li><strong>نمای ماکروسکوپی و بافت‌شناسی:</strong> معمولاً توده زیرمخاطی منفرد، با حدود مشخص و گوشتی (<span class="en">Fleshy</span>) تشکیل می‌دهد؛ متاستازها به کبد یا ندول‌های سروزی می‌روند. دو فنوتیپ بافت‌شناسی دارد: <strong>نوع سلول دوکی (<span class="en">Spindle Cell Type</span>)</strong> و <strong>نوع اپی‌تلیوئید (<span class="en">Epithelioid Cell Type</span>)</strong> با واکوئل‌های سیتوپلاسمی برجسته. رنگ‌آمیزی ایمونوهیستوشیمی برای گیرنده <strong><span class="en">KIT</span></strong> در بیش از ۹۵٪ موارد مثبت است (استاندارد طلایی تشخیص).</li>
+                    <li><strong>محرک‌های جهشی و درمان هدفمند (<span class="en">Mutation Engine & Targeted Therapy</span>):</strong>
+                        <ul>
+                            <li>۷۵ تا ۸۵٪ دارای جهش‌های افزایش عملکرد (<span class="en">Gain-of-function mutations</span>) در گیرنده تیروزین کیناز <span class="en">KIT</span> و حدود ۸٪ دارای جهش‌های متقابلاً انحصاری در گیرنده <span class="en">PDGFRA</span> هستند که تکثیر سلولی مهارنشدنی را هدایت می‌کنند.</li>
+                            <li><em>مسیر جایگزین:</em> تومورهای نادر فاقد جهش <span class="en">KIT/PDGFRA</span> عملکرد کمپلکس سوکسینات دهیدروژناز (<span class="en">SDH</span>) را از دست می‌دهند و خطر بالای پاراگانگلیوماهای هم‌زمان دارند.</li>
+                            <li><em>درمان هدفمند:</em> داروی <strong>ایماتینیب (<span class="en">Imatinib</span>)</strong> به‌عنوان مهارکننده اختصاصی تیروزین کیناز، گیرنده‌های جهش‌یافته <span class="en">KIT/PDGFRA</span> را مسدود کرده و پاسخ‌های درمانی چشمگیر و چندساله در <span class="en">GIST</span> غیرقابل جراحی یا متاستاتیک ایجاد می‌کند (هرچند در نهایت مقاومت از طریق جهش‌های ثانویه بروز می‌یابد).</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="callout" style="text-align: center; margin-top: 1.5rem;">
+                <strong>با آرزوی موفقیت! (<span class="en">Best wishes!</span>)</strong>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        خلاصه جامع و ترجمه کامل اسلایدهای پاتولوژی معده (جلسه سوم) — برگرفته از <span class="en">Robbins & Kumar Basic Pathology (11th Ed)</span>
+    </footer>
+
+    <script>
+        function setTheme(themeName) {
+            document.documentElement.setAttribute('data-theme', themeName);
+            localStorage.setItem('stomach-pathology-theme', themeName);
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-set-theme') === themeName);
+            });
+        }
+
+        // Load saved theme or default to semi-dark (#2a2b2b)
+        const savedTheme = localStorage.getItem('stomach-pathology-theme') || 'semi-dark';
+        setTheme(savedTheme);
+    </script>
+</body>
+</html>

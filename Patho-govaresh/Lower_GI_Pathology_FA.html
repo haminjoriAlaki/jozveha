@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="semi-dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پاتولوژی دستگاه گوارش تحتانی (Lower GI Pathology) | Robbins & Kumar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root, [data-theme="semi-dark"] {
+            --bg-primary: #2a2b2b;
+            --bg-secondary: #343636;
+            --bg-card: rgba(54, 56, 56, 0.85);
+            --bg-accent-soft: rgba(56, 189, 248, 0.14);
+            --bg-warning-soft: rgba(244, 63, 94, 0.15);
+            --bg-success-soft: rgba(16, 185, 129, 0.15);
+            --text-primary: #ffffff;
+            --text-secondary: #e2e8f0;
+            --text-muted: #cbd5e1;
+            --accent: #38bdf8;
+            --accent-secondary: #818cf8;
+            --danger: #fb7185;
+            --success: #34d399;
+            --warning: #fbbf24;
+            --border-color: rgba(255, 255, 255, 0.12);
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+            --header-bg: rgba(42, 43, 43, 0.88);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0f1115;
+            --bg-secondary: #181b21;
+            --bg-card: rgba(24, 27, 33, 0.9);
+            --bg-accent-soft: rgba(56, 189, 248, 0.12);
+            --bg-warning-soft: rgba(244, 63, 94, 0.14);
+            --bg-success-soft: rgba(16, 185, 129, 0.14);
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-secondary: #a78bfa;
+            --danger: #f43f5e;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
+            --header-bg: rgba(15, 17, 21, 0.88);
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #f4f6f9;
+            --bg-secondary: #ffffff;
+            --bg-card: rgba(255, 255, 255, 0.95);
+            --bg-accent-soft: rgba(2, 132, 199, 0.08);
+            --bg-warning-soft: rgba(225, 29, 72, 0.08);
+            --bg-success-soft: rgba(5, 150, 105, 0.08);
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --text-muted: #64748b;
+            --accent: #0284c7;
+            --accent-secondary: #6366f1;
+            --danger: #e11d48;
+            --success: #059669;
+            --warning: #d97706;
+            --border-color: rgba(15, 23, 42, 0.1);
+            --shadow: 0 8px 25px rgba(15, 23, 42, 0.07);
+            --header-bg: rgba(244, 246, 249, 0.9);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.85;
+            font-size: 16px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            padding-bottom: 4rem;
+        }
+
+        /* English Terms Formatting */
+        .en {
+            font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            direction: ltr;
+            unicode-bidi: isolate;
+            display: inline-block;
+            font-weight: 600;
+            color: var(--accent);
+            padding: 0 3px;
+        }
+
+        /* Sticky Navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--header-bg);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 1.25rem;
+        }
+
+        .nav-container {
+            max-width: 1120px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            font-weight: 800;
+            font-size: 1.05rem;
+        }
+
+        .brand-badge {
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+            color: #fff;
+            padding: 0.25rem 0.65rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .theme-switcher {
+            display: flex;
+            align-items: center;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 999px;
+            padding: 4px;
+            gap: 4px;
+        }
+
+        .theme-btn {
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 0.35rem 0.85rem;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .theme-btn.active {
+            background: var(--accent);
+            color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        [data-theme="semi-dark"] .theme-btn.active,
+        [data-theme="dark"] .theme-btn.active {
+            color: #0f172a;
+        }
+
+        /* Quick Nav Pills */
+        .quick-nav {
+            max-width: 1120px;
+            margin: 1rem auto 0;
+            padding: 0 1.25rem;
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .quick-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-pill {
+            text-decoration: none;
+            color: var(--text-secondary);
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 0.4rem 0.9rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .nav-pill:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1120px;
+            margin: 1.5rem auto 0;
+            padding: 0 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+        }
+
+        /* Hero / Cover Card */
+        .hero-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 22px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-secondary), var(--danger));
+        }
+
+        .uni-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            padding-bottom: 1.25rem;
+            margin-bottom: 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .uni-title {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .ref-badge {
+            background: var(--bg-accent-soft);
+            border: 1px solid var(--accent);
+            padding: 0.35rem 0.85rem;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .hero-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 0.85rem;
+            background: var(--bg-secondary);
+            padding: 1rem 1.25rem;
+            border-radius: 14px;
+            border: 1px solid var(--border-color);
+            font-size: 0.92rem;
+        }
+
+        /* Section Cards */
+        .slide-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 1.75rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .slide-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.85rem;
+            border-bottom: 1px solid var(--border-color);
+            flex-wrap: wrap;
+        }
+
+        .slide-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .slide-num {
+            background: var(--bg-accent-soft);
+            color: var(--accent);
+            border: 1px solid var(--border-color);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 0.25rem 0.7rem;
+            border-radius: 8px;
+        }
+
+        /* Grids inside slides */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 1.15rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .sub-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.2rem;
+        }
+
+        .sub-box h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.65rem;
+            color: var(--accent);
+        }
+
+        .sub-box.danger {
+            border-right: 4px solid var(--danger);
+        }
+
+        .sub-box.danger h4 {
+            color: var(--danger);
+        }
+
+        .sub-box.success {
+            border-right: 4px solid var(--success);
+        }
+
+        .sub-box.success h4 {
+            color: var(--success);
+        }
+
+        .sub-box.warning {
+            border-right: 4px solid var(--warning);
+        }
+
+        .sub-box.warning h4 {
+            color: var(--warning);
+        }
+
+        ul, ol {
+            padding-right: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+        }
+
+        li {
+            color: var(--text-primary);
+        }
+
+        .callout {
+            background: var(--bg-accent-soft);
+            border-right: 4px solid var(--accent);
+            padding: 1rem 1.2rem;
+            border-radius: 12px;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .callout.danger {
+            background: var(--bg-warning-soft);
+            border-right-color: var(--danger);
+        }
+
+        /* Table styling */
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 14px;
+            border: 1px solid var(--border-color);
+            margin-top: 0.75rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: right;
+            background: var(--bg-secondary);
+            font-size: 0.92rem;
+        }
+
+        th, td {
+            padding: 0.85rem 0.9rem;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+
+        th {
+            background: var(--bg-accent-soft);
+            font-weight: 700;
+            color: var(--accent);
+            white-space: nowrap;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding: 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Responsive Mobile Adjustments */
+        @media (max-width: 640px) {
+            body {
+                font-size: 15px;
+            }
+            .hero-card, .slide-card {
+                padding: 1.25rem;
+                border-radius: 16px;
+            }
+            .hero-title {
+                font-size: 1.4rem;
+            }
+            .slide-title {
+                font-size: 1.15rem;
+            }
+            .theme-btn {
+                padding: 0.3rem 0.65rem;
+                font-size: 0.78rem;
+            }
+            .nav-container {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation & Theme Switcher -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="brand">
+                <span class="brand-badge">جلسه پنجم</span>
+                <span>پاتولوژی دستگاه گوارش تحتانی (<span class="en">Lower GI Pathology</span>)</span>
+            </div>
+
+            <div class="theme-switcher" role="group" aria-label="تغییر تم صفحه">
+                <button class="theme-btn" data-set-theme="light" onclick="setTheme('light')">☀️ روشن</button>
+                <button class="theme-btn active" data-set-theme="semi-dark" onclick="setTheme('semi-dark')">🌗 نیمه‌دارک</button>
+                <button class="theme-btn" data-set-theme="dark" onclick="setTheme('dark')">🌙 دارک</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Quick Section Links -->
+    <nav class="quick-nav" aria-label="دسترسی سریع به بخش‌ها">
+        <a href="#intro" class="nav-pill">مقدمه</a>
+        <a href="#diverticular" class="nav-pill">بیماری دیورتیکولی سیگموئید</a>
+        <a href="#ibd-path" class="nav-pill">پاتوژنز IBD</a>
+        <a href="#crohn" class="nav-pill">بیماری کرون (Crohn)</a>
+        <a href="#uc" class="nav-pill">کولیت اولسراتیو (UC)</a>
+        <a href="#polyps" class="nav-pill">پولیپ‌ها و سندرم‌های ارثی</a>
+        <a href="#crc" class="nav-pill">آدنوکارسینوم کولورکتال</a>
+        <a href="#appendix" class="nav-pill">آپاندیس و تومورهای آن</a>
+    </nav>
+
+    <main class="container">
+
+        <!-- Cover & Chapter Title -->
+        <section class="hero-card" id="intro">
+            <div class="uni-header">
+                <div>
+                    <div class="uni-title">وزارت بهداشت، درمان و آموزش پزشکی</div>
+                    <div class="uni-title">دانشکده علوم پزشکی و خدمات بهداشتی درمانی ساوه</div>
+                </div>
+                <div class="ref-badge">
+                    <span class="en">ROBBINS & KUMAR BASIC PATHOLOGY</span> — ویرایش یازدهم (<span class="en">ELEVENTH EDITION</span>) | انتشارات <span class="en">ELSEVIER</span> (نسخه دیجیتال پیشرفته)
+                </div>
+            </div>
+
+            <h1 class="hero-title">فصل ۱۳: حفره دهان و دستگاه گوارش (<span class="en">Chapter 13: Oral Cavity and Gastrointestinal Tract</span>)</h1>
+            <p class="hero-subtitle">جلسه ۵ (<span class="en">Session 5</span>) — پاتولوژی دستگاه گوارش تحتانی: بیماری دیورتیکولی، بیماری التهابی روده (<span class="en">IBD</span>)، پولیپ‌ها، کارسینوم کولورکتال و آپاندیس (<span class="en">Lower GI Pathology</span>)</p>
+
+            <div class="meta-grid">
+                <div><strong>مدرس:</strong> <span class="en">Dr. Saeede Khoshbakht M.D.</span> (<span class="en">Board certified AP/CP</span>)</div>
+                <div><strong>نویسندگان مرجع:</strong> <span class="en">KUMAR, ABBAS, ASTER, DEYRUP, DAS</span></div>
+            </div>
+        </section>
+
+        <!-- Section 1: Sigmoid Diverticulitis -->
+        <section class="slide-card" id="diverticular">
+            <div class="slide-header">
+                <h2 class="slide-title">بیماری التهابی روده: دیورتیکولیت سیگموئید (<span class="en">INFLAMMATORY INTESTINAL DISEASE: Sigmoid Diverticulitis</span>)</h2>
+                <span class="slide-num">بخش ۱</span>
+            </div>
+
+            <div class="grid-3" style="margin-bottom: 1.25rem;">
+                <div class="sub-box">
+                    <h4>۱. تعریف و اپیدمیولوژی (<span class="en">Definition and Epidemiology</span>)</h4>
+                    <ul>
+                        <li><strong>دیورتیکول کاذب (<span class="en">Pseudodiverticula</span>):</strong> بیشتر دیورتیکول‌های کولون به‌صورت اکتسابی و از نوع دیورتیکول کاذب هستند که در اثر فتق مخاط و زیرمخاط از میان دیواره عضلانی تشکیل می‌شوند.</li>
+                        <li><strong>دیورتیکولوز (<span class="en">Diverticulosis</span>):</strong> به وجود دیورتیکول‌های متعدد گفته می‌شود.</li>
+                        <li><strong>شیوع سنی و جغرافیایی:</strong> پیش از ۳۰ سالگی غیرشایع است، اما در نزدیک به ۵۰٪ بزرگسالان غربی بالای ۶۰ سال رخ می‌دهد. در کشورهای کم‌درآمد به دلیل تفاوت‌های رژیم غذایی کمتر شایع است.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box warning">
+                    <h4>۲. پاتوژنز (<span class="en">Pathogenesis</span>)</h4>
+                    <ul>
+                        <li><strong>مکانیسم اصلی:</strong> افزایش فشار داخل لومنی (<span class="en">Increased intraluminal pressure</span>) که بر نواحی ذاتاً ضعیف دیواره کولون وارد می‌شود.</li>
+                        <li><strong>نقش تنیا کولی (<span class="en">Taeniae coli</span>):</strong> برخلاف سایر بخش‌های روده، لایه عضلانی طولی خارجی کولون در سه نوار مجزا (<span class="en">Taeniae coli</span>) آرایش یافته و نقاط ضعیفی را بدون تقویت عضلانی پیوسته باقی می‌گذارد.</li>
+                        <li><strong>محل شایع و انقباضات:</strong> <strong>کولون سیگموئید (<span class="en">Sigmoid colon</span>)</strong> به دلیل باریک‌ترین قطر و فشار بالای حین پریستالسیس، شایع‌ترین محل درگیری است. پریستالسیس تشدیدیافته و انقباضات اسپاسمودیک موضعی فشار را بیشتر می‌کنند.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box">
+                    <h4>۳. عوامل خطر (<span class="en">Risk Factors</span>)</h4>
+                    <ul>
+                        <li><strong>عوامل تغذیه‌ای:</strong> رژیم غذایی غربی به‌ویژه مصرف بالای گوشت قرمز و دریافت کم فیبر (<span class="en">Low fiber intake</span>).</li>
+                        <li><strong>عوامل سبک زندگی:</strong> کم‌تحرکی (<span class="en">Sedentary behavior</span>)، چاقی و مصرف سیگار.</li>
+                        <li><strong>داروها:</strong> استروئیدها و اوپیوئیدها (<span class="en">Opiates</span>) می‌توانند خطر عوارض دیورتیکولی را افزایش دهند.</li>
+                        <li><strong>نقاط ضعف ساختاری:</strong> محل نفوذ اعصاب و عروق مستقیم (<span class="en">Vasa recta</span>) از میان لایه عضلانی حلقوی، نقاط ضعفی برای بیرون‌زدگی مخاط و زیرمخاط ایجاد می‌کند.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="sub-box">
+                    <h4>مورفولوژی بیماری دیورتیکولی (<span class="en">Morphology — FIG. 13.25</span>)</h4>
+                    <ul>
+                        <li><strong>نمای ظاهری و توزیع:</strong> بیرون‌زدگی‌های کوچک فلاسکی‌شکل (<span class="en">Flask-shaped outpouchings</span>) معمولاً با قطر ۰.۵ تا ۱ سانتی‌متر که با الگویی منظم در بین نوارهای <span class="en">Taeniae coli</span> (اغلب در سیگموئید) قرار می‌گیرند.</li>
+                        <li><strong>ساختار دیواره:</strong> متشکل از مخاط مسطح یا آتروفیک، زیرمخاط فشرده‌شده و موسکولاریس پروپریای نازک یا غایب.</li>
+                        <li><strong>دیورتیکولیت، پرفوراسیون و عوارض:</strong> انسداد دیورتیکول و رکود محتویات باعث التهاب (دیورتیکولیت) می‌شود. به دلیل نازکی دیواره و فقدان لایه عضلانی مناسب، التهاب یا زخم مخاطی می‌تواند منجر به <strong>سوراخ‌شدگی (<span class="en">Perforation</span>)</strong> شود. دیورتیکولیت راجعه می‌تواند کولیت قطعه‌ای، فیبروز اطراف و تنگی کولون (<span class="en">Colonic stricture</span>) ایجاد کند.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box success">
+                    <h4>ویژگی‌های بالینی و سیر بیماری (<span class="en">Clinical Features</span>)</h4>
+                    <ul>
+                        <li><strong>علائم:</strong> اکثر افراد مبتلا به دیورتیکولوز در طول عمر بدون علامت می‌مانند. حدود ۲۰٪ افراد دچار علائمی شامل کرامپ‌های متناوب شکمی، ناراحتی مداوم بخش تحتانی شکم، یبوست یا اسهال می‌شوند.</li>
+                        <li><strong>پیشرفت بیماری:</strong> دیورتیکول‌های اولیه گاهی پسرفت می‌کنند، اما با گذشت زمان بزرگ‌تر و متعددتر می‌شوند (تأثیر رژیم پرفیبر در پیشگیری از پیشرفت یا دیورتیکولیت هنوز قطعی نیست).</li>
+                        <li><strong>دیورتیکولیت و عوارض:</strong> حتی در صورت بروز دیورتیکولیت، معمولاً به‌صورت خودبه‌خودی یا با درمان آنتی‌بیوتیکی برطرف می‌شود؛ تنها درصد کمی از بیماران (معمولاً به دلیل عوارضی چون پرفوراسیون) نیازمند جراحی می‌شوند.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Inflammatory Bowel Disease (IBD) Pathogenesis -->
+        <section class="slide-card" id="ibd-path">
+            <div class="slide-header">
+                <h2 class="slide-title">بیماری التهابی روده (<span class="en">Inflammatory Bowel Disease - IBD</span>): تعریف و پاتوژنز</h2>
+                <span class="slide-num">بخش ۲</span>
+            </div>
+
+            <div class="grid-2" style="margin-bottom: 1.25rem;">
+                <div class="sub-box">
+                    <h4>تعریف، انواع و اپیدمیولوژی</h4>
+                    <ul>
+                        <li><strong>تعریف <span class="en">IBD</span>:</strong> التهاب مزمن روده ناشی از پاسخ ایمنی غیرطبیعی به میکروب‌های روده در افراد مستعد ژنتیکی.</li>
+                        <li><strong>انواع اصلی:</strong> بیماری کرون (<span class="en">Crohn disease</span>؛ می‌تواند هر بخشی از دستگاه گوارش به‌ویژه ایلئوم انتهایی را درگیر کند و التهاب تمام‌ضخامت <span class="en">Transmural</span> ایجاد می‌نماید) و کولیت اولسراتیو (<span class="en">Ulcerative colitis - UC</span>؛ تنها کولون و رکتوم را درگیر کرده و محدود به مخاط و زیرمخاط است).</li>
+                        <li><strong>اپیدمیولوژی و فرضیه بهداشت (<span class="en">Hygiene Hypothesis</span>):</strong> معمولاً در نوجوانی یا اوایل بزرگسالی آغاز می‌شود؛ در کشورهای صنعتی و عرض‌های جغرافیایی بالاتر شایع‌تر است اما در سطح جهانی رو به افزایش است. بر اساس فرضیه بهداشت، مواجهه زودهنگام با میکروب‌ها به تکامل مکانیسم‌های تنظیمی سیستم ایمنی کمک می‌کند و بهبود بهداشت ممکن است این تنظیم ایمنی را مختل سازد (شواهد قطعی هنوز محدود است).</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box warning">
+                    <h4>عوامل ژنتیکی (<span class="en">Genetic Factors</span>)</h4>
+                    <ul>
+                        <li><strong>سابقه خانوادگی و مطالعات دوقلوها:</strong> تأثیر ژنتیک در بیماری کرون (حدود ۵۰٪ همگرایی در دوقلوهای همسان) بسیار قوی‌تر از کولیت اولسراتیو (حدود ۲۰٪) است.</li>
+                        <li><strong>ژن <span class="en">NOD2</span>:</strong> یک ژن مستعدکننده برای بیماری کرون که پپتیدوگلیکان‌های باکتریایی را شناسایی و <span class="en">NF-κB</span> را فعال می‌کند. جهش‌های <span class="en">NOD2</span> دفاع ضدباکتریایی را تضعیف کرده و اجازه عبور باکتری‌ها از اپی‌تلیوم را می‌دهند (در بیماران آفریقایی و آسیایی غیرشایع است).</li>
+                        <li><strong>سایر ژن‌ها:</strong> بیش از ۲۰۰ واریانت ژنتیکی از جمله ژن‌های مرتبط با اتوفاژی (<span class="en">Autophagy</span>؛ برای حذف باکتری‌های داخل سلولی) با <span class="en">IBD</span> مرتبط‌اند.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="sub-box danger">
+                    <h4>پاسخ‌های ایمنی غیرطبیعی مخاطی (<span class="en">Abnormal Mucosal Immune Responses — FIG. 13.27</span>)</h4>
+                    <ul>
+                        <li><strong>فعال‌سازی ایمنی:</strong> آنتی‌ژن‌های میکروبی از طریق سلول‌های دندریتیک، سلول‌های <span class="en">CD4+ helper T</span> را فعال کرده که تحت تأثیر <span class="en">IL-12</span> و <span class="en">IL-23</span> به سلول‌های <strong><span class="en">Th1</span></strong> (ترشح <span class="en">IFN-γ</span>) و <strong><span class="en">Th17</span></strong> (ترشح <span class="en">IL-17</span>) تمایز می‌یابند.</li>
+                        <li><strong>التهاب و تخریب:</strong> سلول‌های <span class="en">Th1</span> و <span class="en">Th17</span> ماکروفاژها را فعال کرده، نوتروفیل‌ها را (با <span class="en">IL-8</span>) فراخوانی می‌کنند و باعث آزادسازی سایتوکاین‌های التهابی مانند <strong><span class="en">TNF</span></strong> می‌شوند.</li>
+                        <li><strong>کولیت اولسراتیو و شواهد درمانی:</strong> افزایش تولید <strong><span class="en">IL-13</span></strong> (مرتبط با <span class="en">Th2</span>) در <span class="en">UC</span> نقش دارد. پاسخ درمانی به آنتی‌بادی‌های ضد <span class="en">TNF</span> و ضد <span class="en">IL-12/IL-23</span> نقش این سایتوکاین‌ها را تأیید می‌کند (نقش دقیق خودایمنی نامشخص است زیرا خودآنتی‌ژن اختصاصی یافت نشده است).</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box">
+                    <h4>نقص‌های اپی‌تلیال و تغییرات میکروبیوتا (<span class="en">Epithelial Defects & Microbiota</span>)</h4>
+                    <ul>
+                        <li><strong>نقص اتصالات محکم (<span class="en">Tight junction defects</span>):</strong> افزایش نفوذپذیری اپی‌تلیوم روده در بیماری کرون و حتی در برخی بستگان درجه اول سالم دیده می‌شود و با جهش‌های <span class="en">NOD2</span> مرتبط است.</li>
+                        <li><strong>ناهنجاری سلول‌های پانت (<span class="en">Paneth cell abnormalities</span>):</strong> گرانول‌های معیوب سلول‌های پانت عملکرد پپتیدهای ضدمیکروبی را کاهش داده و تعادل باکتری-اپی‌تلیوم را برهم می‌زنند.</li>
+                        <li><strong>تغییرات میکروبیوتا:</strong> عدم تعادل میکروبی (<span class="en">Dysbiosis</span>) در التهاب روده نقش دارد؛ پروبیوتیک‌ها و پیوند میکروبیوتای مدفوع (<span class="en">FMT</span>) ممکن است به بهبود برخی بیماران کمک کنند.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Crohn Disease -->
+        <section class="slide-card" id="crohn">
+            <div class="slide-header">
+                <h2 class="slide-title">بیماری کرون: مورفولوژی و ویژگی‌های بالینی (<span class="en">Crohn Disease — FIG. 13.28 & 13.29</span>)</h2>
+                <span class="slide-num">بخش ۳</span>
+            </div>
+
+            <div class="grid-3" style="margin-bottom: 1.25rem;">
+                <div class="sub-box">
+                    <h4>توزیع (<span class="en">Distribution</span>)</h4>
+                    <ul>
+                        <li><strong>شایع‌ترین محل:</strong> <strong>ایلئوم انتهایی (<span class="en">Terminal ileum</span>)</strong>.</li>
+                        <li><strong>الگوی درگیری:</strong> تنها روده کوچک (~۴۰٪)، هم روده کوچک و هم کولون (~۳۰٪)، و تنها کولون (~۳۰٪؛ مری و معده به‌ندرت درگیر می‌شوند).</li>
+                        <li><strong>ضایعات پرشی (<span class="en">Skip lesions</span>):</strong> نواحی مجزای مخاط ملتهب در تناوب با مخاط کاملاً طبیعی (مشخصه بیماری کرون).</li>
+                        <li><strong>تنگی‌ها (<span class="en">Strictures</span>):</strong> شایع در اثر التهاب مزمن و فیبروز.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box danger">
+                    <h4>مورفولوژی ماکروسکوپی (<span class="en">Gross Morphology</span>)</h4>
+                    <ul>
+                        <li><strong>زخم‌های آفتی (<span class="en">Aphthous ulcers</span>):</strong> اولین ضایعات که بزرگ شده و به زخم‌های عمیق، طویل و مارپیچی (<span class="en">Serpentine ulcers</span>) ادغام می‌شوند.</li>
+                        <li><strong>نمای سنگفرشی (<span class="en">Cobblestone appearance</span>):</strong> زخم‌های عمیق که با جزایر مخاطی متورم و نسبتاً سالم از هم جدا شده‌اند.</li>
+                        <li><strong>شقاق و فیستول (<span class="en">Fissures & Fistulas</span>):</strong> شقاق‌های عمیق در دیواره که منجر به پرفوراسیون یا تشکیل فیستول می‌شوند.</li>
+                        <li><strong>ضخیم‌شدگی دیواره و چربی خزنده (<span class="en">Creeping fat</span>):</strong> التهاب تمام‌ضخامت (<span class="en">Transmural</span>)، فیبروز زیرمخاط و هیپرتروفی موسکولاریس پروپریا همراه با کشیده شدن چربی مزانتر به دور سطح خارجی روده. مگاکولون توکسیک به دلیل فیبروز دیواره غیرشایع است.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box warning">
+                    <h4>ویژگی‌های میکروسکوپی (<span class="en">Microscopic Features</span>)</h4>
+                    <ul>
+                        <li><strong>التهاب فعال و آبسه کریپت:</strong> ارتشاح نوتروفیل‌ها به اپی‌تلیوم کریپت و تشکیل آبسه‌های کریپت (<span class="en">Crypt abscesses</span>).</li>
+                        <li><strong>بهم‌ریختگی معماری کریپت (<span class="en">Crypt distortion</span>):</strong> شاخه‌دار شدن و آرایش نامنظم کریپت‌ها در اثر چرخه‌های مکرر آسیب و بازسازی.</li>
+                        <li><strong>متاپلازی و آتروفی:</strong> متاپلازی شبه‌پیلوریک (<span class="en">Pseudopyloric metaplasia</span>) و متاپلازی سلول پانت در کولون چپ؛ آتروفی مخاطی در بیماری طولانی‌مدت.</li>
+                        <li><strong>گرانولوم‌های غیرکازئوز (<span class="en">Noncaseating granulomas</span>):</strong> در حدود <strong>۳۵٪ موارد</strong> در دیواره روده یا غدد لنفاوی مزانتریک یافت می‌شوند (فقدان آن‌ها بیماری کرون را رد نمی‌کند).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sub-box">
+                <h4>ویژگی‌های بالینی و عوارض بیماری کرون (<span class="en">Clinical Features of Crohn Disease</span>)</h4>
+                <ul>
+                    <li><strong>تظاهر معمول و حاد:</strong> حملات متناوب اسهال نسبتاً خفیف، تب و درد شکم با فواصل بدون علامت هفته‌ها تا ماه‌ها. حدود ۲۰٪ با درد ربع تحتانی راست (<span class="en">RLQ pain</span>) و تب تظاهر می‌یابند که آپاندیسیت حاد یا پرفوراسیون را تقلید می‌کند.</li>
+                    <li><strong>عوامل شعله‌ورکننده (<span class="en">Flares</span>):</strong> استرس فیزیکی یا عاطفی، برخی غذاها، <span class="en">NSAIDs</span> و <strong>مصرف سیگار</strong>.</li>
+                    <li><strong>عوارض تغذیه‌ای، تنگی و فیستول:</strong> آنمی فقر آهن (درگیری کولون)؛ سوءجذب، هیپوآلبومینمی و کمبود ویتامین <span class="en">B12</span> (درگیری وسیع روده کوچک). تنگی‌های فیبروزکننده ایلئوم انتهایی اغلب نیازمند جراحی هستند اما عود در محل آناستوموز شایع است (تا ۴۰٪ طی ۱۰ سال جراحی مجدد می‌خواهند). فیستول‌ها بین حلقه‌های روده، مثانه، واژن یا پوست شکم/پره‌آنال ایجاد می‌شوند.</li>
+                    <li><strong>تظاهرات خارج روده‌ای و خطر سرطان:</strong> یوئیت (<span class="en">Uveitis</span>)، پلی‌آرتریت مهاجر، ساکروایلئیت، اسپوندیلیت آنکیلوزان، اریتم ندوزوم، چماقی شدن انگشتان (<span class="en">Digital clubbing</span>)، پری‌کلانژیت و کلانژیت اسکلروزان اولیه (<span class="en">PSC</span>). افزایش خطر آدنوکارسینوم کولورکتال و روده کوچک.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 4: Ulcerative Colitis & Comparison Table -->
+        <section class="slide-card" id="uc">
+            <div class="slide-header">
+                <h2 class="slide-title">کولیت اولسراتیو (<span class="en">Ulcerative Colitis</span>) و مقایسه جامع با بیماری کرون</h2>
+                <span class="slide-num">بخش ۴</span>
+            </div>
+
+            <div class="grid-2" style="margin-bottom: 1.5rem;">
+                <div class="sub-box danger">
+                    <h4>مورفولوژی کولیت اولسراتیو (<span class="en">Morphology — FIG. 13.30</span>)</h4>
+                    <ul>
+                        <li><strong>توزیع پیوسته (<span class="en">Continuous distribution</span>):</strong> همواره رکتوم را درگیر کرده و به‌صورت <strong>پیوسته و بدون ضایعات پرشی (<span class="en">Without skip lesions</span>)</strong> به سمت پروگزیمال گسترش می‌یابد. درگیری کل کولون: <strong>پان‌کولیت (<span class="en">Pancolitis</span>)</strong>؛ محدود به رکتوم: پروکتیت اولسراتیو (<span class="en">Ulcerative proctitis</span>). در پان‌کولیت شدید، التهاب خفیف ایلئوم دیستال (<span class="en">Backwash ileitis</span>) ممکن است رخ دهد.</li>
+                        <li><strong>نمای ماکروسکوپی و سودوپولیپ‌ها (<span class="en">Pseudopolyps</span>):</strong> مخاط قرمز و گرانولار یا دارای زخم‌های گسترده با مرز مشخص با مخاط سالم. جزایر مخاط در حال بازسازی که به داخل لومن برجسته می‌شوند <strong>سودوپولیپ</strong> نام دارند. در بیماری مزمن، مخاط صاف و آتروفیک می‌شود و چین‌های طبیعی از بین می‌روند.</li>
+                        <li><strong>عمق التهاب و دیواره روده:</strong> التهاب محدود به <strong>مخاط و زیرمخاط سطحی</strong> است؛ ضخیم‌شدگی دیواره و تنگی معمولاً وجود ندارد و سروز طبیعی است. <strong>گرانولوم وجود ندارد.</strong></li>
+                        <li><strong>مگاکولون توکسیک (<span class="en">Toxic megacolon</span>):</strong> التهاب شدید می‌تواند به موسکولاریس پروپریا آسیب زده و عملکرد عصبی-عضلانی را مختل کند که باعث اتساع خطرناک کولون با خطر بالای پرفوراسیون، تب، تاکی‌کاردی و افت فشار خون می‌شود.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box">
+                    <h4>ویژگی‌های بالینی، درمان و نئوپلازی مرتبط با <span class="en">IBD</span></h4>
+                    <ul>
+                        <li><strong>علائم و سیر بالینی:</strong> اسهال خونی و اغلب موکوئیدی همراه با کرامپ‌های تحتانی شکم که موقتاً با اجابت مزاج تسکین می‌یابد. سیگار کشیدن ممکن است علائم را تا حدی تسکین دهد و ترک سیگار گاهی آغازگر حملات است (اما درمان با نیکوتین مؤثر نیست).</li>
+                        <li><strong>درمان:</strong> گلوکوکورتیکوئیدها یا آمینوسالیسیلات‌ها برای بیماری خفیف؛ داروهای بیولوژیک (آنتی‌بادی‌های ضد <span class="en">TNF</span> یا <span class="en">IL-12/IL-23</span>) برای موارد متوسط تا شدید. <strong>کولکتومی (<span class="en">Colectomy</span>)</strong> بیماری روده‌ای را به‌طور قطعی درمان می‌کند (هرچند تظاهرات خارج روده‌ای ممکن است باقی بمانند).</li>
+                        <li><strong>نئوپلازی مرتبط با <span class="en">IBD</span>:</strong> خطر آدنوکارسینوم پس از <strong>۸ تا ۱۰ سال</strong> از شروع بیماری (به‌ویژه در پان‌کولیت و التهاب شدید) به‌طور چشمگیری افزایش می‌یابد. پایش کولونوسکوپیک منظم با بیوپسی‌های متعدد از حدود ۸ سال پس از تشخیص آغاز می‌شود (در بیماران مبتلا به <strong><span class="en">PSC</span></strong> پایش بلافاصله در زمان تشخیص <span class="en">PSC</span> شروع می‌شود).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--accent);">جدول ۱۳.۵: مقایسه ویژگی‌های بیماری کرون و کولیت اولسراتیو (<span class="en">Table 13.5 & FIG. 13.26</span>)</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ویژگی (<span class="en">Feature</span>)</th>
+                            <th>بیماری کرون (<span class="en">Crohn Disease</span>)</th>
+                            <th>کولیت اولسراتیو (<span class="en">Ulcerative Colitis</span>)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>ناحیه درگیر روده</strong></td><td>ایلئوم ± کولون</td><td>فقط کولون (<span class="en">Colon only</span>)</td></tr>
+                        <tr><td><strong>درگیری رکتوم</strong></td><td>گاهی (<span class="en">Sometimes</span>)</td><td>همیشه (<span class="en">Always</span>)</td></tr>
+                        <tr><td><strong>توزیع</strong></td><td>ضایعات پرشی (<span class="en">Skip lesions</span>)</td><td>منتشر / پیوسته (<span class="en">Diffuse</span>)</td></tr>
+                        <tr><td><strong>تنگی (<span class="en">Stricture</span>)</strong></td><td>بله (<span class="en">Yes</span>)</td><td>نادر (<span class="en">Rare</span>)</td></tr>
+                        <tr><td><strong>نمای دیواره روده</strong></td><td>ضخیم (<span class="en">Thick</span>)</td><td>نازک (<span class="en">Thin</span>)</td></tr>
+                        <tr><td><strong>عمق التهاب</strong></td><td>تمام‌ضخامت (<span class="en">Transmural</span>)</td><td>محدود به مخاط و زیرمخاط</td></tr>
+                        <tr><td><strong>سودوپولیپ‌ها</strong></td><td>متوسط (<span class="en">Moderate</span>)</td><td>بارز (<span class="en">Marked</span>)</td></tr>
+                        <tr><td><strong>زخم‌ها</strong></td><td>عمیق و چاقویی‌شکل (<span class="en">Deep, knifelike</span>)</td><td>سطحی و با قاعده پهن (<span class="en">Superficial, broad-based</span>)</td></tr>
+                        <tr><td><strong>واکنش لنفوئیدی</strong></td><td>بارز (<span class="en">Marked</span>)</td><td>متوسط (<span class="en">Moderate</span>)</td></tr>
+                        <tr><td><strong>فیبروز</strong></td><td>بارز (<span class="en">Marked</span>)</td><td>خفیف تا غایب (<span class="en">Mild to none</span>)</td></tr>
+                        <tr><td><strong>سروزیت (<span class="en">Serositis</span>)</strong></td><td>بله (<span class="en">Yes</span>)</td><td>خیر (<span class="en">No</span>)</td></tr>
+                        <tr><td><strong>گرانولوم‌ها</strong></td><td>بله (~۳۵٪)</td><td>خیر (<span class="en">No</span>)</td></tr>
+                        <tr><td><strong>فیستول / سینوس</strong></td><td>بله (<span class="en">Yes</span>)</td><td>خیر (<span class="en">No</span>)</td></tr>
+                        <tr><td><strong>فیستول پره‌آنال</strong></td><td>بله (در بیماری کولون)</td><td>خیر (<span class="en">No</span>)</td></tr>
+                        <tr><td><strong>سوءجذب چربی / ویتامین</strong></td><td>بله (<span class="en">Yes</span>)</td><td>خیر (<span class="en">No</span>)</td></tr>
+                        <tr><td><strong>پتانسیل بدخیمی</strong></td><td>بله (<span class="en">Yes</span>)</td><td>بله (<span class="en">Yes</span>)</td></tr>
+                        <tr><td><strong>عود پس از جراحی</strong></td><td>شایع (<span class="en">Common</span>)</td><td>خیر (<span class="en">No</span>)</td></tr>
+                        <tr><td><strong>مگاکولون توکسیک</strong></td><td>خیر (<span class="en">No</span>)</td><td>بله (<span class="en">Yes</span>)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section 5: Colonic Polyps & Familial Syndromes -->
+        <section class="slide-card" id="polyps">
+            <div class="slide-header">
+                <h2 class="slide-title">پولیپ‌های کولون و سندرم‌های نئوپلازی خانوادگی (<span class="en">Colonic Polyps & Polyposis Syndromes</span>)</h2>
+                <span class="slide-num">بخش ۵</span>
+            </div>
+
+            <p style="margin-bottom: 1rem;">پولیپ‌ها توده‌های غیرطبیعی برجسته به داخل لومن هستند که به دو شکل <strong>بدون پایه (<span class="en">Sessile</span>)</strong> و <strong>پایه‌دار (<span class="en">Pedunculated</span>)</strong> دیده می‌شوند و به دو گروه اصلی تقسیم می‌گردند: <strong>پولیپ‌های غیرنئوپلاستیک</strong> (التهابی، هامارتوماتوز، هیپرپلاستیک) و <strong>پولیپ‌های نئوپلاستیک</strong> (عمدتاً آدنوم‌ها).</p>
+
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent);">۱. پولیپ‌های غیرنئوپلاستیک (<span class="en">Non-Neoplastic Polyps — FIG. 13.31 & 13.32</span>)</h3>
+            <div class="grid-2" style="margin-bottom: 1.5rem;">
+                <div class="sub-box">
+                    <h4>پولیپ‌های التهابی (<span class="en">Inflammatory Polyps</span>)</h4>
+                    <p>در <strong>سندرم زخم منفرد رکتوم (<span class="en">Solitary rectal ulcer syndrome</span>)</strong> دیده می‌شوند. اختلال در شل شدن اسفنکتر آنورکتال زاویه تندی در دیواره قدامی رکتوم ایجاد کرده و سایش و ترومای مکرر منجر به تشکیل توده پولیپوئید واکنشی همراه با خونریزی رکتال و دفع موکوس می‌شود.</p>
+                </div>
+
+                <div class="sub-box">
+                    <h4>پولیپ‌های هیپرپلاستیک (<span class="en">Hyperplastic Polyps</span>)</h4>
+                    <p>تکثیرهای شایع اپی‌تلیال در دهه‌های ۶ و ۷ زندگی (اغلب در سیگموئید و رکتوم، کوچک‌تر از ۵ میلی‌متر). کاهش نوسازی سلولی و تأخیر در ریزش سلول‌های سطحی باعث تجمع سلول‌های جامی و ایجاد نمای <strong>اره‌ای یا دندانه‌دار (<span class="en">Serrated / saw-toothed</span>)</strong> در سطح مخاط می‌شود. <strong>فاقد پتانسیل بدخیمی</strong> هستند اما به دلیل شباهت به آدنوم‌های دندانه‌دار نیازمند بیوپسی‌اند.</p>
+                </div>
+
+                <div class="sub-box warning">
+                    <h4>پولیپ‌های جوانه‌ای (<span class="en">Juvenile Polyps</span>)</h4>
+                    <p>شایع‌ترین نوع پولیپ هامارتوماتوز؛ معمولاً در کودکان زیر ۵ سال و در رکتوم (ضایعات پایه‌دار قرمز رنگ &lt;۳ سانتی‌متر با غدد متسع کیستیک پر از موکوس). نوع تک‌گیر معمولاً منفرد است، اما <strong>پولیپوز جوانه‌ای (<span class="en">Juvenile polyposis</span>)</strong> یک سندرم اتوزوم غالب ناشی از جهش‌های زایا در <strong><span class="en">SMAD4</span> و <span class="en">BMPR1A</span></strong> (مسیر <span class="en">TGF-β/BMP</span>) با خطر بالای سرطان کولورکتال است.</p>
+                </div>
+
+                <div class="sub-box danger">
+                    <h4>سندرم پوتز-جگرز (<span class="en">Peutz–Jeghers Syndrome</span>)</h4>
+                    <p>اختلال اتوزوم غالب با پولیپ‌های هامارتوماتوز متعدد گوارشی (بیشتر در روده کوچک)، هیپرپیگمانتاسیون پوستی-مخاطی و خطر بالای سرطان‌های کولون، پانکراس، پستان، ریه، تخمدان، رحم و بیضه. ناشی از جهش‌های زایا در ژن سرکوبگر تومور <strong><span class="en">STK11 (LKB1)</span></strong>. در بافت‌شناسی: <strong>شبکه درختی‌شکل (<span class="en">Arborizing network</span>)</strong> از بافت همبند و عضله صاف.</p>
+                </div>
+            </div>
+
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent);">۲. آدنوم‌های کولون و ضایعات دندانه‌دار (<span class="en">Colonic Adenomas & Sessile Serrated Lesions — FIG. 13.33 & 13.34</span>)</h3>
+            <div class="sub-box" style="margin-bottom: 1.5rem;">
+                <ul>
+                    <li><strong>اهمیت و غربالگری:</strong> پیش‌سازهای آدنوکارسینوم کولورکتال؛ در نزدیک به ۵۰٪ بزرگسالان غربی بالای ۵۰ سال وجود دارند. کولونوسکوپی غربالگری در افراد با خطر متوسط از <strong>سن ۴۵ سالگی</strong> (و در افراد دارای سابقه خانوادگی حداقل ۱۰ سال زودتر از سن تشخیص جوان‌ترین عضو مبتلای خانواده) توصیه می‌شود.</li>
+                    <li><strong>مشخصه بافت‌شناسی:</strong> <strong>دیسپلازی اپی‌تلیال</strong> (هیپرکرومازی، طویل شدن و مطبق شدن هسته‌ها). بر اساس معماری به سه نوع تقسیم می‌شوند: <strong>توبولار (<span class="en">Tubular</span>)</strong> (معمولاً کوچک و پایه‌دار)، <strong>ویلوس (<span class="en">Villous</span>)</strong> (بزرگ‌تر و بدون پایه با زوائد انگشتی‌شکل) و <strong>توبولوویلوس (<span class="en">Tubulovillous</span>)</strong>.</li>
+                    <li><strong>مهم‌ترین عامل پیش‌بینی‌کننده بدخیمی:</strong> <strong>اندازه پولیپ (<span class="en">Size</span>)</strong> (در آدنوم‌های &lt;۱ سانتی‌متر سرطان بسیار نادر است، اما در ضایعات &gt;۴ سانتی‌متر نزدیک به ۵۰٪ حاوی سرطان تهاجمی‌اند) و پس از آن دیسپلازی درجه بالا.</li>
+                    <li><strong>ضایعات دندانه‌دار بدون پایه (<span class="en">Sessile Serrated Lesions</span>):</strong> از نظر میکروسکوپی شبیه پولیپ‌های هیپرپلاستیک هستند و فاقد دیسپلازی سیتولوژیک کلاسیک‌اند، اما <strong>دارای پتانسیل بدخیمی</strong> می‌باشند. وجه تمایز: معماری دندانه‌دار تا <strong>قاعده کریپت‌ها (<span class="en">Crypt bases</span>)</strong> گسترش یافته و همراه با اتساع کریپت است.</li>
+                </ul>
+            </div>
+
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent);">۳. سندرم‌های نئوپلازی خانوادگی کولون (<span class="en">FAP, Lynch Syndrome & Table 13.6 — FIG. 13.35</span>)</h3>
+            <div class="grid-2" style="margin-bottom: 1.25rem;">
+                <div class="sub-box danger">
+                    <h4>پولیپوز آدنوماتوز خانوادگی (<span class="en">Familial Adenomatous Polyposis - FAP</span>)</h4>
+                    <ul>
+                        <li>اختلال اتوزوم غالب ناشی از جهش‌های زایا در ژن سرکوبگر تومور <strong><span class="en">APC</span></strong>؛ تشخیص کلاسیک با وجود <strong>حداقل ۱۰۰ آدنوم کولورکتال</strong> (گاهی هزاران پولیپ) از نوجوانی. بدون درمان تقریباً ۱۰۰٪ افراد پیش از ۳۰ تا ۴۰ سالگی دچار سرطان کولورکتال می‌شوند (درمان استاندارد: <strong>کولکتومی پروفیلاکتیک</strong>).</li>
+                        <li><strong>سندرم گاردنر (<span class="en">Gardner syndrome</span>):</strong> آدنوم‌های کولورکتال + استئوماهای فک/جمجمه/استخوان‌های دراز، کیست‌های اپی‌درمال، تومورهای دسموئید، تومورهای تیروئید و ناهنجاری‌های دندانی.</li>
+                        <li><strong>سندرم تورکوت (<span class="en">Turcot syndrome</span>):</strong> آدنوم‌های روده + تومورهای <span class="en">CNS</span> (دو سوم دارای جهش <span class="en">APC</span> و مدولوبلاستوما؛ یک سوم دارای جهش ژن‌های ترمیم عدم تطابق <span class="en">DNA</span> و گلیوبلاستوما).</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box warning">
+                    <h4>سندرم لینچ (<span class="en">Lynch Syndrome / HNPCC</span>)</h4>
+                    <ul>
+                        <li>سندرم اتوزوم غالب که خطر سرطان‌های کولورکتوم (در سنین پایین‌تر و اغلب در <strong>کولون راست</strong>)، اندومتر، معده، تخمدان، حالب، مغز، روده کوچک، مجاری صفراوی-کبدی و پوست را افزایش می‌دهد.</li>
+                        <li><strong>پاتوژنز ژنتیکی:</strong> جهش‌های زایا در ژن‌های ترمیم عدم تطابق <span class="en">DNA</span> (<span class="en">Mismatch repair genes</span>؛ عمدتاً <strong><span class="en">MSH2</span> یا <span class="en">MLH1</span></strong>). با مکانیسم دو ضربه‌ای (<span class="en">Two-hit</span>)، نقص ترمیم باعث <strong>ناپایداری ریزماهواره‌ای (<span class="en">Microsatellite Instability - MSI</span>)</strong> می‌شود. برخلاف <span class="en">FAP</span>، بیماران تنها تعداد اندکی آدنوم (شامل ضایعات دندانه‌دار بدون پایه) دارند.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>سندرم (<span class="en">Syndrome</span>)</th>
+                            <th>میانگین سن تظاهر</th>
+                            <th>ژن(های) جهش‌یافته</th>
+                            <th>ضایعات گوارشی (<span class="en">GI Lesions</span>)</th>
+                            <th>تظاهرات خارج گوارشی منتخب</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong><span class="en">Peutz-Jeghers syndrome</span></strong></td><td>۱۰–۱۵ سال</td><td><span class="en">LKB1/STK11</span></td><td>پولیپ‌های درختی‌شکل (روده کوچک &gt; کولون &gt; معده)؛ آدنوکارسینوم کولون</td><td>پیگمانتاسیون پوستی-مخاطی؛ افزایش خطر سرطان تیروئید، پستان، ریه، پانکراس، گناد و مثانه</td></tr>
+                        <tr><td><strong><span class="en">Juvenile polyposis</span></strong></td><td>&lt;۵ سال</td><td><span class="en">SMAD4, BMPR1A</span></td><td>پولیپ‌های جوانه‌ای؛ افزایش خطر آدنوکارسینوم معده، روده کوچک، کولون و پانکراس</td><td>ناهنجاری‌های شریانی-وریدی ریوی، چماقی شدن انگشتان</td></tr>
+                        <tr><td><strong><span class="en">Cowden syndrome</span></strong></td><td>&lt;۱۵ سال</td><td><span class="en">PTEN</span></td><td>پولیپ‌های هامارتوماتوز، لیپوم‌ها، گانگلیونوروماها، پولیپ‌های التهابی؛ خطر سرطان کولون</td><td>تومورهای خوش‌خیم پوست، ضایعات خوش‌خیم و بدخیم تیروئید و پستان</td></tr>
+                        <tr><td><strong><span class="en">Tuberous sclerosis</span></strong></td><td>شیرخوارگی تا بزرگسالی</td><td><span class="en">TSC1, TSC2</span></td><td>پولیپ‌های هامارتوماتوز (رکتوم)</td><td>آنژیوفیبروم صورت، توبرهای قشری، آنژیومیولیپوم کلیوی</td></tr>
+                        <tr><td><strong><span class="en">Classic FAP</span></strong></td><td>۱۰–۱۵ سال</td><td><span class="en">APC</span></td><td>آدنوم‌های متعدد</td><td>هیپرتروفی مادرزادی <span class="en">RPE</span></td></tr>
+                        <tr><td><strong><span class="en">Attenuated FAP</span></strong></td><td>۴۰–۵۰ سال</td><td><span class="en">APC</span></td><td>آدنوم‌های متعدد</td><td>—</td></tr>
+                        <tr><td><strong><span class="en">Gardner syndrome</span></strong></td><td>۱۰–۱۵ سال</td><td><span class="en">APC</span></td><td>آدنوم‌های متعدد</td><td>استئوماها، دسموئیدها، کیست‌های پوستی</td></tr>
+                        <tr><td><strong><span class="en">Turcot syndrome</span></strong></td><td>۱۰–۱۵ سال</td><td><span class="en">APC</span></td><td>آدنوم‌های متعدد</td><td>تومورهای <span class="en">CNS</span>، مدولوبلاستوما</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section 6: Colorectal Adenocarcinoma -->
+        <section class="slide-card" id="crc">
+            <div class="slide-header">
+                <h2 class="slide-title">آدنوکارسینوم کولورکتال (<span class="en">Colorectal Adenocarcinoma — FIG. 13.36 to 13.40</span>)</h2>
+                <span class="slide-num">بخش ۶</span>
+            </div>
+
+            <div class="sub-box" style="margin-bottom: 1.25rem;">
+                <h4>اپیدمیولوژی و عوامل خطر (<span class="en">Overview & Epidemiology</span>)</h4>
+                <ul>
+                    <li>شایع‌ترین بدخیمی دستگاه گوارش (در ایالات متحده دومین علت مرگ ناشی از سرطان پس از سرطان ریه). اوج بروز در ۶۰ تا ۷۰ سالگی است (کمتر از ۲۰٪ پیش از ۵۰ سالگی رخ می‌دهد، هرچند مرگ‌ومیر در جوانان رو به افزایش است).</li>
+                    <li><strong>تومورهای روده کوچک:</strong> با وجود تشکیل ۷۵٪ طول دستگاه گوارش، نادرند؛ آدنوکارسینوم‌ها و تومورهای نورواندوکرین (کارسینوئید) نرخ مشابهی دارند و پس از آن‌ها لنفوم و سارکوم قرار می‌گیرند.</li>
+                    <li><strong>عوامل خطر و محافظت‌کننده:</strong> رژیم غذایی کم‌فیبر و پرچرب/کربوهیدرات تصفیه‌شده، چاقی، سیگار و الکل خطر را افزایش می‌دهند. <strong>آسپرین و <span class="en">NSAIDs</span></strong> از طریق مهار <strong><span class="en">COX-2</span></strong> اثر محافظتی دارند.</li>
+                </ul>
+            </div>
+
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent);">۱. دو مسیر مولکولی اصلی کارسینوژنز (<span class="en">Molecular Pathways & Table 13.7</span>)</h3>
+            <div class="grid-2" style="margin-bottom: 1.5rem;">
+                <div class="sub-box danger">
+                    <h4>مسیر <span class="en">APC/β-Catenin</span> یا ناپایداری کروموزومی (~۸۰٪ موارد تک‌گیر)</h4>
+                    <ol>
+                        <li><strong>از دست رفتن زودهنگام <span class="en">APC</span> (کروموزوم <span class="en">5q21</span>):</strong> غیرفعال شدن هر دو آلل <span class="en">APC</span> ← تجمع <strong>بتا-کاتنین (<span class="en">β-catenin</span>)</strong> و ورود به هسته ← فعال‌سازی ژن‌های محرک رشد (<span class="en">MYC</span> و <span class="en">Cyclin D1</span>) و ایجاد آدنوم.</li>
+                        <li><strong>فعال‌سازی <span class="en">KRAS</span> (<span class="en">12p12</span>):</strong> ترویج رشد و مهار آپوپتوز.</li>
+                        <li><strong>از دست رفتن سیگنال‌دهی <span class="en">TGF-β</span> (<span class="en">18q21</span>):</strong> جهش در ژن‌های <span class="en">SMAD2</span> و <span class="en">SMAD4</span> و بیان بیش‌ازحد <span class="en">COX-2</span>.</li>
+                        <li><strong>جهش دیرهنگام <span class="en">TP53</span> (<span class="en">17p13</span>) و فعال‌سازی تلومراز:</strong> ایجاد ناپایداری کروموزومی و تبدیل به کارسینوم تهاجمی (اغلب در <strong>سمت چپ کولون</strong>).</li>
+                    </ol>
+                </div>
+
+                <div class="sub-box warning">
+                    <h4>مسیر ناپایداری ریزماهواره‌ای (<span class="en">MSI Pathway</span> — ۱۰ تا ۱۵٪ موارد تک‌گیر)</h4>
+                    <ul>
+                        <li>نقص در ترمیم عدم تطابق <span class="en">DNA</span> (جهش زایا/اکتسابی در <span class="en">MSH2, MLH1</span> یا <strong>هیپرمتیلاسیون پروموتر <span class="en">MLH1</span></strong> در فنوتیپ <span class="en">CIMP</span>) ← جهش در توالی‌های تکراری ریزماهواره‌ای (<span class="en">Mutator phenotype</span>).</li>
+                        <li><strong>ژن‌های هدف:</strong> جهش در <strong>گیرنده نوع II فاکتور <span class="en">TGF-β</span> (<span class="en">TGFβRII</span>)</strong> و پروتئین پیش‌آپوپتوتیک <strong><span class="en">BAX</span></strong>.</li>
+                        <li><strong>ویژگی‌های همراه:</strong> این تومورها معمولاً دارای <strong>جهش‌های فعال‌کننده <span class="en">BRAF</span></strong> هستند (در حالی که جهش‌های <span class="en">KRAS</span> و <span class="en">TP53</span> معمولاً غایب‌اند)، از آدنوم‌های دندانه‌دار بدون پایه منشأ می‌گیرند، اغلب در <strong>سمت راست کولون</strong> قرار دارند و بافت‌شناسی موسینی نشان می‌دهند.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid-2" style="margin-bottom: 1.25rem;">
+                <div class="sub-box">
+                    <h4>تفاوت‌های کولون راست در برابر کولون چپ (<span class="en">Right-Sided vs. Left-Sided</span>)</h4>
+                    <ul>
+                        <li><strong>تومورهای سمت راست (سکوم و کولون صعودی):</strong> به‌صورت توده‌های <strong>پولیپوئید و برون‌روینده (<span class="en">Exophytic</span>)</strong> رشد می‌کنند، به‌ندرت انسداد می‌دهند و با خستگی، ضعف و <strong>آنمی فقر آهن</strong> ناشی از خونریزی مخفی تظاهر می‌یابند. (هشدار بالینی: آنمی فقر آهن در مرد مسن یا زن یائسه مشکوک به سرطان گوارش است).</li>
+                        <li><strong>تومورهای سمت چپ:</strong> ضایعات حلقوی و تنگ‌کننده با نمای کلاسیک <strong>«حلقه دستمال سفره» (<span class="en">Napkin-ring narrowing</span>)</strong> ایجاد کرده و با انسداد روده، خونریزی رکتال و تغییر عادات اجابت مزاج تظاهر می‌یابند.</li>
+                        <li><strong>بافت‌شناسی:</strong> سلول‌های استوانه‌ای بلند شبیه اپی‌تلیوم دیسپلاستیک آدنوم همراه با واکنش <strong>دسموپلاستیک (<span class="en">Desmoplasia</span>)</strong> شدید (قوام سفت). کارسینوم موسینی (<span class="en">Mucinous</span>) و کارسینوم سلول انگشتری (<span class="en">Signet-ring cell</span>) پیش‌آگهی ضعیف‌تری دارند.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box success">
+                    <h4>مرحله‌بندی (<span class="en">TNM</span>)، پیش‌آگهی و درمان هدفمند</h4>
+                    <ul>
+                        <li><strong>عمق تهاجم و بقای ۵ ساله:</strong> محدود به مخاط: نزدیک به ۱۰۰٪؛ زیرمخاط: ~۹۰٪؛ موسکولاریس پروپریا: ~۸۰٪؛ عبور از سروز یا متاستاز غدد لنفاوی/دوردست: کاهش شدید بقا.</li>
+                        <li><strong>الگوی متاستاز:</strong> <strong>کبد</strong> شایع‌ترین محل متاستاز دوردست است (از طریق گردش خون پورت)؛ تومورهای رکتوم می‌توانند پورت را دور زده و مستقیماً به <strong>ریه‌ها</strong> متاستاز دهند.</li>
+                        <li><strong>درمان مبتنی بر ویژگی مولکولی:</strong> سرطان‌های دارای ناپایداری ریزماهواره‌ای (<span class="en">MSI</span>) به دلیل تولید نئوآنتی‌ژن‌های فراوان، پاسخ بسیار خوبی به <strong>مهارکننده‌های نقاط وارسی ایمنی (<span class="en">Immune checkpoint inhibitors</span>)</strong> می‌دهند.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Appendix, Acute Appendicitis & Appendiceal Tumors -->
+        <section class="slide-card" id="appendix">
+            <div class="slide-header">
+                <h2 class="slide-title">آپاندیس، آپاندیسیت حاد و تومورهای آپاندیس (<span class="en">Appendix, Appendicitis & Tumors — eFIG. 13.8</span>)</h2>
+                <span class="slide-num">بخش ۷</span>
+            </div>
+
+            <div class="grid-2">
+                <div class="sub-box danger">
+                    <h4>آپاندیسیت حاد (<span class="en">Acute Appendicitis</span>)</h4>
+                    <ul>
+                        <li><strong>کلیات و اپیدمیولوژی:</strong> آپاندیس یک دیورتیکول واقعی سکوم است. آپاندیسیت حاد در نوجوانان و جوانان شایع‌تر است (خطر ابتلا در طول عمر ~۷٪). تشخیص افتراقی: لنفادنیت مزانتریک، سالپنژیت حاد، حاملگی خارج رحمی، میتل‌اشمرتز (<span class="en">Mittelschmerz</span>) و دیورتیکولیت مکل (<span class="en">Meckel diverticulitis</span>).</li>
+                        <li><strong>پاتوژنز:</strong> انسداد لومن (در ۵۰ تا ۸۰٪ موارد توسط <strong>فکالیت <span class="en">Fecalith</span></strong> و به‌ندرت سنگ صفراوی، تومور یا کرم) ← افزایش فشار داخل لومنی و اختلال تخلیه وریدی ← آسیب ایسکمیک و تکثیر باکتری‌ها.</li>
+                        <li><strong>مورفولوژی (معیار تشخیصی):</strong> سروز کدر، گرانولار و اریتماتوز. <strong>ارتشاح نوتروفیل‌ها به درون موسکولاریس پروپریا (<span class="en">Neutrophilic infiltration of the muscularis propria</span>) برای قطعی کردن تشخیص الزامی است.</strong> در موارد شدید: آپاندیسیت چرکی حاد (<span class="en">Suppurative</span>) ← آپاندیسیت گانگرن حاد (<span class="en">Gangrenous</span>) ← پرفوراسیون و پریتونیت.</li>
+                        <li><strong>ویژگی‌های بالینی:</strong> درد مبهم اطراف ناف که به ربع تحتانی راست (<span class="en">RLQ</span>) منتقل می‌شود، تهوع، استفراغ، تب خفیف، لکوسیتوز خفیف و حساسیت عمیق در <strong>نقطه مک‌برنی (<span class="en">McBurney point</span>)</strong> (دو سوم فاصله ناف تا خار خاصره قدامی فوقانی راست). <span class="en">CT scan</span> به تشخیص کمک می‌کند.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box warning">
+                    <h4>تومورهای آپاندیس (<span class="en">Tumors of the Appendix</span>)</h4>
+                    <ul>
+                        <li><strong>کارسینوئید / تومور نورواندوکرین (<span class="en">Carcinoid Tumor</span>):</strong> شایع‌ترین تومور آپاندیس؛ معمولاً به‌طور تصادفی حین جراحی کشف می‌شود. اغلب در <strong>نوک دیستال آپاندیس (<span class="en">Distal tip</span>)</strong> به‌صورت توده توپر و پیازی‌شکل (۲ تا ۳ سانتی‌متر) ایجاد می‌شود؛ متاستاز لنفاوی غیرشایع و متاستاز دوردست بسیار نادر است.</li>
+                        <li><strong>آدنوم‌ها و آدنوکارسینوم‌های غیرموسینی:</strong> می‌توانند لومن را مسدود کرده و نمایی شبیه آپاندیسیت حاد ایجاد کنند.</li>
+                        <li><strong>تومورهای موسینی و سودومیکسوما پریتونئی (<span class="en">Mucinous Tumors & Pseudomyxoma Peritonei</span>):</strong> سیست‌آدنوم و سیست‌آدنوکارسینوم موسینی لومن را مسدود کرده و با تجمع موسین غلیظ باعث اتساع آپاندیس (<strong>موکوسل <span class="en">Mucocele</span></strong>) می‌شوند. پارگی آن باعث انتشار سلول‌های تومور و موسین به حفره صفاق (در زنان شبیه تومورهای موسینی تخمدان) و ایجاد <strong>سودومیکسوما پریتونئی (<span class="en">Pseudomyxoma peritonei</span>)</strong> (تجمع گسترده موسین ژلاتینی غلیظ در حفره صفاق) می‌گردد که در اکثر موارد پیشرفته در نهایت کشنده است.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="callout" style="text-align: center; margin-top: 1.5rem;">
+                <strong>با آرزوی موفقیت! (<span class="en">Best wishes!</span>)</strong>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        خلاصه جامع و ترجمه کامل اسلایدهای پاتولوژی دستگاه گوارش تحتانی (جلسه پنجم) — برگرفته از <span class="en">Robbins & Kumar Basic Pathology (11th Ed)</span>
+    </footer>
+
+    <script>
+        function setTheme(themeName) {
+            document.documentElement.setAttribute('data-theme', themeName);
+            localStorage.setItem('lower-gi-pathology-theme', themeName);
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-set-theme') === themeName);
+            });
+        }
+
+        // Load saved theme or default to semi-dark (#2a2b2b)
+        const savedTheme = localStorage.getItem('lower-gi-pathology-theme') || 'semi-dark';
+        setTheme(savedTheme);
+    </script>
+</body>
+</html>

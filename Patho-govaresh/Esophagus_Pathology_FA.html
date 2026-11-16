@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="semi-dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پاتولوژی مری (Esophagus) | Robbins & Kumar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root, [data-theme="semi-dark"] {
+            --bg-primary: #2a2b2b;
+            --bg-secondary: #343636;
+            --bg-card: rgba(54, 56, 56, 0.85);
+            --bg-accent-soft: rgba(56, 189, 248, 0.14);
+            --bg-warning-soft: rgba(244, 63, 94, 0.15);
+            --bg-success-soft: rgba(16, 185, 129, 0.15);
+            --text-primary: #ffffff;
+            --text-secondary: #e2e8f0;
+            --text-muted: #cbd5e1;
+            --accent: #38bdf8;
+            --accent-secondary: #818cf8;
+            --danger: #fb7185;
+            --success: #34d399;
+            --warning: #fbbf24;
+            --border-color: rgba(255, 255, 255, 0.12);
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+            --header-bg: rgba(42, 43, 43, 0.88);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0f1115;
+            --bg-secondary: #181b21;
+            --bg-card: rgba(24, 27, 33, 0.9);
+            --bg-accent-soft: rgba(56, 189, 248, 0.12);
+            --bg-warning-soft: rgba(244, 63, 94, 0.14);
+            --bg-success-soft: rgba(16, 185, 129, 0.14);
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-secondary: #a78bfa;
+            --danger: #f43f5e;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
+            --header-bg: rgba(15, 17, 21, 0.88);
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #f4f6f9;
+            --bg-secondary: #ffffff;
+            --bg-card: rgba(255, 255, 255, 0.95);
+            --bg-accent-soft: rgba(2, 132, 199, 0.08);
+            --bg-warning-soft: rgba(225, 29, 72, 0.08);
+            --bg-success-soft: rgba(5, 150, 105, 0.08);
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --text-muted: #64748b;
+            --accent: #0284c7;
+            --accent-secondary: #6366f1;
+            --danger: #e11d48;
+            --success: #059669;
+            --warning: #d97706;
+            --border-color: rgba(15, 23, 42, 0.1);
+            --shadow: 0 8px 25px rgba(15, 23, 42, 0.07);
+            --header-bg: rgba(244, 246, 249, 0.9);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.85;
+            font-size: 16px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            padding-bottom: 4rem;
+        }
+
+        /* English Terms Formatting */
+        .en {
+            font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            direction: ltr;
+            unicode-bidi: isolate;
+            display: inline-block;
+            font-weight: 600;
+            color: var(--accent);
+            padding: 0 3px;
+        }
+
+        /* Sticky Navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--header-bg);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 1.25rem;
+        }
+
+        .nav-container {
+            max-width: 1120px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            font-weight: 800;
+            font-size: 1.05rem;
+        }
+
+        .brand-badge {
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+            color: #fff;
+            padding: 0.25rem 0.65rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .theme-switcher {
+            display: flex;
+            align-items: center;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 999px;
+            padding: 4px;
+            gap: 4px;
+        }
+
+        .theme-btn {
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 0.35rem 0.85rem;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .theme-btn.active {
+            background: var(--accent);
+            color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        [data-theme="semi-dark"] .theme-btn.active,
+        [data-theme="dark"] .theme-btn.active {
+            color: #0f172a;
+        }
+
+        /* Quick Nav Pills */
+        .quick-nav {
+            max-width: 1120px;
+            margin: 1rem auto 0;
+            padding: 0 1.25rem;
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .quick-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-pill {
+            text-decoration: none;
+            color: var(--text-secondary);
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 0.4rem 0.9rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .nav-pill:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1120px;
+            margin: 1.5rem auto 0;
+            padding: 0 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+        }
+
+        /* Hero / Cover Card */
+        .hero-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 22px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-secondary), var(--danger));
+        }
+
+        .uni-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            padding-bottom: 1.25rem;
+            margin-bottom: 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .uni-title {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .ref-badge {
+            background: var(--bg-accent-soft);
+            border: 1px solid var(--accent);
+            padding: 0.35rem 0.85rem;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .hero-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 0.85rem;
+            background: var(--bg-secondary);
+            padding: 1rem 1.25rem;
+            border-radius: 14px;
+            border: 1px solid var(--border-color);
+            font-size: 0.92rem;
+        }
+
+        /* Section Cards */
+        .slide-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 1.75rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .slide-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.85rem;
+            border-bottom: 1px solid var(--border-color);
+            flex-wrap: wrap;
+        }
+
+        .slide-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .slide-num {
+            background: var(--bg-accent-soft);
+            color: var(--accent);
+            border: 1px solid var(--border-color);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 0.25rem 0.7rem;
+            border-radius: 8px;
+        }
+
+        /* Grids inside slides */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 1.15rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .sub-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.2rem;
+        }
+
+        .sub-box h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.65rem;
+            color: var(--accent);
+        }
+
+        .sub-box.danger {
+            border-right: 4px solid var(--danger);
+        }
+
+        .sub-box.danger h4 {
+            color: var(--danger);
+        }
+
+        .sub-box.success {
+            border-right: 4px solid var(--success);
+        }
+
+        .sub-box.success h4 {
+            color: var(--success);
+        }
+
+        .sub-box.warning {
+            border-right: 4px solid var(--warning);
+        }
+
+        .sub-box.warning h4 {
+            color: var(--warning);
+        }
+
+        ul {
+            padding-right: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+        }
+
+        li {
+            color: var(--text-primary);
+        }
+
+        .callout {
+            background: var(--bg-accent-soft);
+            border-right: 4px solid var(--accent);
+            padding: 1rem 1.2rem;
+            border-radius: 12px;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .callout.danger {
+            background: var(--bg-warning-soft);
+            border-right-color: var(--danger);
+        }
+
+        /* Stage Flow Cards */
+        .stage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .stage-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-top: 4px solid var(--accent);
+            border-radius: 14px;
+            padding: 1.15rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .stage-card.s2 { border-top-color: var(--warning); }
+        .stage-card.s3 { border-top-color: var(--accent-secondary); }
+        .stage-card.s4 { border-top-color: var(--danger); }
+
+        .stage-badge {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .stage-card.s2 .stage-badge { color: var(--warning); }
+        .stage-card.s3 .stage-badge { color: var(--accent-secondary); }
+        .stage-card.s4 .stage-badge { color: var(--danger); }
+
+        /* Table styling */
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 14px;
+            border: 1px solid var(--border-color);
+            margin-top: 0.75rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: right;
+            background: var(--bg-secondary);
+        }
+
+        th, td {
+            padding: 0.9rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+
+        th {
+            background: var(--bg-accent-soft);
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding: 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Responsive Mobile Adjustments */
+        @media (max-width: 640px) {
+            body {
+                font-size: 15px;
+            }
+            .hero-card, .slide-card {
+                padding: 1.25rem;
+                border-radius: 16px;
+            }
+            .hero-title {
+                font-size: 1.4rem;
+            }
+            .slide-title {
+                font-size: 1.15rem;
+            }
+            .theme-btn {
+                padding: 0.3rem 0.65rem;
+                font-size: 0.78rem;
+            }
+            .nav-container {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation & Theme Switcher -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="brand">
+                <span class="brand-badge">جلسه دوم</span>
+                <span>پاتولوژی مری (<span class="en">Esophagus</span>)</span>
+            </div>
+
+            <div class="theme-switcher" role="group" aria-label="تغییر تم صفحه">
+                <button class="theme-btn" data-set-theme="light" onclick="setTheme('light')">☀️ روشن</button>
+                <button class="theme-btn active" data-set-theme="semi-dark" onclick="setTheme('semi-dark')">🌗 نیمه‌دارک</button>
+                <button class="theme-btn" data-set-theme="dark" onclick="setTheme('dark')">🌙 دارک</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Quick Section Links -->
+    <nav class="quick-nav" aria-label="دسترسی سریع به بخش‌ها">
+        <a href="#intro" class="nav-pill">مقدمه و ساختار دیواره</a>
+        <a href="#structural" class="nav-pill">نقص‌های ساختاری و آشالازی</a>
+        <a href="#vascular" class="nav-pill">واریس مری و پارگی‌ها</a>
+        <a href="#esophagitis" class="nav-pill">ازوفاژیت‌ها (شیمیایی، عفونی، GERD، EoE)</a>
+        <a href="#barrett" class="nav-pill">مری بارت و دیسپلازی</a>
+        <a href="#neoplasms" class="nav-pill">آدنوکارسینوم و SCC</a>
+        <a href="#clinical" class="nav-pill">سیر بالینی و جمع‌بندی</a>
+    </nav>
+
+    <main class="container">
+
+        <!-- Slide 1, 2 & 3: Cover & Chapter Title -->
+        <section class="hero-card" id="intro">
+            <div class="uni-header">
+                <div>
+                    <div class="uni-title">وزارت بهداشت، درمان و آموزش پزشکی</div>
+                    <div class="uni-title">دانشکده علوم پزشکی و خدمات بهداشتی درمانی ساوه</div>
+                </div>
+                <div class="ref-badge">
+                    <span class="en">ROBBINS & KUMAR BASIC PATHOLOGY</span> — ویرایش یازدهم (<span class="en">ELEVENTH EDITION</span>) | انتشارات <span class="en">ELSEVIER</span> (نسخه دیجیتال پیشرفته)
+                </div>
+            </div>
+
+            <h1 class="hero-title">فصل ۱۳: حفره دهان و دستگاه گوارش (<span class="en">Chapter 13: Oral Cavity and Gastrointestinal Tract</span>)</h1>
+            <p class="hero-subtitle">جلسه ۲ (<span class="en">Session 2</span>) — مری تحت محاصره: پیوستار پاتوژنتیک از نقص‌های مکانیکی لوله‌کشی تا پیامدهای تکاملی بدخیم (<span class="en">THE ESOPHAGUS UNDER SIEGE: A PATHOGENETIC CONTINUUM FROM MECHANICAL PLUMBING FAILURES TO MALIGNANT EVOLUTIONARY CONSEQUENCES</span>)</p>
+
+            <div class="meta-grid">
+                <div><strong>مدرس:</strong> <span class="en">Dr. Saeede Khoshbakht M.D.</span> (<span class="en">Board certified AP/CP</span>)</div>
+                <div><strong>نویسندگان مرجع:</strong> <span class="en">KUMAR, ABBAS, ASTER, DEYRUP, DAS</span></div>
+                <div style="grid-column: 1 / -1;"><strong>موضوع محوری:</strong> سفری ساختاری و مولکولی در میان بیماری‌های انسدادی، التهابی و نئوپلاستیک مری (<span class="en">A STRUCTURAL AND MOLECULAR JOURNEY THROUGH OBSTRUCTIVE, INFLAMMATORY, AND NEOPLASTIC DISEASES OF THE ESOPHAGUS</span>).</div>
+            </div>
+        </section>
+
+        <!-- Slide 4: The Architectural Framework of the Esophageal Wall -->
+        <section class="slide-card">
+            <div class="slide-header">
+                <h2 class="slide-title">چارچوب معماری دیواره مری (<span class="en">The Architectural Framework of the Esophageal Wall</span>)</h2>
+                <span class="slide-num">اسلاید ۴</span>
+            </div>
+            <div class="grid-4">
+                <div class="sub-box">
+                    <h4>مخاط (<span class="en">Mucosa</span>)</h4>
+                    <p>اپی‌تلیوم سنگفرشی مطبق (<span class="en">Stratified squamous epithelium</span>) که برای مقاومت در برابر ترومای فیزیکی سایشی طراحی شده و با لامینا پروپریای تخصصی (<span class="en">Lamina propria</span>) و موسکولاریس موکوزا (<span class="en">Muscularis mucosae</span>) همراه است.</p>
+                </div>
+                <div class="sub-box">
+                    <h4>زیرمخاط (<span class="en">Submucosa</span>)</h4>
+                    <p>بزرگراه عروقی و لنفاوی که شبکه‌های وریدی (<span class="en">Venous plexuses</span>) و غدد زیرمخاطی ترشح‌کننده موسین و بی‌کربنات محافظ (<span class="en">Protective mucin and bicarbonate</span>) را در خود جای داده است.</p>
+                </div>
+                <div class="sub-box">
+                    <h4>موسکولاریس پروپریا (<span class="en">Muscularis Propria</span>)</h4>
+                    <p>موتور مکانیکی پریستالسیس؛ یک سیستم دو لایه هماهنگ (حلقوی داخلی <span class="en">Inner circular</span> و طولی خارجی <span class="en">Outer longitudinal</span>) که توسط شبکه میانتریک (<span class="en">Myenteric plexus</span>) کنترل می‌شود.</p>
+                </div>
+                <div class="sub-box">
+                    <h4>ادونتیس (<span class="en">Adventitia</span>)</h4>
+                    <p>غلاف بافت همبند خارجی که مری را به مدیاستن (<span class="en">Mediastinum</span>) متصل می‌کند.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5: Structural Plumbing Failures -->
+        <section class="slide-card" id="structural">
+            <div class="slide-header">
+                <h2 class="slide-title">نقص‌های ساختاری لوله‌کشی: آترزی، فیستول و اکتوپی (<span class="en">Structural Plumbing Failures: Atresia, Fistulas, and Ectopia</span>)</h2>
+                <span class="slide-num">اسلاید ۵</span>
+            </div>
+            <div class="grid-3">
+                <div class="sub-box danger">
+                    <h4>آترزی و فیستول (<span class="en">Atresia & Fistulas</span>)</h4>
+                    <p>اندکی پس از تولد از طریق رگورژیتاسیون (<span class="en">Regurgitation</span>) یا آسپیراسیون (<span class="en">Aspiration</span>) کشف می‌شود. مری با یک طناب نازک بدون مجرا (<span class="en">Thin, noncanalized cord</span>) جایگزین شده است که بیشتر در نزدیکی دوشاخه شدن نای (<span class="en">Tracheal bifurcation</span>) رخ می‌دهد و اغلب با یک ارتباط فیستولی به دستگاه تنفسی (<span class="en">Trachea / Respiratory tract</span>) همراه است.</p>
+                </div>
+                <div class="sub-box warning">
+                    <h4>تنگی (<span class="en">Stenosis</span>)</h4>
+                    <p>یک باریک‌شدگی اکتسابی (<span class="en">Acquired narrowing</span>). التهاب و اسکار (ناشی از <span class="en">GERD</span>، پرتودرمانی یا آسیب سوزاننده <span class="en">Caustic injury</span>) باعث ضخیم شدن فیبروز زیرمخاط (<span class="en">Submucosa</span>) و آتروفی موسکولاریس پروپریا (<span class="en">Muscularis propria</span>) می‌شود. منجر به دیسفاژی پیشرونده (<span class="en">Progressive dysphagia</span>) می‌گردد: ابتدا برای جامدات (<span class="en">Solids first</span>) و سپس برای مایعات (<span class="en">Liquids later</span>).</p>
+                </div>
+                <div class="sub-box">
+                    <h4>اکتوپی یا پچ ورودی (<span class="en">Ectopia / Inlet Patch</span>)</h4>
+                    <p>بقایای تکاملی مخاط نابجای معده (<span class="en">Ectopic gastric mucosa</span>) که بیشتر در یک‌سوم فوقانی مری دیده می‌شود. اسید ترشح‌شده می‌تواند باعث ازوفاژیت موضعی، دیسفاژی یا به‌ندرت آدنوکارسینوم (<span class="en">Adenocarcinoma</span>) شود.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: The Achalasia Pressure Valve -->
+        <section class="slide-card">
+            <div class="slide-header">
+                <h2 class="slide-title">دریچه فشاری آشالازی: انسداد عملکردی (<span class="en">The Achalasia Pressure Valve: Functional Obstruction</span>)</h2>
+                <span class="slide-num">اسلاید ۶</span>
+            </div>
+
+            <div class="callout danger" style="margin-top: 0; margin-bottom: 1.25rem;">
+                <strong>سه‌گانه پاتولوژیک (<span class="en">The Pathologic Triad</span>):</strong>
+                (۱) شل شدن ناقص اسفنکتر تحتانی مری (<span class="en">Incomplete lower esophageal sphincter [LES] relaxation</span>)،
+                (۲) افزایش تون <span class="en">LES</span> (<span class="en">Increased LES tone</span>) و
+                (۳) آپریستالسیس مری (<span class="en">Esophageal aperistalsis</span>).
+            </div>
+
+            <div class="grid-2">
+                <div class="sub-box">
+                    <h4>آشالازی اولیه (<span class="en">Primary Achalasia</span>)</h4>
+                    <p>دژنراسیون ایدیوپاتیک (<span class="en">Idiopathic degeneration</span>) نورون‌های مهاری بخش دیستال مری.</p>
+                </div>
+                <div class="sub-box warning">
+                    <h4>آشالازی ثانویه (<span class="en">Secondary Achalasia</span>)</h4>
+                    <p>از دست رفتن عصب‌دهی (<span class="en">Loss of neural innervation</span>) به دلیل آسیب‌های خارجی؛ به‌ویژه بیماری شاگاس (<span class="en">Chagas disease</span> که در آن عفونت <span class="en">Trypanosoma cruzi</span> شبکه میانتریک <span class="en">Myenteric plexus</span> را تخریب می‌کند)، نوروپاتی اتونوم دیابتی (<span class="en">Diabetic autonomic neuropathy</span>) یا اختلالات ارتشاحی (بدخیمی، آمیلوئیدوز <span class="en">Amyloidosis</span>، سارکوئیدوز <span class="en">Sarcoidosis</span>).</p>
+                </div>
+            </div>
+
+            <div class="callout">
+                <strong>پیامد (<span class="en">Consequence</span>):</strong> اتساع شدید بخش پروگزیمال مری (<span class="en">Massive proximal esophageal dilatation</span>) و استرس دیواره.
+            </div>
+        </section>
+
+        <!-- Slide 7: Hemodynamic Bypass: Esophageal Varices -->
+        <section class="slide-card" id="vascular">
+            <div class="slide-header">
+                <h2 class="slide-title">بای‌پس همودینامیک: واریس مری و پرفشاری پورت (<span class="en">Hemodynamic Bypass: Esophageal Varices and Portal Hypertension</span>)</h2>
+                <span class="slide-num">اسلاید ۷</span>
+            </div>
+            <ul>
+                <li><strong>مسیر بای‌پس عبور اول (<span class="en">The First-Pass Bypass</span>):</strong> مری یکی از معدود نواحی بدن است که در آن گردش خون وریدی احشایی (<span class="en">Splanchnic</span>) و سیستمیک (<span class="en">Systemic</span>) با یکدیگر ارتباط دارند.</li>
+                <li><strong>پاتوژنز (<span class="en">Pathogenesis</span>):</strong> افزایش فشار پورت (<span class="en">Portal Hypertension</span>؛ ناشی از سیروز <span class="en">Cirrhosis</span> یا شیستوزومیازیس <span class="en">Schistosomiasis</span>) باعث ایجاد کانال‌های جانبی (کولترال) از طریق ورید معدی چپ (<span class="en">Left Gastric Vein</span>) شده و شبکه‌های وریدی زیرمخاطی و زیر اپی‌تلیالی (<span class="en">Subepithelial and submucosal venous plexi</span>) در دیستال مری را متسع و پرخون می‌کند.</li>
+                <li><strong>واقعیت بالینی (<span class="en">Clinical Reality</span>):</strong> در ۵۰٪ بیماران سیروتیک ایجاد می‌شود. تا زمان پارگی بدون علامت است، اما پارگی آن باعث هماتمز (<span class="en">Hematemesis</span>؛ استفراغ خونی) حجیم و تهدیدکننده حیات می‌شود. تا ۲۰٪ بیماران در همان اولین اپیزود خونریزی به دلیل شوک هیپوولمیک (<span class="en">Hypovolemic shock</span>) یا کمای کبدی (<span class="en">Hepatic coma</span>) جان خود را از دست می‌دهند.</li>
+                <li><strong>نمای تشخیصی و پاتولوژی (<span class="en">Plates 1–3</span>):</strong> قابل مشاهده در آنژیوگرام واریس مری، نمای آندوسکوپیک واریس‌های برجسته و آبی‌رنگ در لومن، و مجاری واریسی روی‌هم‌خوابیده در بررسی پاتولوژی پس از مرگ (<span class="en">Postmortem pathology</span>).</li>
+            </ul>
+        </section>
+
+        <!-- Slide 8: Acute Traumatic Insults: The Laceration Matrix -->
+        <section class="slide-card">
+            <div class="slide-header">
+                <h2 class="slide-title">آسیب‌های تروماتیک حاد: ماتریکس پارگی‌ها (<span class="en">Acute Traumatic Insults: The Laceration Matrix</span>)</h2>
+                <span class="slide-num">اسلاید ۸</span>
+            </div>
+            <div class="grid-2">
+                <div class="sub-box warning">
+                    <h4>سندرم مالوری-وایس (<span class="en">Mallory-Weiss Syndrome</span>)</h4>
+                    <ul>
+                        <li><strong>پاتوژنز (<span class="en">Pathogenesis</span>):</strong> اوغ زدن و استفراغ شدید (<span class="en">Severe retching/vomiting</span>). شل شدن رفلکسی اسفنکتر انجام نمی‌شود و موج ضدپریستالتیک دیواره کشیده‌شده را پاره می‌کند.</li>
+                        <li><strong>مورفولوژی (<span class="en">Morphology</span>):</strong> پارگی‌های خطی سطحی با جهت‌گیری طولی (<span class="en">Superficial, longitudinally oriented linear lacerations</span>) که از محل اتصال معده و مری (<span class="en">GE junction</span>) عبور می‌کنند (محدود به مخاط و زیرمخاط).</li>
+                        <li><strong>نمای بالینی (<span class="en">Clinical</span>):</strong> با هماتمز تظاهر می‌یابد؛ عموماً خودبه‌خود محدودشونده است و به‌سرعت بهبود می‌یابد.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box danger">
+                    <h4>سندرم بورهاو (<span class="en">Boerhaave Syndrome</span>)</h4>
+                    <ul>
+                        <li><strong>پاتوژنز (<span class="en">Pathogenesis</span>):</strong> فشار داخل لومنی بسیار شدید (<span class="en">Extreme intraluminal pressure</span>).</li>
+                        <li><strong>مورفولوژی (<span class="en">Morphology</span>):</strong> پارگی تمام‌ضخامت دیواره مری (<span class="en">Transmural esophageal rupture</span>) که از میان تمام لایه‌ها (از مخاط تا ادونتیس) عبور می‌کند.</li>
+                        <li><strong>نمای بالینی (<span class="en">Clinical</span>):</strong> منجر به مدیاستینیت شدید (<span class="en">Severe mediastinitis</span>) می‌شود و یک اورژانس جراحی فاجعه‌بار (<span class="en">Catastrophic surgical emergency</span>) محسوب می‌گردد.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 9: Exogenous Siege: Chemical and Iatrogenic Esophagitis -->
+        <section class="slide-card" id="esophagitis">
+            <div class="slide-header">
+                <h2 class="slide-title">محاصره برون‌زاد: ازوفاژیت شیمیایی و یاتروژنیک (<span class="en">Exogenous Siege: Chemical and Iatrogenic Esophagitis</span>)</h2>
+                <span class="slide-num">اسلاید ۹</span>
+            </div>
+            <div class="grid-3">
+                <div class="sub-box danger">
+                    <h4>آسیب شیمیایی و سوزاننده (<span class="en">Chemical & Corrosive Injury</span>)</h4>
+                    <p>بلع الکل، اسیدها یا قلیاهای سوزاننده (<span class="en">Corrosive acids/alkalis</span>) یا مایعات بیش‌ازحد داغ باعث نکروز مستقیم سلولی، زخم شدن (<span class="en">Ulceration</span>) و در نهایت تشکیل تنگی (<span class="en">Stricture formation</span>) می‌شود.</p>
+                </div>
+                <div class="sub-box warning">
+                    <h4>ازوفاژیت ناشی از قرص (<span class="en">Pill-Induced Esophagitis</span>)</h4>
+                    <p>قرص‌های دارویی (به‌طور شایع داکسی‌سایکلین <span class="en">Doxycycline</span> و بیس‌فسفونات‌ها <span class="en">Bisphosphonates</span>) به پوشش مخاطی می‌چسبند، به‌صورت موضعی حل می‌شوند و مخاط را به‌طور شیمیایی می‌سوزانند. علامت اصلی آن <strong>ادینوفاژی</strong> (<span class="en">Odynophagia</span>؛ درد هنگام بلع) است.</p>
+                </div>
+                <div class="sub-box">
+                    <h4>آسیب یاتروژنیک (<span class="en">Iatrogenic Injury</span>)</h4>
+                    <p>شیمی‌درمانی سیتوتوکسیک (<span class="en">Cytotoxic chemotherapy</span>)، پرتودرمانی (<span class="en">Radiation therapy</span>؛ که هم باعث مرگ سلول‌های اپی‌تلیال و هم آسیب عروقی ایسکمیک می‌شود) یا بیماری پیوند علیه میزبان (<span class="en">Graft-versus-host disease - GVHD</span>).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 10: Opportunistic Invasions: Infectious Esophagitis -->
+        <section class="slide-card">
+            <div class="slide-header">
+                <h2 class="slide-title">تهاجم‌های فرصت‌طلب: ازوفاژیت عفونی (<span class="en">Opportunistic Invasions: Infectious Esophagitis</span>)</h2>
+                <span class="slide-num">اسلاید ۱۰</span>
+            </div>
+            <p style="margin-bottom: 1rem; color: var(--text-secondary);">*شایع در بیماران ناتوان (<span class="en">Debilitated</span>) یا دچار سرکوب سیستم ایمنی (<span class="en">Immunosuppressed</span>).</p>
+
+            <div class="grid-3">
+                <div class="sub-box">
+                    <h4>ویروس هرپس سیمپلکس (<span class="en">Herpes Simplex Virus - HSV</span>)</h4>
+                    <ul>
+                        <li><strong>آندوسکوپی:</strong> زخم‌های منگوله‌مانند یا پانچ‌شده (<span class="en">Punched-out ulcers</span>) را نشان می‌دهد.</li>
+                        <li><strong>بافت‌شناسی:</strong> سلول‌های بالونی‌شده (<span class="en">Ballooned cells</span>)، چند هسته‌ای شدن (<span class="en">Multinucleation</span>) و انکلوزیون‌های داخل هسته‌ای ائوزینوفیلیک بزرگ در <strong>حاشیه زخم</strong> (<span class="en">At the ulcer edge</span>).</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box">
+                    <h4>سیتومگالوویروس (<span class="en">Cytomegalovirus - CMV</span>)</h4>
+                    <ul>
+                        <li><strong>آندوسکوپی:</strong> زخم‌های سطحی‌تر (<span class="en">Shallower ulcerations</span>) را نشان می‌دهد.</li>
+                        <li><strong>بافت‌شناسی:</strong> انکلوزیون‌های هسته‌ای و سیتوپلاسمی مشخص منحصراً درون سلول‌های اندوتلیال و استرومایی در <strong>قاعده زخم</strong> (<span class="en">At the ulcer base</span>).</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box">
+                    <h4>کاندیدا آلبیکنس (<span class="en">Candida Albicans</span>)</h4>
+                    <ul>
+                        <li><strong>آندوسکوپی:</strong> غشاهای کاذب چسبنده و خاکستری-سفید (<span class="en">Adherent, gray-white pseudomembranes</span>).</li>
+                        <li><strong>بافت‌شناسی:</strong> هیف‌های قارچی متراکم و درهم‌تنیده (<span class="en">Densely matted fungal hyphae</span>) و سلول‌های التهابی گرفتار در اگزودای فیبرینوچرکین (<span class="en">Fibrinosuppurative exudate</span>).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 11 & 12: GERD vs Eosinophilic Esophagitis -->
+        <section class="slide-card">
+            <div class="slide-header">
+                <h2 class="slide-title">ازوفاژیت ریفلاکس (<span class="en">GERD</span>) و مقایسه آن با ازوفاژیت ائوزینوفیلیک (<span class="en">EoE</span>)</h2>
+                <span class="slide-num">اسلایدهای ۱۱ و ۱۲</span>
+            </div>
+
+            <div class="sub-box warning" style="margin-bottom: 1.25rem;">
+                <h4>آسیب مزمن و پایدار: ازوفاژیت ریفلاکس (<span class="en">Chronic Sustained Damage: Reflux Esophagitis - GERD</span>)</h4>
+                <ul>
+                    <li><strong>پاتوژنز ریفلاکس (<span class="en">The Pathogenesis of Reflux</span>):</strong> اپی‌تلیوم سنگفرشی در برابر سایش فیزیکی مقاوم است اما به اسید بسیار حساس می‌باشد. بیماری زمانی رخ می‌دهد که سد محافظتی موسین/بی‌کربنات و تون <span class="en">LES</span> در برابر فشار مثبت معده ناتوان شوند.</li>
+                    <li><strong>عوامل تشدیدکننده (<span class="en">Aggravating Factors</span>):</strong> الکل، تنباکو، چاقی، داروهای مضعف سیستم عصبی مرکزی (<span class="en">CNS depressants</span>)، بارداری، تأخیر در تخلیه معده (<span class="en">Delayed gastric emptying</span>) و فتق هیاتال (<span class="en">Hiatal hernia</span>).</li>
+                    <li><strong>نشانه‌های مورفولوژیک (<span class="en">Morphologic Hallmarks</span>):</strong> بیماری خفیف ممکن است فقط اریتم (<span class="en">Erythema</span>) نشان دهد. از نظر بافت‌شناسی، ائوزینوفیل‌ها (<span class="en">Eosinophils</span>) به مخاط سنگفرشی فراخوانده می‌شوند و به‌دنبال آن نوتروفیل‌ها (<span class="en">Neutrophils</span>؛ نشانه آسیب شدید) ظاهر می‌گردند؛ همراه با هیپرپلازی ناحیه بازال (<span class="en">Basal zone hyperplasia</span>) و طویل شدن پاپیلاهای لامینا پروپریا (<span class="en">Elongation of lamina propria papillae</span>).</li>
+                    <li><strong>تظاهر بالینی (<span class="en">Clinical Presentation</span>):</strong> سوزش سر دل (<span class="en">Heartburn</span>)، دیسفاژی و رگورژیتاسیون ترش، عمدتاً در بزرگسالان بالای ۴۰ سال.</li>
+                </ul>
+            </div>
+
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--accent);">واگرایی التهاب: ازوفاژیت ائوزینوفیلیک در برابر ازوفاژیت ریفلاکس (<span class="en">The Divergence of Inflammation: Eosinophilic vs. Reflux Esophagitis</span>)</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ویژگی</th>
+                            <th>ازوفاژیت ائوزینوفیلیک (<span class="en">Eosinophilic Esophagitis - EoE</span>)</th>
+                            <th>ریفلاکس معده به مری (<span class="en">GERD</span>)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>عامل محرک (<span class="en">Driver</span>)</strong></td>
+                            <td>اختلال ایمونولوژیک/آلرژیک مزمن (بیماران به‌شدت آتوپیک <span class="en">Atopic</span> هستند).</td>
+                            <td>مواجهه با اسید و پپسین (<span class="en">Acid and pepsin exposure</span>).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>بافت‌شناسی (<span class="en">Histology</span>)</strong></td>
+                            <td>ارتشاح سطحی وسیع ائوزینوفیل‌ها، دور از محل اتصال معده و مری (<span class="en">GE junction</span>).</td>
+                            <td>هیپرپلازی ناحیه بازال، ارتشاح مختلط نوتروفیل‌ها و ائوزینوفیل‌ها.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>آندوسکوپی (<span class="en">Endoscopy</span>)</strong></td>
+                            <td>حلقه‌های مخاطی محیطی مشخص (<span class="en">Circumferential mucosal rings</span>) در یک‌سوم فوقانی و میانی مری.</td>
+                            <td>اریتم، به‌طور معمول در بخش دیستال نزدیک <span class="en">GE junction</span>.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>تظاهر بالینی و درمان (<span class="en">Clinical</span>)</strong></td>
+                            <td>گیر کردن غذا (<span class="en">Food impaction</span>) در بزرگسالان و عدم تحمل تغذیه در کودکان. <strong>مقاوم به مهارکننده‌های پمپ پروتون (<span class="en">Refractory to PPIs</span>).</strong></td>
+                            <td>سوزش سر دل (<span class="en">Heartburn</span>)، <strong>پاسخ‌دهنده به <span class="en">PPIs</span></strong>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Slide 13, 14 & 15: Pathogenetic Continuum, Barrett Esophagus & Dysplasia -->
+        <section class="slide-card" id="barrett">
+            <div class="slide-header">
+                <h2 class="slide-title">پیوستار پاتوژنتیک: مری بارت و دیسپلازی (<span class="en">Barrett Esophagus & Dysplasia</span>)</h2>
+                <span class="slide-num">اسلایدهای ۱۳، ۱۴ و ۱۵</span>
+            </div>
+
+            <p style="margin-bottom: 1rem; color: var(--text-secondary);"><strong>از استرس اسیدی تا نئوپلازی (<span class="en">The Pathogenetic Continuum: From Acid Stress to Neoplasia</span>):</strong> تلاش ناامیدانه اپی‌تلیوم برای بقا در یک محیط لومنی خصمانه، به سقوط بدخیم خودش منجر می‌شود.</p>
+
+            <div class="stage-grid" style="margin-bottom: 1.5rem;">
+                <div class="stage-card">
+                    <span class="stage-badge">مرحله ۱: آسیب (<span class="en">Stage 1: Injury - GERD</span>)</span>
+                    <p>التهاب مداوم و نوسازی سلولی (<span class="en">Cellular turnover</span>) در اثر مواجهه با اسید و التهاب (<span class="en">Normal Squamous → GERD</span>).</p>
+                </div>
+                <div class="stage-card s2">
+                    <span class="stage-badge">مرحله ۲: سازگاری (<span class="en">Stage 2: Adaptation - Barrett</span>)</span>
+                    <p>تغییر متاپلاستیک به اپی‌تلیوم استوانه‌ای مقاوم به اسید (<span class="en">Barrett Esophagus</span>).</p>
+                </div>
+                <div class="stage-card s3">
+                    <span class="stage-badge">مرحله ۳: ناپایداری (<span class="en">Stage 3: Instability - Dysplasia</span>)</span>
+                    <p>تجمع آسیب‌های ژنتیکی (جهش‌های <span class="en">TP53</span> و تغییرات اپی‌ژنتیک) ← <span class="en">Low/High-Grade Dysplasia</span>.</p>
+                </div>
+                <div class="stage-card s4">
+                    <span class="stage-badge">مرحله ۴: تهاجم (<span class="en">Stage 4: Invasion - Adenocarcinoma</span>)</span>
+                    <p>تکثیر مهارنشدنی، آشوب ژنومی و عبور از سد زیرمخاط (<span class="en">Submucosal breach</span>).</p>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="sub-box warning">
+                    <h4>سازگاری سلولی: مری بارت (<span class="en">Cellular Adaptation: Barrett Esophagus</span>)</h4>
+                    <ul>
+                        <li><strong>معامله تکاملی (<span class="en">The Evolutionary Trade-off</span>):</strong> در تا ۱۰٪ بیماران مبتلا به <span class="en">GERD</span> علامت‌دار ایجاد می‌شود. بافت، سلول‌های سنگفرشی حساس به اسید را با سلول‌های استوانه‌ای روده‌ای مقاوم به اسید جایگزین می‌کند.</li>
+                        <li><strong>نمای آندوسکوپیک (<span class="en">Endoscopic Presentation</span>):</strong> زبانه‌ها یا لکه‌هایی از مخاط قرمز و مخملی (<span class="en">Reddish, velvety mucosa</span>) که از <span class="en">GE junction</span> به سمت بالا گسترش یافته و با مخاط سنگفرشی باقیمانده صورتی‌رنگ متناوب می‌شوند.</li>
+                        <li><strong>ویژگی تعریف‌کننده بافت‌شناسی (<span class="en">The Histologic Defining Feature</span>):</strong> متاپلازی روده‌ای (<span class="en">Intestinal metaplasia</span>). تشخیص مستلزم وجود <strong>سلول‌های جامی (<span class="en">Goblet cells</span>)</strong> است که با واکوئل‌های موسین مشخص که در رنگ‌آمیزی <span class="en">H&E</span> به رنگ آبی کم‌رنگ درآمده و شکل جام شراب ایجاد می‌کنند، شناسایی می‌شوند. (نیازمند هر دو مورد: شواهد آندوسکوپیک بیش از ۱ سانتی‌متر بالاتر از <span class="en">GE junction</span> و تأیید بافت‌شناسی).</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box danger">
+                    <h4>آستانه پیش‌بدخیمی: دیسپلازی در مری بارت (<span class="en">The Pre-Malignant Threshold: Dysplasia in Barrett Esophagus</span>)</h4>
+                    <ul>
+                        <li><strong>تکامل کلونال (<span class="en">The Clonal Evolution</span>):</strong> اپی‌تلیوم بارت دارای جهش‌های محرک (<span class="en">Driver mutations</span>) مشترک با آدنوکارسینوم است که پیش‌ساز مستقیم بودن آن را تأیید می‌کند.</li>
+                        <li><strong>بروز پیشرفت (<span class="en">Incidence of Progression</span>):</strong> دیسپلازی سالانه در ۰.۲٪ تا ۱٪ افراد مبتلا به مری بارت ایجاد می‌شود و با افزایش سن و مدت علائم افزایش می‌یابد.</li>
+                        <li><strong>درجه‌بندی مورفولوژیک (<span class="en">Morphologic Grading</span>):</strong> بر اساس آتیپی هسته‌ای (<span class="en">Nuclear atypia</span>)، شلوغی سلولی (<span class="en">Crowding</span>) و از دست رفتن جهت‌گیری سلولی (<span class="en">Loss of cellular orientation</span>) به‌طور دقیق به دو دسته درجه پایین (<span class="en">Low-grade</span>) یا درجه بالا (<span class="en">High-grade</span>) طبقه‌بندی می‌شود.</li>
+                        <li><strong>الزام بالینی (<span class="en">Clinical Mandate</span>):</strong> نیازمند آندوسکوپی پایشی دوره‌ای است. دیسپلازی درجه بالا یا کارسینوم داخل مخاطی (<span class="en">Intramucosal carcinoma</span>) نیازمند مداخله درمانی است (ازوفاژکتومی <span class="en">Esophagectomy</span>، ابلیشن با امواج رادیویی <span class="en">Radiofrequency ablation</span> یا موکوزکتومی آندوسکوپیک <span class="en">Endoscopic mucosectomy</span>).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 16, 17, 18 & 19: Esophageal Adenocarcinoma vs Squamous Cell Carcinoma -->
+        <section class="slide-card" id="neoplasms">
+            <div class="slide-header">
+                <h2 class="slide-title">بدخیمی‌های مری: آدنوکارسینوم در برابر کارسینوم سلول سنگفرشی (<span class="en">Adenocarcinoma vs. SCC</span>)</h2>
+                <span class="slide-num">اسلایدهای ۱۶ تا ۱۹</span>
+            </div>
+
+            <div class="grid-2" style="margin-bottom: 1.5rem;">
+                <div class="sub-box danger">
+                    <h4>اوج بدخیمی: آدنوکارسینوم مری (<span class="en">Esophageal Adenocarcinoma</span>)</h4>
+                    <ul>
+                        <li><strong>اپیدمیولوژی:</strong> بروز به‌سرعت در حال افزایش در کشورهای غربی؛ ۷ برابر شایع‌تر در مردان. ناشی از چاقی و <span class="en">GERD</span> مزمن.</li>
+                        <li><strong>توپوگرافی:</strong> عمدتاً در یک‌سوم دیستال مری (<span class="en">Distal third</span>) قرار دارد و اغلب به کاردیای مجاور معده (<span class="en">Gastric cardia</span>) تهاجم می‌کند.</li>
+                        <li><strong>پاتوژنز مولکولی:</strong> کسب مرحله‌به‌مرحله تغییرات ژنتیکی و اپی‌ژنتیکی؛ جهش <span class="en">TP53</span> و ناهنجاری‌های کروموزومی از نشانه‌های اولیه هستند.</li>
+                        <li><strong>مورفولوژی:</strong> به‌صورت لکه‌های مسطح یا برجسته آغاز شده و به توده‌های بزرگ برون‌روینده (<span class="en">Exophytic</span>)، ارتشاحی منتشر یا عمیقاً زخمی تبدیل می‌شود. از نظر بافت‌شناسی، غدد بدخیم تولیدکننده موسین (<span class="en">Invasive malignant glands with mucin</span>) را در میان استرومای دسموپلاستیک (<span class="en">Desmoplastic stroma</span>) تشکیل می‌دهد.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box warning">
+                    <h4>تراژدی جایگزین: کارسینوم سلول سنگفرشی (<span class="en">Squamous Cell Carcinoma - SCC</span>)</h4>
+                    <ul>
+                        <li><strong>اپیدمیولوژی:</strong> شایع‌ترین سرطان مری در سراسر جهان (ایران، چین، آفریقای جنوبی)، هرچند آدنوکارسینوم در غرب رو به افزایش است. ۴ برابر شایع‌تر در مردان.</li>
+                        <li><strong>عوامل خطر و مسیرها:</strong>
+                            <ul>
+                                <li><em>مسیر کارسینوژن:</em> هم‌افزایی الکل و تنباکو؛ همچنین مرتبط با آسیب سوزاننده، آشالازی، نوشیدنی‌های بسیار داغ و سندرم پلامر-وینسون (<span class="en">Plummer-Vinson syndrome</span>). منجر به جهش در تنظیم‌کننده‌های تمایز سنگفرشی (<span class="en">TP63, NOTCH</span>) و تکثیر می‌شود.</li>
+                                <li><em>مسیر <span class="en">HPV</span> پرخطر:</em> عفونت با زیرتیپ‌های انکوژن <span class="en">HPV</span> در مناطق پرخطر نقش دارد و از مسیر کارسینوژن شیمیایی متمایز است.</li>
+                            </ul>
+                        </li>
+                        <li><strong>توپوگرافی و مورفولوژی:</strong> نیمی از موارد در <strong>یک‌سوم میانی مری (<span class="en">Middle third</span>)</strong> رخ می‌دهند. با دیسپلازی سنگفرشی (پلاک‌های خاکستری-سفید) آغاز شده و به توده‌های پولیپوئید انسدادی یا ضایعات زخمی و ارتشاحی با تنگی سفت مجرا تبدیل می‌شود. در بافت‌شناسی: آشیانه‌های سلول‌های بدخیم کراتینه‌شونده (<span class="en">Keratin nests</span>).</li>
+                        <li><strong>تهاجم موضعی:</strong> به ساختارهای مجاور تهاجم می‌کند: درخت تنفسی (پنومونی)، آئورت (خونریزی کشنده) یا مدیاستن.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--accent);">جدول مقایسه جامع: آدنوکارسینوم در برابر کارسینوم سلول سنگفرشی (<span class="en">Synthesis: Adenocarcinoma vs. Squamous Cell Carcinoma</span>)</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>شاخص</th>
+                            <th>آدنوکارسینوم (<span class="en">Adenocarcinoma - Adeno</span>)</th>
+                            <th>کارسینوم سلول سنگفرشی (<span class="en">Squamous Cell Carcinoma - SCC</span>)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>محل (<span class="en">Location</span>)</strong></td>
+                            <td>یک‌سوم دیستال (<span class="en">Distal 1/3</span>)، محل اتصال معده و مری (<span class="en">GE junction</span>)</td>
+                            <td>یک‌سوم میانی (<span class="en">Middle 1/3</span>)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>عوامل خطر اصلی (<span class="en">Primary Risk Factors</span>)</strong></td>
+                            <td><span class="en">GERD</span>، چاقی (<span class="en">Obesity</span>)، مری بارت (<span class="en">Barrett</span>)</td>
+                            <td>الکل، تنباکو، آشالازی (<span class="en">Achalasia</span>)، مواد سوزاننده (<span class="en">Caustics</span>)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ضایعه پیش‌ساز (<span class="en">Precursor Lesion</span>)</strong></td>
+                            <td>مری بارت / متاپلازی روده‌ای (<span class="en">Barrett Esophagus / Intestinal Metaplasia</span>)</td>
+                            <td>دیسپلازی سنگفرشی (<span class="en">Squamous Dysplasia</span>)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>امضاهای مولکولی (<span class="en">Molecular Signatures</span>)</strong></td>
+                            <td>جهش زودهنگام <span class="en">TP53</span>، ناپایداری کروموزومی (<span class="en">Chromosomal instability</span>)</td>
+                            <td><span class="en">TP53</span>، <span class="en">TP63</span>، <span class="en">NOTCH</span>، سیکلین‌ها (<span class="en">Cyclins</span>)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>بافت‌شناسی (<span class="en">Histology</span>)</strong></td>
+                            <td>غدد تولیدکننده موسین (<span class="en">Mucin-producing glands</span>)</td>
+                            <td>آشیانه‌های سنگفرشی کراتینه‌شونده (<span class="en">Keratinizing squamous nests</span>)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Slide 20, 21 & 22: Clinical Endpoints, Lymphatic Spread & Conclusion -->
+        <section class="slide-card" id="clinical">
+            <div class="slide-header">
+                <h2 class="slide-title">نقاط پایانی بالینی: انسداد، انتشار لنفاوی و جمع‌بندی (<span class="en">Clinical Endpoints & Synthesis</span>)</h2>
+                <span class="slide-num">اسلایدهای ۲۰، ۲۱ و ۲۲</span>
+            </div>
+
+            <div class="grid-2" style="margin-bottom: 1.25rem;">
+                <div class="sub-box">
+                    <h4>تظاهر بالینی و بزرگراه زیرمخاطی (<span class="en">Presentation & Submucosal Highway</span>)</h4>
+                    <ul>
+                        <li><strong>تظاهر موذیانه (<span class="en">Insidious Presentation</span>):</strong> دیسفاژی، ادینوفاژی، انسداد و کاهش وزن شدید (کاشکسی <span class="en">Cachexia</span>). بیماران به‌طور ناخودآگاه با روی آوردن به رژیم‌های مایع خود را سازگار می‌کنند.</li>
+                        <li><strong>بزرگراه زیرمخاطی (<span class="en">The Submucosal Highway</span>):</strong> شبکه لنفاوی غنی زیرمخاطی، گسترش سریع طولی و محیطی تومور را پیش از تشخیص بالینی تسهیل می‌کند.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-box danger">
+                    <h4>متاستاز غدد لنفاوی بر اساس محل (<span class="en">Lymph Node Metastasis by Location</span>)</h4>
+                    <ul>
+                        <li><strong>یک‌سوم فوقانی (<span class="en">Upper Third</span>):</strong> گسترش به غدد لنفاوی گردنی (<span class="en">Cervical lymph nodes</span>).</li>
+                        <li><strong>یک‌سوم میانی (<span class="en">Middle Third</span>):</strong> گسترش به غدد مدیاستن (<span class="en">Mediastinal</span>)، پارا‌تراکئال (<span class="en">Paratracheal</span>) و تراکئوبرونشیال (<span class="en">Tracheobronchial nodes</span>).</li>
+                        <li><strong>یک‌سوم تحتانی (<span class="en">Lower Third</span>):</strong> گسترش به غدد معدی (<span class="en">Gastric</span>) و سلیاک (<span class="en">Celiac nodes</span>).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="callout danger" style="margin-bottom: 1.25rem;">
+                <strong>پیش‌آگهی (<span class="en">Prognosis</span>):</strong> بقای ۵ ساله برای ضایعات سطحی ۷۵٪ است، اما به دلیل مراجعه در مراحل پیشرفته، بقای کلی به حدود ۱۰ تا ۲۵٪ سقوط می‌کند.
+            </div>
+
+            <div class="sub-box" style="text-align: center;">
+                <h4>لومن و دیواره: بافتی تحت محاصره (<span class="en">The Lumen and the Wall: A Tissue Under Siege</span>)</h4>
+                <p style="margin-top: 0.5rem;">مری یک لوله معماری ساده است که در معرض نیروهای بی‌وقفه فیزیکی، شیمیایی و بیولوژیکی قرار دارد؛ چه تحت محاصره فشار شدید پارگی بورهاو (<span class="en">Boerhaave tear</span>)، پس‌زدگی جریان پورت در واریس‌ها (<span class="en">Varices</span>)، سوختگی مزمن اسیدی <span class="en">GERD</span>، یا تهاجم شیمیایی کارسینوژن‌ها باشد... ناتوانی نهایی دیواره (مخاط، زیرمخاط، موسکولاریس پروپریا و ادونتیس) در سازگاری با لومن خصمانه، تراژدی بالینی پاتولوژی مری را رقم می‌زند.</p>
+                <p style="margin-top: 0.85rem; font-weight: 700; color: var(--accent);">با آرزوی موفقیت! (<span class="en">Best wishes!</span>)</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        خلاصه جامع و ترجمه کامل اسلایدهای پاتولوژی مری (جلسه دوم) — برگرفته از <span class="en">Robbins & Kumar Basic Pathology (11th Ed)</span>
+    </footer>
+
+    <script>
+        function setTheme(themeName) {
+            document.documentElement.setAttribute('data-theme', themeName);
+            localStorage.setItem('esophagus-pathology-theme', themeName);
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-set-theme') === themeName);
+            });
+        }
+
+        // Load saved theme or default to semi-dark (#2a2b2b)
+        const savedTheme = localStorage.getItem('esophagus-pathology-theme') || 'semi-dark';
+        setTheme(savedTheme);
+    </script>
+</body>
+</html>
